@@ -1049,7 +1049,7 @@ Game.Launch=function()
 		
 		Game.showBackupWarning=function()
 		{
-			Game.Notify('Back up your save!','Hello again! Just a reminder that you may want to back up your Cookie Clicker save every once in a while, just in case.<br>To do so, go to Options and hit "Export save" or "Save to file"!<div class="line"></div><a style="float:right;" onclick="Game.prefs.showBackupWarning=0;==CLOSETHIS()==">Don\'t show this again</a>',[25,7]);
+			Game.Notify('备份你的游戏存档！','再一次问好！ 只是提醒一下，为了以防万一，您可能需要每隔一段时间备份您的游戏存档。<br>要做到这一点，进入选项并点击“导出存档”或“保存到文件”！<div class="line"></div><a style="float:right;" onclick="Game.prefs.showBackupWarning=0;==CLOSETHIS()==">Don\'t show this again</a>',[25,7]);
 		}
 		
 		/*=====================================================================================
@@ -1180,7 +1180,7 @@ Game.Launch=function()
 		Game.ExportSave=function()
 		{
 			Game.prefs.showBackupWarning=0;
-			Game.Prompt('<h3>Export save</h3><div class="block">This is your save code.<br>Copy it and keep it somewhere safe!</div><div class="block"><textarea id="textareaPrompt" style="width:100%;height:128px;" readonly>'+Game.WriteSave(1)+'</textarea></div>',['All done!']);//prompt('Copy this text and keep it somewhere safe!',Game.WriteSave(1));
+			Game.Prompt('<h3>导出存档</h3><div class="block">This is your save code.<br>Copy it and keep it somewhere safe!</div><div class="block"><textarea id="textareaPrompt" style="width:100%;height:128px;" readonly>'+Game.WriteSave(1)+'</textarea></div>',['All done!']);//prompt('Copy this text and keep it somewhere safe!',Game.WriteSave(1));
 			l('textareaPrompt').focus();l('textareaPrompt').select();
 		}
 		Game.ImportSave=function()
@@ -1390,8 +1390,8 @@ Game.Launch=function()
 						}
 						else if (document.hasFocus())
 						{
-							if (Game.prefs.popups) Game.Popup('Game saved');
-							else Game.Notify('Game saved','','',1,1);
+							if (Game.prefs.popups) Game.Popup('游戏已保存');
+							else Game.Notify('游戏已保存','','',1,1);
 						}
 					}
 				}
@@ -1413,8 +1413,8 @@ Game.Launch=function()
 					}
 					else if (document.hasFocus())
 					{
-						if (Game.prefs.popups) Game.Popup('Game saved');
-						else Game.Notify('Game saved','','',1,1);
+						if (Game.prefs.popups) Game.Popup('游戏已保存');
+						else Game.Notify('游戏已保存','','',1,1);
 					}
 				}
 			}
@@ -1883,8 +1883,8 @@ Game.Launch=function()
 						Game.BigCookieSize=0;
 					}
 					
-					if (Game.prefs.popups) Game.Popup('Game loaded');
-					else Game.Notify('Game loaded','','',1,1);
+					if (Game.prefs.popups) Game.Popup('游戏加载成功');
+					else Game.Notify('游戏加载成功','','',1,1);
 					
 					if (Game.prefs.showBackupWarning==1) Game.showBackupWarning();
 				}
@@ -4696,8 +4696,8 @@ Game.Launch=function()
 				str+='<div class="section">Options</div>'+
 				'<div class="subsection">'+
 				'<div class="title">General</div>'+
-				'<div class="listing"><a class="option" '+Game.clickStr+'="Game.WriteSave();PlaySound(\'snd/tick.mp3\');">Save</a><label>Save manually (the game autosaves every 60 seconds; shortcut : ctrl+S)</label></div>'+
-				'<div class="listing"><a class="option" '+Game.clickStr+'="Game.ExportSave();PlaySound(\'snd/tick.mp3\');">Export save</a><a class="option" '+Game.clickStr+'="Game.ImportSave();PlaySound(\'snd/tick.mp3\');">Import save</a><label>You can use this to backup your save or to transfer it to another computer (shortcut for import : ctrl+O)</label></div>'+
+				'<div class="listing"><a class="option" '+Game.clickStr+'="Game.WriteSave();PlaySound(\'snd/tick.mp3\');">保存</a><label>手动保存（游戏每60秒会自动保存一次，快捷键：Ctrl + S）</label></div>'+
+				'<div class="listing"><a class="option" '+Game.clickStr+'="Game.ExportSave();PlaySound(\'snd/tick.mp3\');">导出存档</a><a class="option" '+Game.clickStr+'="Game.ImportSave();PlaySound(\'snd/tick.mp3\');">Import save</a><label>You can use this to backup your save or to transfer it to another computer (shortcut for import : ctrl+O)</label></div>'+
 				'<div class="listing"><a class="option" '+Game.clickStr+'="Game.FileSave();PlaySound(\'snd/tick.mp3\');">Save to file</a><a class="option" style="position:relative;"><input id="FileLoadInput" type="file" style="cursor:pointer;opacity:0;position:absolute;left:0px;top:0px;width:100%;height:100%;" onchange="Game.FileLoad(event);" '+Game.clickStr+'="PlaySound(\'snd/tick.mp3\');"/>Load from file</a><label><b>Experimental</b> - use this to keep backups on your computer</label></div>'+
 				
 				'<div class="listing"><a class="option warning" '+Game.clickStr+'="Game.HardReset();PlaySound(\'snd/tick.mp3\');">Wipe save</a><label>Delete all your progress, including your achievements</label></div>'+
@@ -4889,23 +4889,24 @@ Game.Launch=function()
 				
 				str+='<div class="section">Statistics</div>'+
 				'<div class="subsection">'+
-				'<div class="title">General</div>'+
-				'<div class="listing"><b>Cookies in bank :</b> <div class="price plain">'+Game.tinyCookie()+Beautify(Game.cookies)+'</div></div>'+
-				'<div class="listing"><b>Cookies baked (this ascension) :</b> <div class="price plain">'+Game.tinyCookie()+Beautify(Game.cookiesEarned)+'</div></div>'+
-				'<div class="listing"><b>Cookies baked (all time) :</b> <div class="price plain">'+Game.tinyCookie()+Beautify(Game.cookiesEarned+Game.cookiesReset)+'</div></div>'+
-				(Game.cookiesReset>0?'<div class="listing"><b>Cookies forfeited by ascending :</b> <div class="price plain">'+Game.tinyCookie()+Beautify(Game.cookiesReset)+'</div></div>':'')+
-				(Game.resets?('<div class="listing"><b>Legacy started :</b> '+(fullDate==''?'just now':(fullDate+' ago'))+', with '+Beautify(Game.resets)+' ascension'+(Game.resets==1?'':'s')+'</div>'):'')+
-				'<div class="listing"><b>Run started :</b> '+(startDate==''?'just now':(startDate+' ago'))+'</div>'+
-				'<div class="listing"><b>Buildings owned :</b> '+Beautify(buildingsOwned)+'</div>'+
-				'<div class="listing"><b>Cookies per second :</b> '+Beautify(Game.cookiesPs,1)+' <small>'+
+				'<div class="title">一般</div>'+
+				'<div class="listing"><b>银行里的饼干 :</b> <div class="price plain">'+Game.tinyCookie()+Beautify(Game.cookies)+'</div></div>'+
+				'<div class="listing"><b>饼干烘烤（本次游戏） :</b> <div class="price plain">'+Game.tinyCookie()+Beautify(Game.cookiesEarned)+'</div></div>'+
+				'<div class="listing"><b>饼干烘烤（所有时间） :</b> <div class="price plain">'+Game.tinyCookie()+Beautify(Game.cookiesEarned+Game.cookiesReset)+'</div></div>'+
+				(Game.cookiesReset>0?'<div class="listing"><b>饼干被升级没收 :</b> <div class="price plain">'+Game.tinyCookie()+Beautify(Game.cookiesReset)+'</div></div>':'')+
+				(Game.resets?('<div class="listing"><b>传统开始 :</b> '+(fullDate==''?'just now':(fullDate+' ago'))+', with '+Beautify(Game.resets)+' ascension'+(Game.resets==1?'':'s')+'</div>'):'')+
+				'<div class="listing"><b>游戏运行时间 :</b> '+(startDate==''?'just now':(startDate+' ago'))+'</div>'+
+				'<div class="listing"><b>拥有的建筑 :</b> '+Beautify(buildingsOwned)+'</div>'+
+				'<div class="listing"><b>每秒生产饼干数 :</b> '+Beautify(Game.cookiesPs,1)+' <small>'+
 					'(multiplier : '+Beautify(Math.round(Game.globalCpsMult*100),1)+'%)'+
 					(Game.cpsSucked>0?' <span class="warning">(withered : '+Beautify(Math.round(Game.cpsSucked*100),1)+'%)</span>':'')+
 					'</small></div>'+
-				'<div class="listing"><b>Cookies per click :</b> '+Beautify(Game.computedMouseCps,1)+'</div>'+
-				'<div class="listing"><b>Cookie clicks :</b> '+Beautify(Game.cookieClicks)+'</div>'+
-				'<div class="listing"><b>Hand-made cookies :</b> '+Beautify(Game.handmadeCookies)+'</div>'+
-				'<div class="listing"><b>Golden cookie clicks :</b> '+Beautify(Game.goldenClicksLocal)+' <small>(all time : '+Beautify(Game.goldenClicks)+')</small></div>'+//' <span class="hidden">(<b>Missed golden cookies :</b> '+Beautify(Game.missedGoldenClicks)+')</span></div>'+
-				'<br><div class="listing"><b>Running version :</b> '+Game.version+'</div>'+
+				'<div class="listing"><b>每次点击得到的饼干 :</b> '+Beautify(Game.computedMouseCps,1)+'</div>'+
+				'<div class="listing"><b>饼干点击次数 :</b> '+Beautify(Game.cookieClicks)+'</div>'+
+				'<div class="listing"><b>手动点击的饼干 :</b> '+Beautify(Game.handmadeCookies)+'</div>'+
+				'<div class="listing"><b>金饼干点击 :</b> '+Beautify(Game.goldenClicksLocal)+' <small>(全部 : '+Beautify(Game.goldenClicks)+')</small></div>'+//' <span class="hidden">(<b>Missed golden cookies :</b> '+Beautify(Game.missedGoldenClicks)+')</span></div>'+
+				'<br><div class="listing"><b>当前版本 :</b> '+Game.version+'</div>'+
+                    '<br><div class="listing"><b>汉化者 :</b> 好阳光的爸爸</div>'+
 				
 				((researchStr!='' || wrathStr!='' || pledgeStr!='' || santaStr!='' || dragonStr!='' || Game.season!='' || ascensionModeStr!='')?(
 				'</div><div class="subsection">'+
@@ -4915,13 +4916,13 @@ Game.Launch=function()
 					(seasonStr!=''?' <small>('+seasonStr+' remaining)</small>':'')+
 				'</div>':'')+
 				(Game.season=='fools'?
-					'<div class="listing"><b>Money made from selling cookies :</b> $'+Beautify(Game.cookiesEarned*0.08,2)+'</div>'+
+					'<div class="listing"><b>出售饼干赚的钱 :</b> $'+Beautify(Game.cookiesEarned*0.08,2)+'</div>'+
 					(Game.Objects['Portal'].amount>0?'<div class="listing"><b>TV show seasons produced :</b> '+Beautify(Math.floor((timeInSeconds/60/60)*(Game.Objects['Portal'].amount*0.13)+1))+'</div>':'')
 				:'')+
-				(researchStr!=''?'<div class="listing"><b>Research :</b> '+researchStr+' remaining</div>':'')+
-				(wrathStr!=''?'<div class="listing"><b>Grandmatriarchs status :</b> '+wrathStr+'</div>':'')+
-				(pledgeStr!=''?'<div class="listing"><b>Pledge :</b> '+pledgeStr+' remaining</div>':'')+
-				(Game.wrinklersPopped>0?'<div class="listing"><b>Wrinklers popped :</b> '+Beautify(Game.wrinklersPopped)+'</div>':'')+
+				(researchStr!=''?'<div class="listing"><b>研究 :</b> '+researchStr+' remaining</div>':'')+
+				(wrathStr!=''?'<div class="listing"><b>祖母的地位 :</b> '+wrathStr+'</div>':'')+
+				(pledgeStr!=''?'<div class="listing"><b>保证 :</b> '+pledgeStr+' remaining</div>':'')+
+				(Game.wrinklersPopped>0?'<div class="listing"><b>起泡器弹出 :</b> '+Beautify(Game.wrinklersPopped)+'</div>':'')+
 				((Game.resets>0 && Game.lumpsTotal>0)?'<div class="listing"><b>Sugar lumps harvested :</b> <div class="price lump plain">'+Beautify(Game.lumpsTotal)+'</div></div>':'')+
 				//(Game.cookiesSucked>0?'<div class="listing warning"><b>Withered :</b> '+Beautify(Game.cookiesSucked)+' cookies</div>':'')+
 				(Game.reindeerClicked>0?'<div class="listing"><b>Reindeer found :</b> '+Beautify(Game.reindeerClicked)+'</div>':'')+
@@ -5314,10 +5315,10 @@ Game.Launch=function()
 			
 			if (list.length==0)
 			{
-				if (Game.cookiesEarned<5) list.push('You feel like making cookies. But nobody wants to eat your cookies.');
-				else if (Game.cookiesEarned<50) list.push('Your first batch goes to the trash. The neighborhood raccoon barely touches it.');
-				else if (Game.cookiesEarned<100) list.push('Your family accepts to try some of your cookies.');
-				else if (Game.cookiesEarned<500) list.push('Your cookies are popular in the neighborhood.');
+				if (Game.cookiesEarned<5) list.push('你觉得做的饼干很不错，但是没有人想吃你的饼干。');
+				else if (Game.cookiesEarned<50) list.push('你做的第一批饼干去了垃圾桶。 邻居的浣熊几乎都没有去碰它。');
+				else if (Game.cookiesEarned<100) list.push('你的家人接受尝试一些你的饼干。');
+				else if (Game.cookiesEarned<500) list.push('你的饼干在附近很受欢迎。');
 				else if (Game.cookiesEarned<1000) list.push('People are starting to talk about your cookies.');
 				else if (Game.cookiesEarned<5000) list.push('Your cookies are talked about for miles around.');
 				else if (Game.cookiesEarned<10000) list.push('Your cookies are renowned in the whole town!');
@@ -5893,7 +5894,7 @@ Game.Launch=function()
 				l('productIcon'+me.id).style.backgroundPosition='-'+icon[0]+'px -'+icon[1]+'px';
 				//l('productIconOff'+me.id).style.backgroundImage='url(img/'+iconOff+')';
 				l('productIconOff'+me.id).style.backgroundPosition='-'+iconOff[0]+'px -'+iconOff[1]+'px';
-				l('productName'+me.id).innerHTML=displayName;
+				l('productName'+me.id).innerHTML=cndisplayname(displayName);
 				l('productOwned'+me.id).innerHTML=me.amount?me.amount:'';
 				l('productPrice'+me.id).innerHTML=Beautify(Math.round(price));
 				l('productPriceMult'+me.id).innerHTML=(Game.buyBulk>1)?('x'+Game.buyBulk+' '):'';
@@ -8096,8 +8097,8 @@ Game.Launch=function()
 					{
 						var name=Game.Achievements[what].shortName?Game.Achievements[what].shortName:Game.Achievements[what].name;
 						Game.Achievements[what].won=1;
-						if (Game.prefs.popups) Game.Popup('Achievement unlocked :<br>'+name);
-						else Game.Notify('Achievement unlocked','<div class="title" style="font-size:18px;margin-top:-2px;">'+name+'</div>',Game.Achievements[what].icon);
+						if (Game.prefs.popups) Game.Popup('成就解锁 :<br>'+name);
+						else Game.Notify('成就解锁','<div class="title" style="font-size:18px;margin-top:-2px;">'+name+'</div>',Game.Achievements[what].icon);
 						if (Game.Achievements[what].pool!='shadow') Game.AchievementsOwned++;
 						Game.recalculateGains=1;
 					}
@@ -11320,7 +11321,7 @@ Game.Launch=function()
 		if (!Game.OnAscend)
 		{
 			
-			var unit=(Math.round(Game.cookiesd)==1?' cookie':' cookies');
+			var unit=(Math.round(Game.cookiesd)==1?' 饼干':' 饼干');
 			var str=Beautify(Math.round(Game.cookiesd));
 			if (Game.cookiesd>=1000000)//dirty padding
 			{
@@ -11338,10 +11339,10 @@ Game.Launch=function()
 				}
 				str=[str.slice(0, spacePos),add,str.slice(spacePos)].join('');
 			}
-			if (str.length>11 && !Game.mobile) unit='<br>cookies';
+			if (str.length>11 && !Game.mobile) unit='<br>饼干';
 			str+=unit;
 			if (Game.prefs.monospace) str='<span class="monospace">'+str+'</span>';
-			str=str+'<div style="font-size:50%;"'+(Game.cpsSucked>0?' class="warning"':'')+'>per second : '+Beautify(Game.cookiesPs*(1-Game.cpsSucked),1)+'</div>';//display cookie amount
+			str=str+'<div style="font-size:50%;"'+(Game.cpsSucked>0?' class="warning"':'')+'>每秒 : '+Beautify(Game.cookiesPs*(1-Game.cpsSucked),1)+'</div>';//display cookie amount
 			l('cookies').innerHTML=str;
 			l('compactCookies').innerHTML=str;
 			Timer.track('cookie amount');
@@ -11501,3 +11502,42 @@ window.onload=function()
 		}
 	}
 };
+
+function cndisplayname(name){
+    var cnname="";
+    var temp=name;
+    if(temp=="Cursor"){
+        cnname="光标"
+    }else if(temp=="Grandma"){
+        cnname="老奶奶"
+    }else if(temp=="Farm"){
+        cnname="农田"
+    }else if(temp=="Mine"){
+        cnname="矿山"
+    }else if(temp=="Factory"){
+        cnname="工厂"
+    }else if(temp=="Bank"){
+        cnname="银行"
+    }else if(temp=="Temple"){
+        cnname="寺庙"
+    }else if(temp=="Wizard tower"){
+        cnname="精灵塔"
+    }else if(temp=="Shipment"){
+        cnname="装船"
+    }else if(temp=="Alchemy lab"){
+        cnname="炼金实验室"
+    }else if(temp=="Portal"){
+        cnname="门户"
+    }else if(temp=="Time machine"){
+        cnname="时光机器"
+    }else if(temp=='<span style="font-size:65%;position:relative;bottom:4px;">Antimatter condenser</span>'){
+        cnname='<span style="font-size:65%;position:relative;bottom:4px;">反物质冷凝器</span>'
+    }else if(temp=="Prism"){
+        cnname="棱镜"
+    }else if(temp=="Chancemaker"){
+        cnname="机会制造商"
+    }else{
+        return name;
+    }
+    return cnname;
+}

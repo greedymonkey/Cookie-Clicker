@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="/cdn-cgi/apps/head/0qgk9sTk1hPaj4RmmbOPMlTGE6w.js"></script><script type="text/javascript">
+<!--<script src="/cdn-cgi/apps/head/0qgk9sTk1hPaj4RmmbOPMlTGE6w.js"></script>-->
+   <script type="text/javascript">
     window.cookieconsent_options = {"message":"Unsurprisingly, this website uses cookies for ads and traffic analysis.","dismiss":"Got it!","learnMore":"Learn more","link":"http://orteil.dashnet.org/cookieconsentpolicy.html","target":"_blank","theme":"http://orteil.dashnet.org/cookieconsent.css","domain":"dashnet.org"};
 </script>
+<style>
+    .cc_banner-wrapper {display: none;}
+    </style>
+<script type="text/javascript" src="https://cdn.bootcss.com/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
 
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
-
-<title>Cookie Clicker</title>
+<title>无尽的饼干 v2.0042</title>
 <!--
 Code and graphics copyright Orteil, 2013-2017
 Feel free to alter this code to your liking, but please do not re-host it, do not profit from it and do not present it as your own.
@@ -45,13 +48,17 @@ target-densityDpi=device-dpi"/>
 <div id="wrapper">
 
 	<div id="topBar">
-		<div><b>Cookie Clicker</b>&trade; &copy; <a href="http://orteil.dashnet.org" target="_blank">Orteil</a>, 2017 - <a href="http://dashnet.org" target="_blank">DashNet</a></div>
+		<div><b>无尽的饼干</b>&trade; &copy; <a href="http://orteil.dashnet.org" target="_blank">Orteil</a>, 2017 - <a href="http://dashnet.org" target="_blank">DashNet</a></div>
+<!--
 		<div><a href="http://twitter.com/orteil42" target="_blank">twitter</a></div>
 		<div><a href="http://orteil42.tumblr.com" target="_blank">tumblr</a></div>
-		<div>Help? Bugs? Ideas? Check out the <a href="http://forum.dashnet.org" target="_blank">forum</a>!</div>
-		<div style="position:relative;"><div style="width:25px;height:32px;background:url(img/weeHoodie.png);position:absolute;left:-2px;top:0px;pointer-events:none;"></div><a class="blueLink" href="http://www.redbubble.com/people/dashnet" target="_blank" style="padding-left:12px;">Cookie Clicker merch & stickers!</a></div>
-		<div><a href="http://orteil.dashnet.org/randomgen/" target="_blank">RandomGen</a></div>
-		<div id="links" class="hoverer">
+-->
+		<!--<div>Help? Bugs? Ideas? Check out the <a href="http://forum.dashnet.org" target="_blank">论坛</a>!</div>
+		<div style="position:relative;">
+		<div style="width:25px;height:32px;background:url(img/weeHoodie.png);position:absolute;left:-2px;top:0px;pointer-events:none;"></div>
+		<a class="blueLink" href="http://www.redbubble.com/people/dashnet" target="_blank" style="padding-left:12px;">Cookie Clicker merch & stickers!</a></div>
+		<div><a href="http://orteil.dashnet.org/randomgen/" target="_blank">RandomGen</a></div>-->
+		<div id="links" class="hoverer" style="display:none;">
 			Other versions
 			<div class="hoverable">
 			<a href="../" target="_blank" id="linkVersionLive">Live version</a>
@@ -119,24 +126,26 @@ target-densityDpi=device-dpi"/>
 
 		<div id="sectionMiddle" class="inset">
 			<div id="comments" class="inset title">
-				<div id="prefsButton" class="button">Options</div>
-				<div id="statsButton" class="button">Stats</div>
-				<div id="logButton" class="button">Info</div>
-				<div id="legacyButton" class="button">Legacy<div id="ascendMeterContainer" class="smallFramed meterContainer"><div id="ascendMeter" class="meter filling"></div></div><div class="roundedPanel" id="ascendNumber"></div><div id="ascendTooltip" class="framed"></div></div>
+				<div id="prefsButton" class="button">选项</div>
+				<div id="statsButton" class="button">统计</div>
+				<div id="logButton" class="button">信息</div>
+				<div id="legacyButton" class="button">遗产<div id="ascendMeterContainer" class="smallFramed meterContainer"><div id="ascendMeter" class="meter filling"></div></div><div class="roundedPanel" id="ascendNumber"></div><div id="ascendTooltip" class="framed"></div></div>
 				<div id="commentsTextBelow" class="commentsText"></div>
 				<div id="commentsText" class="commentsText"></div>
 				<div class="separatorBottom"></div>
 			</div>
 			<div id="centerArea">
-				<div id="buildingsTitle" class="inset title zoneTitle">Buildings</div>
+				<div id="buildingsTitle" class="inset title zoneTitle">建筑</div>
 				<div id="rows"></div>
 				<div id="menu"></div>
 				<div id="donateBox">
 					<form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post" id="donate" style="margin:0px 16px;">
 					<input type="hidden" name="cmd" value="_s-xclick">
 					<input type="hidden" name="hosted_button_id" value="BBN2WL3TC6QH4">
+<!--
 					<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
 					<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
+-->
 					</form>
 					Help us keep developing the game!
 				</div>
@@ -153,15 +162,16 @@ target-densityDpi=device-dpi"/>
 			</div>
 			
 			
-			<div id="support" style="margin-top:130px;">
-				<div class="supportComment">Sponsored links</div>
+			<div id="support" style="margin-top:130px;display:none;">
+				<div class="supportComment">赞助商链接</div>
 				<div style="position:relative;">
 				
 					<div style="position:relative;z-index:100;min-height:250px;">
 					
 						<!-- Google ad -->
+<!--
 						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-						<!-- Cookie Clicker Rectangle -->
+						 Cookie Clicker Rectangle 
 						<ins class="adsbygoogle"
 							 style="display:inline-block;width:300px;height:250px"
 							 data-ad-client="ca-pub-8491708950677704"
@@ -169,12 +179,14 @@ target-densityDpi=device-dpi"/>
 						<script>
 						(adsbygoogle = window.adsbygoogle || []).push({});
 						</script>
+-->
 						
 						<div style="height:16px;"></div>
 						
 						<!-- Google ad -->
+<!--
 						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-						<!-- Cookie Clicker Rectangle -->
+						 Cookie Clicker Rectangle 
 						<ins class="adsbygoogle"
 							 style="display:inline-block;width:300px;height:250px"
 							 data-ad-client="ca-pub-8491708950677704"
@@ -182,6 +194,7 @@ target-densityDpi=device-dpi"/>
 						<script>
 						(adsbygoogle = window.adsbygoogle || []).push({});
 						</script>
+-->
 						
 						<div style="height:16px;"></div>
 						
@@ -197,7 +210,7 @@ target-densityDpi=device-dpi"/>
 		<!--
 		<div id="sectionAd" class="inset">
 		
-			<div class="supportComment">Sponsored links</div>
+			<div class="supportComment">赞助商链接</div>
 			<div style="position:relative;">
 				<div class="supportPlaceholder">
 					<div>(Normally, there would be an ad here. It's fine if you want to block it, but remember - Cookie Clicker only happens because of ad revenue!)</div>
