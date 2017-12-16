@@ -483,20 +483,20 @@ Game.Launch=function()
 	}
 	
 	Game.updateLog=
-	'<div class="section">Info</div>'+
+	'<div class="section">信息</div>'+
 	'</div><div class="subsection">'+
-	'<div class="title">About</div>'+
-	'<div class="listing">Cookie Clicker is a javascript game by <a href="http://orteil.dashnet.org" target="_blank">Orteil</a> and <a href="http://dashnet.org" target="_blank">Opti</a>.</div>'+
-	'<div class="listing">We have an <a href="http://forum.dashnet.org" target="_blank">official forum</a>; '+
-		'if you\'re looking for help, you may also want to visit the <a href="http://www.reddit.com/r/CookieClicker" target="_blank">subreddit</a> '+
-		'or the <a href="http://cookieclicker.wikia.com/wiki/Cookie_Clicker_Wiki" target="_blank">wiki</a>. We\'re also on <a href="http://forum.dashnet.org/discussion/277/irc-chat-channel/p1" target="_blank">IRC</a>.</div>'+
+	'<div class="title">关于</div>'+
+	'<div class="listing">无尽的饼干是一个JavaScript游戏，作者是 <a href="http://orteil.dashnet.org" target="_blank">Orteil</a> 和 <a href="http://dashnet.org" target="_blank">Opti</a>。</div>'+
+	'<div class="listing">我们有一个 <a href="http://forum.dashnet.org" target="_blank">官方论坛</a>; '+
+		'如果你正在寻求帮助，你可以访问 <a href="http://www.reddit.com/r/CookieClicker" target="_blank">subreddit</a> '+
+		'或者 <a href="http://cookieclicker.wikia.com/wiki/Cookie_Clicker_Wiki" target="_blank">wiki</a>。 还有 <a href="http://forum.dashnet.org/discussion/277/irc-chat-channel/p1" target="_blank">IRC</a>.</div>'+
 	'<div class="listing">News and teasers are usually posted on my <a href="http://orteil42.tumblr.com/" target="_blank">tumblr</a> and <a href="http://twitter.com/orteil42" target="_blank">twitter</a>.</div>'+
 	'<div class="listing">We\'ve got some <a href="http://www.redbubble.com/people/dashnet" target="_blank">rad cookie shirts, hoodies and stickers</a> for sale!</div>'+
 	'<div class="listing warning">Note : if you find a new bug after an update and you\'re using a 3rd-party add-on, make sure it\'s not just your add-on causing it!</div>'+
 	'<div class="listing warning">Warning : clearing your browser cache or cookies <small>(what else?)</small> will result in your save being wiped. Export your save and back it up first!</div>'+
 	
 	'</div><div class="subsection">'+
-	'<div class="title">Version history</div>'+
+	'<div class="title">更新日志</div>'+
 	
 	'</div><div class="subsection update">'+
 	'<div class="title">08/08/2017 - 4 more years</div>'+
@@ -1115,13 +1115,13 @@ Game.Launch=function()
 			if (name.slice(-1).toLowerCase()=='s') name+='\' bakery'; else name+='\'s bakery';
 			Game.bakeryNameL.innerHTML=name;
 			name=Game.bakeryName.toLowerCase();
-			if (name=='orteil') Game.Win('God complex');
+			if (name=='orteil') Game.Win('神复杂');
 			if (name.indexOf('saysopensesame',name.length-('saysopensesame').length)>0 && !Game.sesame) Game.OpenSesame();
 			Game.recalculateGains=1;
 		}
 		Game.bakeryNamePrompt=function()
 		{
-			Game.Prompt('<h3>Name your bakery</h3><div class="block" style="text-align:center;">What should your bakery\'s name be?</div><div class="block"><input type="text" style="text-align:center;width:100%;" id="bakeryNameInput" value="'+Game.bakeryName+'"/></div>',[['Confirm','if (l(\'bakeryNameInput\').value.length>0) {Game.bakeryNameSet(l(\'bakeryNameInput\').value);Game.Win(\'What\\\'s in a name\');Game.ClosePrompt();}'],['Random','Game.bakeryNamePromptRandom();'],'Cancel']);
+			Game.Prompt('<h3>命名你的饼干店</h3><div class="block" style="text-align:center;">你想给饼干店起什么名字？</div><div class="block"><input type="text" style="text-align:center;width:100%;" id="bakeryNameInput" value="'+Game.bakeryName+'"/></div>',[['确定','if (l(\'bakeryNameInput\').value.length>0) {Game.bakeryNameSet(l(\'bakeryNameInput\').value);Game.Win(\'什么名字\');Game.ClosePrompt();}'],['随机','Game.bakeryNamePromptRandom();'],'取消']);
 			l('bakeryNameInput').focus();
 			l('bakeryNameInput').select();
 		}
@@ -1180,12 +1180,12 @@ Game.Launch=function()
 		Game.ExportSave=function()
 		{
 			Game.prefs.showBackupWarning=0;
-			Game.Prompt('<h3>导出存档</h3><div class="block">This is your save code.<br>Copy it and keep it somewhere safe!</div><div class="block"><textarea id="textareaPrompt" style="width:100%;height:128px;" readonly>'+Game.WriteSave(1)+'</textarea></div>',['All done!']);//prompt('Copy this text and keep it somewhere safe!',Game.WriteSave(1));
+			Game.Prompt('<h3>导出存档</h3><div class="block">这是你的存档代码<br>复制它，并保存到安全的地方（邮箱、网盘等）</div><div class="block"><textarea id="textareaPrompt" style="width:100%;height:128px;" readonly>'+Game.WriteSave(1)+'</textarea></div>',['关闭!']);//prompt('Copy this text and keep it somewhere safe!',Game.WriteSave(1));
 			l('textareaPrompt').focus();l('textareaPrompt').select();
 		}
 		Game.ImportSave=function()
 		{
-			Game.Prompt('<h3>Import save</h3><div class="block">Please paste in the code that was given to you on save export.</div><div class="block"><textarea id="textareaPrompt" style="width:100%;height:128px;"></textarea></div>',[['Load','if (l(\'textareaPrompt\').value.length>0) {Game.ImportSaveCode(l(\'textareaPrompt\').value);Game.ClosePrompt();}'],'Nevermind']);//prompt('Please paste in the text that was given to you on save export.','');
+			Game.Prompt('<h3>导入存档</h3><div class="block">请在框里粘贴你保存时，导出的代码。</div><div class="block"><textarea id="textareaPrompt" style="width:100%;height:128px;"></textarea></div>',[['导入','if (l(\'textareaPrompt\').value.length>0) {Game.ImportSaveCode(l(\'textareaPrompt\').value);Game.ClosePrompt();}'],'取消']);//prompt('Please paste in the text that was given to you on save export.','');
 			l('textareaPrompt').focus();
 		}
 		Game.ImportSaveCode=function(save)
@@ -2047,11 +2047,11 @@ Game.Launch=function()
 		{
 			if (!bypass)
 			{
-				Game.Prompt('<h3>Wipe save</h3><div class="block">Do you REALLY want to wipe your save?<br><small>You will lose your progress, your achievements, and your heavenly chips!</small></div>',[['Yes!','Game.ClosePrompt();Game.HardReset(1);'],'No']);
+				Game.Prompt('<h3>删除存档</h3><div class="block">你真的想删掉你的所有游戏进度？<br><small>你将失去你的所有游戏进度，你的成就，你的天堂筹码！</small></div>',[['确定','Game.ClosePrompt();Game.HardReset(1);'],'取消']);
 			}
 			else if (bypass==1)
 			{
-				Game.Prompt('<h3>Wipe save</h3><div class="block">Whoah now, are you really, <b><i>REALLY</i></b> sure you want to go through with this?<br><small>Don\'t say we didn\'t warn you!</small></div>',[['Do it!','Game.ClosePrompt();Game.HardReset(2);'],'No']);
+				Game.Prompt('<h3>删除存档</h3><div class="block">哇，现在，你真的， <b><i>真的</i></b> 确定你想要删除游戏存档？<br><small>不要怪我们没有提醒你！</small></div>',[['确定','Game.ClosePrompt();Game.HardReset(2);'],'取消']);
 			}
 			else
 			{
@@ -2265,25 +2265,25 @@ Game.Launch=function()
 				
 				classes+=' upgrade';
 				
-				if (me.pool=='prestige') {tags.push('Heavenly','#efa438');classes+=' heavenly';}
-				else if (me.pool=='tech') tags.push('Tech','#36a4ff');
-				else if (me.pool=='cookie') tags.push('Cookie',0);
-				else if (me.pool=='debug') tags.push('Debug','#00c462');
-				else if (me.pool=='toggle') tags.push('Switch',0);
-				else tags.push('Upgrade',0);
+				if (me.pool=='prestige') {tags.push('天上','#efa438');classes+=' heavenly';}
+				else if (me.pool=='tech') tags.push('技术','#36a4ff');
+				else if (me.pool=='cookie') tags.push('饼干',0);
+				else if (me.pool=='debug') tags.push('调试','#00c462');
+				else if (me.pool=='toggle') tags.push('开关',0);
+				else tags.push('升级',0);
 				
 				//if (me.tier!=0) tags.push('Tier : '+Game.Tiers[me.tier].name,Game.Tiers[me.tier].color);//removed because this was somehow confusing to players
 				
 				if (me.bought>0)
 				{
-					if (me.pool=='tech') tags.push('Researched',0);
-					else if (me.kitten) tags.push('Purrchased',0);
-					else tags.push('Purchased',0);
+					if (me.pool=='tech') tags.push('已研究',0);
+					else if (me.kitten) tags.push('已购买',0);
+					else tags.push('已购买',0);
 					enabled=1;
 				}
 				
-				if (neuromancy && me.bought==0) tags.push('Click to learn!','#00c462');
-				else if (neuromancy && me.bought>0) tags.push('Click to unlearn!','#00c462');
+				if (neuromancy && me.bought==0) tags.push('点击学习！','#00c462');
+				else if (neuromancy && me.bought>0) tags.push('点击忘掉！','#00c462');
 				
 				if (neuromancy) clickStr='Game.UpgradesById['+me.id+'].toggle();';
 				
@@ -2300,10 +2300,10 @@ Game.Launch=function()
 				if (context=='stats' && !Game.prefs.crates) noFrame=1;
 				
 				classes+=' achievement';
-				if (me.pool=='shadow') {tags.push('Shadow Achievement','#9700cf');classes+=' shadow';}
-				else tags.push('Achievement',0);
-				if (me.won>0) {tags.push('Unlocked',0);enabled=1;}
-				else {tags.push('Locked',0);mysterious=1;}
+				if (me.pool=='shadow') {tags.push('暗影成就','#9700cf');classes+=' shadow';}
+				else tags.push('成就',0);
+				if (me.won>0) {tags.push('未解锁',0);enabled=1;}
+				else {tags.push('未解锁',0);mysterious=1;}
 				if (!enabled) clickStr='Game.AchievementsById['+me.id+'].click();';
 			}
 			
@@ -3126,7 +3126,7 @@ Game.Launch=function()
 			
 			for (var i in Game.customMouseCpsMult) {mult*=Game.customMouseCpsMult[i]();}
 			
-			var out=mult*Game.ComputeCps(1,Game.Has('Reinforced index finger')+Game.Has('Carpal tunnel prevention cream')+Game.Has('Ambidextrous'),add);
+			var out=mult*Game.ComputeCps(1,Game.Has('加强的食指')+Game.Has('Carpal tunnel prevention cream')+Game.Has('Ambidextrous'),add);
 			
 			if (Game.hasBuff('Cursed finger')) out=Game.buffs['Cursed finger'].power;
 			return out;
@@ -4693,7 +4693,7 @@ Game.Launch=function()
 			}
 			if (Game.onMenu=='prefs')
 			{
-				str+='<div class="section">Options</div>'+
+				str+='<div class="section">选项</div>'+
 				'<div class="subsection">'+
 				'<div class="title">普通设置</div>'+
 				'<div class="listing"><a class="option" '+Game.clickStr+'="Game.WriteSave();PlaySound(\'snd/tick.mp3\');">保存</a><label>手动保存（游戏每60秒会自动保存一次，快捷键：Ctrl + S）</label></div>'+
@@ -4705,22 +4705,22 @@ Game.Launch=function()
 				'<div class="listing">'+
 				Game.WriteSlider('volumeSlider','音量','[$]%',function(){return Game.volume;},'Game.setVolume(Math.round(l(\'volumeSlider\').value));l(\'volumeSliderRightText\').innerHTML=Game.volume+\'%\';')+'<br>'+
 				Game.WriteButton('fancy','fancyButton','花哨的图形 已开启','花哨的图形 已关闭','Game.ToggleFancy();')+'<label>(视觉上的改进; 禁用可能会提高性能)</label><br>'+
-				Game.WriteButton('filters','filtersButton','CSS filters ON','CSS filters OFF','Game.ToggleFilters();')+'<label>(cutting-edge visual improvements; disabling may improve performance)</label><br>'+
-				Game.WriteButton('particles','particlesButton','Particles ON','Particles OFF')+'<label>(cookies falling down, etc; disabling may improve performance)</label><br>'+
-				Game.WriteButton('numbers','numbersButton','Numbers ON','Numbers OFF')+'<label>(numbers that pop up when clicking the cookie)</label><br>'+
-				Game.WriteButton('milk','milkButton','Milk ON','Milk OFF')+'<label>(only appears with enough achievements)</label><br>'+
-				Game.WriteButton('cursors','cursorsButton','Cursors ON','Cursors OFF')+'<label>(visual display of your cursors)</label><br>'+
-				Game.WriteButton('wobbly','wobblyButton','Wobbly cookie ON','Wobbly cookie OFF')+'<label>(your cookie will react when you click it)</label><br>'+
-				Game.WriteButton('cookiesound','cookiesoundButton','Alt cookie sound ON','Alt cookie sound OFF')+'<label>(how your cookie sounds when you click on it)</label><br>'+
-				Game.WriteButton('crates','cratesButton','Icon crates ON','Icon crates OFF')+'<label>(display boxes around upgrades and achievements in stats)</label><br>'+
-				Game.WriteButton('monospace','monospaceButton','Alt font ON','Alt font OFF')+'<label>(your cookies are displayed using a monospace font)</label><br>'+
-				Game.WriteButton('format','formatButton','Short numbers OFF','Short numbers ON','BeautifyAll();Game.RefreshStore();Game.upgradesToRebuild=1;',1)+'<label>(shorten big numbers)</label><br>'+
-				Game.WriteButton('notifs','notifsButton','Fast notes ON','Fast notes OFF')+'<label>(notifications disappear much faster)</label><br>'+
-				Game.WriteButton('autoupdate','autoupdateButton','Offline mode OFF','Offline mode ON',0,1)+'<label>(disables update notifications)</label><br>'+
-				Game.WriteButton('warn','warnButton','Closing warning ON','Closing warning OFF')+'<label>(the game will ask you to confirm when you close the window)</label><br>'+
-				Game.WriteButton('focus','focusButton','Defocus OFF','Defocus ON',0,1)+'<label>(the game will be less resource-intensive when out of focus)</label><br>'+
+				Game.WriteButton('filters','filtersButton','CSS滤镜 已开启','CSS滤镜 已关闭','Game.ToggleFilters();')+'<label>(先进的视觉改进; 禁用可能会提高性能)</label><br>'+
+				Game.WriteButton('particles','particlesButton','粒子效果 已开启','粒子效果 已关闭')+'<label>(饼干掉下来等等; 禁用可能会提高性能)</label><br>'+
+				Game.WriteButton('numbers','numbersButton','数字显示 已开启','数字显示 已关闭')+'<label>(点击饼干时弹出的数字)</label><br>'+
+				Game.WriteButton('milk','milkButton','牛奶显示 已开启','牛奶显示 已关闭')+'<label>(只在有足够的成就时出现)</label><br>'+
+				Game.WriteButton('cursors','cursorsButton','游标 已开启','游标 已关闭')+'<label>(是否显示你的游标)</label><br>'+
+				Game.WriteButton('wobbly','wobblyButton','饼干颤抖 已开启','饼干颤抖 已关闭')+'<label>(你的饼干会在你点击的时候作出反应)</label><br>'+
+				Game.WriteButton('cookiesound','cookiesoundButton','点击饼干声音 已开启','点击饼干声音 已关闭')+'<label>(当你点击它时，你的饼干是否发出声音)</label><br>'+
+				Game.WriteButton('crates','cratesButton','图标箱 已开启','图标箱 已关闭')+'<label>(显示升级和统计成就的框)</label><br>'+
+				Game.WriteButton('monospace','monospaceButton','字体 已开启','字体 已关闭')+'<label>(您的饼干使用等宽字体显示)</label><br>'+
+				Game.WriteButton('format','formatButton','短数字 已关闭','短数字 已开启','BeautifyAll();Game.RefreshStore();Game.upgradesToRebuild=1;',1)+'<label>(缩短大数目的数字)</label><br>'+
+				Game.WriteButton('notifs','notifsButton','快速提示 已开启','快速提示 已关闭')+'<label>(通知消失得更快)</label><br>'+
+				Game.WriteButton('autoupdate','autoupdateButton','离线模式 已关闭','离线模式 已开启',0,1)+'<label>(更新禁用通知)</label><br>'+
+				Game.WriteButton('warn','warnButton','关闭提示 已开启','关闭提示 已关闭')+'<label>(当你关闭游戏窗口时，游戏会要求您确认)</label><br>'+
+				Game.WriteButton('focus','focusButton','失焦 已关闭','失焦 已开启',0,1)+'<label>(当焦点不集中时，游戏的资源密集度会降低)</label><br>'+
 				'</div>'+
-				//'<div class="listing">'+Game.WriteButton('autosave','autosaveButton','Autosave ON','Autosave OFF')+'</div>'+
+				//'<div class="listing">'+Game.WriteButton('autosave','autosaveButton','Autosave ON','Autosave 已关闭')+'</div>'+
 				'<div style="padding-bottom:128px;"></div>'+
 				'</div>'
 				;
@@ -4729,11 +4729,11 @@ Game.Launch=function()
 			{
 				str+=
 				'<div class="listing">This isn\'t really finished</div>'+
-				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(\'prefs\');">Menu</a></div>'+
-				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(\'stats\');">Stats</a></div>'+
-				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(\'log\');">Updates</a></div>'+
-				'<div class="listing"><a class="option big title" '+Game.clickStr+'="">Quit</a></div>'+
-				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(Game.onMenu);">Resume</a></div>';
+				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(\'prefs\');">菜单</a></div>'+
+				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(\'stats\');">统计</a></div>'+
+				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(\'log\');">升级</a></div>'+
+				'<div class="listing"><a class="option big title" '+Game.clickStr+'="">退出</a></div>'+
+				'<div class="listing"><a class="option big title" '+Game.clickStr+'="Game.ShowMenu(Game.onMenu);">返回</a></div>';
 			}
 			else if (Game.onMenu=='log')
 			{
@@ -4910,7 +4910,7 @@ Game.Launch=function()
 				
 				((researchStr!='' || wrathStr!='' || pledgeStr!='' || santaStr!='' || dragonStr!='' || Game.season!='' || ascensionModeStr!='')?(
 				'</div><div class="subsection">'+
-				'<div class="title">Special</div>'+
+				'<div class="title">特殊</div>'+
 				(ascensionModeStr!=''?'<div class="listing"><b>挑战模式 :</b>'+ascensionModeStr+'</div>':'')+
 				(Game.season!=''?'<div class="listing"><b>季节性活动 :</b> '+Game.seasons[Game.season].name+
 					(seasonStr!=''?' <small>('+seasonStr+' 剩余)</small>':'')+
@@ -4925,24 +4925,24 @@ Game.Launch=function()
 				(Game.wrinklersPopped>0?'<div class="listing"><b>起泡器弹出 :</b> '+Beautify(Game.wrinklersPopped)+'</div>':'')+
 				((Game.resets>0 && Game.lumpsTotal>0)?'<div class="listing"><b>收集糖块 :</b> <div class="price lump plain">'+Beautify(Game.lumpsTotal)+'</div></div>':'')+
 				//(Game.cookiesSucked>0?'<div class="listing warning"><b>Withered :</b> '+Beautify(Game.cookiesSucked)+' cookies</div>':'')+
-				(Game.reindeerClicked>0?'<div class="listing"><b>Reindeer found :</b> '+Beautify(Game.reindeerClicked)+'</div>':'')+
-				(santaStr!=''?'<div class="listing"><b>Santa stages unlocked :</b></div><div>'+santaStr+'</div>':'')+
-				(dragonStr!=''?'<div class="listing"><b>Dragon training :</b></div><div>'+dragonStr+'</div>':'')+
+				(Game.reindeerClicked>0?'<div class="listing"><b>驯鹿发现 :</b> '+Beautify(Game.reindeerClicked)+'</div>':'')+
+				(santaStr!=''?'<div class="listing"><b>圣诞老人解锁 :</b></div><div>'+santaStr+'</div>':'')+
+				(dragonStr!=''?'<div class="listing"><b>龙训练 :</b></div><div>'+dragonStr+'</div>':'')+
 				''
 				):'')+
 				((Game.prestige>0 || prestigeUpgrades!='')?(
 				'</div><div class="subsection">'+
-				'<div class="title">Prestige</div>'+
+				'<div class="title">声望</div>'+
 				'<div class="listing"><div class="icon" style="float:left;background-position:'+(-19*48)+'px '+(-7*48)+'px;"></div>'+
-					'<div style="margin-top:8px;"><span class="title" style="font-size:22px;">Prestige level : '+Beautify(Game.prestige)+'</span> at '+Beautify(heavenlyMult*100,1)+'% of its potential <b>(+'+Beautify(parseFloat(Game.prestige)*Game.heavenlyPower*heavenlyMult,1)+'% CpS)</b><br>Heavenly chips : <b>'+Beautify(Game.heavenlyChips)+'</b></div>'+
+					'<div style="margin-top:8px;"><span class="title" style="font-size:22px;">声望等级 : '+Beautify(Game.prestige)+'</span> at '+Beautify(heavenlyMult*100,1)+'% of its potential <b>(+'+Beautify(parseFloat(Game.prestige)*Game.heavenlyPower*heavenlyMult,1)+'% CpS)</b><br>天堂筹码 : <b>'+Beautify(Game.heavenlyChips)+'</b></div>'+
 				'</div>'+
 				(prestigeUpgrades!=''?(
-				'<div class="listing" style="clear:left;"><b>威望升级解锁 :</b> '+prestigeUpgradesOwned+'/'+prestigeUpgradesTotal+' ('+Math.floor((prestigeUpgradesOwned/prestigeUpgradesTotal)*100)+'%)</div>'+
+				'<div class="listing" style="clear:left;"><b>声望升级解锁 :</b> '+prestigeUpgradesOwned+'/'+prestigeUpgradesTotal+' ('+Math.floor((prestigeUpgradesOwned/prestigeUpgradesTotal)*100)+'%)</div>'+
 				'<div class="listing crateBox">'+prestigeUpgrades+'</div>'):'')+
 				''):'')+
 
 				'</div><div class="subsection">'+
-				'<div class="title">Upgrades unlocked</div>'+
+				'<div class="title">升级解锁</div>'+
 				(hiddenUpgrades!=''?('<div class="listing"><b>调试</b></div>'+
 				'<div class="listing crateBox">'+hiddenUpgrades+'</div>'):'')+
 				'<div class="listing"><b>解锁 :</b> '+upgradesOwned+'/'+upgradesTotal+' ('+Math.floor((upgradesOwned/upgradesTotal)*100)+'%)</div>'+
@@ -6116,15 +6116,15 @@ Game.Launch=function()
 		{
 			var str='';
 			str+='<div id="storeBulk" '+Game.getTooltip(
-							'<div style="padding:8px;min-width:200px;text-align:center;font-size:11px;">You can also press <b>Ctrl</b> to bulk-buy or sell <b>10</b> of a building at a time, or <b>Shift</b> for <b>100</b>.</div>'
+							'<div style="padding:8px;min-width:200px;text-align:center;font-size:11px;">你可以按 <b>Ctrl</b> 键，一次批量购买或出售 <b>10</b> 建筑。 或者 <b>Shift</b> 建，一次批量购买或出售<b>100</b>个。</div>'
 							,'store')+
 				'>'+
-				'<div id="storeBulkBuy" class="storeBulkMode" '+Game.clickStr+'="Game.storeBulkButton(0);">Buy</div>'+
-				'<div id="storeBulkSell" class="storeBulkMode" '+Game.clickStr+'="Game.storeBulkButton(1);">Sell</div>'+
+				'<div id="storeBulkBuy" class="storeBulkMode" '+Game.clickStr+'="Game.storeBulkButton(0);">购买</div>'+
+				'<div id="storeBulkSell" class="storeBulkMode" '+Game.clickStr+'="Game.storeBulkButton(1);">出售</div>'+
 				'<div id="storeBulk1" class="storeBulkAmount" '+Game.clickStr+'="Game.storeBulkButton(2);">1</div>'+
 				'<div id="storeBulk10" class="storeBulkAmount" '+Game.clickStr+'="Game.storeBulkButton(3);">10</div>'+
 				'<div id="storeBulk100" class="storeBulkAmount" '+Game.clickStr+'="Game.storeBulkButton(4);">100</div>'+
-				'<div id="storeBulkMax" class="storeBulkAmount" '+Game.clickStr+'="Game.storeBulkButton(5);">all</div>'+
+				'<div id="storeBulkMax" class="storeBulkAmount" '+Game.clickStr+'="Game.storeBulkButton(5);">全部</div>'+
 				'</div>';
 			for (var i in Game.Objects)
 			{
@@ -6243,9 +6243,9 @@ Game.Launch=function()
 			for (var i in Game.Objects) {if (Game.Objects[i].name!='Cursor') num+=Game.Objects[i].amount;}
 			add=add*num;
 			mult*=Game.magicCpS('Cursor');
-			return Game.ComputeCps(0.1,Game.Has('Reinforced index finger')+Game.Has('Carpal tunnel prevention cream')+Game.Has('Ambidextrous'),add)*mult;
+			return Game.ComputeCps(0.1,Game.Has('加强的食指')+Game.Has('Carpal tunnel prevention cream')+Game.Has('Ambidextrous'),add)*mult;
 		},function(){
-			if (this.amount>=1) Game.Unlock(['Reinforced index finger','Carpal tunnel prevention cream']);
+			if (this.amount>=1) Game.Unlock(['加强的食指','Carpal tunnel prevention cream']);
 			if (this.amount>=10) Game.Unlock('Ambidextrous');
 			if (this.amount>=25) Game.Unlock('Thousand fingers');
 			if (this.amount>=50) Game.Unlock('Million fingers');
@@ -6257,7 +6257,7 @@ Game.Launch=function()
 			if (this.amount>=350) Game.Unlock('Septillion fingers');
 			if (this.amount>=400) Game.Unlock('Octillion fingers');
 			
-			if (this.amount>=1) Game.Win('Click');if (this.amount>=2) Game.Win('Double-click');if (this.amount>=50) Game.Win('Mouse wheel');if (this.amount>=100) Game.Win('Of Mice and Men');if (this.amount>=200) Game.Win('The Digital');if (this.amount>=300) Game.Win('Extreme polydactyly');if (this.amount>=400) Game.Win('Dr. T');if (this.amount>=500) Game.Win('Thumbs, phalanges, metacarpals');
+			if (this.amount>=1) Game.Win('单击');if (this.amount>=2) Game.Win('双击');if (this.amount>=50) Game.Win('鼠标滚轮');if (this.amount>=100) Game.Win('老鼠和人');if (this.amount>=200) Game.Win('数字');if (this.amount>=300) Game.Win('极端多指');if (this.amount>=400) Game.Win('T博士');if (this.amount>=500) Game.Win('大拇指，指骨，掌骨');
 		});
 		
 		Game.SpecialGrandmaUnlock=15;
@@ -6940,7 +6940,7 @@ Game.Launch=function()
 		//define upgrades
 		//WARNING : do NOT add new upgrades in between, this breaks the saves. Add them at the end !
 		var order=100;//this is used to set the order in which the items are listed
-		new Game.Upgrade('Reinforced index finger','The mouse and cursors are <b>twice</b> as efficient.<q>prod prod</q>',100,[0,0]);
+		new Game.Upgrade('加强的食指','鼠标和游标是 <b>twice</b> as efficient.<q>prod prod</q>',100,[0,0]);
 		new Game.Upgrade('Carpal tunnel prevention cream','The mouse and cursors are <b>twice</b> as efficient.<q>it... it hurts to click...</q>',500,[0,1]);
 		new Game.Upgrade('Ambidextrous','The mouse and cursors are <b>twice</b> as efficient.<q>Look ma, both hands!</q>',10000,[0,2])
 		new Game.Upgrade('Thousand fingers','The mouse and cursors gain <b>+0.1</b> cookies for each non-cursor object owned.<q>clickity</q>',100000,[0,13]);
@@ -7311,11 +7311,11 @@ Game.Launch=function()
 		
 		order=24000;
 		Game.seasonTriggerBasePrice=1111111111;
-		new Game.Upgrade('Season switcher','Allows you to <b>trigger seasonal events</b> at will, for a price.<q>There will always be time.</q>',1111,[16,6],function(){for (var i in Game.seasons){Game.Unlock(Game.seasons[i].trigger);}});Game.last.pool='prestige';
-		new Game.Upgrade('Festive biscuit','Triggers <b>Christmas season</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>\'Twas the night before Christmas- or was it?</q>',Game.seasonTriggerBasePrice,[12,10]);Game.last.season='christmas';Game.last.pool='toggle';
-		new Game.Upgrade('Ghostly biscuit','Triggers <b>Halloween season</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>spooky scary skeletons<br>will wake you with a boo</q>',Game.seasonTriggerBasePrice,[13,8]);Game.last.season='halloween';Game.last.pool='toggle';
-		new Game.Upgrade('Lovesick biscuit','Triggers <b>Valentine\'s Day season</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>Romance never goes out of fashion.</q>',Game.seasonTriggerBasePrice,[20,3]);Game.last.season='valentines';Game.last.pool='toggle';
-		new Game.Upgrade('Fool\'s biscuit','Triggers <b>Business Day season</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>Business. Serious business. This is absolutely all of your business.</q>',Game.seasonTriggerBasePrice,[17,6]);Game.last.season='fools';Game.last.pool='toggle';
+		new Game.Upgrade('Season switcher','允许你 <b>触发节庆活动</b> at will, for a price.<q>There will always be time.</q>',1111,[16,6],function(){for (var i in Game.seasons){Game.Unlock(Game.seasons[i].trigger);}});Game.last.pool='prestige';
+		new Game.Upgrade('Festive biscuit','Triggers <b>圣诞节</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>\'Twas the night before Christmas- or was it?</q>',Game.seasonTriggerBasePrice,[12,10]);Game.last.season='christmas';Game.last.pool='toggle';
+		new Game.Upgrade('Ghostly biscuit','Triggers <b>万圣节</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>spooky scary skeletons<br>will wake you with a boo</q>',Game.seasonTriggerBasePrice,[13,8]);Game.last.season='halloween';Game.last.pool='toggle';
+		new Game.Upgrade('Lovesick biscuit','Triggers <b>情人节</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>Romance never goes out of fashion.</q>',Game.seasonTriggerBasePrice,[20,3]);Game.last.season='valentines';Game.last.pool='toggle';
+		new Game.Upgrade('Fool\'s biscuit','Triggers <b>工作日</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>Business. Serious business. This is absolutely all of your business.</q>',Game.seasonTriggerBasePrice,[17,6]);Game.last.season='fools';Game.last.pool='toggle';
 		
 		order=40000;
 		new Game.Upgrade('Eternal seasons','Seasons now last forever.<q>Season to taste.</q>',7,[16,6],function(){for (var i in Game.seasons){Game.Unlock(Game.seasons[i].trigger);}});//debug purposes only
@@ -7943,16 +7943,16 @@ Game.Launch=function()
 		new Game.Upgrade('Kitten assistants to the regional manager','You gain <b>more CpS</b> the more milk you have.<q>nothing stresses meowt... except having to seek the approval of my inferiors, sir</q>',900000000000000000000000000000000000,Game.GetIcon('Kitten',10));Game.last.kitten=1;
 		
 		order=5000;
-		new Game.SynergyUpgrade('Charm quarks','<q>They\'re after your lucky quarks!</q>','Chancemaker','Antimatter condenser','synergy2');
+		new Game.SynergyUpgrade('Charm quarks','<q>他们是你的幸运夸克！</q>','Chancemaker','Antimatter condenser','synergy2');
 		
 		//end of upgrades
 		
 		Game.seasons={
-			'christmas':{name:'Christmas',start:'Christmas season has started!',over:'Christmas season is over.',trigger:'Festive biscuit'},
-			'valentines':{name:'Valentine\'s day',start:'Valentine\'s day has started!',over:'Valentine\'s day is over.',trigger:'Lovesick biscuit'},
-			'fools':{name:'Business day',start:'Business day has started!',over:'Business day is over.',trigger:'Fool\'s biscuit'},
-			'easter':{name:'Easter',start:'Easter season has started!',over:'Easter season is over.',trigger:'Bunny biscuit'},
-			'halloween':{name:'Halloween',start:'Halloween has started!',over:'Halloween is over.',trigger:'Ghostly biscuit'}
+			'christmas':{name:'Christmas',start:'圣诞节已经开始了！',over:'圣诞节已经结束。',trigger:'Festive biscuit'},
+			'valentines':{name:'Valentine\'s day',start:'情人节已经开始了！',over:'情人节已经结束。',trigger:'Lovesick biscuit'},
+			'fools':{name:'Business day',start:'工作日已经开始了！',over:'工作日已经结束。',trigger:'Fool\'s biscuit'},
+			'easter':{name:'Easter',start:'复活节已经开始了！',over:'复活节已经结束。',trigger:'Bunny biscuit'},
+			'halloween':{name:'Halloween',start:'万圣节已经开始了！',over:'万圣节已经结束。',trigger:'Ghostly biscuit'}
 		};
 		
 		Game.computeSeasonPrices=function()
@@ -10746,21 +10746,21 @@ Game.Launch=function()
 			str+='<a class="option neato" '+Game.clickStr+'="Game.cookies/=10;Game.cookiesEarned/=10;">/10</a><br>';
 			str+='<a class="option neato" '+Game.clickStr+'="Game.cookies*=1000;Game.cookiesEarned*=1000;">x1k</a>';
 			str+='<a class="option neato" '+Game.clickStr+'="Game.cookies/=1000;Game.cookiesEarned/=1000;">/1k</a><br>';
-			str+='<a class="option neato" '+Game.clickStr+'="for (var i in Game.Objects){Game.Objects[i].buy(100);}">Buy 100 of all</a>';//for (var n=0;n<100;n++){for (var i in Game.Objects){Game.Objects[i].buy(1);}}
-			str+='<a class="option neato" '+Game.clickStr+'="for (var i in Game.Objects){Game.Objects[i].sell(100);}">Sell 100 of all</a><br>';
-			str+='<a class="option neato" '+Game.clickStr+'="Game.gainLumps(10);">+10 lumps</a>';
-			str+='<a class="option neato" '+Game.clickStr+'="for (var i in Game.Objects){Game.Objects[i].level=0;Game.Objects[i].onMinigame=false;Game.Objects[i].refresh();}Game.recalculateGains=1;">Reset levels</a>';
+			str+='<a class="option neato" '+Game.clickStr+'="for (var i in Game.Objects){Game.Objects[i].buy(100);}">全部购买100个</a>';//for (var n=0;n<100;n++){for (var i in Game.Objects){Game.Objects[i].buy(1);}}
+			str+='<a class="option neato" '+Game.clickStr+'="for (var i in Game.Objects){Game.Objects[i].sell(100);}">全部出售100个</a><br>';
+			str+='<a class="option neato" '+Game.clickStr+'="Game.gainLumps(10);">+10 硬块</a>';
+			str+='<a class="option neato" '+Game.clickStr+'="for (var i in Game.Objects){Game.Objects[i].level=0;Game.Objects[i].onMinigame=false;Game.Objects[i].refresh();}Game.recalculateGains=1;">重置等级</a>';
 			str+='<div class="line"></div>';
-			str+='<a class="option warning" '+Game.clickStr+'="Game.RuinTheFun(1);">Ruin The Fun</a>';
+			str+='<a class="option warning" '+Game.clickStr+'="Game.RuinTheFun(1);">破坏的乐趣</a>';
 			str+='<a class="option warning" '+Game.clickStr+'="Game.SesameReset();">Wipe</a>';
-			str+='<a class="option neato" '+Game.clickStr+'="Game.GetAllDebugs();">All debugs</a>';
+			str+='<a class="option neato" '+Game.clickStr+'="Game.GetAllDebugs();">所有的调试</a>';
 			str+='<a class="option neato" '+Game.clickStr+'="Game.debugTimersOn=!Game.debugTimersOn;Game.OpenSesame();">Timers '+(Game.debugTimersOn?'On':'Off')+'</a><br>';
-			str+='<a class="option neato" '+Game.clickStr+'="Game.SetAllUpgrades(0);">No upgrades</a>';
-			str+='<a class="option neato" '+Game.clickStr+'="Game.SetAllUpgrades(1);">All upgrades</a><br>';
-			str+='<a class="option neato" '+Game.clickStr+'="Game.SetAllAchievs(0);">No achievs</a>';
-			str+='<a class="option neato" '+Game.clickStr+'="Game.SetAllAchievs(1);">All achievs</a><br>';
-			str+='<a class="option neato" '+Game.clickStr+'="Game.santaLevel=0;Game.dragonLevel=0;">Reset specials</a>';
-			str+='<a class="option neato" '+Game.clickStr+'="Game.MaxSpecials();">Max specials</a><br>';
+			str+='<a class="option neato" '+Game.clickStr+'="Game.SetAllUpgrades(0);">没有升级</a>';
+			str+='<a class="option neato" '+Game.clickStr+'="Game.SetAllUpgrades(1);">所有升级</a><br>';
+			str+='<a class="option neato" '+Game.clickStr+'="Game.SetAllAchievs(0);">没有成就</a>';
+			str+='<a class="option neato" '+Game.clickStr+'="Game.SetAllAchievs(1);">所有成就</a><br>';
+			str+='<a class="option neato" '+Game.clickStr+'="Game.santaLevel=0;Game.dragonLevel=0;">重置特殊</a>';
+			str+='<a class="option neato" '+Game.clickStr+'="Game.MaxSpecials();">最大特殊</a><br>';
 			str+='<a class="option neato" '+Game.clickStr+'="Game.EditAscend();">'+(Game.DebuggingPrestige?'Exit Ascend Edit':'Ascend Edit')+'</a>';
 			str+='<a class="option neato" '+Game.clickStr+'="Game.DebugUpgradeCpS();">Debug upgrades CpS</a>';
 			str+='<div class="line"></div>';
