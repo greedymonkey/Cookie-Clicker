@@ -4703,8 +4703,8 @@ Game.Launch=function()
 				'<div class="listing"><a class="option warning" '+Game.clickStr+'="Game.HardReset();PlaySound(\'snd/tick.mp3\');">复位</a><label>删除所有的游戏进度，包括你的成就</label></div>'+
 				'<div class="title">其它设置</div>'+
 				'<div class="listing">'+
-				Game.WriteSlider('volumeSlider','Volume','[$]%',function(){return Game.volume;},'Game.setVolume(Math.round(l(\'volumeSlider\').value));l(\'volumeSliderRightText\').innerHTML=Game.volume+\'%\';')+'<br>'+
-				Game.WriteButton('fancy','fancyButton','Fancy graphics ON','Fancy graphics OFF','Game.ToggleFancy();')+'<label>(visual improvements; disabling may improve performance)</label><br>'+
+				Game.WriteSlider('volumeSlider','音量','[$]%',function(){return Game.volume;},'Game.setVolume(Math.round(l(\'volumeSlider\').value));l(\'volumeSliderRightText\').innerHTML=Game.volume+\'%\';')+'<br>'+
+				Game.WriteButton('fancy','fancyButton','花哨的图形 已开启','花哨的图形 已关闭','Game.ToggleFancy();')+'<label>(视觉上的改进; 禁用可能会提高性能)</label><br>'+
 				Game.WriteButton('filters','filtersButton','CSS filters ON','CSS filters OFF','Game.ToggleFilters();')+'<label>(cutting-edge visual improvements; disabling may improve performance)</label><br>'+
 				Game.WriteButton('particles','particlesButton','Particles ON','Particles OFF')+'<label>(cookies falling down, etc; disabling may improve performance)</label><br>'+
 				Game.WriteButton('numbers','numbersButton','Numbers ON','Numbers OFF')+'<label>(numbers that pop up when clicking the cookie)</label><br>'+
@@ -4911,9 +4911,9 @@ Game.Launch=function()
 				((researchStr!='' || wrathStr!='' || pledgeStr!='' || santaStr!='' || dragonStr!='' || Game.season!='' || ascensionModeStr!='')?(
 				'</div><div class="subsection">'+
 				'<div class="title">Special</div>'+
-				(ascensionModeStr!=''?'<div class="listing"><b>Challenge mode :</b>'+ascensionModeStr+'</div>':'')+
-				(Game.season!=''?'<div class="listing"><b>Seasonal event :</b> '+Game.seasons[Game.season].name+
-					(seasonStr!=''?' <small>('+seasonStr+' remaining)</small>':'')+
+				(ascensionModeStr!=''?'<div class="listing"><b>挑战模式 :</b>'+ascensionModeStr+'</div>':'')+
+				(Game.season!=''?'<div class="listing"><b>季节性活动 :</b> '+Game.seasons[Game.season].name+
+					(seasonStr!=''?' <small>('+seasonStr+' 剩余)</small>':'')+
 				'</div>':'')+
 				(Game.season=='fools'?
 					'<div class="listing"><b>出售饼干赚的钱 :</b> $'+Beautify(Game.cookiesEarned*0.08,2)+'</div>'+
@@ -4923,7 +4923,7 @@ Game.Launch=function()
 				(wrathStr!=''?'<div class="listing"><b>祖母的地位 :</b> '+wrathStr+'</div>':'')+
 				(pledgeStr!=''?'<div class="listing"><b>保证 :</b> '+pledgeStr+' remaining</div>':'')+
 				(Game.wrinklersPopped>0?'<div class="listing"><b>起泡器弹出 :</b> '+Beautify(Game.wrinklersPopped)+'</div>':'')+
-				((Game.resets>0 && Game.lumpsTotal>0)?'<div class="listing"><b>Sugar lumps harvested :</b> <div class="price lump plain">'+Beautify(Game.lumpsTotal)+'</div></div>':'')+
+				((Game.resets>0 && Game.lumpsTotal>0)?'<div class="listing"><b>收集糖块 :</b> <div class="price lump plain">'+Beautify(Game.lumpsTotal)+'</div></div>':'')+
 				//(Game.cookiesSucked>0?'<div class="listing warning"><b>Withered :</b> '+Beautify(Game.cookiesSucked)+' cookies</div>':'')+
 				(Game.reindeerClicked>0?'<div class="listing"><b>Reindeer found :</b> '+Beautify(Game.reindeerClicked)+'</div>':'')+
 				(santaStr!=''?'<div class="listing"><b>Santa stages unlocked :</b></div><div>'+santaStr+'</div>':'')+
@@ -4937,22 +4937,22 @@ Game.Launch=function()
 					'<div style="margin-top:8px;"><span class="title" style="font-size:22px;">Prestige level : '+Beautify(Game.prestige)+'</span> at '+Beautify(heavenlyMult*100,1)+'% of its potential <b>(+'+Beautify(parseFloat(Game.prestige)*Game.heavenlyPower*heavenlyMult,1)+'% CpS)</b><br>Heavenly chips : <b>'+Beautify(Game.heavenlyChips)+'</b></div>'+
 				'</div>'+
 				(prestigeUpgrades!=''?(
-				'<div class="listing" style="clear:left;"><b>Prestige upgrades unlocked :</b> '+prestigeUpgradesOwned+'/'+prestigeUpgradesTotal+' ('+Math.floor((prestigeUpgradesOwned/prestigeUpgradesTotal)*100)+'%)</div>'+
+				'<div class="listing" style="clear:left;"><b>威望升级解锁 :</b> '+prestigeUpgradesOwned+'/'+prestigeUpgradesTotal+' ('+Math.floor((prestigeUpgradesOwned/prestigeUpgradesTotal)*100)+'%)</div>'+
 				'<div class="listing crateBox">'+prestigeUpgrades+'</div>'):'')+
 				''):'')+
 
 				'</div><div class="subsection">'+
 				'<div class="title">Upgrades unlocked</div>'+
-				(hiddenUpgrades!=''?('<div class="listing"><b>Debug</b></div>'+
+				(hiddenUpgrades!=''?('<div class="listing"><b>调试</b></div>'+
 				'<div class="listing crateBox">'+hiddenUpgrades+'</div>'):'')+
-				'<div class="listing"><b>Unlocked :</b> '+upgradesOwned+'/'+upgradesTotal+' ('+Math.floor((upgradesOwned/upgradesTotal)*100)+'%)</div>'+
+				'<div class="listing"><b>解锁 :</b> '+upgradesOwned+'/'+upgradesTotal+' ('+Math.floor((upgradesOwned/upgradesTotal)*100)+'%)</div>'+
 				'<div class="listing crateBox">'+upgrades+'</div>'+
-				(cookieUpgrades!=''?('<div class="listing"><b>Cookies</b></div>'+
+				(cookieUpgrades!=''?('<div class="listing"><b>饼干</b></div>'+
 				'<div class="listing crateBox">'+cookieUpgrades+'</div>'):'')+
 				'</div><div class="subsection">'+
-				'<div class="title">Achievements</div>'+
-				'<div class="listing"><b>Unlocked :</b> '+achievementsOwned+'/'+achievementsTotal+' ('+Math.floor((achievementsOwned/achievementsTotal)*100)+'%)</div>'+
-				'<div class="listing"><b>Milk :</b> '+milkName+' <small>(Milk is gained with each achievement. It can unlock unique upgrades over time.)</small></div>'+
+				'<div class="title">成就</div>'+
+				'<div class="listing"><b>解锁 :</b> '+achievementsOwned+'/'+achievementsTotal+' ('+Math.floor((achievementsOwned/achievementsTotal)*100)+'%)</div>'+
+				'<div class="listing"><b>牛奶 :</b> '+milkName+' <small>(每个成就都会获得牛奶。 它可以随着时间的推移解锁独特的升级。)</small></div>'+
 				achievementsStr+
 				'</div>'+
 				'<div style="padding-bottom:128px;"></div>'
@@ -5811,13 +5811,13 @@ Game.Launch=function()
 					icon=[0,7];
 				}
 				//if (l('rowInfo'+me.id) && Game.drawT%10==0) l('rowInfoContent'+me.id).innerHTML='&bull; '+me.amount+' '+(me.amount==1?me.single:me.plural)+'<br>&bull; producing '+Beautify(me.storedTotalCps,1)+' '+(me.storedTotalCps==1?'cookie':'cookies')+' per second<br>&bull; total : '+Beautify(me.totalCookies)+' '+(Math.floor(me.totalCookies)==1?'cookie':'cookies')+' '+me.actionName;
-				return '<div style="min-width:350px;padding:8px;"><div class="icon" style="float:left;margin-left:-8px;margin-top:-8px;background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;"></div><div style="float:right;"><span class="price">'+Beautify(Math.round(me.price))+'</span></div><div class="name">'+name+'</div>'+'<small>[owned : '+me.amount+'</small>]'+(me.free>0?' <small>[free : '+me.free+'</small>!]':'')+
+				return '<div style="min-width:350px;padding:8px;"><div class="icon" style="float:left;margin-left:-8px;margin-top:-8px;background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;"></div><div style="float:right;"><span class="price">'+Beautify(Math.round(me.price))+'</span></div><div class="name">'+cndisplayname(name)+'</div>'+'<small>[拥有 : '+me.amount+'</small>]'+(me.free>0?' <small>[free : '+me.free+'</small>!]':'')+
 				'<div class="line"></div><div class="description">'+desc+'</div>'+
 				(me.totalCookies>0?(
 					'<div class="line"></div><div class="data">'+
-					(me.amount>0?'&bull; each '+me.single+' produces <b>'+Beautify((me.storedTotalCps/me.amount)*Game.globalCpsMult,1)+'</b> '+((me.storedTotalCps/me.amount)*Game.globalCpsMult==1?'cookie':'cookies')+' per second<br>':'')+
-					'&bull; '+me.amount+' '+(me.amount==1?me.single:me.plural)+' producing <b>'+Beautify(me.storedTotalCps*Game.globalCpsMult,1)+'</b> '+(me.storedTotalCps*Game.globalCpsMult==1?'cookie':'cookies')+' per second (<b>'+Beautify(Game.cookiesPs>0?((me.amount>0?((me.storedTotalCps*Game.globalCpsMult)/Game.cookiesPs):0)*100):0,1)+'%</b> of total)<br>'+
-					'&bull; <b>'+Beautify(me.totalCookies)+'</b> '+(Math.floor(me.totalCookies)==1?'cookie':'cookies')+' '+me.actionName+' so far</div>'
+					(me.amount>0?'&bull; 每个 '+cnsigle(me.single)+' 每秒生产 <b>'+Beautify((me.storedTotalCps/me.amount)*Game.globalCpsMult,1)+'</b> '+((me.storedTotalCps/me.amount)*Game.globalCpsMult==1?'饼干':'饼干')+'<br>':'')+
+					'&bull; '+me.amount+' 个 '+(me.amount==1?cnsigle(me.single):cnsigle(me.plural))+' 每秒生产 <b>'+Beautify(me.storedTotalCps*Game.globalCpsMult,1)+'</b> '+(me.storedTotalCps*Game.globalCpsMult==1?'饼干':'饼干')+'(<b>占生产总量的 '+Beautify(Game.cookiesPs>0?((me.amount>0?((me.storedTotalCps*Game.globalCpsMult)/Game.cookiesPs):0)*100):0,1)+'%</b>)<br>'+
+					'&bull;  到目前为止，得到 <b>'+Beautify(me.totalCookies)+'</b> '+(Math.floor(me.totalCookies)==1?'饼干':'饼干')+' 通过 '+cnactionname(me.actionName)+'</div>'
 				):'')+
 				'</div>';
 			}
@@ -11502,16 +11502,16 @@ window.onload=function()
 		}
 	}
 };
-
+//汉化建筑
 function cndisplayname(name){
     var cnname="";
     var temp=name;
     if(temp=="Cursor"){
-        cnname="光标"
+        cnname="游标"
     }else if(temp=="Grandma"){
         cnname="老奶奶"
     }else if(temp=="Farm"){
-        cnname="农田"
+        cnname="农场"
     }else if(temp=="Mine"){
         cnname="矿山"
     }else if(temp=="Factory"){
@@ -11540,4 +11540,38 @@ function cndisplayname(name){
         return name;
     }
     return cnname;
+}
+//汉化指令
+function cnactionname(name){
+    var cnactionname="";
+    var temp=name;
+    if(temp=="clicked"){
+        cnactionname="点击"
+    }else if(temp=="baked"){
+        cnactionname="烘烤"
+    }else if(temp=="harvested"){
+        cnactionname="收获"
+    }else if(temp=="mined"){
+        cnactionname="开采"
+    }else{
+        return name;
+    }
+    return cnactionname;
+}
+//汉化职业
+function cnsigle(name){
+    var cnsigle="";
+    var temp=name;
+    if(temp=="cursor" || temp=="cursors"){
+        cnsigle="游标"
+    }else if(temp=="grandma" || temp=="grandmas"){
+        cnsigle="老奶奶"
+    }else if(temp=="farm" || temp=="farms"){
+        cnsigle="农场"
+    }else if(temp=="mine" || temp=="mines"){
+        cnsigle="矿山"
+    }else{
+        return name;
+    }
+    return cnsigle;
 }

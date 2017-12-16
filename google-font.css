@@ -1,0 +1,15 @@
+
+/* merriweather-normal - latin_latin-ext */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 900;
+  src: url('http://lib.baomitu.com/fonts/merriweather/merriweather-v19-latin_latin-ext-900.eot'); /* IE9 Compat Modes */
+  src: local('Merriweather'), local('Merriweather-Normal'),
+       url('http://lib.baomitu.com/fonts/merriweather/merriweather-v19-latin_latin-ext-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('http://lib.baomitu.com/fonts/merriweather/merriweather-v19-latin_latin-ext-900.woff2') format('woff2'), /* Super Modern Browsers */
+       url('http://lib.baomitu.com/fonts/merriweather/merriweather-v19-latin_latin-ext-900.woff') format('woff'), /* Modern Browsers */
+       url('http://lib.baomitu.com/fonts/merriweather/merriweather-v19-latin_latin-ext-900.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('http://lib.baomitu.com/fonts/merriweather/merriweather-v19-latin_latin-ext-900.svg#Merriweather') format('svg'); /* Legacy iOS */
+}
+  
