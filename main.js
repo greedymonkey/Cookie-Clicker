@@ -5006,217 +5006,217 @@ Game.Launch=function()
 				var animals=['newts','penguins','scorpions','axolotls','puffins','porpoises','blowfish','horses','crayfish','slugs','humpback whales','nurse sharks','giant squids','polar bears','fruit bats','frogs','sea squirts','velvet worms','mole rats','paramecia','nematodes','tardigrades','giraffes'];
 				
 				if (Game.Objects['Grandma'].amount>0) list.push(choose([
-				'<q>Moist cookies.</q><sig>grandma</sig>',
-				'<q>We\'re nice grandmas.</q><sig>grandma</sig>',
-				'<q>Indentured servitude.</q><sig>grandma</sig>',
-				'<q>Come give grandma a kiss.</q><sig>grandma</sig>',
-				'<q>Why don\'t you visit more often?</q><sig>grandma</sig>',
-				'<q>Call me...</q><sig>grandma</sig>'
+				'<q>潮湿的饼干。</q><sig>老奶奶</sig>',
+				'<q>我们是很好的奶奶。</q><sig>老奶奶</sig>',
+				'<q>契约奴役。</q><sig>老奶奶</sig>',
+				'<q>快来给奶奶一个吻。</q><sig>老奶奶</sig>',
+				'<q>你为什么不经常去拜访？</q><sig>老奶奶</sig>',
+				'<q>打给我...</q><sig>老奶奶</sig>'
 				]));
 				
 				if (Game.Objects['Grandma'].amount>=50) list.push(choose([
-				'<q>Absolutely disgusting.</q><sig>grandma</sig>',
-				'<q>You make me sick.</q><sig>grandma</sig>',
-				'<q>You disgust me.</q><sig>grandma</sig>',
-				'<q>We rise.</q><sig>grandma</sig>',
-				'<q>It begins.</q><sig>grandma</sig>',
-				'<q>It\'ll all be over soon.</q><sig>grandma</sig>',
-				'<q>You could have stopped it.</q><sig>grandma</sig>'
+				'<q>绝对恶心。</q><sig>老奶奶</sig>',
+				'<q>你让我感到恶心。</q><sig>老奶奶</sig>',
+				'<q>我讨厌你。</q><sig>老奶奶</sig>',
+				'<q>我们起来。</q><sig>老奶奶</sig>',
+				'<q>它开始了。</q><sig>老奶奶</sig>',
+				'<q>这一切都将很快结束。</q><sig>老奶奶</sig>',
+				'<q>你可以阻止它。</q><sig>老奶奶</sig>'
 				]));
 				
 				if (Game.HasAchiev('Just wrong') && Math.random()<0.4) list.push(choose([
-				'News : cookie manufacturer downsizes, sells own grandmother!',
-				'<q>It has betrayed us, the filthy little thing.</q><sig>grandma</sig>',
-				'<q>It tried to get rid of us, the nasty little thing.</q><sig>grandma</sig>',
-				'<q>It thought we would go away by selling us. How quaint.</q><sig>grandma</sig>',
-				'<q>I can smell your rotten cookies.</q><sig>grandma</sig>'
+				'新闻：饼干制造商缩小规模，销售自己的祖母！',
+				'<q>它背叛了我们，那个肮脏的小东西。</q><sig>老奶奶</sig>',
+				'<q>它试图摆脱我们这个讨厌的小东西。</q><sig>老奶奶</sig>',
+				'<q>它认为我们会通过出售我们而走开。 多么古怪。</q><sig>老奶奶</sig>',
+				'<q>我可以闻到你的烂饼干。</q><sig>老奶奶</sig>'
 				]));
 				
 				if (Game.Objects['Grandma'].amount>=1 && Game.pledges>0 && Game.elderWrath==0) list.push(choose([
-				'<q>shrivel</q><sig>grandma</sig>',
-				'<q>writhe</q><sig>grandma</sig>',
-				'<q>throb</q><sig>grandma</sig>',
-				'<q>gnaw</q><sig>grandma</sig>',
-				'<q>We will rise again.</q><sig>grandma</sig>',
-				'<q>A mere setback.</q><sig>grandma</sig>',
-				'<q>We are not satiated.</q><sig>grandma</sig>',
-				'<q>Too late.</q><sig>grandma</sig>'
+				'<q>枯萎</q><sig>老奶奶</sig>',
+				'<q>翻腾</q><sig>老奶奶</sig>',
+				'<q>感动</q><sig>老奶奶</sig>',
+				'<q>啃</q><sig>老奶奶</sig>',
+				'<q>我们会再起来。</q><sig>老奶奶</sig>',
+				'<q>仅仅是一个挫折。</q><sig>老奶奶</sig>',
+				'<q>我们不满足。</q><sig>老奶奶</sig>',
+				'<q>太晚了。</q><sig>老奶奶</sig>'
 				]));
 				
 				if (Game.Objects['Farm'].amount>0) list.push(choose([
-				'News : cookie farms suspected of employing undeclared elderly workforce!',
-				'News : cookie farms release harmful chocolate in our rivers, says scientist!',
-				'News : genetically-modified chocolate controversy strikes cookie farmers!',
-				'News : free-range farm cookies popular with today\'s hip youth, says specialist.',
-				'News : farm cookies deemed unfit for vegans, says nutritionist.'
+				'新闻：饼干农场涉嫌雇用未申报的老年劳动力！',
+				'新闻：科学家说，饼干农场在我们的河流中释放有害的巧克力！',
+				'新闻：转基因巧克力的争议袭击饼干农民！',
+				'新闻：专家解释说，现在的时尚青年中流行的是农场曲奇。',
+				'新闻：营养学家认为农场饼干不适合素食者。'
 				]));
 				
 				if (Game.Objects['Mine'].amount>0) list.push(choose([
-				'News : is our planet getting lighter? Experts examine the effects of intensive chocolate mining.',
-				'News : '+Math.floor(Math.random()*1000+2)+' miners trapped in collapsed chocolate mine!',
-				'News : chocolate mines found to cause earthquakes and sinkholes!',
-				'News : chocolate mine goes awry, floods village in chocolate!',
-				'News : depths of chocolate mines found to house "peculiar, chocolaty beings"!'
+				'新闻：我们的星球变得更轻？ 专家们检查密集的巧克力采矿的影响。',
+				'新闻：'+Math.floor(Math.random()*1000+2)+' 名矿工被困在倒塌的巧克力矿山',
+				'新闻：巧克力矿被发现引起地震和沉没！',
+				'新闻：巧克力矿山出了问题，巧克力在村里泛滥！',
+				'新闻：巧克力矿山深处发现房子“特有的，巧克力味的生命”！'
 				]));
 				
 				if (Game.Objects['Factory'].amount>0) list.push(choose([
-				'News : cookie factories linked to global warming!',
-				'News : cookie factories involved in chocolate weather controversy!',
-				'News : cookie factories on strike, robotic minions employed to replace workforce!',
-				'News : cookie factories on strike - workers demand to stop being paid in cookies!',
-				'News : factory-made cookies linked to obesity, says study.'
+				'新闻：与全球变暖挂钩的饼干工厂！',
+				'新闻：参与巧克力天气争议的饼干工厂！',
+				'新闻：罢工的饼干工厂，机器人奴才被用来取代劳动力！',
+				'新闻：饼干工厂罢工 - 工人要求停止用饼干支付！',
+				'新闻：研究表明，工厂制造的饼干与肥胖有关。'
 				]));
 				
 				if (Game.Objects['Bank'].amount>0) list.push(choose([
-				'News : cookie loans on the rise as people can no longer afford them with regular money.',
-				'News : cookies slowly creeping up their way as a competitor to traditional currency!',
-				'News : most bakeries now fitted with ATMs to allow for easy cookie withdrawals and deposits.',
-				'News : cookie economy now strong enough to allow for massive vaults doubling as swimming pools!',
-				'News : "Tomorrow\'s wealthiest people will be calculated by their worth in cookies", predict specialists.'
+				'新闻：随着人们再也不能用普通的钱来支付，饼干贷款的数量就会增加。',
+				'新闻：作为传统货币的竞争对手，饼干慢慢地崛起了！',
+				'新闻：现在大多数面包店都装有自动取款机，方便取款和存款。',
+				'新闻：饼干经济现在强大到足以让巨大的拱顶加倍作为游泳池！',
+				'新闻：预测专家说，“明天最富有的人将以他们的饼干价值计算”。'
 				]));
 				
 				if (Game.Objects['Temple'].amount>0) list.push(choose([
-				'News : explorers bring back ancient artifact from abandoned temple; archeologists marvel at the centuries-old '+choose(['magic','carved','engraved','sculpted','royal','imperial','mummified','ritual','golden','silver','stone','cursed','plastic','bone','blood','holy','sacred','sacrificial','electronic','singing','tapdancing'])+' '+choose(['spoon','fork','pizza','washing machine','calculator','hat','piano','napkin','skeleton','gown','dagger','sword','shield','skull','emerald','bathtub','mask','rollerskates','litterbox','bait box','cube','sphere','fungus'])+'!',
-				'News : recently-discovered chocolate temples now sparking new cookie-related cult; thousands pray to Baker in the sky!',
-				'News : just how extensive is the cookie pantheon? Theologians speculate about possible '+choose(['god','goddess'])+' of '+choose(animals,choose(['kazoos','web design','web browsers','kittens','atheism','handbrakes','hats','aglets','elevator music','idle games','the letter "P"','memes','hamburgers','bad puns','kerning','stand-up comedy','failed burglary attempts','clickbait','one weird tricks']))+'.',
-				'News : theists of the world discover new cookie religion - "Oh boy, guess we were wrong all along!"',
-				'News : cookie heaven allegedly "sports elevator instead of stairway"; cookie hell "paved with flagstone, as good intentions make for poor building material".'
+				'新闻：探险者从废弃的寺庙带回古代的神器; 考古学家惊叹于数百年的历史 '+choose(['magic','carved','engraved','sculpted','royal','imperial','mummified','ritual','golden','silver','stone','cursed','plastic','bone','blood','holy','sacred','sacrificial','electronic','singing','tapdancing'])+' '+choose(['spoon','fork','pizza','washing machine','calculator','hat','piano','napkin','skeleton','gown','dagger','sword','shield','skull','emerald','bathtub','mask','rollerskates','litterbox','bait box','cube','sphere','fungus'])+'!',
+				'新闻：最近发现的巧克力寺庙现在引发新的饼干相关的邪教组织; 数千人向天空中的贝克祈祷！',
+				'新闻：饼干万神殿有多广泛？ 神学家们推测各种可能。 '+choose(['god','goddess'])+' of '+choose(animals,choose(['kazoos','web design','web browsers','kittens','atheism','handbrakes','hats','aglets','elevator music','idle games','the letter "P"','memes','hamburgers','bad puns','kerning','stand-up comedy','failed burglary attempts','clickbait','one weird tricks']))+'.',
+				'新闻：世界有识之士发现新的饼干宗教 - “哦，伙计，我们猜测我们错了！”',
+				'新闻：据称饼干天堂“运动电梯而不是楼梯”; 饼干地狱“用石板铺好，好意用于贫穷的建筑材料”。'
 				]));
 				
 				if (Game.Objects['Wizard tower'].amount>0) list.push(choose([
-				'News : all '+choose(animals,choose(['public restrooms','clouds','politicians','moustaches','hats','shoes','pants','clowns','encyclopedias','websites','potted plants','lemons','household items','bodily fluids','cutlery','national landmarks','yogurt','rap music','underwear']))+' turned into '+choose(animals,choose(['public restrooms','clouds','politicians','moustaches','hats','shoes','pants','clowns','encyclopedias','websites','potted plants','lemons','household items','bodily fluids','cutlery','national landmarks','yogurt','rap music','underwear']))+' in freak magic catastrophe!',
-				'News : heavy dissent rages between the schools of '+choose(['water','fire','earth','air','lightning','acid','song','battle','peace','pencil','internet','space','time','brain','nature','techno','plant','bug','ice','poison','crab','kitten','dolphin','bird','punch','fart'])+' magic and '+choose(['water','fire','earth','air','lightning','acid','song','battle','peace','pencil','internet','space','time','brain','nature','techno','plant','bug','ice','poison','crab','kitten','dolphin','bird','punch','fart'])+' magic!',
-				'News : get your new charms and curses at the yearly National Spellcrafting Fair! Exclusive prices on runes and spellbooks.',
-				'News : cookie wizards deny involvement in shockingly ugly newborn - infant is "honestly grody-looking, but natural", say doctors.',
-				'News : "Any sufficiently crude magic is indistinguishable from technology", claims renowned technowizard.'
+				'新闻：all '+choose(animals,choose(['public restrooms','clouds','politicians','moustaches','hats','shoes','pants','clowns','encyclopedias','websites','potted plants','lemons','household items','bodily fluids','cutlery','national landmarks','yogurt','rap music','underwear']))+' turned into '+choose(animals,choose(['public restrooms','clouds','politicians','moustaches','hats','shoes','pants','clowns','encyclopedias','websites','potted plants','lemons','household items','bodily fluids','cutlery','national landmarks','yogurt','rap music','underwear']))+' in freak magic catastrophe!',
+				'新闻：heavy dissent rages between the schools of '+choose(['water','fire','earth','air','lightning','acid','song','battle','peace','pencil','internet','space','time','brain','nature','techno','plant','bug','ice','poison','crab','kitten','dolphin','bird','punch','fart'])+' magic and '+choose(['water','fire','earth','air','lightning','acid','song','battle','peace','pencil','internet','space','time','brain','nature','techno','plant','bug','ice','poison','crab','kitten','dolphin','bird','punch','fart'])+' magic!',
+				'新闻：在每年的国家法制工作会上获得新的魅力和诅咒！ 符文和魔法书上的独家价格。',
+				'新闻：医生说，饼干巫师否认参与令人震惊的丑陋的新生儿 - 婴儿是“诚实地看起来，但自然”。',
+				'新闻："任何足够粗的魔法是从技术没有区别”，知名技术向导宣称。'
 				]));
 				
 				if (Game.Objects['Shipment'].amount>0) list.push(choose([
-				'News : new chocolate planet found, becomes target of cookie-trading spaceships!',
-				'News : massive chocolate planet found with 99.8% certified pure dark chocolate core!',
-				'News : space tourism booming as distant planets attract more bored millionaires!',
-				'News : chocolate-based organisms found on distant planet!',
-				'News : ancient baking artifacts found on distant planet; "terrifying implications", experts say.'
+				'新闻：新发现的巧克力行星，成为饼干交易飞船的目标！',
+				'新闻：大规模的巧克力行星与99.8％的认证纯黑巧克力核心发现！',
+				'新闻：随着遥远的星球吸引更多无聊的百万富翁，太空旅游业蓬勃发展！',
+				'新闻：基于巧克力的生物发现在遥远的星球上！',
+				'新闻：在遥远的星球发现的古老烘烤文物; “可怕的含义”，专家说。'
 				]));
 				
 				if (Game.Objects['Alchemy lab'].amount>0) list.push(choose([
-				'News : national gold reserves dwindle as more and more of the precious mineral is turned to cookies!',
-				'News : chocolate jewelry found fashionable, gold and diamonds "just a fad", says specialist.',
-				'News : silver found to also be transmutable into white chocolate!',
-				'News : defective alchemy lab shut down, found to convert cookies to useless gold.',
-				'News : alchemy-made cookies shunned by purists!'
+				'新闻：national gold reserves dwindle as more and more of the precious mineral is turned to cookies!',
+				'新闻：chocolate jewelry found fashionable, gold and diamonds "just a fad", says specialist.',
+				'新闻：silver found to also be transmutable into white chocolate!',
+				'新闻：defective alchemy lab shut down, found to convert cookies to useless gold.',
+				'新闻：alchemy-made cookies shunned by purists!'
 				]));
 				
 				if (Game.Objects['Portal'].amount>0) list.push(choose([
-				'News : nation worried as more and more unsettling creatures emerge from dimensional portals!',
-				'News : dimensional portals involved in city-engulfing disaster!',
-				'News : tourism to cookieverse popular with bored teenagers! Casualty rate as high as 73%!',
-				'News : cookieverse portals suspected to cause fast aging and obsession with baking, says study.',
-				'News : "do not settle near portals," says specialist; "your children will become strange and corrupted inside."'
+				'新闻：nation worried as more and more unsettling creatures emerge from dimensional portals!',
+				'新闻：dimensional portals involved in city-engulfing disaster!',
+				'新闻：tourism to cookieverse popular with bored teenagers! Casualty rate as high as 73%!',
+				'新闻：cookieverse portals suspected to cause fast aging and obsession with baking, says study.',
+				'新闻："do not settle near portals," says specialist; "your children will become strange and corrupted inside."'
 				]));
 				
 				if (Game.Objects['Time machine'].amount>0) list.push(choose([
-				'News : time machines involved in history-rewriting scandal! Or are they?',
-				'News : time machines used in unlawful time tourism!',
-				'News : cookies brought back from the past "unfit for human consumption", says historian.',
-				'News : various historical figures inexplicably replaced with talking lumps of dough!',
-				'News : "I have seen the future," says time machine operator, "and I do not wish to go there again."'
+				'新闻：time machines involved in history-rewriting scandal! Or are they?',
+				'新闻：time machines used in unlawful time tourism!',
+				'新闻：cookies brought back from the past "unfit for human consumption", says historian.',
+				'新闻：various historical figures inexplicably replaced with talking lumps of dough!',
+				'新闻："I have seen the future," says time machine operator, "and I do not wish to go there again."'
 				]));
 				
 				if (Game.Objects['Antimatter condenser'].amount>0) list.push(choose([
-				'News : whole town seemingly swallowed by antimatter-induced black hole; more reliable sources affirm town "never really existed"!',
-				'News : "explain to me again why we need particle accelerators to bake cookies?" asks misguided local woman.',
-				'News : first antimatter condenser successfully turned on, doesn\'t rip apart reality!',
-				'News : researchers conclude that what the cookie industry needs, first and foremost, is "more magnets".',
-				'News : "unravelling the fabric of reality just makes these cookies so much tastier", claims scientist.'
+				'新闻：whole town seemingly swallowed by antimatter-induced black hole; more reliable sources affirm town "never really existed"!',
+				'新闻："explain to me again why we need particle accelerators to bake cookies?" asks misguided local woman.',
+				'新闻：first antimatter condenser successfully turned on, doesn\'t rip apart reality!',
+				'新闻：researchers conclude that what the cookie industry needs, first and foremost, is "more magnets".',
+				'新闻："unravelling the fabric of reality just makes these cookies so much tastier", claims scientist.'
 				]));
 				
 				if (Game.Objects['Prism'].amount>0) list.push(choose([
-				'News : new cookie-producing prisms linked to outbreak of rainbow-related viral videos.',
-				'News : scientists warn against systematically turning light into matter - "One day, we\'ll end up with all matter and no light!"',
-				'News : cookies now being baked at the literal speed of light thanks to new prismatic contraptions.',
-				'News : "Can\'t you sense the prism watching us?", rambles insane local man. "No idea what he\'s talking about", shrugs cookie magnate/government official.',
-				'News : world citizens advised "not to worry" about frequent atmospheric flashes.',
+				'新闻：new cookie-producing prisms linked to outbreak of rainbow-related viral videos.',
+				'新闻：scientists warn against systematically turning light into matter - "One day, we\'ll end up with all matter and no light!"',
+				'新闻：cookies now being baked at the literal speed of light thanks to new prismatic contraptions.',
+				'新闻："Can\'t you sense the prism watching us?", rambles insane local man. "No idea what he\'s talking about", shrugs cookie magnate/government official.',
+				'新闻：world citizens advised "not to worry" about frequent atmospheric flashes.',
 				]));
 				
 				if (Game.Objects['Chancemaker'].amount>0) list.push(choose([
-				'News : strange statistical anomalies continue as weather forecast proves accurate an unprecedented 3 days in a row!',
-				'News : local casino ruined as all gamblers somehow hit a week-long winning streak! "We might still be okay", says owner before being hit by lightning 47 times.',
-				'News : neighboring nation somehow elects president with sensible policies in freak accident of random chance!',
-				'News : million-to-one event sees gritty movie reboot turning out better than the original! "We have no idea how this happened", say movie execs.',
-				'News : all scratching tickets printed as winners, prompting national economy to crash and, against all odds, recover overnight.',
+				'新闻：strange statistical anomalies continue as weather forecast proves accurate an unprecedented 3 days in a row!',
+				'新闻：local casino ruined as all gamblers somehow hit a week-long winning streak! "We might still be okay", says owner before being hit by lightning 47 times.',
+				'新闻：neighboring nation somehow elects president with sensible policies in freak accident of random chance!',
+				'新闻：million-to-one event sees gritty movie reboot turning out better than the original! "We have no idea how this happened", say movie execs.',
+				'新闻：all scratching tickets printed as winners, prompting national economy to crash and, against all odds, recover overnight.',
 				]));
 				
 				if (Game.season=='halloween' && Game.cookiesEarned>=1000) list.push(choose([
-				'News : strange twisting creatures amass around cookie factories, nibble at assembly lines.',
-				'News : ominous wrinkly monsters take massive bites out of cookie production; "this can\'t be hygienic", worries worker.',
-				'News : pagan rituals on the rise as children around the world dress up in strange costumes and blackmail homeowners for candy.',
-				'News : new-age terrorism strikes suburbs as houses find themselves covered in eggs and toilet paper.',
-				'News : children around the world "lost and confused" as any and all Halloween treats have been replaced by cookies.'
+				'新闻：strange twisting creatures amass around cookie factories, nibble at assembly lines.',
+				'新闻：ominous wrinkly monsters take massive bites out of cookie production; "this can\'t be hygienic", worries worker.',
+				'新闻：pagan rituals on the rise as children around the world dress up in strange costumes and blackmail homeowners for candy.',
+				'新闻：new-age terrorism strikes suburbs as houses find themselves covered in eggs and toilet paper.',
+				'新闻：children around the world "lost and confused" as any and all Halloween treats have been replaced by cookies.'
 				]));
 				
 				if (Game.season=='christmas' && Game.cookiesEarned>=1000) list.push(choose([
-				'News : bearded maniac spotted speeding on flying sleigh! Investigation pending.',
-				'News : Santa Claus announces new brand of breakfast treats to compete with cookie-flavored cereals! "They\'re ho-ho-horrible!" says Santa.',
-				'News : "You mean he just gives stuff away for free?!", concerned moms ask. "Personally, I don\'t trust his beard."',
-				'News : obese jolly lunatic still on the loose, warn officials. "Keep your kids safe and board up your chimneys. We mean it."',
-				'News : children shocked as they discover Santa Claus isn\'t just their dad in a costume after all!<br>"I\'m reassessing my life right now", confides Laura, aged 6.',
-				'News : mysterious festive entity with quantum powers still wrecking havoc with army of reindeer, officials say.',
-				'News : elves on strike at toy factory! "We will not be accepting reindeer chow as payment anymore. And stop calling us elves!"',
-				'News : elves protest around the nation; wee little folks in silly little outfits spread mayhem, destruction; rabid reindeer running rampant through streets.',
-				'News : scholars debate regarding the plural of reindeer(s) in the midst of elven world war.',
-				'News : elves "unrelated to gnomes despite small stature and merry disposition", find scientists.',
-				'News : elves sabotage radioactive frosting factory, turn hundreds blind in vincinity - "Who in their right mind would do such a thing?" laments outraged mayor.',
-				'News : drama unfolds at North Pole as rumors crop up around Rudolph\'s red nose; "I may have an addiction or two", admits reindeer.'
+				'新闻：bearded maniac spotted speeding on flying sleigh! Investigation pending.',
+				'新闻：Santa Claus announces new brand of breakfast treats to compete with cookie-flavored cereals! "They\'re ho-ho-horrible!" says Santa.',
+				'新闻："You mean he just gives stuff away for free?!", concerned moms ask. "Personally, I don\'t trust his beard."',
+				'新闻：obese jolly lunatic still on the loose, warn officials. "Keep your kids safe and board up your chimneys. We mean it."',
+				'新闻：children shocked as they discover Santa Claus isn\'t just their dad in a costume after all!<br>"I\'m reassessing my life right now", confides Laura, aged 6.',
+				'新闻：mysterious festive entity with quantum powers still wrecking havoc with army of reindeer, officials say.',
+				'新闻：elves on strike at toy factory! "We will not be accepting reindeer chow as payment anymore. And stop calling us elves!"',
+				'新闻：elves protest around the nation; wee little folks in silly little outfits spread mayhem, destruction; rabid reindeer running rampant through streets.',
+				'新闻：scholars debate regarding the plural of reindeer(s) in the midst of elven world war.',
+				'新闻：elves "unrelated to gnomes despite small stature and merry disposition", find scientists.',
+				'新闻：elves sabotage radioactive frosting factory, turn hundreds blind in vincinity - "Who in their right mind would do such a thing?" laments outraged mayor.',
+				'新闻：drama unfolds at North Pole as rumors crop up around Rudolph\'s red nose; "I may have an addiction or two", admits reindeer.'
 				]));
 				
 				if (Game.season=='valentines' && Game.cookiesEarned>=1000) list.push(choose([
-				'News : organ-shaped confectioneries being traded in schools all over the world; gruesome practice undergoing investigation.',
-				'News : heart-shaped candies overtaking sweets business, offering competition to cookie empire. "It\'s the economy, cupid!"',
-				'News : love\'s in the air, according to weather specialists. Face masks now offered in every city to stunt airborne infection.',
-				'News : marrying a cookie - deranged practice, or glimpse of the future?',
-				'News : boyfriend dumped after offering his lover cookies for Valentine\'s Day, reports say. "They were off-brand", shrugs ex-girlfriend.'
+				'新闻：organ-shaped confectioneries being traded in schools all over the world; gruesome practice undergoing investigation.',
+				'新闻：heart-shaped candies overtaking sweets business, offering competition to cookie empire. "It\'s the economy, cupid!"',
+				'新闻：love\'s in the air, according to weather specialists. Face masks now offered in every city to stunt airborne infection.',
+				'新闻：marrying a cookie - deranged practice, or glimpse of the future?',
+				'新闻：boyfriend dumped after offering his lover cookies for Valentine\'s Day, reports say. "They were off-brand", shrugs ex-girlfriend.'
 				]));
 				
 				if (Game.season=='easter' && Game.cookiesEarned>=1000) list.push(choose([
-				'News : long-eared rodents invade suburbs, spread terror and chocolate!',
-				'News : eggs have begun to materialize in the most unexpected places; "no place is safe", warn experts.',
-				'News : packs of rampaging rabbits cause billions in property damage; new strain of myxomatosis being developed.',
-				'News : egg-laying rabbits "not quite from this dimension", warns biologist; advises against petting, feeding, or cooking the creatures.',
-				'News : mysterious rabbits found to be egg-layers, but warm-blooded, hinting at possible platypus ancestry.'
+				'新闻：long-eared rodents invade suburbs, spread terror and chocolate!',
+				'新闻：eggs have begun to materialize in the most unexpected places; "no place is safe", warn experts.',
+				'新闻：packs of rampaging rabbits cause billions in property damage; new strain of myxomatosis being developed.',
+				'新闻：egg-laying rabbits "not quite from this dimension", warns biologist; advises against petting, feeding, or cooking the creatures.',
+				'新闻：mysterious rabbits found to be egg-layers, but warm-blooded, hinting at possible platypus ancestry.'
 				]));
 				
 				if (Math.random()<0.05)
 				{
-					if (Game.HasAchiev('Base 10')) list.push('News : cookie manufacturer completely forgoes common sense, lets OCD drive building decisions!');//somehow I got flak for this one
-					if (Game.HasAchiev('From scratch')) list.push('News : follow the tear-jerking, riches-to-rags story about a local cookie manufacturer who decided to give it all up!');
-					if (Game.HasAchiev('A world filled with cookies')) list.push('News : known universe now jammed with cookies! No vacancies!');
-					if (Game.HasAchiev('Last Chance to See')) list.push('News : incredibly rare albino wrinkler on the brink of extinction poached by cookie-crazed pastry magnate!');
-					if (Game.Has('Serendipity')) list.push('News : local cookie manufacturer becomes luckiest being alive!');
-					if (Game.Has('Season switcher')) list.push('News : seasons are all out of whack! "We need to get some whack back into them seasons", says local resident.');
+					if (Game.HasAchiev('Base 10')) list.push('新闻：cookie manufacturer completely forgoes common sense, lets OCD drive building decisions!');//somehow I got flak for this one
+					if (Game.HasAchiev('From scratch')) list.push('新闻：follow the tear-jerking, riches-to-rags story about a local cookie manufacturer who decided to give it all up!');
+					if (Game.HasAchiev('A world filled with cookies')) list.push('新闻：known universe now jammed with cookies! No vacancies!');
+					if (Game.HasAchiev('Last Chance to See')) list.push('新闻：incredibly rare albino wrinkler on the brink of extinction poached by cookie-crazed pastry magnate!');
+					if (Game.Has('Serendipity')) list.push('新闻：local cookie manufacturer becomes luckiest being alive!');
+					if (Game.Has('Season switcher')) list.push('新闻：seasons are all out of whack! "We need to get some whack back into them seasons", says local resident.');
 					
-					if (Game.Has('Kitten helpers')) list.push('News : faint meowing heard around local cookie facilities; suggests new ingredient being tested.');
-					if (Game.Has('Kitten workers')) list.push('News : crowds of meowing kittens with little hard hats reported near local cookie facilities.');
-					if (Game.Has('Kitten engineers')) list.push('News : surroundings of local cookie facilities now overrun with kittens in adorable little suits. Authorities advise to stay away from the premises.');
-					if (Game.Has('Kitten overseers')) list.push('News : locals report troupe of bossy kittens meowing adorable orders at passersby.');
-					if (Game.Has('Kitten managers')) list.push('News : local office cubicles invaded with armies of stern-looking kittens asking employees "what\'s happening, meow".');
-					if (Game.Has('Kitten accountants')) list.push('News : tiny felines show sudden and amazing proficiency with fuzzy mathematics and pawlinomials, baffling scientists and pet store owners.');
-					if (Game.Has('Kitten specialists')) list.push('News : new kitten college opening next week, offers courses on cookie-making and catnip studies.');
-					if (Game.Has('Kitten experts')) list.push('News : unemployment rates soaring as woefully adorable little cats nab jobs on all levels of expertise, says study.');
-					if (Game.Has('Kitten consultants')) list.push('News : "In the future, your job will most likely be done by a cat", predicts suspiciously furry futurologist.');
-					if (Game.Has('Kitten assistants to the regional manager')) list.push('News : strange kittens with peculiar opinions on martial arts spotted loitering on local beet farms!');
-					if (Game.Has('Kitten angels')) list.push('News : "Try to ignore any ghostly felines that may be purring inside your ears," warn scientists. "They\'ll just lure you into making poor life choices."');
+					if (Game.Has('Kitten helpers')) list.push('新闻：faint meowing heard around local cookie facilities; suggests new ingredient being tested.');
+					if (Game.Has('Kitten workers')) list.push('新闻：crowds of meowing kittens with little hard hats reported near local cookie facilities.');
+					if (Game.Has('Kitten engineers')) list.push('新闻：surroundings of local cookie facilities now overrun with kittens in adorable little suits. Authorities advise to stay away from the premises.');
+					if (Game.Has('Kitten overseers')) list.push('新闻：locals report troupe of bossy kittens meowing adorable orders at passersby.');
+					if (Game.Has('Kitten managers')) list.push('新闻：local office cubicles invaded with armies of stern-looking kittens asking employees "what\'s happening, meow".');
+					if (Game.Has('Kitten accountants')) list.push('新闻：tiny felines show sudden and amazing proficiency with fuzzy mathematics and pawlinomials, baffling scientists and pet store owners.');
+					if (Game.Has('Kitten specialists')) list.push('新闻：new kitten college opening next week, offers courses on cookie-making and catnip studies.');
+					if (Game.Has('Kitten experts')) list.push('新闻：unemployment rates soaring as woefully adorable little cats nab jobs on all levels of expertise, says study.');
+					if (Game.Has('Kitten consultants')) list.push('新闻："In the future, your job will most likely be done by a cat", predicts suspiciously furry futurologist.');
+					if (Game.Has('Kitten assistants to the regional manager')) list.push('新闻：strange kittens with peculiar opinions on martial arts spotted loitering on local beet farms!');
+					if (Game.Has('Kitten angels')) list.push('新闻："Try to ignore any ghostly felines that may be purring inside your ears," warn scientists. "They\'ll just lure you into making poor life choices."');
 				}
 					
 				if (Game.HasAchiev('Dude, sweet') && Math.random()<0.3) list.push(choose([
-				'News : major sugar-smuggling ring dismantled by authorities; '+Math.floor(Math.random()*30+3)+' tons of sugar lumps seized, '+Math.floor(Math.random()*48+2)+' suspects apprehended.',
-				'News : authorities warn tourists not to buy bootleg sugar lumps from street peddlers - "You think you\'re getting a sweet deal, but what you\'re being sold is really just ordinary cocaine", says agent.',
-				'News : pro-diabetes movement protests against sugar-shaming. "I\'ve eaten nothing but sugar lumps for the past '+Math.floor(Math.random()*10+4)+' years and I\'m feeling great!", says woman with friable skin.',
-				'News : experts in bitter disagreement over whether sugar consumption turns children sluggish or hyperactive.',
-				'News : fishermen deplore upturn in fish tooth decay as sugar lumps-hauling cargo sinks into the ocean.',
-				'News : rare black sugar lump that captivated millions in unprecedented auction revealed to be common toxic fungus.',
-				'News : "Back in my day, sugar lumps were these little cubes you\'d put in your tea, not those fist-sized monstrosities people eat for lunch", whines curmudgeon with failing memory.',
-				'News : sugar lump-snacking fad sweeps the nation; dentists everywhere rejoice.'
+				'新闻：major sugar-smuggling ring dismantled by authorities; '+Math.floor(Math.random()*30+3)+' tons of sugar lumps seized, '+Math.floor(Math.random()*48+2)+' suspects apprehended.',
+				'新闻：authorities warn tourists not to buy bootleg sugar lumps from street peddlers - "You think you\'re getting a sweet deal, but what you\'re being sold is really just ordinary cocaine", says agent.',
+				'新闻：pro-diabetes movement protests against sugar-shaming. "I\'ve eaten nothing but sugar lumps for the past '+Math.floor(Math.random()*10+4)+' years and I\'m feeling great!", says woman with friable skin.',
+				'新闻：experts in bitter disagreement over whether sugar consumption turns children sluggish or hyperactive.',
+				'新闻：fishermen deplore upturn in fish tooth decay as sugar lumps-hauling cargo sinks into the ocean.',
+				'新闻：rare black sugar lump that captivated millions in unprecedented auction revealed to be common toxic fungus.',
+				'新闻："Back in my day, sugar lumps were these little cubes you\'d put in your tea, not those fist-sized monstrosities people eat for lunch", whines curmudgeon with failing memory.',
+				'新闻：sugar lump-snacking fad sweeps the nation; dentists everywhere rejoice.'
 				]));
 				
 				if (Math.random()<0.001)//apologies to Will Wright
@@ -5229,7 +5229,7 @@ Game.Launch=function()
 				}
 				
 				if (Game.cookiesEarned>=10000) list.push(
-				'News : '+choose([
+				'新闻：'+choose([
 					'cookies found to '+choose(['increase lifespan','sensibly increase intelligence','reverse aging','decrease hair loss','prevent arthritis','cure blindness'])+' in '+choose(animals)+'!',
 					'cookies found to make '+choose(animals)+' '+choose(['more docile','more handsome','nicer','less hungry','more pragmatic','tastier'])+'!',
 					'cookies tested on '+choose(animals)+', found to have no ill effects.',
@@ -5243,7 +5243,7 @@ Game.Launch=function()
 					'doctors advise against new cookie-free fad diet.',
 					'doctors warn mothers about the dangers of "home-made cookies".'
 					]),
-				'News : "'+choose([
+				'新闻："'+choose([
 					'I\'m all about cookies',
 					'I just can\'t stop eating cookies. I think I seriously need help',
 					'I guess I have a cookie problem',
@@ -5259,56 +5259,56 @@ Game.Launch=function()
 					'alright, I\'ll say it - I\'ve never eaten a single cookie in my life'
 					])+'", reveals celebrity.',
 				choose([
-					'News : scientist predicts imminent cookie-related "end of the world"; becomes joke among peers.',
-					'News : man robs bank, buys cookies.',
-					'News : scientists establish that the deal with airline food is, in fact, a critical lack of cookies.',
-					'News : hundreds of tons of cookies dumped into starving country from airplanes; thousands dead, nation grateful.',
-					'News : new study suggests cookies neither speed up nor slow down aging, but instead "take you in a different direction".',
-					'News : overgrown cookies found in fishing nets, raise questions about hormone baking.',
-					'News : "all-you-can-eat" cookie restaurant opens in big city; waiters trampled in minutes.',
-					'News : man dies in cookie-eating contest; "a less-than-impressive performance", says judge.',
-					'News : what makes cookies taste so right? "Probably all the [*****] they put in them", says anonymous tipper.',
-					'News : man found allergic to cookies; "what a weirdo", says family.',
-					'News : foreign politician involved in cookie-smuggling scandal.',
-					'News : cookies now more popular than '+choose(['cough drops','broccoli','smoked herring','cheese','video games','stable jobs','relationships','time travel','cat videos','tango','fashion','television','nuclear warfare','whatever it is we ate before','politics','oxygen','lamps'])+', says study.',
-					'News : obesity epidemic strikes nation; experts blame '+choose(['twerking','that darn rap music','video-games','lack of cookies','mysterious ghostly entities','aliens','parents','schools','comic-books','cookie-snorting fad'])+'.',
-					'News : cookie shortage strikes town, people forced to eat cupcakes; "just not the same", concedes mayor.',
-					'News : "you gotta admit, all this cookie stuff is a bit ominous", says confused idiot.',
-					'News : movie cancelled from lack of actors; "everybody\'s at home eating cookies", laments director.',
-					'News : comedian forced to cancel cookie routine due to unrelated indigestion.',
-					'News : new cookie-based religion sweeps the nation.',
-					'News : fossil records show cookie-based organisms prevalent during Cambrian explosion, scientists say.',
-					'News : mysterious illegal cookies seized; "tastes terrible", says police.',
-					'News : man found dead after ingesting cookie; investigators favor "mafia snitch" hypothesis.',
-					'News : "the universe pretty much loops on itself," suggests researcher; "it\'s cookies all the way down."',
-					'News : minor cookie-related incident turns whole town to ashes; neighboring cities asked to chip in for reconstruction.',
-					'News : is our media controlled by the cookie industry? This could very well be the case, says crackpot conspiracy theorist.',
-					'News : '+choose(['cookie-flavored popcorn pretty damn popular; "we kinda expected that", say scientists.','cookie-flavored cereals break all known cereal-related records','cookies popular among all age groups, including fetuses, says study.','cookie-flavored popcorn sales exploded during screening of Grandmothers II : The Moistening.']),
-					'News : all-cookie restaurant opening downtown. Dishes such as braised cookies, cookie thermidor, and for dessert : crepes.',
-					'News : "Ook", says interviewed orangutan.',
-					'News : cookies could be the key to '+choose(['eternal life','infinite riches','eternal youth','eternal beauty','curing baldness','world peace','solving world hunger','ending all wars world-wide','making contact with extraterrestrial life','mind-reading','better living','better eating','more interesting TV shows','faster-than-light travel','quantum baking','chocolaty goodness','gooder thoughtness'])+', say scientists.',
-					'News : flavor text '+choose(["not particularly flavorful","kind of unsavory"])+', study finds.',
-					'News : what do golden cookies taste like? Study reveals a flavor "somewhere between spearmint and liquorice".',
-					'News : what do red cookies taste like? Study reveals a flavor "somewhere between blood sausage and seawater".',
-					'News : '+Game.bakeryName+'-brand cookies "'+choose(['much less soggy','much tastier','relatively less crappy','marginally less awful','less toxic','possibly more edible','more fashionable','slightly nicer','trendier','arguably healthier','objectively better choice','slightly less terrible','decidedly cookier','a tad cheaper'])+' than competitors", says consumer survey.',
-					'News : "'+Game.bakeryName+'" set to be this year\'s most popular baby name.',
-					'News : new popularity survey says '+Game.bakeryName+'\'s the word when it comes to cookies.',
-					'News : major city being renamed '+Game.bakeryName+'ville after world-famous cookie manufacturer.',
-					'News : '+choose(['street','school','nursing home','stadium','new fast food chain','new planet','new disease','flesh-eating virus','deadly bacteria','new species of '+choose(animals),'new law','baby','programming language'])+' to be named after '+Game.bakeryName+', the world-famous cookie manufacturer.',
-					'News : don\'t miss tonight\'s biopic on '+Game.bakeryName+'\'s irresistible rise to success!',
-					'News : don\'t miss tonight\'s interview of '+Game.bakeryName+' by '+choose(['Bloprah','Blavid Bletterman','Blimmy Blimmel','Blellen Blegeneres','Blimmy Blallon','Blonan Blo\'Brien','Blay Bleno','Blon Blewart','Bleven Blolbert','Lord Toxikhron of dimension 7-B19',Game.bakeryName+'\'s own evil clone'])+'!',
-					'News : people all over the internet still scratching their heads over nonsensical reference : "Okay, but why an egg?"',
-					'News : viral video "Too Many Cookies" could be "a grim commentary on the impending crisis our world is about to face", says famous economist.',
-					'News : "memes from last year somehow still relevant", deplore experts.',
-					'News : cookie emoji most popular among teenagers, far ahead of "judgemental OK hand sign" and "shifty-looking dark moon", says study.',
-					'News : births of suspiciously bald babies on the rise; reptilian overlords deny involvement.',
-					'News : "at this point, cookies permeate the economy", says economist. "If we start eating anything else, we\'re all dead."',
-					'News : pun in headline infuriates town, causes riot. 21 wounded, 5 dead; mayor still missing.',
+					'新闻：scientist predicts imminent cookie-related "end of the world"; becomes joke among peers.',
+					'新闻：man robs bank, buys cookies.',
+					'新闻：scientists establish that the deal with airline food is, in fact, a critical lack of cookies.',
+					'新闻：hundreds of tons of cookies dumped into starving country from airplanes; thousands dead, nation grateful.',
+					'新闻：new study suggests cookies neither speed up nor slow down aging, but instead "take you in a different direction".',
+					'新闻：overgrown cookies found in fishing nets, raise questions about hormone baking.',
+					'新闻："all-you-can-eat" cookie restaurant opens in big city; waiters trampled in minutes.',
+					'新闻：man dies in cookie-eating contest; "a less-than-impressive performance", says judge.',
+					'新闻：what makes cookies taste so right? "Probably all the [*****] they put in them", says anonymous tipper.',
+					'新闻：man found allergic to cookies; "what a weirdo", says family.',
+					'新闻：foreign politician involved in cookie-smuggling scandal.',
+					'新闻：cookies now more popular than '+choose(['cough drops','broccoli','smoked herring','cheese','video games','stable jobs','relationships','time travel','cat videos','tango','fashion','television','nuclear warfare','whatever it is we ate before','politics','oxygen','lamps'])+', says study.',
+					'新闻：obesity epidemic strikes nation; experts blame '+choose(['twerking','that darn rap music','video-games','lack of cookies','mysterious ghostly entities','aliens','parents','schools','comic-books','cookie-snorting fad'])+'.',
+					'新闻：cookie shortage strikes town, people forced to eat cupcakes; "just not the same", concedes mayor.',
+					'新闻："you gotta admit, all this cookie stuff is a bit ominous", says confused idiot.',
+					'新闻：movie cancelled from lack of actors; "everybody\'s at home eating cookies", laments director.',
+					'新闻：comedian forced to cancel cookie routine due to unrelated indigestion.',
+					'新闻：new cookie-based religion sweeps the nation.',
+					'新闻：fossil records show cookie-based organisms prevalent during Cambrian explosion, scientists say.',
+					'新闻：mysterious illegal cookies seized; "tastes terrible", says police.',
+					'新闻：man found dead after ingesting cookie; investigators favor "mafia snitch" hypothesis.',
+					'新闻："the universe pretty much loops on itself," suggests researcher; "it\'s cookies all the way down."',
+					'新闻：minor cookie-related incident turns whole town to ashes; neighboring cities asked to chip in for reconstruction.',
+					'新闻：is our media controlled by the cookie industry? This could very well be the case, says crackpot conspiracy theorist.',
+					'新闻：'+choose(['cookie-flavored popcorn pretty damn popular; "we kinda expected that", say scientists.','cookie-flavored cereals break all known cereal-related records','cookies popular among all age groups, including fetuses, says study.','cookie-flavored popcorn sales exploded during screening of Grandmothers II : The Moistening.']),
+					'新闻：all-cookie restaurant opening downtown. Dishes such as braised cookies, cookie thermidor, and for dessert : crepes.',
+					'新闻："Ook", says interviewed orangutan.',
+					'新闻：cookies could be the key to '+choose(['eternal life','infinite riches','eternal youth','eternal beauty','curing baldness','world peace','solving world hunger','ending all wars world-wide','making contact with extraterrestrial life','mind-reading','better living','better eating','more interesting TV shows','faster-than-light travel','quantum baking','chocolaty goodness','gooder thoughtness'])+', say scientists.',
+					'新闻：flavor text '+choose(["not particularly flavorful","kind of unsavory"])+', study finds.',
+					'新闻：what do golden cookies taste like? Study reveals a flavor "somewhere between spearmint and liquorice".',
+					'新闻：what do red cookies taste like? Study reveals a flavor "somewhere between blood sausage and seawater".',
+					'新闻：'+Game.bakeryName+'-brand cookies "'+choose(['much less soggy','much tastier','relatively less crappy','marginally less awful','less toxic','possibly more edible','more fashionable','slightly nicer','trendier','arguably healthier','objectively better choice','slightly less terrible','decidedly cookier','a tad cheaper'])+' than competitors", says consumer survey.',
+					'新闻："'+Game.bakeryName+'" set to be this year\'s most popular baby name.',
+					'新闻：new popularity survey says '+Game.bakeryName+'\'s the word when it comes to cookies.',
+					'新闻：major city being renamed '+Game.bakeryName+'ville after world-famous cookie manufacturer.',
+					'新闻：'+choose(['street','school','nursing home','stadium','new fast food chain','new planet','new disease','flesh-eating virus','deadly bacteria','new species of '+choose(animals),'new law','baby','programming language'])+' to be named after '+Game.bakeryName+', the world-famous cookie manufacturer.',
+					'新闻：don\'t miss tonight\'s biopic on '+Game.bakeryName+'\'s irresistible rise to success!',
+					'新闻：don\'t miss tonight\'s interview of '+Game.bakeryName+' by '+choose(['Bloprah','Blavid Bletterman','Blimmy Blimmel','Blellen Blegeneres','Blimmy Blallon','Blonan Blo\'Brien','Blay Bleno','Blon Blewart','Bleven Blolbert','Lord Toxikhron of dimension 7-B19',Game.bakeryName+'\'s own evil clone'])+'!',
+					'新闻：people all over the internet still scratching their heads over nonsensical reference : "Okay, but why an egg?"',
+					'新闻：viral video "Too Many Cookies" could be "a grim commentary on the impending crisis our world is about to face", says famous economist.',
+					'新闻："memes from last year somehow still relevant", deplore experts.',
+					'新闻：cookie emoji most popular among teenagers, far ahead of "judgemental OK hand sign" and "shifty-looking dark moon", says study.',
+					'新闻：births of suspiciously bald babies on the rise; reptilian overlords deny involvement.',
+					'新闻："at this point, cookies permeate the economy", says economist. "If we start eating anything else, we\'re all dead."',
+					'新闻：pun in headline infuriates town, causes riot. 21 wounded, 5 dead; mayor still missing.',
 					'Nws : ky btwn W and R brokn, plas snd nw typwritr ASAP.',
 					'Neeeeews : "neeeew EEEEEE keeeeey working fineeeeeeeee", reeeports gleeeeeeeeful journalist.',
-					'News : cookies now illegal in some backwards country nobody cares about. Political tensions rising; war soon, hopefully.',
-					'News : irate radio host rambles about pixelated icons. "None of the cookies are aligned! Can\'t anyone else see it? I feel like I\'m taking crazy pills!"',
-					'News : "average person bakes '+Beautify(Math.ceil(Game.cookiesEarned/7300000000))+' cookie'+(Math.ceil(Game.cookiesEarned/7300000000)==1?'':'s')+' a year" factoid actually just statistical error; '+Game.bakeryName+', who has produced '+Beautify(Game.cookiesEarned)+' cookies in their lifetime, is an outlier and should not have been counted.'
+					'新闻：cookies now illegal in some backwards country nobody cares about. Political tensions rising; war soon, hopefully.',
+					'新闻：irate radio host rambles about pixelated icons. "None of the cookies are aligned! Can\'t anyone else see it? I feel like I\'m taking crazy pills!"',
+					'新闻："average person bakes '+Beautify(Math.ceil(Game.cookiesEarned/7300000000))+' cookie'+(Math.ceil(Game.cookiesEarned/7300000000)==1?'':'s')+' a year" factoid actually just statistical error; '+Game.bakeryName+', who has produced '+Beautify(Game.cookiesEarned)+' cookies in their lifetime, is an outlier and should not have been counted.'
 					])
 				);
 			}
@@ -5349,25 +5349,25 @@ Game.Launch=function()
 			{
 				list=[];
 				if (Game.elderWrath==1) list.push(choose([
-					'News : millions of old ladies reported missing!',
-					'News : processions of old ladies sighted around cookie facilities!',
-					'News : families around the continent report agitated, transfixed grandmothers!',
-					'News : doctors swarmed by cases of old women with glassy eyes and a foamy mouth!',
-					'News : nurses report "strange scent of cookie dough" around female elderly patients!'
+					'新闻：millions of old ladies reported missing!',
+					'新闻：processions of old ladies sighted around cookie facilities!',
+					'新闻：families around the continent report agitated, transfixed grandmothers!',
+					'新闻：doctors swarmed by cases of old women with glassy eyes and a foamy mouth!',
+					'新闻：nurses report "strange scent of cookie dough" around female elderly patients!'
 				]));
 				if (Game.elderWrath==2) list.push(choose([
-					'News : town in disarray as strange old ladies break into homes to abduct infants and baking utensils!',
-					'News : sightings of old ladies with glowing eyes terrify local population!',
-					'News : retirement homes report "female residents slowly congealing in their seats"!',
-					'News : whole continent undergoing mass exodus of old ladies!',
-					'News : old women freeze in place in streets, ooze warm sugary syrup!'
+					'新闻：town in disarray as strange old ladies break into homes to abduct infants and baking utensils!',
+					'新闻：sightings of old ladies with glowing eyes terrify local population!',
+					'新闻：retirement homes report "female residents slowly congealing in their seats"!',
+					'新闻：whole continent undergoing mass exodus of old ladies!',
+					'新闻：old women freeze in place in streets, ooze warm sugary syrup!'
 				]));
 				if (Game.elderWrath==3) list.push(choose([
-					'News : large "flesh highways" scar continent, stretch between various cookie facilities!',
-					'News : wrinkled "flesh tendrils" visible from space!',
-					'News : remains of "old ladies" found frozen in the middle of growing fleshy structures!', 
-					'News : all hope lost as writhing mass of flesh and dough engulfs whole city!',
-					'News : nightmare continues as wrinkled acres of flesh expand at alarming speeds!'
+					'新闻：large "flesh highways" scar continent, stretch between various cookie facilities!',
+					'新闻：wrinkled "flesh tendrils" visible from space!',
+					'新闻：remains of "old ladies" found frozen in the middle of growing fleshy structures!', 
+					'新闻：all hope lost as writhing mass of flesh and dough engulfs whole city!',
+					'新闻：nightmare continues as wrinkled acres of flesh expand at alarming speeds!'
 				]));
 			}
 			
