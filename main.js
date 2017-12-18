@@ -5100,148 +5100,149 @@ Game.Launch=function()
 				]));
 				
 				if (Game.Objects['Alchemy lab'].amount>0) list.push(choose([
-				'新闻：national gold reserves dwindle as more and more of the precious mineral is turned to cookies!',
-				'新闻：chocolate jewelry found fashionable, gold and diamonds "just a fad", says specialist.',
-				'新闻：silver found to also be transmutable into white chocolate!',
-				'新闻：defective alchemy lab shut down, found to convert cookies to useless gold.',
-				'新闻：alchemy-made cookies shunned by purists!'
+				'新闻：随着越来越多的珍贵矿物转向饼干，国家黄金储备越来越少！',
+				'新闻：巧克力首饰发现时尚，黄金和钻石“只是一个时尚”，专家说。',
+				'新闻：银被发现也可以转化成白巧克力！',
+				'新闻：有缺陷的炼金实验室被关闭，因为被发现把饼干转换成无用的黄金。',
+				'新闻：纯粹主义者避而不谈的炼金术饼干！'
 				]));
 				
 				if (Game.Objects['Portal'].amount>0) list.push(choose([
-				'新闻：nation worried as more and more unsettling creatures emerge from dimensional portals!',
-				'新闻：dimensional portals involved in city-engulfing disaster!',
-				'新闻：tourism to cookieverse popular with bored teenagers! Casualty rate as high as 73%!',
-				'新闻：cookieverse portals suspected to cause fast aging and obsession with baking, says study.',
-				'新闻："do not settle near portals," says specialist; "your children will become strange and corrupted inside."'
+				'新闻：越来越多令人不安的生物从三维门户涌现出来，国家担心！',
+				'新闻：涉及城市吞没的三维门户！',
+				'新闻：旅游业，被无聊的青少年欢迎！ 伤亡率高达73％！',
+				'新闻：研究表示，门户被怀疑会导致快速老化和对烘焙的痴迷。',
+				'新闻："不要在门户附近定居，“专家说，”你的孩子会变得陌生和腐败。“'
 				]));
 				
 				if (Game.Objects['Time machine'].amount>0) list.push(choose([
-				'新闻：time machines involved in history-rewriting scandal! Or are they?',
-				'新闻：time machines used in unlawful time tourism!',
-				'新闻：cookies brought back from the past "unfit for human consumption", says historian.',
-				'新闻：various historical figures inexplicably replaced with talking lumps of dough!',
-				'新闻："I have seen the future," says time machine operator, "and I do not wish to go there again."'
+				'新闻：涉及历史重写丑闻的时间机器！ 还是他们？',
+				'新闻：时间机器用于非法时间旅游！',
+				'新闻：从过去带回来的曲奇“不适合人类消费”，历史学家说。',
+				'新闻：各种历史人物莫名其妙地被说话的面团替换！',
+				'新闻："我看到了未来，“时光机操作员说，”我不想再去那里了。“'
 				]));
 				
 				if (Game.Objects['Antimatter condenser'].amount>0) list.push(choose([
-				'新闻：whole town seemingly swallowed by antimatter-induced black hole; more reliable sources affirm town "never really existed"!',
-				'新闻："explain to me again why we need particle accelerators to bake cookies?" asks misguided local woman.',
-				'新闻：first antimatter condenser successfully turned on, doesn\'t rip apart reality!',
-				'新闻：researchers conclude that what the cookie industry needs, first and foremost, is "more magnets".',
-				'新闻："unravelling the fabric of reality just makes these cookies so much tastier", claims scientist.'
+				'新闻：似乎被反物质诱发的黑洞吞噬了整个城镇; 更可靠的消息来源肯定“永远不会存在”的城市！',
+				'新闻：被误导的当地妇女问：“再次向我解释为什么我们需要粒子加速器来烤饼干？” ',
+				'新闻：第一个反物质冷凝器成功打开，没有撕裂现实！',
+				'新闻：研究人员总结说，饼干行业首先需要的是“更多的磁铁”。',
+				'新闻：科学家称，“解开现实的结构，使这些饼干更加美味。”'
 				]));
 				
 				if (Game.Objects['Prism'].amount>0) list.push(choose([
-				'新闻：new cookie-producing prisms linked to outbreak of rainbow-related viral videos.',
-				'新闻：scientists warn against systematically turning light into matter - "One day, we\'ll end up with all matter and no light!"',
-				'新闻：cookies now being baked at the literal speed of light thanks to new prismatic contraptions.',
-				'新闻："Can\'t you sense the prism watching us?", rambles insane local man. "No idea what he\'s talking about", shrugs cookie magnate/government official.',
-				'新闻：world citizens advised "not to worry" about frequent atmospheric flashes.',
+				'新闻：与彩虹相关的病毒视频爆发，与新的产生饼干的棱镜有关。',
+				'新闻：科学家警告说，不要有系统地将光转化为物质 - “有一天，我们将会结束所有的事情而不是光明的！”',
+				'新闻：由于新的棱镜装置，现在正以光的字面速度烘烤饼干。',
+				'新闻：“你能感觉到棱镜在看着我们吗？”，疯狂的本地人。 “不知道他在说什么”，政府官员耸耸肩。',
+				'新闻：世界公民建议“不要担心”频繁的大气闪光。',
 				]));
 				
 				if (Game.Objects['Chancemaker'].amount>0) list.push(choose([
-				'新闻：strange statistical anomalies continue as weather forecast proves accurate an unprecedented 3 days in a row!',
-				'新闻：local casino ruined as all gamblers somehow hit a week-long winning streak! "We might still be okay", says owner before being hit by lightning 47 times.',
-				'新闻：neighboring nation somehow elects president with sensible policies in freak accident of random chance!',
-				'新闻：million-to-one event sees gritty movie reboot turning out better than the original! "We have no idea how this happened", say movie execs.',
-				'新闻：all scratching tickets printed as winners, prompting national economy to crash and, against all odds, recover overnight.',
+				'新闻：奇怪的统计异常继续，因为天气预报证明准确的连续三天！',
+				'新闻：当地的赌场被毁，因为所有的赌客不知何故打了一个星期的连胜！ “我们可能仍然是好的”，被闪电击中47次的前老板说。',
+				'新闻：邻居国家莫名其妙地选举总统在随机偶然事件中的合理政策！',
+				'新闻：百万对一的事件看到坚韧不拔的电影重新启动比原来更好！ 电影高管说：“我们不知道这是怎么发生的。”',
+				'新闻：打印为获奖者都刮票，促使国民经济崩溃，并克服一切困难，恢复过夜。',
 				]));
 				
 				if (Game.season=='halloween' && Game.cookiesEarned>=1000) list.push(choose([
-				'新闻：strange twisting creatures amass around cookie factories, nibble at assembly lines.',
-				'新闻：ominous wrinkly monsters take massive bites out of cookie production; "this can\'t be hygienic", worries worker.',
-				'新闻：pagan rituals on the rise as children around the world dress up in strange costumes and blackmail homeowners for candy.',
-				'新闻：new-age terrorism strikes suburbs as houses find themselves covered in eggs and toilet paper.',
-				'新闻：children around the world "lost and confused" as any and all Halloween treats have been replaced by cookies.'
+				'新闻：奇怪的扭曲生物聚集在饼干工厂周围，在装配线上轻咬。',
+				'新闻：不祥的怪物在饼干生产过程中大量地咬人; “这不卫生”，担心工人。',
+				'新闻：随着世界各地的孩子们穿上奇装异服，敲诈房主糖果，异教仪式也在不断上升。',
+				'新闻：当房屋被鸡蛋和卫生纸覆盖时，新的恐怖主义袭击了郊区。',
+				'新闻：全世界的孩子们都“迷茫和困惑”，因为任何万圣节的食物都被饼干取代。'
 				]));
 				
 				if (Game.season=='christmas' && Game.cookiesEarned>=1000) list.push(choose([
-				'新闻：bearded maniac spotted speeding on flying sleigh! Investigation pending.',
-				'新闻：Santa Claus announces new brand of breakfast treats to compete with cookie-flavored cereals! "They\'re ho-ho-horrible!" says Santa.',
-				'新闻："You mean he just gives stuff away for free?!", concerned moms ask. "Personally, I don\'t trust his beard."',
-				'新闻：obese jolly lunatic still on the loose, warn officials. "Keep your kids safe and board up your chimneys. We mean it."',
-				'新闻：children shocked as they discover Santa Claus isn\'t just their dad in a costume after all!<br>"I\'m reassessing my life right now", confides Laura, aged 6.',
-				'新闻：mysterious festive entity with quantum powers still wrecking havoc with army of reindeer, officials say.',
-				'新闻：elves on strike at toy factory! "We will not be accepting reindeer chow as payment anymore. And stop calling us elves!"',
-				'新闻：elves protest around the nation; wee little folks in silly little outfits spread mayhem, destruction; rabid reindeer running rampant through streets.',
-				'新闻：scholars debate regarding the plural of reindeer(s) in the midst of elven world war.',
-				'新闻：elves "unrelated to gnomes despite small stature and merry disposition", find scientists.',
-				'新闻：elves sabotage radioactive frosting factory, turn hundreds blind in vincinity - "Who in their right mind would do such a thing?" laments outraged mayor.',
-				'新闻：drama unfolds at North Pole as rumors crop up around Rudolph\'s red nose; "I may have an addiction or two", admits reindeer.'
+				'新闻：有胡子的疯子被发现超速驾驶雪橇！ 正在调查。',
+				'新闻：圣诞老人宣布新品牌的早餐款待与饼干味麦片竞争！ “他们太可怕了！” 圣诞老人说。',
+				'新闻："你的意思是他只是免费送走东西？“，有关的妈妈问道，”就我个人而言，我不信任他的胡子。“',
+				'新闻：警告官员说，肥胖的疯狂的疯子仍然在逃。 “保持你的孩子安全，登上你的烟囱，我们的意思是。',
+				'新闻：孩子们惊呆了，因为他们发现圣诞老人只是他们的父亲穿着服装假扮的！“我现在反思自己现在的生活”，6岁的劳拉倾诉。',
+				'新闻：量子力量仍与驯鹿的军队造成严重破坏的神秘节日实体，官员说。',
+				'新闻：精灵在玩具厂罢工！ “我们不会再接受驯鹿食品了，不要再叫我们精灵了！',
+				'新闻：精灵在全国抗议; 愚蠢的小服装的小家伙传播混乱，破坏; 疯狂的驯鹿在街上横行。',
+				'新闻：学者争论关于精灵世界战争中驯鹿（S）的复数形式。',
+				'新闻：精灵“与侏儒无关，尽管身材矮小，性格开朗”，找到科学家。',
+				'新闻：精灵破坏放射性结霜厂，百变百出 - “谁在脑海中会做这样的事情？ 愤怒的市长感叹。',
+				'新闻：随着红鼻鲁道夫的传言，戏剧般的在北极展开; “我可能有一两个瘾”，承认驯鹿。'
 				]));
 				
 				if (Game.season=='valentines' && Game.cookiesEarned>=1000) list.push(choose([
-				'新闻：organ-shaped confectioneries being traded in schools all over the world; gruesome practice undergoing investigation.',
-				'新闻：heart-shaped candies overtaking sweets business, offering competition to cookie empire. "It\'s the economy, cupid!"',
-				'新闻：love\'s in the air, according to weather specialists. Face masks now offered in every city to stunt airborne infection.',
-				'新闻：marrying a cookie - deranged practice, or glimpse of the future?',
-				'新闻：boyfriend dumped after offering his lover cookies for Valentine\'s Day, reports say. "They were off-brand", shrugs ex-girlfriend.'
+				'新闻：在世界各地的学校里买卖器官形状的糖果; 可怕的做法正在接受调查。',
+				'新闻：心形糖果超越糖果业务，提供竞争到饼干帝国。 “这是经济，丘比特！”',
+				'新闻：据天气专家介绍，爱情在空气中。 现在每个城市都提供口罩，以阻止空气传播。',
+				'新闻：结婚饼干 - 疯狂的做法，还是未来的一瞥？',
+				'新闻：男友在为情人节献上恋人饼干后被抛弃。 “他们没有品牌”，前女友耸耸肩。'
 				]));
 				
 				if (Game.season=='easter' && Game.cookiesEarned>=1000) list.push(choose([
-				'新闻：long-eared rodents invade suburbs, spread terror and chocolate!',
-				'新闻：eggs have begun to materialize in the most unexpected places; "no place is safe", warn experts.',
-				'新闻：packs of rampaging rabbits cause billions in property damage; new strain of myxomatosis being developed.',
-				'新闻：egg-laying rabbits "not quite from this dimension", warns biologist; advises against petting, feeding, or cooking the creatures.',
-				'新闻：mysterious rabbits found to be egg-layers, but warm-blooded, hinting at possible platypus ancestry.'
+				'新闻：长耳啮齿动物入侵郊区，传播恐怖和巧克力！',
+				'新闻：鸡蛋已经开始在最意想不到的地方出现; “没有地方是安全的”，警告专家。',
+				'新闻：狂暴兔包造成数十亿的财产损失; 正在开发新的粘液瘤菌株。',
+				'新闻：产卵的兔子“完全不属于这个维度”，警告生物学家; 建议不要抚摸，喂食或烹饪这些生物。',
+				'新闻：发现神秘的兔子是卵生，但温血动物，在可能的鸭嘴兽祖先暗示。'
 				]));
 				
 				if (Math.random()<0.05)
 				{
-					if (Game.HasAchiev('Base 10')) list.push('新闻：cookie manufacturer completely forgoes common sense, lets OCD drive building decisions!');//somehow I got flak for this one
-					if (Game.HasAchiev('From scratch')) list.push('新闻：follow the tear-jerking, riches-to-rags story about a local cookie manufacturer who decided to give it all up!');
-					if (Game.HasAchiev('A world filled with cookies')) list.push('新闻：known universe now jammed with cookies! No vacancies!');
-					if (Game.HasAchiev('Last Chance to See')) list.push('新闻：incredibly rare albino wrinkler on the brink of extinction poached by cookie-crazed pastry magnate!');
-					if (Game.Has('Serendipity')) list.push('新闻：local cookie manufacturer becomes luckiest being alive!');
-					if (Game.Has('Season switcher')) list.push('新闻：seasons are all out of whack! "We need to get some whack back into them seasons", says local resident.');
+					if (Game.HasAchiev('Base 10')) list.push('新闻：饼干制造商完全放弃常识，让强迫驱动建设的决定！');//somehow I got flak for this one
+					if (Game.HasAchiev('From scratch')) list.push('新闻：遵循有关本地饼干生产商谁决定放弃一切的催人泪下，财富到抹布的故事！');
+					if (Game.HasAchiev('A world filled with cookies')) list.push('新闻：现在已知的宇宙挤满了饼干！ 没有空位！');
+					if (Game.HasAchiev('Last Chance to See')) list.push('新闻：令人难以置信的罕见的白化皱纹在饼干疯狂的糕点巨头被偷猎灭绝的边缘！
+');
+					if (Game.Has('Serendipity')) list.push('新闻：本地饼干制造商成为最幸运的幸存者！');
+					if (Game.Has('Season switcher')) list.push('新闻：四季都不堪重负！ 当地居民说：“我们需要重新考虑季节。”');
 					
-					if (Game.Has('Kitten helpers')) list.push('新闻：faint meowing heard around local cookie facilities; suggests new ingredient being tested.');
-					if (Game.Has('Kitten workers')) list.push('新闻：crowds of meowing kittens with little hard hats reported near local cookie facilities.');
-					if (Game.Has('Kitten engineers')) list.push('新闻：surroundings of local cookie facilities now overrun with kittens in adorable little suits. Authorities advise to stay away from the premises.');
-					if (Game.Has('Kitten overseers')) list.push('新闻：locals report troupe of bossy kittens meowing adorable orders at passersby.');
-					if (Game.Has('Kitten managers')) list.push('新闻：local office cubicles invaded with armies of stern-looking kittens asking employees "what\'s happening, meow".');
-					if (Game.Has('Kitten accountants')) list.push('新闻：tiny felines show sudden and amazing proficiency with fuzzy mathematics and pawlinomials, baffling scientists and pet store owners.');
-					if (Game.Has('Kitten specialists')) list.push('新闻：new kitten college opening next week, offers courses on cookie-making and catnip studies.');
-					if (Game.Has('Kitten experts')) list.push('新闻：unemployment rates soaring as woefully adorable little cats nab jobs on all levels of expertise, says study.');
-					if (Game.Has('Kitten consultants')) list.push('新闻："In the future, your job will most likely be done by a cat", predicts suspiciously furry futurologist.');
-					if (Game.Has('Kitten assistants to the regional manager')) list.push('新闻：strange kittens with peculiar opinions on martial arts spotted loitering on local beet farms!');
-					if (Game.Has('Kitten angels')) list.push('新闻："Try to ignore any ghostly felines that may be purring inside your ears," warn scientists. "They\'ll just lure you into making poor life choices."');
+					if (Game.Has('Kitten helpers')) list.push('新闻：在当地的饼干设施周围听到微弱的喵喵声; 建议正在测试的新成分。');
+					if (Game.Has('Kitten workers')) list.push('新闻：一群喵喵叫的小猫，戴着小小的安全帽，在当地的饼干设施附近报道。');
+					if (Game.Has('Kitten engineers')) list.push('新闻：当地饼干设施的环境现在充斥着在可爱的小西装小猫。 当局建议远离该处所。');
+					if (Game.Has('Kitten overseers')) list.push('新闻：当地人向路人报告可笑的命令的专横的小猫的剧团。');
+					if (Game.Has('Kitten managers')) list.push('新闻：当地的办公室隔间就被严厉的小猫军队侵入，问员工“发生什么事了，喵喵”。');
+					if (Game.Has('Kitten accountants')) list.push('新闻：微小的猫科动物模糊的数学和爪子，突然惊人的熟练，科学家和宠物店主被困扰。');
+					if (Game.Has('Kitten specialists')) list.push('新闻：新的小猫学院下周开放，提供饼干制作和猫薄荷研究课程。');
+					if (Game.Has('Kitten experts')) list.push('新闻：研究报告说，失业率飙升，因为悲惨的可爱的小猫在各方面的专业技能上都占据了上风。');
+					if (Game.Has('Kitten consultants')) list.push('新闻：可疑的毛茸茸的未来学家预测说：“将来你的工作很可能会由一只猫来完成。”');
+					if (Game.Has('Kitten assistants to the regional manager')) list.push('新闻：奇怪的小猫有被发现在当地的甜菜农场徘徊！');
+					if (Game.Has('Kitten angels')) list.push('新闻："试着忽略任何可能在你耳边咕噜咕噜的幽灵般的猫，“科学家警告说，”他们只会引诱你做出糟糕的人生选择。');
 				}
 					
 				if (Game.HasAchiev('Dude, sweet') && Math.random()<0.3) list.push(choose([
-				'新闻：major sugar-smuggling ring dismantled by authorities; '+Math.floor(Math.random()*30+3)+' tons of sugar lumps seized, '+Math.floor(Math.random()*48+2)+' suspects apprehended.',
-				'新闻：authorities warn tourists not to buy bootleg sugar lumps from street peddlers - "You think you\'re getting a sweet deal, but what you\'re being sold is really just ordinary cocaine", says agent.',
-				'新闻：pro-diabetes movement protests against sugar-shaming. "I\'ve eaten nothing but sugar lumps for the past '+Math.floor(Math.random()*10+4)+' years and I\'m feeling great!", says woman with friable skin.',
-				'新闻：experts in bitter disagreement over whether sugar consumption turns children sluggish or hyperactive.',
-				'新闻：fishermen deplore upturn in fish tooth decay as sugar lumps-hauling cargo sinks into the ocean.',
-				'新闻：rare black sugar lump that captivated millions in unprecedented auction revealed to be common toxic fungus.',
-				'新闻："Back in my day, sugar lumps were these little cubes you\'d put in your tea, not those fist-sized monstrosities people eat for lunch", whines curmudgeon with failing memory.',
-				'新闻：sugar lump-snacking fad sweeps the nation; dentists everywhere rejoice.'
+				'新闻：重要的缉私环被当局捣毁; '+Math.floor(Math.random()*30+3)+' 吨糖块被查获， '+Math.floor(Math.random()*48+2)+' 嫌疑人被捕。',
+				'新闻：当局警告游客不要从街头小贩购买盗版糖块 - “你以为你得到一个甜蜜的交易，其实他们出售的只是普通的可卡因”，特工说。',
+				'新闻：亲糖尿病运动抗议糖的羞辱。 “过去我只吃过糖块，现在'+Math.floor(Math.random()*10+4)+' 年，我感觉很棒！“皮肤脆弱的女士说。',
+				'新闻：专家们对于食糖是否会使孩子变得迟钝或过度活跃的分歧感到痛苦。',
+				'新闻：随着糖块运输货物进入海洋，渔民痛惜鱼蛀牙的好转。',
+				'新闻：在前所未有的拍卖会上迷上千万的罕见的黑糖块显示是常见的有毒木耳。',
+				'新闻：“回到我的日子里，糖块就是你放进茶里的小方块，而不是那些午餐时吃的拳头大小的怪物”。',
+				'新闻：糖馒头流行风尚席卷全国; 牙医到处欢欣鼓舞。'
 				]));
 				
 				if (Math.random()<0.001)//apologies to Will Wright
 				{
 					list.push(
-					'You have been chosen. They will come soon.',
-					'They\'re coming soon. Maybe you should think twice about opening the door.',
-					'The end is near. Make preparations.'
+					'你已经被选中了,他们会很快来。',
+					'他们很快就要来了。 也许你应该考虑打开门。',
+					'尽头快到了。 做准备。'
 					);
 				}
 				
 				if (Game.cookiesEarned>=10000) list.push(
 				'新闻：'+choose([
-					'cookies found to '+choose(['increase lifespan','sensibly increase intelligence','reverse aging','decrease hair loss','prevent arthritis','cure blindness'])+' in '+choose(animals)+'!',
-					'cookies found to make '+choose(animals)+' '+choose(['more docile','more handsome','nicer','less hungry','more pragmatic','tastier'])+'!',
-					'cookies tested on '+choose(animals)+', found to have no ill effects.',
-					'cookies unexpectedly popular among '+choose(animals)+'!',
-					'unsightly lumps found on '+choose(animals)+' near cookie facility; "they\'ve pretty much always looked like that", say biologists.',
-					'new species of '+choose(animals)+' discovered in distant country; "yup, tastes like cookies", says biologist.',
-					'cookies go well with roasted '+choose(animals)+', says controversial chef.',
-					'"do your cookies contain '+choose(animals)+'?", asks PSA warning against counterfeit cookies.',
-					'doctors recommend twice-daily consumption of fresh cookies.',
-					'doctors warn against chocolate chip-snorting teen fad.',
-					'doctors advise against new cookie-free fad diet.',
-					'doctors warn mothers about the dangers of "home-made cookies".'
+					'cookies found to '+choose(['increase lifespan','sensibly increase intelligence','reverse aging','decrease hair loss','prevent arthritis','cure blindness'])+' 在 '+choose(animals)+'!',
+					'发现的饼干 '+choose(animals)+' '+choose(['more docile','more handsome','nicer','less hungry','more pragmatic','tastier'])+'!',
+					'饼干经过测试 '+choose(animals)+', 发现没有不良影响。',
+					'饼干意外流行之中 '+choose(animals)+'!',
+					'难看的肿块被发现在 '+choose(animals)+' 靠近饼干设施; “他们几乎总是这样看”，生物学家说。',
+					'新种 '+choose(animals)+' 在遥远的国家发现; “好的，味道像饼干”，生物学家说。',
+					'饼干烤得很好 '+choose(animals)+', 有争议的厨师说。',
+					'“你做的饼干含有'+choose(animals)+'?",PSA警告要求反对假冒的饼干。',
+					'医生建议每天食用两次新鲜的饼干。',
+					'医生警告反对巧克力片吸食青少年时尚。',
+					'医生建议反对新的无饼干时尚饮食。',
+					'医生警告母亲关于“自制饼干”的危险。'
 					]),
 				'新闻："'+choose([
 					'I\'m all about cookies',
@@ -5319,29 +5320,29 @@ Game.Launch=function()
 				else if (Game.cookiesEarned<50) list.push('你做的第一批饼干去了垃圾桶。 邻居的浣熊几乎都没有去碰它。');
 				else if (Game.cookiesEarned<100) list.push('你的家人接受尝试一些你的饼干。');
 				else if (Game.cookiesEarned<500) list.push('你的饼干在附近很受欢迎。');
-				else if (Game.cookiesEarned<1000) list.push('People are starting to talk about your cookies.');
-				else if (Game.cookiesEarned<5000) list.push('Your cookies are talked about for miles around.');
-				else if (Game.cookiesEarned<10000) list.push('Your cookies are renowned in the whole town!');
-				else if (Game.cookiesEarned<50000) list.push('Your cookies bring all the boys to the yard.');
-				else if (Game.cookiesEarned<100000) list.push('Your cookies now have their own website!');
-				else if (Game.cookiesEarned<500000) list.push('Your cookies are worth a lot of money.');
-				else if (Game.cookiesEarned<1000000) list.push('Your cookies sell very well in distant countries.');
-				else if (Game.cookiesEarned<5000000) list.push('People come from very far away to get a taste of your cookies.');
-				else if (Game.cookiesEarned<10000000) list.push('Kings and queens from all over the world are enjoying your cookies.');
-				else if (Game.cookiesEarned<50000000) list.push('There are now museums dedicated to your cookies.');
-				else if (Game.cookiesEarned<100000000) list.push('A national day has been created in honor of your cookies.');
-				else if (Game.cookiesEarned<500000000) list.push('Your cookies have been named a part of the world wonders.');
-				else if (Game.cookiesEarned<1000000000) list.push('History books now include a whole chapter about your cookies.');
-				else if (Game.cookiesEarned<5000000000) list.push('Your cookies have been placed under government surveillance.');
-				else if (Game.cookiesEarned<10000000000) list.push('The whole planet is enjoying your cookies!');
-				else if (Game.cookiesEarned<50000000000) list.push('Strange creatures from neighboring planets wish to try your cookies.');
-				else if (Game.cookiesEarned<100000000000) list.push('Elder gods from the whole cosmos have awoken to taste your cookies.');
-				else if (Game.cookiesEarned<500000000000) list.push('Beings from other dimensions lapse into existence just to get a taste of your cookies.');
-				else if (Game.cookiesEarned<1000000000000) list.push('Your cookies have achieved sentience.');
-				else if (Game.cookiesEarned<5000000000000) list.push('The universe has now turned into cookie dough, to the molecular level.');
-				else if (Game.cookiesEarned<10000000000000) list.push('Your cookies are rewriting the fundamental laws of the universe.');
-				else if (Game.cookiesEarned<10000000000000) list.push('A local news station runs a 10-minute segment about your cookies. Success!<br><span style="font-size:50%;">(you win a cookie)</span>');
-				else if (Game.cookiesEarned<10100000000000) list.push('it\'s time to stop playing');//only show this for 100 millions (it's funny for a moment)
+				else if (Game.cookiesEarned<1000) list.push('人们开始谈论你的饼干。');
+				else if (Game.cookiesEarned<5000) list.push('你的饼干被谈论了几英里左右。');
+				else if (Game.cookiesEarned<10000) list.push('你的饼干在整个城镇都很有名！');
+				else if (Game.cookiesEarned<50000) list.push('你的饼干把所有的男孩带到院子里。');
+				else if (Game.cookiesEarned<100000) list.push('你的饼干现在有自己的网站！');
+				else if (Game.cookiesEarned<500000) list.push('你的饼干值得很多钱。');
+				else if (Game.cookiesEarned<1000000) list.push('你的饼干在遥远的国家卖得很好。');
+				else if (Game.cookiesEarned<5000000) list.push('人们从很远的地方，品尝你的饼干的味道。');
+				else if (Game.cookiesEarned<10000000) list.push('来自世界各地的国王和王后都喜欢你的饼干。');
+				else if (Game.cookiesEarned<50000000) list.push('现在有专门为您的饼干建的博物馆。');
+				else if (Game.cookiesEarned<100000000) list.push('国庆节是为了纪念你的饼干而创建的。');
+				else if (Game.cookiesEarned<500000000) list.push('你的饼干已被命名为世界奇观的一部分。');
+				else if (Game.cookiesEarned<1000000000) list.push('历史书籍现在包含了关于你的饼干的整个章节。');
+				else if (Game.cookiesEarned<5000000000) list.push('您的饼干已被置于政府监控之下。');
+				else if (Game.cookiesEarned<10000000000) list.push('整个星球都在享受你的饼干！');
+				else if (Game.cookiesEarned<50000000000) list.push('来自邻近行星的奇怪生物希望尝试你的饼干。');
+				else if (Game.cookiesEarned<100000000000) list.push('来自整个宇宙的神都惊醒过来品尝你的饼干。');
+				else if (Game.cookiesEarned<500000000000) list.push('其他维度的生物只是为了品尝你的饼干。');
+				else if (Game.cookiesEarned<1000000000000) list.push('你的饼干都取得了知觉。');
+				else if (Game.cookiesEarned<5000000000000) list.push('现在宇宙已经变成饼干面团，从分子水平上来说。');
+				else if (Game.cookiesEarned<10000000000000) list.push('你的饼干正在重写宇宙的基本规律。');
+				else if (Game.cookiesEarned<10000000000000) list.push('当地一家新闻电台对您的饼干进行10分钟的细分。 成功！<br><span style="font-size:50%;">（你赢了一个饼干）</span>');
+				else if (Game.cookiesEarned<10100000000000) list.push('该停止播放了');//only show this for 100 millions (it's funny for a moment)
 			}
 			
 			//if (Game.elderWrath>0 && (Game.pledges==0 || Math.random()<0.2))
@@ -5349,25 +5350,25 @@ Game.Launch=function()
 			{
 				list=[];
 				if (Game.elderWrath==1) list.push(choose([
-					'新闻：millions of old ladies reported missing!',
-					'新闻：processions of old ladies sighted around cookie facilities!',
-					'新闻：families around the continent report agitated, transfixed grandmothers!',
-					'新闻：doctors swarmed by cases of old women with glassy eyes and a foamy mouth!',
-					'新闻：nurses report "strange scent of cookie dough" around female elderly patients!'
+					'新闻：数百万老奶奶被报告失踪！',
+					'新闻：老奶奶的游行在饼干设施附近被看见！',
+					'新闻：报告称大陆各地的家庭激动，呆若木鸡的祖母！',
+					'新闻：医生们被玻璃般的眼睛和一个泡沫的嘴巴的老女人的案件蜂拥而至！',
+					'新闻：护士报告在女性老年病人周围有“饼干面团的怪味”！'
 				]));
 				if (Game.elderWrath==2) list.push(choose([
-					'新闻：town in disarray as strange old ladies break into homes to abduct infants and baking utensils!',
-					'新闻：sightings of old ladies with glowing eyes terrify local population!',
-					'新闻：retirement homes report "female residents slowly congealing in their seats"!',
-					'新闻：whole continent undergoing mass exodus of old ladies!',
-					'新闻：old women freeze in place in streets, ooze warm sugary syrup!'
+					'新闻：奇怪的老太太闯入家中绑架婴儿和烘焙用具，城镇混乱不堪！',
+					'新闻：老太太们目光炯炯地看着当地人！',
+					'新闻：退休之家报告“女性居民慢慢凝固在自己的座位上”！',
+					'新闻：整个大陆正在经历老太太的大批流亡！',
+					'新闻：老妇人在街上冻住了，渗出温糖糖浆！'
 				]));
 				if (Game.elderWrath==3) list.push(choose([
-					'新闻：large "flesh highways" scar continent, stretch between various cookie facilities!',
-					'新闻：wrinkled "flesh tendrils" visible from space!',
-					'新闻：remains of "old ladies" found frozen in the middle of growing fleshy structures!', 
-					'新闻：all hope lost as writhing mass of flesh and dough engulfs whole city!',
-					'新闻：nightmare continues as wrinkled acres of flesh expand at alarming speeds!'
+					'新闻：大“肉路”疤痕大陆，绵延在各种饼干设施之间！',
+					'新闻：皱“割肉卷须”从太空可以看到！',
+					'新闻：“老太太”的遗体被发现冻结在肉质结构中间！', 
+					'新闻：所有的希望都像扭曲的肉团吞没整个城市一样，失去了！',
+					'新闻：恶梦继续，因为皱纹英亩的肉体以惊人的速度扩张！'
 				]));
 			}
 			
@@ -5376,9 +5377,9 @@ Game.Launch=function()
 				list=[];
 				
 				if (Game.cookiesEarned>=1000) list.push(choose([
-					'Your office chair is really comfortable.',
-					'Business meetings are such a joy!',
-					'You\'ve spent the whole day '+choose(['signing contracts','filling out forms','touching base with the team','examining exciting new prospects','playing with your desk toys','getting new nameplates done','attending seminars','videoconferencing','hiring dynamic young executives','meeting new investors','playing minigolf in your office'])+'!',
+					'你的办公椅很舒服。',
+					'商务会议是如此的快乐！',
+					'你花了一整天的时间 '+choose(['签订合同','填写表格','与团队接触的基地','考察令人兴奋的新的前景','玩桌上玩具','获得新的铭牌','参加研讨会','视频会议','雇用充满活力的年轻高管','会见新的投资者','在你的办公室玩迷你高尔夫'])+'!',
 					'The word of the day is : '+choose(['viral','search engine optimization','blags and wobsites','social networks','web 3.0','logistics','leveraging','branding','proactive','synergizing','market research','demographics','pie charts','blogular','blogulacious','blogastic','authenticity','electronic mail','cellular phones','rap music','cookies, I guess'])+'.',
 					'Profit\'s in the air!'
 				]));
