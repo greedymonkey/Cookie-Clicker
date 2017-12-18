@@ -5191,8 +5191,7 @@ Game.Launch=function()
 					if (Game.HasAchiev('Base 10')) list.push('新闻：饼干制造商完全放弃常识，让强迫驱动建设的决定！');//somehow I got flak for this one
 					if (Game.HasAchiev('From scratch')) list.push('新闻：遵循有关本地饼干生产商谁决定放弃一切的催人泪下，财富到抹布的故事！');
 					if (Game.HasAchiev('A world filled with cookies')) list.push('新闻：现在已知的宇宙挤满了饼干！ 没有空位！');
-					if (Game.HasAchiev('Last Chance to See')) list.push('新闻：令人难以置信的罕见的白化皱纹在饼干疯狂的糕点巨头被偷猎灭绝的边缘！
-');
+					if (Game.HasAchiev('Last Chance to See')) list.push('新闻：令人难以置信的罕见的白化皱纹在饼干疯狂的糕点巨头被偷猎灭绝的边缘！');
 					if (Game.Has('Serendipity')) list.push('新闻：本地饼干制造商成为最幸运的幸存者！');
 					if (Game.Has('Season switcher')) list.push('新闻：四季都不堪重负！ 当地居民说：“我们需要重新考虑季节。”');
 					
@@ -11216,9 +11215,9 @@ Game.Launch=function()
 		
 		if (Game.T%(Game.fps*2)==0)
 		{
-			var title='Cookie Clicker';
+			var title='无尽的饼干';
 			if (Game.season=='fools') title='Cookie Baker';
-			document.title=(Game.OnAscend?'Ascending! ':'')+Beautify(Game.cookies)+' '+(Game.cookies==1?'cookie':'cookies')+' - '+title;
+			document.title=(Game.OnAscend?'Ascending! ':'')+Beautify(Game.cookies)+' '+(Game.cookies==1?'饼干':'饼干')+' - '+title;
 		}
 		if (Game.T%15==0)
 		{
