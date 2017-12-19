@@ -2255,8 +2255,8 @@ Game.Launch=function()
 			
 			if (me.type=='upgrade')
 			{
-				if (context=='stats' && me.bought==0 && !Game.Has('Neuromancy') && (!Game.sesame || me.pool!='debug')) return '';
-				else if (context=='stats' && (Game.Has('Neuromancy') || (Game.sesame && me.pool=='debug'))) neuromancy=1;
+				if (context=='stats' && me.bought==0 && !Game.Has('神经占卜') && (!Game.sesame || me.pool!='debug')) return '';
+				else if (context=='stats' && (Game.Has('神经占卜') || (Game.sesame && me.pool=='debug'))) neuromancy=1;
 				else if (context=='store' && !me.canBuy()) enabled=0;
 				else if (context=='ascend' && me.bought==0) enabled=0;
 				else enabled=1;
@@ -2781,7 +2781,7 @@ Game.Launch=function()
 		Game.SelectedHeavenlyUpgrade=0;
 		Game.PurchaseHeavenlyUpgrade=function(what)
 		{
-			//if (Game.Has('Neuromancy')) Game.UpgradesById[what].toggle(); else
+			//if (Game.Has('神经占卜')) Game.UpgradesById[what].toggle(); else
 			if (Game.UpgradesById[what].buy())
 			{
 				if (l('heavenlyUpgrade'+what)){var rect=l('heavenlyUpgrade'+what).getBoundingClientRect();Game.SparkleAt((rect.left+rect.right)/2,(rect.top+rect.bottom)/2-24);}
@@ -2817,7 +2817,7 @@ Game.Launch=function()
 				var me=Game.PrestigeUpgrades[i];
 				
 				var ghosted=0;
-				if (me.canBePurchased || Game.Has('Neuromancy'))
+				if (me.canBePurchased || Game.Has('神经占卜'))
 				{
 					str+=Game.crate(me,'ascend','Game.PurchaseHeavenlyUpgrade('+me.id+');','heavenlyUpgrade'+me.id);
 				}
@@ -2834,7 +2834,7 @@ Game.Launch=function()
 						str+='<div class="crate upgrade heavenly ghosted" id="heavenlyUpgrade'+me.id+'" style="position:absolute;left:'+me.posX+'px;top:'+me.posY+'px;'+(me.icon[2]?'background-image:url('+me.icon[2]+');':'')+'background-position:'+(-me.icon[0]*48)+'px '+(-me.icon[1]*48)+'px;"></div>';
 					}
 				}
-				if (me.canBePurchased || Game.Has('Neuromancy') || ghosted)
+				if (me.canBePurchased || Game.Has('神经占卜') || ghosted)
 				{
 					if (me.posX<Game.heavenlyBounds.left) Game.heavenlyBounds.left=me.posX;
 					if (me.posX>Game.heavenlyBounds.right) Game.heavenlyBounds.right=me.posX;
@@ -2879,27 +2879,27 @@ Game.Launch=function()
 		Game.lumpTooltip=function()
 		{
 			var str='<div style="padding:8px;width:400px;font-size:11px;text-align:center;">'+
-			'You have <span class="price lump">'+Beautify(Game.lumps)+' sugar lump'+(Game.lumps==1?'':'s')+'</span>.'+
+			'你有 <span class="price lump">'+Beautify(Game.lumps)+' 糖块'+(Game.lumps==1?'':'')+'</span>.'+
 			'<div class="line"></div>'+
-			'A <b>sugar lump</b> is coalescing here, attracted by your past feats.';
+			'一个 <b>糖块</b> 在这里凝聚，被你过去的壮举所吸引。';
 						
 			var age=Date.now()-Game.lumpT;
 			str+='<div class="line"></div>';
-			if (age<Game.lumpMatureAge) str+='This sugar lump is still growing and will take <b>'+Game.sayTime(((Game.lumpMatureAge-age)/1000+1)*Game.fps,-1)+'</b> to reach maturity.';
-			else if (age<Game.lumpRipeAge) str+='This sugar lump is mature and will be ripe in <b>'+Game.sayTime(((Game.lumpRipeAge-age)/1000+1)*Game.fps,-1)+'</b>.<br>You may <b>click it to harvest it now</b>, but there is a <b>50% chance you won\'t get anything</b>.';
-			else if (age<Game.lumpOverripeAge) str+='<b>This sugar lump is ripe! Click it to harvest it.</b><br>If you do nothing, it will auto-harvest in <b>'+Game.sayTime(((Game.lumpOverripeAge-age)/1000+1)*Game.fps,-1)+'</b>.';
+			if (age<Game.lumpMatureAge) str+='这个糖块还在生长，还需要 <b>'+Game.sayTime(((Game.lumpMatureAge-age)/1000+1)*Game.fps,-1)+'</b> 达到成熟。';
+			else if (age<Game.lumpRipeAge) str+='这个糖块是成熟的，会成熟的 <b>'+Game.sayTime(((Game.lumpRipeAge-age)/1000+1)*Game.fps,-1)+'</b>。<br>你可以 <b>点击它以获取它</b>, 但是有 <b>50% 几率你不会得到任何东西</b>.';
+			else if (age<Game.lumpOverripeAge) str+='<b>这个糖块熟了!点击它以获取它。</b><br>如果你什么都不做，它就会自动收割 <b>'+Game.sayTime(((Game.lumpOverripeAge-age)/1000+1)*Game.fps,-1)+'</b>.';
 			
 			var phase=(age/Game.lumpOverripeAge)*7;
 			if (phase>=3)
 			{
 				if (Game.lumpCurrentType!=0) str+='<div class="line"></div>';
-				if (Game.lumpCurrentType==1) str+='This sugar lump grew to be <b>bifurcated</b>; harvesting it has a 50% chance of yielding two lumps.';
-				else if (Game.lumpCurrentType==2) str+='This sugar lump grew to be <b>golden</b>; harvesting it will yield 2 to 7 lumps, your current cookies will be doubled, and you will find 10% more golden cookies 在接下来的24小时。';
-				else if (Game.lumpCurrentType==3) str+='This sugar lump was affected by the elders and grew to be <b>meaty</b>; harvesting it will yield between 0 and 2 lumps.';
+				if (Game.lumpCurrentType==1) str+='这个糖块长大了 <b>分叉</b>; 收割时，它有50%的机会产生两块。';
+				else if (Game.lumpCurrentType==2) str+='这个糖块长大了 <b>黄金</b>; 收获2到7块，你现在的饼干会翻倍，你会找到10%的黄金饼干在接下来的24小时。';
+				else if (Game.lumpCurrentType==3) str+='这个糖块受到了长老们的影响，渐渐长大了 <b>多肉的</b>; 收割时，它的产量在0到2块之间。';
 			}
 			
 			str+='<div class="line"></div>';
-			str+='Your sugar lumps mature after <b>'+Game.sayTime((Game.lumpMatureAge/1000)*Game.fps,-1)+'</b>,<br>ripen after <b>'+Game.sayTime((Game.lumpRipeAge/1000)*Game.fps,-1)+'</b>,<br>and fall after <b>'+Game.sayTime((Game.lumpOverripeAge/1000)*Game.fps,-1)+'</b>.';
+			str+='你的糖块会慢慢变成熟 <b>'+Game.sayTime((Game.lumpMatureAge/1000)*Game.fps,-1)+'</b>,<br>ripen after <b>'+Game.sayTime((Game.lumpRipeAge/1000)*Game.fps,-1)+'</b>,<br>and fall after <b>'+Game.sayTime((Game.lumpOverripeAge/1000)*Game.fps,-1)+'</b>.';
 			
 			str+='<div class="line"></div>'+
 			'&bull; Sugar lumps can be harvested when ripe, though if left alone beyond that point they will eventually fall and be auto-harvested after some time.<br>&bull; Sugar lumps are delicious and may be used as currency for all sorts of things.<br>&bull; Once a sugar lump is harvested, another one will start growing in its place.<br>&bull; Note that sugar lumps keep growing when the game is closed.';
@@ -6303,7 +6303,7 @@ Game.Launch=function()
 			var add=0;
 			if (Game.Has('同心协力')) add+=Game.Objects['Grandma'].amount*0.02;
 			if (Game.Has('集体洗脑')) add+=Game.Objects['Grandma'].amount*0.02;
-			if (Game.Has('Elder Pact')) add+=Game.Objects['Portal'].amount*0.05;
+			if (Game.Has('长者盟约')) add+=Game.Objects['Portal'].amount*0.05;
 			
 			var num=0;
 			for (var i in Game.Objects) {if (Game.Objects[i].name!='Grandma') num+=Game.Objects[i].amount;}
@@ -6897,8 +6897,8 @@ Game.Launch=function()
 			if (b1.basePrice>b2.basePrice) {b1=Game.Objects[building2];b2=Game.Objects[building1];}//swap
 			
 			desc=
-				(b1.plural.charAt(0).toUpperCase()+b1.plural.slice(1))+' gain <b>+5% CpS</b> per '+b2.name.toLowerCase()+'.<br>'+
-				(b2.plural.charAt(0).toUpperCase()+b2.plural.slice(1))+' gain <b>+0.1% CpS</b> per '+b1.name.toLowerCase()+'.'+
+				(b1.plural.charAt(0).toUpperCase()+b1.plural.slice(1))+' 获得 <b>+5% 饼干每秒产量</b> 每个 '+b2.name.toLowerCase()+'。<br>'+
+				(b2.plural.charAt(0).toUpperCase()+b2.plural.slice(1))+' 获得 <b>+0.1% 饼干每秒产量</b> 每个 '+b1.name.toLowerCase()+'。'+
 				desc;
 			var upgrade=new Game.Upgrade(name,desc,(b1.basePrice*10+b2.basePrice*1)*Game.Tiers[tier].price,Game.GetIcon(building1,tier));//Math.sqrt(b1.basePrice*b2.basePrice)*Game.Tiers[tier].price
 			upgrade.tier=tier;
@@ -6940,53 +6940,53 @@ Game.Launch=function()
 		//define upgrades
 		//WARNING : do NOT add new upgrades in between, this breaks the saves. Add them at the end !
 		var order=100;//this is used to set the order in which the items are listed
-		new Game.Upgrade('加强的食指','每次鼠标和游标像 <b>两次</b> 一样高效。<q>戳戳</q>',100,[0,0]);
-		new Game.Upgrade('腕管预防霜','每次鼠标和游标像 <b>两次</b> 一样高效。<q>它…点击伤害…</q>',500,[0,1]);
-		new Game.Upgrade('双手通用','每次鼠标和游标像 <b>两次</b> 一样高效。<q>看看马，双手！</q>',10000,[0,2])
+		new Game.Upgrade('加强的食指','每次鼠标和游标工作效率像 <b>双倍</b> 一样高效。<q>戳戳</q>',100,[0,0]);
+		new Game.Upgrade('腕管预防霜','每次鼠标和游标工作效率像 <b>双倍</b> 一样高效。<q>它…点击伤害…</q>',500,[0,1]);
+		new Game.Upgrade('双手通用','每次鼠标和游标工作效率像 <b>双倍</b> 一样高效。<q>看看马，双手！</q>',10000,[0,2])
 		new Game.Upgrade('千手指','鼠标和游标获得 <b>+0.1</b> 每个非游标建筑生产的饼干数。<q>点点</q>',100000,[0,13]);
 		new Game.Upgrade('百万手指','鼠标和游标获得 <b>+0.5</b> 每个非游标建筑生产的饼干数。<q>点点点</q>',10000000,[0,14]);
 		new Game.Upgrade('十亿手指','鼠标和游标获得 <b>+5</b> 每个非游标建筑生产的饼干数。<q>点点点点</q>',100000000,[0,15]);
 		new Game.Upgrade('万亿手指','鼠标和游标获得 <b>+50</b> 每个非游标建筑生产的饼干数。<q>点点点点点</q>',1000000000,[0,16]);
 		
 		order=200;
-		new Game.TieredUpgrade('前锋老奶奶','老奶奶生产像 <b>两次</b> 一样高效。<q>我还以为你会被踢出这个地方呢。</q>','Grandma',1);
-		new Game.TieredUpgrade('钢包滚针','老奶奶生产像 <b>两次</b> 一样高效。<q>就是你的膝盖。</q>','Grandma',2);
-		new Game.TieredUpgrade('润滑假牙','老奶奶生产像 <b>两次</b> 一样高效。<q>压扁</q>','Grandma',3);
+		new Game.TieredUpgrade('前锋老奶奶','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>我还以为你会被踢出这个地方呢。</q>','Grandma',1);
+		new Game.TieredUpgrade('钢包滚针','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>就是你的膝盖。</q>','Grandma',2);
+		new Game.TieredUpgrade('润滑假牙','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>压扁</q>','Grandma',3);
 		
 		order=300;
-		new Game.TieredUpgrade('廉价的锄头','农场生产像 <b>两次</b> 一样高效。<q>把面团耙平!</q>','Farm',1);
-		new Game.TieredUpgrade('肥料','农场生产像 <b>两次</b> 一样高效。<q>这是巧克力，我发誓。</q>','Farm',2);
-		new Game.TieredUpgrade('饼干树','农场生产像 <b>两次</b> 一样高效。<q>面包果的亲戚。</q>','Farm',3);
+		new Game.TieredUpgrade('廉价的锄头','农场生产工作效率像 <b>双倍</b> 一样高效。<q>把面团耙平!</q>','Farm',1);
+		new Game.TieredUpgrade('肥料','农场生产工作效率像 <b>双倍</b> 一样高效。<q>这是巧克力，我发誓。</q>','Farm',2);
+		new Game.TieredUpgrade('饼干树','农场生产工作效率像 <b>双倍</b> 一样高效。<q>面包果的亲戚。</q>','Farm',3);
 		
 		order=500;
-		new Game.TieredUpgrade('更坚固的传送带','工厂生产像 <b>两次</b> 一样高效。<q>你要去的地方。</q>','Factory',1);
-		new Game.TieredUpgrade('童工','工厂生产像 <b>两次</b> 一样高效。<q>更便宜,更健康的劳动力。</q>','Factory',2);
-		new Game.TieredUpgrade('血汗工厂','工厂生产像 <b>两次</b> 一样高效。<q>游手好闲的人将被解雇。</q>','Factory',3);
+		new Game.TieredUpgrade('更坚固的传送带','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>你要去的地方。</q>','Factory',1);
+		new Game.TieredUpgrade('童工','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>更便宜,更健康的劳动力。</q>','Factory',2);
+		new Game.TieredUpgrade('血汗工厂','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>游手好闲的人将被解雇。</q>','Factory',3);
 		
 		order=400;
-		new Game.TieredUpgrade('糖气','矿工像 <b>两次</b> 一样高效。<q>在一些巧克力洞穴的深处发现了一种粉红色的挥发性气体。</q>','Mine',1);
-		new Game.TieredUpgrade('大型钻','矿工像 <b>两次</b> 一样高效。<q>你太深了。</q>','Mine',2);
-		new Game.TieredUpgrade('超级钻','矿工像 <b>两次</b> 一样高效。<q>终于妥协了?</q>','Mine',3);
+		new Game.TieredUpgrade('糖气','矿工工作效率像 <b>双倍</b> 一样高效。<q>在一些巧克力洞穴的深处发现了一种粉红色的挥发性气体。</q>','Mine',1);
+		new Game.TieredUpgrade('大型钻','矿工工作效率像 <b>双倍</b> 一样高效。<q>你太深了。</q>','Mine',2);
+		new Game.TieredUpgrade('超级钻','矿工工作效率像 <b>双倍</b> 一样高效。<q>终于妥协了?</q>','Mine',3);
 		
 		order=600;
-		new Game.TieredUpgrade('香草星云','装船像 <b>两次</b> 一样高效。<q>如果你去掉了你的太空头盔，你可能会闻到它!<br/>(注意:不要那样做。)</q>','Shipment',1);
-		new Game.TieredUpgrade('虫洞','装船像 <b>两次</b> 一样高效。<q>通过使用这些快捷方式，你的船只可以行驶得更快。</q>','Shipment',2);
-		new Game.TieredUpgrade('飞行常客','装船像 <b>两次</b> 一样高效。<q>很快回来!</q>','Shipment',3);
+		new Game.TieredUpgrade('香草星云','装船工作效率像 <b>双倍</b> 一样高效。<q>如果你去掉了你的太空头盔，你可能会闻到它!<br/>(注意:不要那样做。)</q>','Shipment',1);
+		new Game.TieredUpgrade('虫洞','装船工作效率像 <b>双倍</b> 一样高效。<q>通过使用这些快捷方式，你的船只可以行驶得更快。</q>','Shipment',2);
+		new Game.TieredUpgrade('飞行常客','装船工作效率像 <b>双倍</b> 一样高效。<q>很快回来!</q>','Shipment',3);
 		
 		order=700;
-		new Game.TieredUpgrade('锑','炼金实验室像<b>两次</b> 一样高效。<q>确实值得一大笔钱。</q>','Alchemy lab',1);
-		new Game.TieredUpgrade('面团的本质','炼金实验室像<b>两次</b> 一样高效。<q>从炼化烘焙的5个古老步骤中提取。</q>','Alchemy lab',2);
-		new Game.TieredUpgrade('真正的巧克力','炼金实验室像<b>两次</b> 一样高效。<q>可可的最纯净的形式。</q>','Alchemy lab',3);
+		new Game.TieredUpgrade('锑','炼金实验室像<b>双倍</b> 一样高效。<q>确实值得一大笔钱。</q>','Alchemy lab',1);
+		new Game.TieredUpgrade('面团的本质','炼金实验室像<b>双倍</b> 一样高效。<q>从炼化烘焙的5个古老步骤中提取。</q>','Alchemy lab',2);
+		new Game.TieredUpgrade('真正的巧克力','炼金实验室像<b>双倍</b> 一样高效。<q>可可的最纯净的形式。</q>','Alchemy lab',3);
 		
 		order=800;
-		new Game.TieredUpgrade('古碑文','传送门像 <b>两次</b> 一样高效。<q>一块奇怪的花生脆饼，拿着一个古老的饼干食谱。太棒了!</q>','Portal',1);
-		new Game.TieredUpgrade('疯狂的燕麦工人','传送门像 <b>两次</b> 一样高效。<q>起来，我的奴才们!</q>','Portal',2);
-		new Game.TieredUpgrade('灵魂纽带','传送门像 <b>两次</b> 一样高效。<q>所以我只是注册并得到更多的饼干?当然，管他呢!</q>','Portal',3);
+		new Game.TieredUpgrade('古碑文','传送门工作效率像 <b>双倍</b> 一样高效。<q>一块奇怪的花生脆饼，拿着一个古老的饼干食谱。太棒了!</q>','Portal',1);
+		new Game.TieredUpgrade('疯狂的燕麦工人','传送门工作效率像 <b>双倍</b> 一样高效。<q>起来，我的奴才们!</q>','Portal',2);
+		new Game.TieredUpgrade('灵魂纽带','传送门工作效率像 <b>双倍</b> 一样高效。<q>所以我只是注册并得到更多的饼干?当然，管他呢!</q>','Portal',3);
 		
 		order=900;
-		new Game.TieredUpgrade('通量电容器','时光机器像 <b>两次</b> 一样高效。<q>烤到未来。</q>','Time machine',1);
-		new Game.TieredUpgrade('时间悖论解析器','时光机器像 <b>两次</b> 一样高效。<q>别再和你的老奶奶鬼混了!</q>','Time machine',2);
-		new Game.TieredUpgrade('量子难题','时光机器像 <b>两次</b> 一样高效。<q>只有一个常数，那就是普遍的不确定性。<br>是这样吗?</q>','Time machine',3);
+		new Game.TieredUpgrade('通量电容器','时光机器工作效率像 <b>双倍</b> 一样高效。<q>烤到未来。</q>','Time machine',1);
+		new Game.TieredUpgrade('时间悖论解析器','时光机器工作效率像 <b>双倍</b> 一样高效。<q>别再和你的老奶奶鬼混了!</q>','Time machine',2);
+		new Game.TieredUpgrade('量子难题','时光机器工作效率像 <b>双倍</b> 一样高效。<q>只有一个常数，那就是普遍的不确定性。<br>是这样吗?</q>','Time machine',3);
 		
 		order=20000;
 		new Game.Upgrade('小猫助手','你获得了 <b>更多的饼干每秒产量</b> 你的牛奶越多。<q>喵~我可以帮你吗？</q>',9000000,Game.GetIcon('Kitten',1));Game.last.kitten=1;
@@ -7007,18 +7007,18 @@ Game.Launch=function()
 		order=100;
 		new Game.Upgrade('千万亿手指','鼠标和游标获得 <b>+500</b> 每个非游标对象生产的饼干数。<q>点点点点点点点点点点点点</q>',10000000000,[0,17]);
 		
-		order=200;new Game.TieredUpgrade('西梅汁','老奶奶生产像 <b>两次</b> 一样高效。<q>让我走。</q>','Grandma',4);
-		order=300;new Game.TieredUpgrade('转基因饼干','农场生产像 <b>两次</b> 一样高效。<q>全自然变异。</q>','Farm',4);
-		order=500;new Game.TieredUpgrade('镭反应堆','工厂生产像 <b>两次</b> 一样高效。<q>让你的饼干焕发光彩。</q>','Factory',4);
-		order=400;new Game.TieredUpgrade('天涯钻','矿山像 <b>两次</b> 一样高效。<q>穿过天空，等等。</q>','Mine',4);
-		order=600;new Game.TieredUpgrade('曲速驱动','装船像 <b>两次</b> 一样高效。<q>大胆地烘烤。</q>','Shipment',4);
-		order=700;new Game.TieredUpgrade('美味食物','炼金实验室像<b>两次</b> 一样高效。<q>把这个加入到饼干的混合物中肯定会让他们更容易上瘾!<br>也许是危险的。<br>希望你能继续合法地销售这些产品。</q>','Alchemy lab',4);
-		order=800;new Game.TieredUpgrade('理智之舞','传送门像<b>两次</b> 一样高效。<q>如果我们愿意，我们可以改变。<br>我们可以把我们的大脑抛在脑后。</q>','Portal',4);
-		order=900;new Game.TieredUpgrade('因果关系的执行者','时光机器像 <b>两次</b> 一样高效。<q>发生了什么,发生了。</q>','Time machine',4);
+		order=200;new Game.TieredUpgrade('西梅汁','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>让我走。</q>','Grandma',4);
+		order=300;new Game.TieredUpgrade('转基因饼干','农场生产工作效率像 <b>双倍</b> 一样高效。<q>全自然变异。</q>','Farm',4);
+		order=500;new Game.TieredUpgrade('镭反应堆','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>让你的饼干焕发光彩。</q>','Factory',4);
+		order=400;new Game.TieredUpgrade('天涯钻','矿山工作效率像 <b>双倍</b> 一样高效。<q>穿过天空，等等。</q>','Mine',4);
+		order=600;new Game.TieredUpgrade('曲速驱动','装船工作效率像 <b>双倍</b> 一样高效。<q>大胆地烘烤。</q>','Shipment',4);
+		order=700;new Game.TieredUpgrade('美味食物','炼金实验室像<b>双倍</b> 一样高效。<q>把这个加入到饼干的混合物中肯定会让他们更容易上瘾!<br>也许是危险的。<br>希望你能继续合法地销售这些产品。</q>','Alchemy lab',4);
+		order=800;new Game.TieredUpgrade('理智之舞','传送门像<b>双倍</b> 一样高效。<q>如果我们愿意，我们可以改变。<br>我们可以把我们的大脑抛在脑后。</q>','Portal',4);
+		order=900;new Game.TieredUpgrade('因果关系的执行者','时光机器工作效率像 <b>双倍</b> 一样高效。<q>发生了什么,发生了。</q>','Time machine',4);
 		
 		order=5000;
-		new Game.Upgrade('幸运日','黄金饼干出现像 <b>两倍一样的频繁</b> 并且停留 <b>两倍的时间</b>.<q>哦，嗨，一枚四叶的硬币！</q>',777777777,[27,6]);
-		new Game.Upgrade('意外的惊喜','黄金饼干出现像 <b>两倍一样的频繁</b> 并且停留 <b>两倍的时间</b>.<q>多么快乐!七个马蹄铁!</q>',77777777777,[27,6]);
+		new Game.Upgrade('幸运日','黄金饼干出现工作效率像 <b>两倍一样的频繁</b> 并且停留 <b>两倍的时间</b>.<q>哦，嗨，一枚四叶的硬币！</q>',777777777,[27,6]);
+		new Game.Upgrade('意外的惊喜','黄金饼干出现工作效率像 <b>两倍一样的频繁</b> 并且停留 <b>两倍的时间</b>.<q>多么快乐!七个马蹄铁!</q>',77777777777,[27,6]);
 		
 		order=20000;
 		new Game.Upgrade('小猫工程师','你获得了 <b>更多的饼干秒产量</b> 你的牛奶越多。<q>喵喵喵，先生</q>',90000000000000,Game.GetIcon('Kitten',3));Game.last.kitten=1;
@@ -7038,7 +7038,7 @@ Game.Launch=function()
 			var grandmaNumber=(building.id-1);
 			if (grandmaNumber==1) grandmaNumber='grandma';
 			else grandmaNumber+=' grandmas';
-			return '老奶奶生产像 <b>两次</b> 一样高效。 '+(building.plural.charAt(0).toUpperCase()+building.plural.slice(1))+' gain <b>+1% CpS</b> per '+grandmaNumber+'.';
+			return '老奶奶生产工作效率像 <b>双倍</b> 一样高效。 '+(building.plural.charAt(0).toUpperCase()+building.plural.slice(1))+' gain <b>+1% CpS</b> per '+grandmaNumber+'.';
 		}
 		
 		order=250;
@@ -7066,21 +7066,21 @@ Game.Launch=function()
 			}
 		}
 		
-		new Game.Upgrade('宾果游戏中心/研究设施','Grandma-operated science lab and leisure club.<br>Grandmas are <b>4 times</b> 一样高效。<br><b>Regularly unlocks new upgrades</b>.<q>What could possibly keep those grandmothers in check?...<br>Bingo.</q>',1000000000000000,[11,9],function(){Game.SetResearch('专业巧克力片');});Game.last.noPerm=1;
+		new Game.Upgrade('宾果游戏中心/研究设施','老奶奶操作的科学实验室和休闲俱乐部。<br>老奶奶工作效率工作效率像 <b>4 倍</b> 一样高效。<br><b>Regularly unlocks new upgrades</b>.<q>还有什么能阻止这些老奶奶们呢?...<br>Bingo.</q>',1000000000000000,[11,9],function(){Game.SetResearch('专业巧克力片');});Game.last.noPerm=1;
 		
 		order=15000;
 		
 		new Game.Upgrade('专业巧克力片','饼干生产增加 <b>+1%</b>.<q>电脑设计的巧克力片。电脑芯片，如果你愿意。</q>',100000000000,[0,9],function(){Game.SetResearch('Designer cocoa beans');});Game.last.pool='tech';
 		new Game.Upgrade('Designer cocoa beans','饼干生产增加 <b>+2%</b>.<q>现在比以前更符合空气动力学了!</q>',200000000000,[1,9],function(){Game.SetResearch('仪式滚针');});Game.last.pool='tech';
-		new Game.Upgrade('仪式滚针','老奶奶生产像 <b>两次</b> 一样高效。<q>多年的科学研究成果!</q>',400000000000,[2,9],function(){Game.SetResearch('地下烤箱');});Game.last.pool='tech';
+		new Game.Upgrade('仪式滚针','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>多年的科学研究成果!</q>',400000000000,[2,9],function(){Game.SetResearch('地下烤箱');});Game.last.pool='tech';
 		new Game.Upgrade('地下烤箱','饼干生产增加 <b>+3%</b>.<q>当然是靠科学的力量!</q>',800000000000,[3,9],function(){Game.SetResearch('同心协力');});Game.last.pool='tech';
 		new Game.Upgrade('同心协力','每个老奶奶收获 <b>+0.0<span></span>2 基本秒收益老奶奶</b>.<div class="warning">注意:祖母们越来越焦躁不安。不要鼓励他们。</div><q>我们是一个。我们有很多。</q>',1600000000000,[4,9],function(){Game.elderWrath=1;Game.SetResearch('奇异果');Game.storeToRefresh=1;});Game.last.pool='tech';
 		//Game.last.clickFunction=function(){return confirm('Warning : purchasing this will have unexpected, and potentially undesirable results!\nIt\'s all downhill from here. You have been warned!\nPurchase anyway?');};
 		Game.RequiresConfirmation(Game.last,'<div class="block"><b>警告 :</b> 购买这种产品将会带来意想不到的结果，而且可能会带来意想不到的后果!<br><small>从这里开始，一切都在走下坡路。我已经警告过你了!</small><br><br>还是购买?</small></div>');
 		new Game.Upgrade('奇异果','饼干生产增加 <b>+4%</b>.<q>你会为这些疯狂的!</q>',3200000000000,[5,9],function(){Game.SetResearch('集体洗脑');});Game.last.pool='tech';
 		new Game.Upgrade('集体洗脑','每一个奶奶的收益 <b>+0.0<span></span>2 基本秒收益老奶奶</b>.<div class="warning">注:继续进行科学研究可能会产生意想不到的结果。我已经警告过你了!</div><q>我们融合。我们合并。我们成长。</q>',6400000000000,[6,9],function(){Game.elderWrath=2;Game.SetResearch('神秘的糖');Game.storeToRefresh=1;});Game.last.pool='tech';
-		new Game.Upgrade('神秘的糖','饼干生产增加 <b>+5%</b>.<q>尝起来像昆虫、韧带和糖蜜。</q>',12800000000000,[7,9],function(){Game.SetResearch('Elder Pact');});Game.last.pool='tech';
-		new Game.Upgrade('Elder Pact','每一个奶奶的收益 <b>+0.0<span></span>5 base CpS per portal</b>.<div class="warning">注意:这是个坏主意。</div><q>今天我们起来，爬着爬着爬着爬着</q>',25600000000000,[8,9],function(){Game.elderWrath=3;Game.storeToRefresh=1;});Game.last.pool='tech';
+		new Game.Upgrade('神秘的糖','饼干生产增加 <b>+5%</b>.<q>尝起来像昆虫、韧带和糖蜜。</q>',12800000000000,[7,9],function(){Game.SetResearch('长者盟约');});Game.last.pool='tech';
+		new Game.Upgrade('长者盟约','每一个奶奶的收益 <b>+0.0<span></span>5 base CpS per portal</b>.<div class="warning">注意:这是个坏主意。</div><q>今天我们起来，爬着爬着爬着爬着</q>',25600000000000,[8,9],function(){Game.elderWrath=3;Game.storeToRefresh=1;});Game.last.pool='tech';
 		new Game.Upgrade('老人的承诺','包含长辈的愤怒，至少在一段时间内。<q>这是一个简单的仪式，包括抗衰老的奶油，在月光下混合的饼干面糊，还有一只活的鸡肉。</q>',1,[9,9],function()
 		{
 			Game.elderWrath=0;
@@ -7138,10 +7138,10 @@ Game.Launch=function()
 		Game.last.pool='toggle';
 		
 		order=5000;
-		new Game.Upgrade('走运','Golden cookie effects last <b>twice as long</b>.<q>You\'ve been up all night, haven\'t you?</q>',77777777777777,[27,6]);
+		new Game.Upgrade('走运','黄金饼干效果至少持续 <b>两倍的时间</b>。<q>你整晚都没睡，是吧?</q>',77777777777777,[27,6]);
 		
 		order=15000;
-		new Game.Upgrade('牺牲擀面杖','Elder pledges last <b>两次</b> as long.<q>These are mostly just for spreading the anti-aging cream.<br>(And accessorily, shortening the chicken\'s suffering.)</q>',2888888888888,[2,9]);
+		new Game.Upgrade('牺牲擀面杖','长者承诺至少持续 <b>双倍</b> 的时间。<q>这些主要是为了推广抗衰老面霜。<br>(而且还可以缩短鸡的痛苦。)</q>',2888888888888,[2,9]);
 		
 		order=10020;
 		Game.NewUpgradeCookie({name:'Snickerdoodles',desc:'True to their name.',icon:[2,4],power:												2,	price:	999999999999*5});
@@ -7149,7 +7149,7 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'Macaroons',desc:'Not to be confused with macarons.<br>These have coconut, okay?',icon:[4,4],power:			2,	price:	9999999999999*5});
 		
 		order=40000;
-		new Game.Upgrade('Neuromancy','Can toggle upgrades on and off at will in the stats menu.<q>Can also come in handy to unsee things that can\'t be unseen.</q>',7,[4,9]);//debug purposes only
+		new Game.Upgrade('神经占卜','可以在统计菜单中随意开启和关闭升级。<q>也可以派人去看那些看不到的东西。</q>',7,[4,9]);//debug purposes only
 		Game.last.pool='debug';
 		
 		order=10030;
@@ -7162,10 +7162,10 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'Round chocolate british tea biscuits with heart motif',desc:'I like cookies.',icon:[11,4],require:Game.last.name,power:		2,	price:	99999999999999});
 		
 		order=1000;
-		new Game.TieredUpgrade('Sugar bosons','反物质冷凝器像 <b>两次</b> 一样高效。<q>Sweet firm bosons.</q>','Antimatter condenser',1);
-		new Game.TieredUpgrade('String theory','反物质冷凝器像 <b>两次</b> 一样高效。<q>Reveals new insight about the true meaning of baking cookies (and, as a bonus, the structure of the universe).</q>','Antimatter condenser',2);
-		new Game.TieredUpgrade('Large macaron collider','反物质冷凝器像 <b>两次</b> 一样高效。<q>How singular!</q>','Antimatter condenser',3);
-		new Game.TieredUpgrade('Big bang bake','反物质冷凝器像 <b>两次</b> 一样高效。<q>And that\'s how it all began.</q>','Antimatter condenser',4);
+		new Game.TieredUpgrade('Sugar bosons','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>Sweet firm bosons.</q>','Antimatter condenser',1);
+		new Game.TieredUpgrade('String theory','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>Reveals new insight about the true meaning of baking cookies (and, as a bonus, the structure of the universe).</q>','Antimatter condenser',2);
+		new Game.TieredUpgrade('Large macaron collider','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>How singular!</q>','Antimatter condenser',3);
+		new Game.TieredUpgrade('Big bang bake','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>And that\'s how it all began.</q>','Antimatter condenser',4);
 
 		order=255;
 		new Game.Upgrade('针对老奶奶',Game.getGrandmaSynergyUpgradeDesc('Antimatter condenser')+'<q>A mean antigrandma to vomit more cookies.<br>(Do not put in contact with normal grandmas; loss of matter may occur.)</q>',Game.Objects['Antimatter condenser'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
@@ -7183,15 +7183,15 @@ Game.Launch=function()
 		order=100;
 		new Game.Upgrade('百万的六乘方手指','鼠标和游标获得 <b>+50000</b> 每个非游标对象生产的饼干数。<q>sometimes<br>things just<br>click</q>',10000000000000000,[0,19]);
 		
-		order=200;new Game.TieredUpgrade('Double-thick glasses','老奶奶生产像 <b>两次</b> 一样高效。<q>Oh... so THAT\'s what I\'ve been baking.</q>','Grandma',5);
-		order=300;new Game.TieredUpgrade('Gingerbread scarecrows','农场生产像 <b>两次</b> 一样高效。<q>Staring at your crops with mischievous glee.</q>','Farm',5);
-		order=500;new Game.TieredUpgrade('Recombobulators','工厂生产像 <b>两次</b> 一样高效。<q>A major part of cookie recombobulation.</q>','Factory',5);
-		order=400;new Game.TieredUpgrade('H-bomb mining','矿山像 <b>两次</b> 一样高效。<q>Questionable efficiency, but spectacular nonetheless.</q>','Mine',5);
-		order=600;new Game.TieredUpgrade('Chocolate monoliths','装船像 <b>两次</b> 一样高效。<q>My god. It\'s full of chocolate bars.</q>','Shipment',5);
-		order=700;new Game.TieredUpgrade('Aqua crustulae','炼金实验室像<b>两次</b> 一样高效。<q>Careful with the dosing - one drop too much and you get muffins.<br>And nobody likes muffins.</q>','Alchemy lab',5);
-		order=800;new Game.TieredUpgrade('Brane transplant','传送门像<b>两次</b> 一样高效。<q>This refers to the practice of merging higher dimensional universes, or "branes", with our own, in order to facilitate transit (and harvesting of precious cookie dough).</q>','Portal',5);
-		order=900;new Game.TieredUpgrade('Yestermorrow comparators','时光机器像 <b>两次</b> 一样高效。<q>Fortnights into milleniums.</q>','Time machine',5);
-		order=1000;new Game.TieredUpgrade('Reverse cyclotrons','反物质冷凝器像 <b>两次</b> 一样高效。<q>These can uncollision particles and unspin atoms. For... uh... better flavor, and stuff.</q>','Antimatter condenser',5);
+		order=200;new Game.TieredUpgrade('Double-thick glasses','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>Oh... so THAT\'s what I\'ve been baking.</q>','Grandma',5);
+		order=300;new Game.TieredUpgrade('Gingerbread scarecrows','农场生产工作效率像 <b>双倍</b> 一样高效。<q>Staring at your crops with mischievous glee.</q>','Farm',5);
+		order=500;new Game.TieredUpgrade('Recombobulators','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>A major part of cookie recombobulation.</q>','Factory',5);
+		order=400;new Game.TieredUpgrade('H-bomb mining','矿山工作效率像 <b>双倍</b> 一样高效。<q>Questionable efficiency, but spectacular nonetheless.</q>','Mine',5);
+		order=600;new Game.TieredUpgrade('Chocolate monoliths','装船工作效率像 <b>双倍</b> 一样高效。<q>My god. It\'s full of chocolate bars.</q>','Shipment',5);
+		order=700;new Game.TieredUpgrade('Aqua crustulae','炼金实验室像<b>双倍</b> 一样高效。<q>Careful with the dosing - one drop too much and you get muffins.<br>And nobody likes muffins.</q>','Alchemy lab',5);
+		order=800;new Game.TieredUpgrade('Brane transplant','传送门像<b>双倍</b> 一样高效。<q>This refers to the practice of merging higher dimensional universes, or "branes", with our own, in order to facilitate transit (and harvesting of precious cookie dough).</q>','Portal',5);
+		order=900;new Game.TieredUpgrade('Yestermorrow comparators','时光机器工作效率像 <b>双倍</b> 一样高效。<q>Fortnights into milleniums.</q>','Time machine',5);
+		order=1000;new Game.TieredUpgrade('Reverse cyclotrons','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>These can uncollision particles and unspin atoms. For... uh... better flavor, and stuff.</q>','Antimatter condenser',5);
 		
 		order=150;
 		new Game.Upgrade('难得素鼠标','点击获得 <b>+1% 总秒收益</b>.<q>These nice mice should suffice.</q>',5000000000000,[11,14]);
@@ -7229,7 +7229,7 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'蜘蛛饼干',desc:'你在网上找到了这个菜谱。他们做任何饼干都可以。',locked:1,icon:[18,8],power: 2, price: 444444444444});
 
 		order=0;
-		new Game.Upgrade('持久记忆','后续研究将像 <b>10 次</b> 那样快。<q>这一切都是有道理的!<br>再一次!</q>',5,[9,2]);Game.last.pool='prestige';
+		new Game.Upgrade('持久记忆','后续研究将工作效率像 <b>10 次</b> 那样快。<q>这一切都是有道理的!<br>再一次!</q>',5,[9,2]);Game.last.pool='prestige';
 		
 		order=40000;
 		new Game.Upgrade('皱纹门垫','皱纹产生的频率要高得多。<q>你真是个软弱的人。</q>',7,[19,8]);//debug purposes only
@@ -7266,7 +7266,7 @@ Game.Launch=function()
 		new Game.Upgrade('Ho ho ho-flavored frosting','Reindeer give <b>twice as much</b>.<br>Cost scales with Santa level.<q>It\'s time to up the antler.</q>',2525,[12,9]);
 		new Game.Upgrade('Season savings','All buildings are <b>1% cheaper</b>.<br>Cost scales with Santa level.<q>By Santa\'s beard, what savings!<br>But who will save us?</q>',2525,[16,9],function(){Game.storeToRefresh=1;});
 		new Game.Upgrade('Toy workshop','All upgrades are <b>5% cheaper</b>.<br>Cost scales with Santa level.<q>Watch yours-elf around elvesdroppers who might steal our production secrets.<br>Or elven worse!</q>',2525,[16,9],function(){Game.upgradesToRebuild=1;});
-		new Game.Upgrade('Naughty list','老奶奶生产像 <b>两次</b> as productive.<br>Cost scales with Santa level.<q>This list contains every unholy deed perpetuated by grandmakind.<br>He won\'t be checking this one twice.<br>Once. Once is enough.</q>',2525,[15,9]);
+		new Game.Upgrade('Naughty list','老奶奶生产工作效率像 <b>双倍</b> as productive.<br>Cost scales with Santa level.<q>This list contains every unholy deed perpetuated by grandmakind.<br>He won\'t be checking this one twice.<br>Once. Once is enough.</q>',2525,[15,9]);
 		new Game.Upgrade('圣诞老人的无底包','Random drops are <b>10% more common</b>.<br>Cost scales with Santa level.<q>This is one bottom you can\'t check out.</q>',2525,[19,9]);
 		new Game.Upgrade('Santa\'s helpers','Clicking is <b>10% more powerful</b>.<br>Cost scales with Santa level.<q>Some choose to help hamburger; some choose to help you.<br>To each their own, I guess.</q>',2525,[19,9]);
 		new Game.Upgrade('Santa\'s legacy','饼干生产增加 <b>+3% per Santa\'s levels</b>.<br>Cost scales with Santa level.<q>In the north pole, you gotta get the elves first. Then when you get the elves, you start making the toys. Then when you get the toys... then you get the cookies.</q>',2525,[19,9]);
@@ -7300,11 +7300,11 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'Eternal heart biscuits',desc:'Silver icing for a very special someone you\'ve liked for a long, long time.',require:Game.last.name,season:'valentines',icon:[19,4],							power:heartPower,price: 1000000000000000000000});
 
 		order=1100;
-		new Game.TieredUpgrade('Gem polish','棱镜像 <b>两次</b> 一样高效。<q>Get rid of the grime and let more light in.<br>Truly, truly outrageous.</q>','Prism',1);
-		new Game.TieredUpgrade('9th color','棱镜像 <b>两次</b> 一样高效。<q>Delve into untouched optical depths where even the mantis shrimp hasn\'t set an eye!</q>','Prism',2);
-		new Game.TieredUpgrade('Chocolate light','棱镜像 <b>两次</b> 一样高效。<q>Bask into its cocoalescence.<br>(Warning : may cause various interesting albeit deadly skin conditions.)</q>','Prism',3);
-		new Game.TieredUpgrade('Grainbow','棱镜像 <b>两次</b> 一样高效。<q>Remember the different grains using the handy Roy G. Biv mnemonic : R is for rice, O is for oats... uh, B for barley?...</q>','Prism',4);
-		new Game.TieredUpgrade('纯粹的宇宙之光','棱镜像 <b>两次</b> 一样高效。<q>Your prisms now receive pristine, unadulterated photons from the other end of the universe.</q>','Prism',5);
+		new Game.TieredUpgrade('Gem polish','棱镜工作效率像 <b>双倍</b> 一样高效。<q>Get rid of the grime and let more light in.<br>Truly, truly outrageous.</q>','Prism',1);
+		new Game.TieredUpgrade('9th color','棱镜工作效率像 <b>双倍</b> 一样高效。<q>Delve into untouched optical depths where even the mantis shrimp hasn\'t set an eye!</q>','Prism',2);
+		new Game.TieredUpgrade('Chocolate light','棱镜工作效率像 <b>双倍</b> 一样高效。<q>Bask into its cocoalescence.<br>(Warning : may cause various interesting albeit deadly skin conditions.)</q>','Prism',3);
+		new Game.TieredUpgrade('Grainbow','棱镜工作效率像 <b>双倍</b> 一样高效。<q>Remember the different grains using the handy Roy G. Biv mnemonic : R is for rice, O is for oats... uh, B for barley?...</q>','Prism',4);
+		new Game.TieredUpgrade('纯粹的宇宙之光','棱镜工作效率像 <b>双倍</b> 一样高效。<q>Your prisms now receive pristine, unadulterated photons from the other end of the universe.</q>','Prism',5);
 
 		order=255;
 		new Game.Upgrade('彩虹老奶奶',Game.getGrandmaSynergyUpgradeDesc('Prism')+'<q>一个发光的老奶奶在饼干上闪闪发光。</q>',Game.Objects['Prism'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
@@ -7331,17 +7331,17 @@ Game.Launch=function()
 		
 		order=150;new Game.Upgrade('Eludium mouse','点击获得 <b>+1% 总秒收益</b>.<q>I rodent do that if I were you.</q>',500000000000000,[11,15]);
 		new Game.Upgrade('Wishalloy mouse','点击获得 <b>+1% 总秒收益</b>.<q>Clicking is fine and dandy, but don\'t smash your mouse over it. Get your game on. Go play.</q>',50000000000000000,[11,16]);
-		order=200;new Game.TieredUpgrade('Aging agents','老奶奶生产像 <b>两次</b> 一样高效。<q>Counter-intuitively, grandmas have the uncanny ability to become more powerful the older they get.</q>','Grandma',6);
-		order=300;new Game.TieredUpgrade('Pulsar sprinklers','农场生产像 <b>两次</b> 一样高效。<q>There\'s no such thing as over-watering. The moistest is the bestest.</q>','Farm',6);
-		order=500;new Game.TieredUpgrade('Deep-bake process','工厂生产像 <b>两次</b> 一样高效。<q>A patented process increasing cookie yield two-fold for the same amount of ingredients. Don\'t ask how, don\'t take pictures, and be sure to wear your protective suit.</q>','Factory',6);
-		order=400;new Game.TieredUpgrade('Coreforge','矿山像 <b>两次</b> 一样高效。<q>You\'ve finally dug a tunnel down to the Earth\'s core. It\'s pretty warm down here.</q>','Mine',6);
-		order=600;new Game.TieredUpgrade('Generation ship','装船像 <b>两次</b> 一样高效。<q>Built to last, this humongous spacecraft will surely deliver your cookies to the deep ends of space, one day.</q>','Shipment',6);
-		order=700;new Game.TieredUpgrade('Origin crucible','炼金实验室像<b>两次</b> 一样高效。<q>Built from the rarest of earths and located at the very deepest of the largest mountain, this legendary crucible is said to retain properties from the big-bang itself.</q>','Alchemy lab',6);
-		order=800;new Game.TieredUpgrade('Deity-sized portals','传送门像<b>两次</b> 一样高效。<q>It\'s almost like, say, an elder god could fit through this thing now. Hypothetically.</q>','Portal',6);
-		order=900;new Game.TieredUpgrade('Far future enactment','时光机器像 <b>两次</b> 一样高效。<q>遥远未来的法令授权你深入挖掘未来——文明已经堕落，又重新崛起，而饼干是丰富的。</q>','Time machine',6);
-		order=1000;new Game.TieredUpgrade('Nanocosmics','反物质冷凝器像 <b>两次</b> 一样高效。<q>纳米宇宙理论认为，每一个亚原子粒子实际上都是它自己自足的宇宙，拥有不可思议的能量。</q>','Antimatter condenser',6);
+		order=200;new Game.TieredUpgrade('Aging agents','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>Counter-intuitively, grandmas have the uncanny ability to become more powerful the older they get.</q>','Grandma',6);
+		order=300;new Game.TieredUpgrade('Pulsar sprinklers','农场生产工作效率像 <b>双倍</b> 一样高效。<q>There\'s no such thing as over-watering. The moistest is the bestest.</q>','Farm',6);
+		order=500;new Game.TieredUpgrade('Deep-bake process','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>A patented process increasing cookie yield two-fold for the same amount of ingredients. Don\'t ask how, don\'t take pictures, and be sure to wear your protective suit.</q>','Factory',6);
+		order=400;new Game.TieredUpgrade('Coreforge','矿山工作效率像 <b>双倍</b> 一样高效。<q>You\'ve finally dug a tunnel down to the Earth\'s core. It\'s pretty warm down here.</q>','Mine',6);
+		order=600;new Game.TieredUpgrade('Generation ship','装船工作效率像 <b>双倍</b> 一样高效。<q>Built to last, this humongous spacecraft will surely deliver your cookies to the deep ends of space, one day.</q>','Shipment',6);
+		order=700;new Game.TieredUpgrade('Origin crucible','炼金实验室像<b>双倍</b> 一样高效。<q>Built from the rarest of earths and located at the very deepest of the largest mountain, this legendary crucible is said to retain properties from the big-bang itself.</q>','Alchemy lab',6);
+		order=800;new Game.TieredUpgrade('Deity-sized portals','传送门像<b>双倍</b> 一样高效。<q>It\'s almost like, say, an elder god could fit through this thing now. Hypothetically.</q>','Portal',6);
+		order=900;new Game.TieredUpgrade('Far future enactment','时光机器工作效率像 <b>双倍</b> 一样高效。<q>遥远未来的法令授权你深入挖掘未来——文明已经堕落，又重新崛起，而饼干是丰富的。</q>','Time machine',6);
+		order=1000;new Game.TieredUpgrade('Nanocosmics','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>纳米宇宙理论认为，每一个亚原子粒子实际上都是它自己自足的宇宙，拥有不可思议的能量。</q>','Antimatter condenser',6);
 		order=1100;
-		new Game.TieredUpgrade('Glow-in-the-dark','棱镜像 <b>两次</b> 一样高效。<q>你的棱镜现在在黑暗中发光，有效地加倍它们的输出!</q>','Prism',6);
+		new Game.TieredUpgrade('Glow-in-the-dark','棱镜工作效率像 <b>双倍</b> 一样高效。<q>你的棱镜现在在黑暗中发光，有效地加倍它们的输出!</q>','Prism',6);
 		
 		order=10032;
 		Game.NewUpgradeCookie({name:'Rose macarons',desc:'虽然味道很怪，但这些糕点最近越来越受欢迎。',icon:[22,3],require:'马卡龙盒子',		power:3,price: 9999});
@@ -7442,28 +7442,28 @@ Game.Launch=function()
 		
 		
 		order=525;
-		new Game.TieredUpgrade('Taller tellers','银行像 <b>两次</b> 一样高效。<q>Able to process a higher amount of transactions. Careful though, as taller tellers tell tall tales.</q>','Bank',1);
-		new Game.TieredUpgrade('Scissor-resistant credit cards','银行像 <b>两次</b> 一样高效。<q>For those truly valued customers.</q>','Bank',2);
-		new Game.TieredUpgrade('Acid-proof vaults','银行像 <b>两次</b> 一样高效。<q>You know what they say : better safe than sorry.</q>','Bank',3);
-		new Game.TieredUpgrade('Chocolate coins','银行像 <b>两次</b> 一样高效。<q>This revolutionary currency is much easier to melt from and into ingots - and tastes much better, for a change.</q>','Bank',4);
-		new Game.TieredUpgrade('Exponential interest rates','银行像 <b>两次</b> 一样高效。<q>Can\'t argue with mathematics! Now fork it over.</q>','Bank',5);
-		new Game.TieredUpgrade('Financial zen','银行像 <b>两次</b> 一样高效。<q>The ultimate grail of economic thought; the feng shui of big money, the stock market yoga - the Heimlich maneuver of dimes and nickels.</q>','Bank',6);
+		new Game.TieredUpgrade('Taller tellers','银行工作效率像 <b>双倍</b> 一样高效。<q>Able to process a higher amount of transactions. Careful though, as taller tellers tell tall tales.</q>','Bank',1);
+		new Game.TieredUpgrade('Scissor-resistant credit cards','银行工作效率像 <b>双倍</b> 一样高效。<q>For those truly valued customers.</q>','Bank',2);
+		new Game.TieredUpgrade('Acid-proof vaults','银行工作效率像 <b>双倍</b> 一样高效。<q>You know what they say : better safe than sorry.</q>','Bank',3);
+		new Game.TieredUpgrade('Chocolate coins','银行工作效率像 <b>双倍</b> 一样高效。<q>This revolutionary currency is much easier to melt from and into ingots - and tastes much better, for a change.</q>','Bank',4);
+		new Game.TieredUpgrade('Exponential interest rates','银行工作效率像 <b>双倍</b> 一样高效。<q>Can\'t argue with mathematics! Now fork it over.</q>','Bank',5);
+		new Game.TieredUpgrade('Financial zen','银行工作效率像 <b>双倍</b> 一样高效。<q>The ultimate grail of economic thought; the feng shui of big money, the stock market yoga - the Heimlich maneuver of dimes and nickels.</q>','Bank',6);
 		
 		order=550;
-		new Game.TieredUpgrade('Golden idols','寺庙想 <b>两次</b> 一样高效。<q>Lure even greedier adventurers to retrieve your cookies. Now that\'s a real idol game!</q>','Temple',1);
-		new Game.TieredUpgrade('Sacrifices','寺庙想 <b>两次</b> 一样高效。<q>What\'s a life to a gigaton of cookies?</q>','Temple',2);
-		new Game.TieredUpgrade('Delicious blessing','寺庙想 <b>两次</b> 一样高效。<q>And lo, the Baker\'s almighty spoon came down and distributed holy gifts unto the believers - shimmering sugar, and chocolate dark as night, and all manner of wheats. And boy let me tell you, that party was mighty gnarly.</q>','Temple',3);
-		new Game.TieredUpgrade('Sun festival','寺庙想 <b>两次</b> 一样高效。<q>Free the primordial powers of your temples with these annual celebrations involving fire-breathers, traditional dancing, ritual beheadings and other merriments!</q>','Temple',4);
-		new Game.TieredUpgrade('Enlarged pantheon','寺庙想 <b>两次</b> 一样高效。<q>Enough spiritual inadequacy! More divinities than you\'ll ever need, or your money back! 100% guaranteed!</q>','Temple',5);
-		new Game.TieredUpgrade('Great Baker in the sky','寺庙想 <b>两次</b> 一样高效。<q>This is it. The ultimate deity has finally cast Their sublimely divine eye upon your operation; whether this is a good thing or possibly the end of days is something you should find out very soon.</q>','Temple',6);
+		new Game.TieredUpgrade('Golden idols','寺庙想 <b>双倍</b> 一样高效。<q>Lure even greedier adventurers to retrieve your cookies. Now that\'s a real idol game!</q>','Temple',1);
+		new Game.TieredUpgrade('Sacrifices','寺庙想 <b>双倍</b> 一样高效。<q>What\'s a life to a gigaton of cookies?</q>','Temple',2);
+		new Game.TieredUpgrade('Delicious blessing','寺庙想 <b>双倍</b> 一样高效。<q>And lo, the Baker\'s almighty spoon came down and distributed holy gifts unto the believers - shimmering sugar, and chocolate dark as night, and all manner of wheats. And boy let me tell you, that party was mighty gnarly.</q>','Temple',3);
+		new Game.TieredUpgrade('Sun festival','寺庙想 <b>双倍</b> 一样高效。<q>Free the primordial powers of your temples with these annual celebrations involving fire-breathers, traditional dancing, ritual beheadings and other merriments!</q>','Temple',4);
+		new Game.TieredUpgrade('Enlarged pantheon','寺庙想 <b>双倍</b> 一样高效。<q>Enough spiritual inadequacy! More divinities than you\'ll ever need, or your money back! 100% guaranteed!</q>','Temple',5);
+		new Game.TieredUpgrade('Great Baker in the sky','寺庙想 <b>双倍</b> 一样高效。<q>This is it. The ultimate deity has finally cast Their sublimely divine eye upon your operation; whether this is a good thing or possibly the end of days is something you should find out very soon.</q>','Temple',6);
 		
 		order=575;
-		new Game.TieredUpgrade('尖尖的帽子','精灵塔像 <b>两次</b> 一样高效。<q>测试显示，相对于神奇的圆锥工具的几何比例，它的可接受性增加了。</q>','Wizard tower',1);
-		new Game.TieredUpgrade('胡子胡子','精灵塔像 <b>两次</b> 一样高效。<q>你没听说吗?胡子就是这个词。</q>','Wizard tower',2);
-		new Game.TieredUpgrade('古魔典','精灵塔像 <b>两次</b> 一样高效。<q>包含一些有趣的咒语，比如“把水变成流口水”，“在家具上长眉毛”和“召唤政治家”。</q>','Wizard tower',3);
-		new Game.TieredUpgrade('厨房诅咒','精灵塔像 <b>两次</b> 一样高效。<q>奇异魔法涉及到一切与人有关的东西。好极了!</q>','Wizard tower',4);
-		new Game.TieredUpgrade('魔法学校','精灵塔像 <b>两次</b> 一样高效。<q>这个由饼干资助的魔法学院是四所著名的魔法学院的所在地:运动员，书呆子，预备者，和死亡的人。</q>','Wizard tower',5);
-		new Game.TieredUpgrade('黑暗公式','精灵塔像 <b>两次</b> 一样高效。<q>在这些咒语的背后，有一种力量在发挥作用——你会感觉到你真的不应该把它们弄乱。但是我是说，免费的饼干，对吧?</q>','Wizard tower',6);
+		new Game.TieredUpgrade('尖尖的帽子','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>测试显示，相对于神奇的圆锥工具的几何比例，它的可接受性增加了。</q>','Wizard tower',1);
+		new Game.TieredUpgrade('胡子胡子','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>你没听说吗?胡子就是这个词。</q>','Wizard tower',2);
+		new Game.TieredUpgrade('古魔典','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>包含一些有趣的咒语，比如“把水变成流口水”，“在家具上长眉毛”和“召唤政治家”。</q>','Wizard tower',3);
+		new Game.TieredUpgrade('厨房诅咒','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>奇异魔法涉及到一切与人有关的东西。好极了!</q>','Wizard tower',4);
+		new Game.TieredUpgrade('魔法学校','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>这个由饼干资助的魔法学院是四所著名的魔法学院的所在地:运动员，书呆子，预备者，和死亡的人。</q>','Wizard tower',5);
+		new Game.TieredUpgrade('黑暗公式','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>在这些咒语的背后，有一种力量在发挥作用——你会感觉到你真的不应该把它们弄乱。但是我是说，免费的饼干，对吧?</q>','Wizard tower',6);
 
 		order=250;
 		new Game.Upgrade('银行家老奶奶',Game.getGrandmaSynergyUpgradeDesc('Bank')+'<q>一个好的银行家可以兑现更多的饼干。</q>',Game.Objects['Bank'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
@@ -7578,40 +7578,40 @@ Game.Launch=function()
 
 		new Game.Upgrade('小猫天使','你获得了 <b>更多的饼干每秒产量</b> 你的牛奶越多。<q>所有的猫都会去天堂。</q>',9000,[23,7]);Game.last.pool='prestige';Game.last.parents=['Dominions'];Game.last.kitten=1;
 		
-		new Game.Upgrade('邪恶的诱饵','皱纹出现像 <b>5 次</b> 那么快。<q>没有皱纹可以抵御蠕虫饼干的气味。</q>',44444,[15,12]);Game.last.pool='prestige';Game.last.parents=['启动厨房'];
+		new Game.Upgrade('邪恶的诱饵','皱纹出现工作效率像 <b>5 次</b> 那么快。<q>没有皱纹可以抵御蠕虫饼干的气味。</q>',44444,[15,12]);Game.last.pool='prestige';Game.last.parents=['启动厨房'];
 		new Game.Upgrade('亵渎神明','Wrinklers regurgitate <b>5%</b> more cookies.<q>独特的动物王国，皱纹消化道能够承受难以置信程度的扩张——只要你适当地刺激它们。</q>',444444,[19,8]);Game.last.pool='prestige';Game.last.parents=['邪恶的诱饵'];
 		
 		
-		order=200;new Game.TieredUpgrade('Xtreme walkers','老奶奶生产像 <b>两次</b> 一样高效。<q>配上火焰贴纸和一个小喇叭，“嘟嘟”。</q>','Grandma',7);
-		order=300;new Game.TieredUpgrade('Fudge fungus','农场生产像 <b>两次</b> 一样高效。<q>一种含糖的寄生虫，其卷须帮助饼干生长。<br>请不要在孢子里呼吸。如果有孢子摄入，在接下来的36秒内寻求医疗帮助。</q>','Farm',7);
-		order=400;new Game.TieredUpgrade('Planetsplitters','矿山像 <b>两次</b> 一样高效。<q>这些新型的挖土机已经在马鲁拉，格洛伯特和弗瓦扎·维的实验中进行了测试，在其他遥远的星球上，它们最近都很安静。</q>','Mine',7);
-		order=500;new Game.TieredUpgrade('Cyborg workforce','工厂生产像 <b>两次</b> 一样高效。<q>半合成的生物体没有松懈，没有统一，午休时间缩短了20%，这使它们成为理想的劳动饲料。</q>','Factory',7);
-		order=525;new Game.TieredUpgrade('Way of the wallet','银行像 <b>两次</b> 一样高效。<q>这种新的货币学派在银行界引起了激烈的讨论;遵循它的规则，你就可以从中获利。</q>','Bank',7);
-		order=550;new Game.TieredUpgrade('Creation myth','寺庙想 <b>两次</b> 一样高效。<q>关于第一个饼干的起源的故事一直流传着;故事是如何开始的，在时间和命运的烤箱里。</q>','Temple',7);
-		order=575;new Game.TieredUpgrade('Cookiemancy','精灵塔像 <b>两次</b> 一样高效。<q>在这里;完美的烘焙魔法学校。从召唤晶片到打螺帽，没有任何一种饼干制作方法能通过魔术提高10倍的效果。</q>','Wizard tower',7);
-		order=600;new Game.TieredUpgrade('Dyson sphere','装船像 <b>两次</b> 一样高效。<q>你已经找到了一种方法，将你的宇宙技术知识运用到更局部的努力中;这个巨大的元材料球体包裹着太阳系，肯定会让你的烘焙能力提高一个档次。</q>','Shipment',7);
-		order=700;new Game.TieredUpgrade('Theory of atomic fluidity','炼金实验室像<b>两次</b> 一样高效。<q>把炼金术推向极限，你会发现一切事物都可以转化成其他东西——铅、水银、水;更重要的是，你意识到任何东西都可以而且应该被转换成饼干。</q>','Alchemy lab',7);
-		order=800;new Game.TieredUpgrade('End of times back-up plan','传送门像<b>两次</b> 一样高效。<q>以防万一，好吗?</q>','Portal',7);
-		order=900;new Game.TieredUpgrade('Great loop hypothesis','时光机器像 <b>两次</b> 一样高效。<q>如果我们的宇宙只是一个无限循环的一个实例呢?如果，在它之前和之后，无限延伸的相同的宇宙，它们本身含有无限的饼干?</q>','Time machine',7);
-		order=1000;new Game.TieredUpgrade('The Pulse','反物质冷凝器像 <b>两次</b> 一样高效。<q>你已经进入了宇宙的脉搏，这是一种永恒的节奏，每一种材料和反物质都能和谐地跳动。不知何故，这意味着更多的饼干。</q>','Antimatter condenser',7);
+		order=200;new Game.TieredUpgrade('Xtreme walkers','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>配上火焰贴纸和一个小喇叭，“嘟嘟”。</q>','Grandma',7);
+		order=300;new Game.TieredUpgrade('Fudge fungus','农场生产工作效率像 <b>双倍</b> 一样高效。<q>一种含糖的寄生虫，其卷须帮助饼干生长。<br>请不要在孢子里呼吸。如果有孢子摄入，在接下来的36秒内寻求医疗帮助。</q>','Farm',7);
+		order=400;new Game.TieredUpgrade('Planetsplitters','矿山工作效率像 <b>双倍</b> 一样高效。<q>这些新型的挖土机已经在马鲁拉，格洛伯特和弗瓦扎·维的实验中进行了测试，在其他遥远的星球上，它们最近都很安静。</q>','Mine',7);
+		order=500;new Game.TieredUpgrade('Cyborg workforce','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>半合成的生物体没有松懈，没有统一，午休时间缩短了20%，这使它们成为理想的劳动饲料。</q>','Factory',7);
+		order=525;new Game.TieredUpgrade('Way of the wallet','银行工作效率像 <b>双倍</b> 一样高效。<q>这种新的货币学派在银行界引起了激烈的讨论;遵循它的规则，你就可以从中获利。</q>','Bank',7);
+		order=550;new Game.TieredUpgrade('Creation myth','寺庙想 <b>双倍</b> 一样高效。<q>关于第一个饼干的起源的故事一直流传着;故事是如何开始的，在时间和命运的烤箱里。</q>','Temple',7);
+		order=575;new Game.TieredUpgrade('Cookiemancy','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>在这里;完美的烘焙魔法学校。从召唤晶片到打螺帽，没有任何一种饼干制作方法能通过魔术提高10倍的效果。</q>','Wizard tower',7);
+		order=600;new Game.TieredUpgrade('Dyson sphere','装船工作效率像 <b>双倍</b> 一样高效。<q>你已经找到了一种方法，将你的宇宙技术知识运用到更局部的努力中;这个巨大的元材料球体包裹着太阳系，肯定会让你的烘焙能力提高一个档次。</q>','Shipment',7);
+		order=700;new Game.TieredUpgrade('Theory of atomic fluidity','炼金实验室像<b>双倍</b> 一样高效。<q>把炼金术推向极限，你会发现一切事物都可以转化成其他东西——铅、水银、水;更重要的是，你意识到任何东西都可以而且应该被转换成饼干。</q>','Alchemy lab',7);
+		order=800;new Game.TieredUpgrade('End of times back-up plan','传送门像<b>双倍</b> 一样高效。<q>以防万一，好吗?</q>','Portal',7);
+		order=900;new Game.TieredUpgrade('Great loop hypothesis','时光机器工作效率像 <b>双倍</b> 一样高效。<q>如果我们的宇宙只是一个无限循环的一个实例呢?如果，在它之前和之后，无限延伸的相同的宇宙，它们本身含有无限的饼干?</q>','Time machine',7);
+		order=1000;new Game.TieredUpgrade('The Pulse','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>你已经进入了宇宙的脉搏，这是一种永恒的节奏，每一种材料和反物质都能和谐地跳动。不知何故，这意味着更多的饼干。</q>','Antimatter condenser',7);
 		order=1100;
-		new Game.TieredUpgrade('Lux sanctorum','棱镜像 <b>两次</b> 一样高效。<q>你的“棱镜”服务人员已经变得越来越着迷于某些东西——或者是一些超越它的东西;超出了我们所有人,可能吗?</q>','Prism',7);
+		new Game.TieredUpgrade('Lux sanctorum','棱镜工作效率像 <b>双倍</b> 一样高效。<q>你的“棱镜”服务人员已经变得越来越着迷于某些东西——或者是一些超越它的东西;超出了我们所有人,可能吗?</q>','Prism',7);
 		
 		
-		order=200;new Game.TieredUpgrade('The Unbridling','老奶奶生产像 <b>两次</b> 一样高效。<q>It might be a classic tale of bad parenting, but let\'s see where grandma is going with this.</q>','Grandma',8);
-		order=300;new Game.TieredUpgrade('Wheat triffids','农场生产像 <b>两次</b> 一样高效。<q>Taking care of crops is so much easier when your plants can just walk about and help around the farm.<br>Do not pet. Do not feed. Do not attempt to converse with.</q>','Farm',8);
-		order=400;new Game.TieredUpgrade('Canola oil wells','矿山像 <b>两次</b> 一样高效。<q>A previously untapped resource, canola oil permeates the underground olifers which grant it its particular taste and lucrative properties.</q>','Mine',8);
-		order=500;new Game.TieredUpgrade('78-hour days','工厂生产像 <b>两次</b> 一样高效。<q>Why didn\'t we think of this earlier?</q>','Factory',8);
-		order=525;new Game.TieredUpgrade('The stuff rationale','银行像 <b>两次</b> 一样高效。<q>If not now, when? If not it, what? If not things... stuff?</q>','Bank',8);
-		order=550;new Game.TieredUpgrade('Theocracy','寺庙想 <b>两次</b> 一样高效。<q>You\'ve turned your cookie empire into a perfect theocracy, gathering the adoration of zillions of followers from every corner of the universe.<br>Don\'t let it go to your head.</q>','Temple',8);
-		order=575;new Game.TieredUpgrade('Rabbit trick','精灵塔像 <b>两次</b> 一样高效。<q>Using nothing more than a fancy top hat, your wizards have found a way to simultaneously curb rabbit population and produce heaps of extra cookies for basically free!<br>Resulting cookies may or may not be fit for vegans.</q>','Wizard tower',8);
-		order=600;new Game.TieredUpgrade('The final frontier','装船像 <b>两次</b> 一样高效。<q>It\'s been a long road, getting from there to here. It\'s all worth it though - the sights are lovely and the oil prices slightly more reasonable.</q>','Shipment',8);
-		order=700;new Game.TieredUpgrade('Beige goo','炼金实验室像<b>两次</b> 一样高效。<q>Well now you\'ve done it. Good job. Very nice. That\'s 3 galaxies you\'ve just converted into cookies. Good thing you can hop from universe to universe.</q>','Alchemy lab',8);
-		order=800;new Game.TieredUpgrade('Maddening chants','传送门像<b>两次</b> 一样高效。<q>A popular verse goes like so : "jau\'hn madden jau\'hn madden aeiouaeiouaeiou brbrbrbrbrbrbr"</q>','Portal',8);
-		order=900;new Game.TieredUpgrade('Cookietopian moments of maybe','时光机器像 <b>两次</b> 一样高效。<q>Reminiscing how things could have been, should have been, will have been.</q>','Time machine',8);
-		order=1000;new Game.TieredUpgrade('Some other super-tiny fundamental particle? Probably?','反物质冷凝器像 <b>两次</b> 一样高效。<q>When even the universe is running out of ideas, that\'s when you know you\'re nearing the end.</q>','Antimatter condenser',8);
+		order=200;new Game.TieredUpgrade('The Unbridling','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>It might be a classic tale of bad parenting, but let\'s see where grandma is going with this.</q>','Grandma',8);
+		order=300;new Game.TieredUpgrade('Wheat triffids','农场生产工作效率像 <b>双倍</b> 一样高效。<q>Taking care of crops is so much easier when your plants can just walk about and help around the farm.<br>Do not pet. Do not feed. Do not attempt to converse with.</q>','Farm',8);
+		order=400;new Game.TieredUpgrade('Canola oil wells','矿山工作效率像 <b>双倍</b> 一样高效。<q>A previously untapped resource, canola oil permeates the underground olifers which grant it its particular taste and lucrative properties.</q>','Mine',8);
+		order=500;new Game.TieredUpgrade('78-hour days','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>Why didn\'t we think of this earlier?</q>','Factory',8);
+		order=525;new Game.TieredUpgrade('The stuff rationale','银行工作效率像 <b>双倍</b> 一样高效。<q>If not now, when? If not it, what? If not things... stuff?</q>','Bank',8);
+		order=550;new Game.TieredUpgrade('Theocracy','寺庙想 <b>双倍</b> 一样高效。<q>You\'ve turned your cookie empire into a perfect theocracy, gathering the adoration of zillions of followers from every corner of the universe.<br>Don\'t let it go to your head.</q>','Temple',8);
+		order=575;new Game.TieredUpgrade('Rabbit trick','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>Using nothing more than a fancy top hat, your wizards have found a way to simultaneously curb rabbit population and produce heaps of extra cookies for basically free!<br>Resulting cookies may or may not be fit for vegans.</q>','Wizard tower',8);
+		order=600;new Game.TieredUpgrade('The final frontier','装船工作效率像 <b>双倍</b> 一样高效。<q>It\'s been a long road, getting from there to here. It\'s all worth it though - the sights are lovely and the oil prices slightly more reasonable.</q>','Shipment',8);
+		order=700;new Game.TieredUpgrade('Beige goo','炼金实验室像<b>双倍</b> 一样高效。<q>Well now you\'ve done it. Good job. Very nice. That\'s 3 galaxies you\'ve just converted into cookies. Good thing you can hop from universe to universe.</q>','Alchemy lab',8);
+		order=800;new Game.TieredUpgrade('Maddening chants','传送门像<b>双倍</b> 一样高效。<q>A popular verse goes like so : "jau\'hn madden jau\'hn madden aeiouaeiouaeiou brbrbrbrbrbrbr"</q>','Portal',8);
+		order=900;new Game.TieredUpgrade('Cookietopian moments of maybe','时光机器工作效率像 <b>双倍</b> 一样高效。<q>Reminiscing how things could have been, should have been, will have been.</q>','Time machine',8);
+		order=1000;new Game.TieredUpgrade('Some other super-tiny fundamental particle? Probably?','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>When even the universe is running out of ideas, that\'s when you know you\'re nearing the end.</q>','Antimatter condenser',8);
 		order=1100;
-		new Game.TieredUpgrade('Reverse shadows','棱镜像 <b>两次</b> 一样高效。<q>Oh man, this is really messing with your eyes.</q>','Prism',8);
+		new Game.TieredUpgrade('Reverse shadows','棱镜工作效率像 <b>双倍</b> 一样高效。<q>Oh man, this is really messing with your eyes.</q>','Prism',8);
 		
 		
 		order=20000;
@@ -7900,14 +7900,14 @@ Game.Launch=function()
 		new Game.Upgrade('幸运老奶奶',Game.getGrandmaSynergyUpgradeDesc('Chancemaker')+'<q>一位幸运的奶奶总是能找到更多的饼干。</q>',Game.Objects['Chancemaker'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
 		
 		order=1200;
-		new Game.TieredUpgrade('你的幸运饼干','投机分子像 <b>两次</b> 一样高效。<q>这是你烤过的第一块饼干。它具有很深的情感价值，而且，在这之后，有一种有趣的味道。</q>','Chancemaker',1);
-		new Game.TieredUpgrade('所有的赌注都在"魔法硬币"上','投机分子像 <b>两次</b> 一样高效。<q>抛硬币时总是落在另一边的硬币。不是正面，不是反面，不是边缘。是<i>另一边</i>.</q>','Chancemaker',2);
-		new Game.TieredUpgrade('中奖彩票','投机分子像 <b>两次</b> 一样高效。<q>什么彩票?彩票，那就是彩票！只有彩票才重要!</q>','Chancemaker',3);
-		new Game.TieredUpgrade('四叶苜蓿田','投机分子像 <b>两次</b> 一样高效。<q>这里没有巨型怪物，只有一大堆幸运草。</q>','Chancemaker',4);
-		new Game.TieredUpgrade('一本关于书的食谱','投机分子像 <b>两次</b> 一样高效。<q>用28种创造性的新方法来帮你烹饪书。</q>','Chancemaker',5);
-		new Game.TieredUpgrade('小妖精村','投机分子像 <b>两次</b> 一样高效。<q>你最终会被当地的小妖精们所接受，他们把神话般的运气当作友谊的象征(还有一些很臭的茶)。</q>','Chancemaker',6);
-		new Game.TieredUpgrade('非概率驱动','投机分子像 <b>两次</b> 一样高效。<q>这是一个奇怪的引擎，它会把统计数据转到他们的头上。由祖母推荐的面包房指南。</q>','Chancemaker',7);
-		new Game.TieredUpgrade('反超级美味','投机分子像 <b>两次</b> 一样高效。<q>一个令人兴奋的新领域的研究使不幸的事情变得幸运。没有镜子没有被打破，没有梯子在下面！</q>','Chancemaker',8);
+		new Game.TieredUpgrade('你的幸运饼干','投机分子工作效率像 <b>双倍</b> 一样高效。<q>这是你烤过的第一块饼干。它具有很深的情感价值，而且，在这之后，有一种有趣的味道。</q>','Chancemaker',1);
+		new Game.TieredUpgrade('所有的赌注都在"魔法硬币"上','投机分子工作效率像 <b>双倍</b> 一样高效。<q>抛硬币时总是落在另一边的硬币。不是正面，不是反面，不是边缘。是<i>另一边</i>.</q>','Chancemaker',2);
+		new Game.TieredUpgrade('中奖彩票','投机分子工作效率像 <b>双倍</b> 一样高效。<q>什么彩票?彩票，那就是彩票！只有彩票才重要!</q>','Chancemaker',3);
+		new Game.TieredUpgrade('四叶苜蓿田','投机分子工作效率像 <b>双倍</b> 一样高效。<q>这里没有巨型怪物，只有一大堆幸运草。</q>','Chancemaker',4);
+		new Game.TieredUpgrade('一本关于书的食谱','投机分子工作效率像 <b>双倍</b> 一样高效。<q>用28种创造性的新方法来帮你烹饪书。</q>','Chancemaker',5);
+		new Game.TieredUpgrade('小妖精村','投机分子工作效率像 <b>双倍</b> 一样高效。<q>你最终会被当地的小妖精们所接受，他们把神话般的运气当作友谊的象征(还有一些很臭的茶)。</q>','Chancemaker',6);
+		new Game.TieredUpgrade('非概率驱动','投机分子工作效率像 <b>双倍</b> 一样高效。<q>这是一个奇怪的引擎，它会把统计数据转到他们的头上。由祖母推荐的面包房指南。</q>','Chancemaker',7);
+		new Game.TieredUpgrade('反超级美味','投机分子工作效率像 <b>双倍</b> 一样高效。<q>一个令人兴奋的新领域的研究使不幸的事情变得幸运。没有镜子没有被打破，没有梯子在下面！</q>','Chancemaker',8);
 		
 		order=5000;
 		new Game.SynergyUpgrade('宝石护身符','<q>幸运的符咒覆盖着古老的、极其稀有的晶体。一定要有面试的机会！</q>','Chancemaker','Mine','synergy1');
@@ -7924,20 +7924,20 @@ Game.Launch=function()
 		
 		order=150;new Game.Upgrade('阿迈斯里鼠标','点击获得 <b>+1% 总秒收益</b>.<q>这个需要大约53人来推动它，另外48人跳下来按下按钮并触发点击。你可以说它有一些分量。</q>',50000000000000000000000,[11,19]);
 		
-		order=200;new Game.TieredUpgrade('逆转痴呆','老奶奶生产像 <b>两次</b> 一样高效。<q>非常令人不安，甚至比普通的还要糟糕。</q>','Grandma',9);
-		order=300;new Game.TieredUpgrade('人道杀虫剂','农场生产像 <b>两次</b> 一样高效。<q>这是由人，为人们，从人们，准备释放一些正义的灼伤的那些讨厌的昆虫，所以应该得到它。</q>','Farm',9);
-		order=400;new Game.TieredUpgrade('鼹鼠人','矿山像 <b>两次</b> 一样高效。<q>这些壮实的小人物，在你的实验室里，从真实的人类身上设计出来，他们有本事找到最美味的地下矿石，条件是更昂贵的机器可能无法生存。</q>','Mine',9);
-		order=500;new Game.TieredUpgrade('机器学习','工厂生产像 <b>两次</b> 一样高效。<q>如果你真的告诉你的员工学会如何操作机器，你就会得到更好的工作效率。有时候，这是小事……</q>','Factory',9);
-		order=525;new Game.TieredUpgrade('可食用货币','银行像 <b>两次</b> 一样高效。<q>这真的很简单;你让所有的货币都太好吃了，不吃，一下子解决世界饥饿和通货膨胀!</q>','Bank',9);
-		order=550;new Game.TieredUpgrade('病态的说唱祈祷','寺庙想 <b>两次</b> 一样高效。<q>这些时髦的宗教曲调以其糟糕的节奏和激流的韵律，肯定能让所有的年轻人们相信他们是在教堂的长凳上，祈祷更多!邪恶的!</q>','Temple',9);
-		order=575;new Game.TieredUpgrade('豪华的魔杖','精灵塔像 <b>两次</b> 一样高效。<q>在这个科学的时代，大多数熟练的魔杖制造者都已经远去了;但值得庆幸的是，并非所有的游荡者都迷失了。</q>','Wizard tower',9);
-		order=600;new Game.TieredUpgrade('自动驾驶仪','装船像 <b>两次</b> 一样高效。<q>你的船现在安装了完全的机器人船员!当你不需要补偿那些在太空中迷失的人的家人时，你能省下多少钱，真是太疯狂了。</q>','Shipment',9);
-		order=700;new Game.TieredUpgrade('化学的出现','炼金实验室像<b>两次</b> 一样高效。<q>你知道吗?那全是炼金术的胡说八道，是一堆毫无根据的废话。亲爱的上帝，你在想什么?</q>','Alchemy lab',9);
-		order=800;new Game.TieredUpgrade('真实的世界','传送门像<b>两次</b> 一样高效。<q>事实证明，我们的宇宙实际上是另一种更理智的现实世界的扭曲维度。是时候跳到那边去了!</q>','Portal',9);
-		order=900;new Game.TieredUpgrade('第二秒','时光机器像 <b>两次</b> 一样高效。<q>在相同的时间内，它的秒数是原来的两倍!什么交易!还有，以上帝的名义!</q>','Time machine',9);
-		order=1000;new Game.TieredUpgrade('量子梳','反物质冷凝器像 <b>两次</b> 一样高效。<q>量子纠缠是一种很烦人的解释，我们可以坦白地说，如果没有它，我们可能会过得更好。这终于有可能多亏了量子梳子!</q>','Antimatter condenser',9);
-		order=1100;new Game.TieredUpgrade('水晶镜子','棱镜像 <b>两次</b> 一样高效。<q>它的设计是为了将更多的光线过滤回你的棱镜，达到了现实本身从未计划过的亮度水平。</q>','Prism',9);
-		order=1200;new Game.TieredUpgrade('兔子脚','投机分子像 <b>两次</b> 一样高效。<q>你会用几百只爪子去饲养兔子，这使它们在本质上非常幸运，因此是一个非常方便(如果非常令人不安)的宠物。</q>','Chancemaker',9);
+		order=200;new Game.TieredUpgrade('逆转痴呆','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>非常令人不安，甚至比普通的还要糟糕。</q>','Grandma',9);
+		order=300;new Game.TieredUpgrade('人道杀虫剂','农场生产工作效率像 <b>双倍</b> 一样高效。<q>这是由人，为人们，从人们，准备释放一些正义的灼伤的那些讨厌的昆虫，所以应该得到它。</q>','Farm',9);
+		order=400;new Game.TieredUpgrade('鼹鼠人','矿山工作效率像 <b>双倍</b> 一样高效。<q>这些壮实的小人物，在你的实验室里，从真实的人类身上设计出来，他们有本事找到最美味的地下矿石，条件是更昂贵的机器可能无法生存。</q>','Mine',9);
+		order=500;new Game.TieredUpgrade('机器学习','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>如果你真的告诉你的员工学会如何操作机器，你就会得到更好的工作效率。有时候，这是小事……</q>','Factory',9);
+		order=525;new Game.TieredUpgrade('可食用货币','银行工作效率像 <b>双倍</b> 一样高效。<q>这真的很简单;你让所有的货币都太好吃了，不吃，一下子解决世界饥饿和通货膨胀!</q>','Bank',9);
+		order=550;new Game.TieredUpgrade('病态的说唱祈祷','寺庙想 <b>双倍</b> 一样高效。<q>这些时髦的宗教曲调以其糟糕的节奏和激流的韵律，肯定能让所有的年轻人们相信他们是在教堂的长凳上，祈祷更多!邪恶的!</q>','Temple',9);
+		order=575;new Game.TieredUpgrade('豪华的魔杖','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>在这个科学的时代，大多数熟练的魔杖制造者都已经远去了;但值得庆幸的是，并非所有的游荡者都迷失了。</q>','Wizard tower',9);
+		order=600;new Game.TieredUpgrade('自动驾驶仪','装船工作效率像 <b>双倍</b> 一样高效。<q>你的船现在安装了完全的机器人船员!当你不需要补偿那些在太空中迷失的人的家人时，你能省下多少钱，真是太疯狂了。</q>','Shipment',9);
+		order=700;new Game.TieredUpgrade('化学的出现','炼金实验室像<b>双倍</b> 一样高效。<q>你知道吗?那全是炼金术的胡说八道，是一堆毫无根据的废话。亲爱的上帝，你在想什么?</q>','Alchemy lab',9);
+		order=800;new Game.TieredUpgrade('真实的世界','传送门像<b>双倍</b> 一样高效。<q>事实证明，我们的宇宙实际上是另一种更理智的现实世界的扭曲维度。是时候跳到那边去了!</q>','Portal',9);
+		order=900;new Game.TieredUpgrade('第二秒','时光机器工作效率像 <b>双倍</b> 一样高效。<q>在相同的时间内，它的秒数是原来的两倍!什么交易!还有，以上帝的名义!</q>','Time machine',9);
+		order=1000;new Game.TieredUpgrade('量子梳','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>量子纠缠是一种很烦人的解释，我们可以坦白地说，如果没有它，我们可能会过得更好。这终于有可能多亏了量子梳子!</q>','Antimatter condenser',9);
+		order=1100;new Game.TieredUpgrade('水晶镜子','棱镜工作效率像 <b>双倍</b> 一样高效。<q>它的设计是为了将更多的光线过滤回你的棱镜，达到了现实本身从未计划过的亮度水平。</q>','Prism',9);
+		order=1200;new Game.TieredUpgrade('兔子脚','投机分子工作效率像 <b>双倍</b> 一样高效。<q>你会用几百只爪子去饲养兔子，这使它们在本质上非常幸运，因此是一个非常方便(如果非常令人不安)的宠物。</q>','Chancemaker',9);
 		
 		order=20000;
 		new Game.Upgrade('小猫助理到区域经理那里','你获得了 <b>更多饼干秒产量</b> 你的牛奶越多。<q>没有什么能强调……除了必须征得我的下级的同意外，先生</q>',900000000000000000000000000000000000,Game.GetIcon('Kitten',10));Game.last.kitten=1;
@@ -9117,11 +9117,11 @@ Game.Launch=function()
 				{
 					Game.elderWrath=1;
 				}
-				if (Math.random()<0.001 && Game.elderWrath<Game.Has('同心协力')+Game.Has('集体洗脑')+Game.Has('Elder Pact'))
+				if (Math.random()<0.001 && Game.elderWrath<Game.Has('同心协力')+Game.Has('集体洗脑')+Game.Has('长者盟约'))
 				{
 					Game.elderWrath++;//have we already pledged? make the elder wrath shift between different stages
 				}
-				if (Game.Has('Elder Pact') && Game.Upgrades['老人的承诺'].unlocked==0)
+				if (Game.Has('长者盟约') && Game.Upgrades['老人的承诺'].unlocked==0)
 				{
 					Game.Lock('老人的承诺');
 					Game.Unlock('老人的承诺');
@@ -10010,7 +10010,7 @@ Game.Launch=function()
 					{
 						var me=Game.PrestigeUpgrades[i];
 						var ghosted=0;
-						if (me.canBePurchased || Game.Has('Neuromancy')){}
+						if (me.canBePurchased || Game.Has('神经占卜')){}
 						else
 						{
 							for (var ii in me.parents){if (me.parents[ii]!=-1 && me.parents[ii].canBePurchased) ghosted=1;}
