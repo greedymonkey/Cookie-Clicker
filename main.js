@@ -3105,7 +3105,7 @@ Game.Launch=function()
 			
 			for (var i in Game.customMouseCps) {mult+=Game.customMouseCps[i]();}
 			
-			if (Game.Has('Santa\'s helpers')) mult*=1.1;
+			if (Game.Has('圣诞老人的帮手')) mult*=1.1;
 			if (Game.Has('Cookie egg')) mult*=1.1;
 			if (Game.Has('光环手套')) mult*=1.1;
 			
@@ -3307,7 +3307,7 @@ Game.Launch=function()
 			if (Game.Has('改良愉快')) mult*=1.15;
 			if (Game.Has('一堆煤')) mult*=1.01;
 			if (Game.Has('发痒的毛衣')) mult*=1.01;
-			if (Game.Has('Santa\'s dominion')) mult*=1.2;
+			if (Game.Has('圣诞老人的统治')) mult*=1.2;
 			
 			var buildMult=1;
 			if (Game.hasGod)
@@ -3338,7 +3338,7 @@ Game.Launch=function()
 				else if (godLvl==3) buildMult*=0.99;
 			}
 			
-			if (Game.Has('Santa\'s legacy')) mult*=1+(Game.santaLevel+1)*0.03;
+			if (Game.Has('圣诞老人的遗产')) mult*=1+(Game.santaLevel+1)*0.03;
 			
 			for (var i in Game.Objects)
 			{
@@ -3357,7 +3357,7 @@ Game.Launch=function()
 			
 			Game.milkProgress=Game.AchievementsOwned/25;
 			var milkMult=1;
-			if (Game.Has('Santa\'s milk and cookies')) milkMult*=1.05;
+			if (Game.Has('圣诞老人的牛奶和饼干')) milkMult*=1.05;
 			if (Game.hasAura('Breath of Milk')) milkMult*=1.05;
 			if (Game.hasGod)
 			{
@@ -4019,7 +4019,7 @@ Game.Launch=function()
 					if (Game.hasBuff('Elder frenzy')) val*=0.5;//very sorry
 					if (Game.hasBuff('Frenzy')) val*=0.75;//I sincerely apologize
 					var moni=Math.max(25,val);//1 minute of cookie production, or 25 cookies - whichever is highest
-					if (Game.Has('Ho ho ho-flavored frosting')) moni*=2;
+					if (Game.Has('何蚝味糖霜')) moni*=2;
 					Game.Earn(moni);
 					if (Game.hasBuff('Elder frenzy')) Game.Win('Eldeer');
 					
@@ -6061,8 +6061,8 @@ Game.Launch=function()
 		
 		Game.modifyBuildingPrice=function(building,price)
 		{
-			if (Game.Has('Season savings')) price*=0.99;
-			if (Game.Has('Santa\'s dominion')) price*=0.99;
+			if (Game.Has('季节储蓄')) price*=0.99;
+			if (Game.Has('圣诞老人的统治')) price*=0.99;
 			if (Game.Has('法贝热彩蛋')) price*=0.99;
 			if (Game.Has('神圣折扣')) price*=0.99;
 			if (Game.hasAura('Fierce Hoarder')) price*=0.98;
@@ -6296,7 +6296,7 @@ Game.Launch=function()
 			if (Game.Has('幸运老奶奶')) mult*=2;
 			if (Game.Has('宾果游戏中心/研究设施')) mult*=4;
 			if (Game.Has('仪式滚针')) mult*=2;
-			if (Game.Has('Naughty list')) mult*=2;
+			if (Game.Has('淘气名单')) mult*=2;
 			
 			mult*=Game.GetTieredCpsMult(me);
 
@@ -6564,9 +6564,9 @@ Game.Launch=function()
 			if (this.priceFunc) price=this.priceFunc();
 			if (this.pool!='prestige')
 			{
-				if (Game.Has('Toy workshop')) price*=0.95;
+				if (Game.Has('玩具车间')) price*=0.95;
 				if (Game.Has('Five-finger discount')) price*=Math.pow(0.99,Game.Objects['Cursor'].amount/100);
-				if (Game.Has('Santa\'s dominion')) price*=0.98;
+				if (Game.Has('圣诞老人的统治')) price*=0.98;
 				if (Game.Has('法贝热彩蛋')) price*=0.99;
 				if (Game.Has('神圣销售')) price*=0.99;
 				if (Game.hasBuff('Haggler\'s luck')) price*=0.98;
@@ -7257,27 +7257,27 @@ Game.Launch=function()
 			else Game.Notify('在节日的礼帽里，你会发现……','一个节日测试管br>和 <b>'+drop+'</b>.',Game.Upgrades[drop].icon);
 		});
 		
-		new Game.Upgrade('增加愉快','饼干生产增加 <b>+15%</b>.<br>Cost scales with Santa level.<q>It turns out that the key to 增加愉快, strangely enough, happens to be a good campfire and some s\'mores.<br>You know what they say, after all; the s\'more, the merrier.</q>',2525,[17,9]);
-		new Game.Upgrade('改良愉快','饼干生产增加 <b>+15%</b>.<br>Cost scales with Santa level.<q>A nice wobbly belly goes a long way.<br>You jolly?</q>',2525,[17,9]);
-		new Game.Upgrade('一堆煤','饼干生产增加 <b>+1%</b>.<br>Cost scales with Santa level.<q>Some of the world\'s worst stocking stuffing.<br>I guess you could try starting your own little industrial revolution, or something?...</q>',2525,[13,9]);
-		new Game.Upgrade('发痒的毛衣','饼干生产增加 <b>+1%</b>.<br>Cost scales with Santa level.<q>You don\'t know what\'s worse : the embarrassingly quaint "elf on reindeer" motif, or the fact that wearing it makes you feel like you\'re wrapped in a dead sasquatch.</q>',2525,[14,9]);
-		new Game.Upgrade('驯鹿烘烤场','Reindeer appear <b>twice as frequently</b>.<br>Cost scales with Santa level.<q>Male reindeer are from Mars; female reindeer are from venison.</q>',2525,[12,9]);
-		new Game.Upgrade('加重雪橇','Reindeer are <b>twice as slow</b>.<br>Cost scales with Santa level.<q>Hope it was worth the weight.<br>(Something something forced into cervidude)</q>',2525,[12,9]);
-		new Game.Upgrade('Ho ho ho-flavored frosting','Reindeer give <b>twice as much</b>.<br>Cost scales with Santa level.<q>It\'s time to up the antler.</q>',2525,[12,9]);
-		new Game.Upgrade('Season savings','All buildings are <b>1% cheaper</b>.<br>Cost scales with Santa level.<q>By Santa\'s beard, what savings!<br>But who will save us?</q>',2525,[16,9],function(){Game.storeToRefresh=1;});
-		new Game.Upgrade('Toy workshop','All upgrades are <b>5% cheaper</b>.<br>Cost scales with Santa level.<q>Watch yours-elf around elvesdroppers who might steal our production secrets.<br>Or elven worse!</q>',2525,[16,9],function(){Game.upgradesToRebuild=1;});
-		new Game.Upgrade('Naughty list','老奶奶生产工作效率像 <b>双倍</b> as productive.<br>Cost scales with Santa level.<q>This list contains every unholy deed perpetuated by grandmakind.<br>He won\'t be checking this one twice.<br>Once. Once is enough.</q>',2525,[15,9]);
-		new Game.Upgrade('圣诞老人的无底包','Random drops are <b>10% more common</b>.<br>Cost scales with Santa level.<q>This is one bottom you can\'t check out.</q>',2525,[19,9]);
-		new Game.Upgrade('Santa\'s helpers','Clicking is <b>10% more powerful</b>.<br>Cost scales with Santa level.<q>Some choose to help hamburger; some choose to help you.<br>To each their own, I guess.</q>',2525,[19,9]);
-		new Game.Upgrade('Santa\'s legacy','饼干生产增加 <b>+3% per Santa\'s levels</b>.<br>Cost scales with Santa level.<q>In the north pole, you gotta get the elves first. Then when you get the elves, you start making the toys. Then when you get the toys... then you get the cookies.</q>',2525,[19,9]);
-		new Game.Upgrade('Santa\'s milk and cookies','Milk is <b>5% more powerful</b>.<br>Cost scales with Santa level.<q>Part of Santa\'s dreadfully unbalanced diet.</q>',2525,[19,9]);
+		new Game.Upgrade('增加愉快','饼干生产增加 <b>+15%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>结果证明这是增加愉快, 奇怪的是,恰好是一个不错的篝火和一些年代习俗。<br>你知道他们说什么，毕竟;越多越好，越多越好。</q>',2525,[17,9]);
+		new Game.Upgrade('改良愉快','饼干生产增加 <b>+15%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>一个摇摇欲坠的小肚子会有很长的路要走。<br>你快乐吗?</q>',2525,[17,9]);
+		new Game.Upgrade('一堆煤','饼干生产增加 <b>+1%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>一些世界上最糟糕的袜子填充物。<br/>我猜你可以尝试开创自己的小工业革命，还是别的什么?...</q>',2525,[13,9]);
+		new Game.Upgrade('发痒的毛衣','饼干生产增加 <b>+1%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>你不知道更糟糕的是什么:那个令人尴尬的古怪的“驯鹿”图案，或者穿着它会让你感觉像被一个死去的大脚野人裹住一样。</q>',2525,[14,9]);
+		new Game.Upgrade('驯鹿烘烤场','驯鹿出现 <b>两倍频繁</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>雄性驯鹿来自火星;雌性驯鹿是鹿肉。</q>',2525,[12,9]);
+		new Game.Upgrade('加重雪橇','驯鹿 <b>两倍地慢</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>希望它物有所值。<br>(某物被迫成为某物)</q>',2525,[12,9]);
+		new Game.Upgrade('何蚝味糖霜','驯鹿给 <b>两倍一样多</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>这是我该起床的时候了。</q>',2525,[12,9]);
+		new Game.Upgrade('季节储蓄','所有建筑都便宜 <b>1%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>圣诞老人的胡子，什么储蓄!<br/>谁会来救我们?</q>',2525,[16,9],function(){Game.storeToRefresh=1;});
+		new Game.Upgrade('玩具车间','所有升级都便宜 <b>5%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>看着你身边的精灵，他们可能会偷走我们的生产秘密。<br>或者更糟!</q>',2525,[16,9],function(){Game.upgradesToRebuild=1;});
+		new Game.Upgrade('淘气名单','老奶奶生产工作效率像 <b>双倍</b> 一样卓有成效。<br>以圣诞老人等级为标准的成本衡量表。<q>这个名单包含了每一个由格兰德克德人延续的不神圣的行为。<br>他赢不了两次了。<br>一次。一次就足够了。</q>',2525,[15,9]);
+		new Game.Upgrade('圣诞老人的无底包','随机掉落 <b>10% 更常见的</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>这是你不能检查的一个底部。</q>',2525,[19,9]);
+		new Game.Upgrade('圣诞老人的帮手','点击加成 <b>10% 更强大的</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>一些人选择帮助汉堡包;有些人选择帮助你。<br>我想，每个人都有自己的想法。</q>',2525,[19,9]);
+		new Game.Upgrade('圣诞老人的遗产','饼干生产增加 <b>+3% 每圣诞老人等级</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>在北极，你得先找到精灵。当你得到精灵，你就开始制造玩具。然后当你拿到玩具的时候…然后你得到饼干。</q>',2525,[19,9]);
+		new Game.Upgrade('圣诞老人的牛奶和饼干','牛奶能力加 <b>5%</b>。<br>以圣诞老人等级为标准的成本衡量表。<q>这是圣诞老人可怕的不平衡饮食的一部分。</q>',2525,[19,9]);
 		
 		order=40000;
-		new Game.Upgrade('Reindeer season','Reindeer spawn much more frequently.<q>Go, Cheater! Go, Hacker and Faker!</q>',7,[12,9]);//debug purposes only
+		new Game.Upgrade('驯鹿的季节','驯鹿产生更频繁。<q>走,骗子!去,黑客和骗子!</q>',7,[12,9]);//debug purposes only
 		Game.last.pool='debug';
 		
 		order=25000;
-		new Game.Upgrade('Santa\'s dominion','饼干生产增加 <b>+20%</b>.<br>All buildings are <b>1% cheaper</b>.<br>All upgrades are <b>2% cheaper</b>.<q>My name is Claus, king of kings;<br>Look on my toys, ye Mighty, and despair!</q>',2525252525252525,[19,10],function(){Game.storeToRefresh=1;});
+		new Game.Upgrade('圣诞老人的统治','饼干生产增加 <b>+20%</b>.<br>所有建筑成本便宜 <b>1%</b>.<br>所有升级便宜 <b>2%</b>.<q>我的名字是克劳斯，万王之王;<br>看我的玩具，你是伟大的，绝望的!</q>',2525252525252525,[19,10],function(){Game.storeToRefresh=1;});
 		
 		order=10300;
 		var heartPower=function(){
@@ -8184,8 +8184,8 @@ Game.Launch=function()
 		Game.CpsAchievement('Mass producer');
 		Game.CpsAchievement('Cookie vortex');
 		Game.CpsAchievement('Cookie pulsar');
-		Game.CpsAchievement('Cookie quasar');
-		Game.CpsAchievement('Oh hey, you\'re still here');
+		Game.CpsAchievement('饼干类星体');
+		Game.CpsAchievement('嘿，你还在这儿');
 		Game.CpsAchievement('Let\'s never bake again');
 		
 		order=30010;
@@ -8210,24 +8210,24 @@ Game.Launch=function()
 		
 		order=1100;
 		new Game.Achievement('大错特错','出售1个老奶奶<q>我以为你爱我。</q>',[10,9]);
-		new Game.TieredAchievement('奶奶的饼干','拥有 <b>1</b> grandma.','Grandma',1);
-		new Game.TieredAchievement('草率的吻','拥有 <b>50</b> grandmas.','Grandma',2);
-		new Game.TieredAchievement('养老院','拥有 <b>100</b> grandmas.','Grandma',3);
+		new Game.TieredAchievement('奶奶的饼干','拥有 <b>1</b> 老奶奶。','Grandma',1);
+		new Game.TieredAchievement('草率的吻','拥有 <b>50</b> 老奶奶。','Grandma',2);
+		new Game.TieredAchievement('养老院','拥有 <b>100</b> 老奶奶。','Grandma',3);
 		
 		order=1200;
-		new Game.TieredAchievement('My first farm','拥有 <b>1</b> farm.','Farm',1);
-		new Game.TieredAchievement('Reap what you sow','拥有 <b>50</b> farms.','Farm',2);
-		new Game.TieredAchievement('Farm ill','拥有 <b>100</b> farms.','Farm',3);
+		new Game.TieredAchievement('我的第一个农场','拥有 <b>1</b> 农场。','Farm',1);
+		new Game.TieredAchievement('收获你所播种','拥有 <b>50</b> 农场。','Farm',2);
+		new Game.TieredAchievement('农场生病了','拥有 <b>100</b> 农场。','Farm',3);
 		
 		order=1400;
-		new Game.TieredAchievement('Production chain','拥有 <b>1</b> factory.','Factory',1);
-		new Game.TieredAchievement('Industrial revolution','拥有 <b>50</b> factories.','Factory',2);
-		new Game.TieredAchievement('Global warming','拥有 <b>100</b> factories.','Factory',3);
+		new Game.TieredAchievement('生产链','拥有 <b>1</b> 工厂。','Factory',1);
+		new Game.TieredAchievement('工业革命','拥有 <b>50</b> 工厂。','Factory',2);
+		new Game.TieredAchievement('全球变暖','拥有 <b>100</b> 工厂。','Factory',3);
 		
 		order=1300;
-		new Game.TieredAchievement('You know the drill','拥有 <b>1</b> mine.','Mine',1);
-		new Game.TieredAchievement('Excavation site','拥有 <b>50</b> mines.','Mine',2);
-		new Game.TieredAchievement('Hollow the planet','拥有 <b>100</b> mines.','Mine',3);
+		new Game.TieredAchievement('你知道钻','拥有 <b>1</b> 矿山。','Mine',1);
+		new Game.TieredAchievement('挖掘现场','拥有 <b>50</b> 矿山。','Mine',2);
+		new Game.TieredAchievement('空心地球','拥有 <b>100</b> 矿山。','Mine',3);
 		
 		order=1500;
 		new Game.TieredAchievement('Expedition','拥有 <b>1</b> shipment.','Shipment',1);
@@ -8356,7 +8356,7 @@ Game.Launch=function()
 		new Game.Achievement('驯鹿长辈','Pop <b>200 reindeer</b>.',[12,9]);
 
 		order=1200;
-		new Game.TieredAchievement('完善农业','拥有 <b>150</b> farms.','Farm',4);
+		new Game.TieredAchievement('完善农业','拥有 <b>150</b> 农场。','Farm',4);
 		order=1400;
 		new Game.TieredAchievement('终极自动化','拥有 <b>150</b> factories.','Factory',4);
 		order=1300;
@@ -8430,7 +8430,7 @@ Game.Launch=function()
 		new Game.Achievement('Dr. T','拥有 <b>400</b> cursors.',[0,14]);
 		
 		order=1100;new Game.TieredAchievement('The old never bothered me anyway','拥有 <b>250</b> grandmas.','Grandma',6);
-		order=1200;new Game.TieredAchievement('Homegrown','拥有 <b>200</b> farms.','Farm',5);
+		order=1200;new Game.TieredAchievement('Homegrown','拥有 <b>200</b> 农场。','Farm',5);
 		order=1400;new Game.TieredAchievement('Technocracy','拥有 <b>200</b> factories.','Factory',5);
 		order=1300;new Game.TieredAchievement('The center of the Earth','拥有 <b>200</b> mines.','Mine',5);
 		order=1500;new Game.TieredAchievement('We come in peace','拥有 <b>200</b> shipments.','Shipment',5);
@@ -8534,7 +8534,7 @@ Game.Launch=function()
 		new Game.TieredAchievement('The agemaster','拥有 <b>300</b> grandmas.','Grandma',7);
 		new Game.TieredAchievement('To oldly go','拥有 <b>350</b> grandmas.','Grandma',8);
 		
-		order=1200;new Game.TieredAchievement('Gardener extraordinaire','拥有 <b>250</b> farms.','Farm',6);
+		order=1200;new Game.TieredAchievement('Gardener extraordinaire','拥有 <b>250</b> 农场。','Farm',6);
 		order=1300;new Game.TieredAchievement('Tectonic ambassador','拥有 <b>250</b> mines.','Mine',6);
 		order=1400;new Game.TieredAchievement('Rise of the machines','拥有 <b>250</b> factories.','Factory',6);
 		order=1425;new Game.TieredAchievement('Acquire currency','拥有 <b>250</b> banks.','Bank',6);
@@ -8593,7 +8593,7 @@ Game.Launch=function()
 		order=30050;
 		new Game.Achievement('To crumbs, you say?','Ascend with <b>1 decillion</b> cookies baked.<q>Very well then.</q>',[29,6]);
 		
-		order=1200;new Game.TieredAchievement('Seedy business','拥有 <b>300</b> farms.','Farm',7);
+		order=1200;new Game.TieredAchievement('Seedy business','拥有 <b>300</b> 农场。','Farm',7);
 		order=1300;new Game.TieredAchievement('Freak fracking','拥有 <b>300</b> mines.','Mine',7);
 		order=1400;new Game.TieredAchievement('Modern times','拥有 <b>300</b> factories.','Factory',7);
 		order=1425;new Game.TieredAchievement('The nerve of war','拥有 <b>300</b> banks.','Bank',7);
@@ -8684,7 +8684,7 @@ Game.Launch=function()
 		order=1120;
 		new Game.Achievement('Methuselah','Reach level <b>10</b> grandmas.',[1,26]);Game.Objects['Grandma'].levelAchiev10=Game.last;
 		order=1220;
-		new Game.Achievement('Huge tracts of land','Reach level <b>10</b> farms.',[2,26]);Game.Objects['Farm'].levelAchiev10=Game.last;
+		new Game.Achievement('Huge tracts of land','Reach level <b>10</b> 农场。',[2,26]);Game.Objects['Farm'].levelAchiev10=Game.last;
 		order=1320;
 		new Game.Achievement('D-d-d-d-deeper','Reach level <b>10</b> mines.',[3,26]);Game.Objects['Mine'].levelAchiev10=Game.last;
 		order=1420;
@@ -9007,7 +9007,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Haggler\'s luck',
-				desc:'All upgrades are '+pow+'% cheaper for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'所有升级都便宜'+pow+'% '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[25,11],
 				time:time*Game.fps,
 				power:pow,
@@ -9555,8 +9555,8 @@ Game.Launch=function()
 			}
 		}
 		
-		Game.santaLevels=['一个节日测试管','节日装饰','节日花环','节日树','Festive present','Festive elf fetus','Elf toddler','Elfling','Young elf','Bulky elf','Nick','Santa Claus','Elder Santa','True Santa','Final Claus'];
-		Game.santaDrops=['增加愉快','改良愉快','一堆煤','发痒的毛衣','驯鹿烘烤场','加重雪橇','Ho ho ho-flavored frosting','Season savings','Toy workshop','Naughty list','圣诞老人的无底包','Santa\'s helpers','Santa\'s legacy','Santa\'s milk and cookies'];
+		Game.santaLevels=['一个节日测试管','节日装饰','节日花环','节日树','节日礼物','节日精灵胎儿','精灵小孩','精灵','年轻的精灵','庞大的精灵','尼克','圣诞老人','老圣诞老人','真正的圣诞老人','最后的圣诞老人'];
+		Game.santaDrops=['增加愉快','改良愉快','一堆煤','发痒的毛衣','驯鹿烘烤场','加重雪橇','何蚝味糖霜','季节储蓄','玩具车间','淘气名单','圣诞老人的无底包','圣诞老人的帮手','圣诞老人的遗产','圣诞老人的牛奶和饼干'];
 		for (var i in Game.santaDrops)//scale christmas upgrade prices with santa level
 		{Game.Upgrades[Game.santaDrops[i]].priceFunc=function(){return Math.pow(3,Game.santaLevel)*2525;}}
 		
@@ -9571,9 +9571,9 @@ Game.Launch=function()
 				Game.santaLevel=(Game.santaLevel+1)%15;
 				if (Game.santaLevel==14)
 				{
-					Game.Unlock('Santa\'s dominion');
-					if (Game.prefs.popups) Game.Popup('You are granted<br>Santa\'s dominion.');
-					else Game.Notify('You are granted Santa\'s dominion.','',Game.Upgrades['Santa\'s dominion'].icon);
+					Game.Unlock('圣诞老人的统治');
+					if (Game.prefs.popups) Game.Popup('你被授予<br>圣诞老人的统治。');
+					else Game.Notify('你被赋予了圣诞老人的自治权。','',Game.Upgrades['圣诞老人的统治'].icon);
 				}
 				var drops=[];
 				for (var i in Game.santaDrops) {if (!Game.HasUnlocked(Game.santaDrops[i])) drops.push(Game.santaDrops[i]);}
@@ -9581,8 +9581,8 @@ Game.Launch=function()
 				if (drop)
 				{
 					Game.Unlock(drop);
-					if (Game.prefs.popups) Game.Popup('You find a present which contains...<br>'+drop+'!');
-					else Game.Notify('Found a present!','You find a present which contains...<br><b>'+drop+'</b>!',Game.Upgrades[drop].icon);
+					if (Game.prefs.popups) Game.Popup('你找到包含的一份礼物...<br>'+drop+'!');
+					else Game.Notify('找到一份礼物!','你找到包含的一份礼物...<br><b>'+drop+'</b>!',Game.Upgrades[drop].icon);
 				}
 				
 				Game.ToggleSpecialMenu(1);
@@ -9797,9 +9797,9 @@ Game.Launch=function()
 					{
 						str+='<div class="line"></div>'+
 						'<div class="optionBox" style="margin-bottom:0px;"><a class="option framed large title" '+Game.clickStr+'="Game.UpgradeSanta();">'+
-							'<div style="display:table-cell;vertical-align:middle;">Evolve</div>'+
+							'<div style="display:table-cell;vertical-align:middle;">进化</div>'+
 							'<div style="display:table-cell;vertical-align:middle;padding:4px 12px;">|</div>'+
-							'<div style="display:table-cell;vertical-align:middle;font-size:65%;">cost :<div'+(Game.cookies>moni?'':' style="color:#777;"')+'>'+Beautify(Math.pow(Game.santaLevel+1,Game.santaLevel+1))+' '+(Game.santaLevel>0?'cookies':'cookie')+'</div></div>'+
+							'<div style="display:table-cell;vertical-align:middle;font-size:65%;">成本 :<div'+(Game.cookies>moni?'':' style="color:#777;"')+'>'+Beautify(Math.pow(Game.santaLevel+1,Game.santaLevel+1))+' '+(Game.santaLevel>0?'饼干':'饼干')+'</div></div>'+
 						'</a></div>';
 					}
 				}
@@ -11570,6 +11570,28 @@ function cnsigle(name){
         cnsigle="农场"
     }else if(temp=="mine" || temp=="mines"){
         cnsigle="矿山"
+    }else if(temp=="factory" || temp=="factories"){
+        cnsigle="工厂"
+    }else if(temp=="bank" || temp=="banks"){
+        cnsigle="银行"
+    }else if(temp=="temple" || temp=="temples"){
+        cnsigle="寺庙"
+    }else if(temp=="wizard tower" || temp=="wizard towers"){
+        cnsigle="精灵塔"
+    }else if(temp=="shipment" || temp=="shipments"){
+        cnsigle="装船"
+    }else if(temp=="alchemy lab" || temp=="alchemy labs"){
+        cnsigle="炼金实验室"
+    }else if(temp=="portal" || temp=="portals"){
+        cnsigle="传送门"
+    }else if(temp=="time machine" || temp=="time machines"){
+        cnsigle="时光机器"
+    }else if(temp=="antimatter condenser" || temp=="antimatter condensers"){
+        cnsigle="反物质冷凝器"
+    }else if(temp=="prism" || temp=="prisms"){
+        cnsigle="棱镜"
+    }else if(temp=="chancemaker" || temp=="chancemakers"){
+        cnsigle="机会制造商"
     }else{
         return name;
     }

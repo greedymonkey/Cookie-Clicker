@@ -1,4 +1,4 @@
-﻿var M={};
+var M={};
 M.parent=Game.Objects['Wizard tower'];
 M.parent.minigame=M;
 M.launch=function()
@@ -130,26 +130,26 @@ M.launch=function()
 					}
 					for (var i in Game.Objects)
 					{if ((Game.Objects[i].amount<max || n==1) && Game.Objects[i].getPrice()<=Game.cookies*2 && Game.Objects[i].amount<400) buildings.push(Game.Objects[i]);}
-					if (buildings.length==0){Game.Popup('<div style="font-size:80%;">No buildings to improve!</div>',Game.mouseX,Game.mouseY);return -1;}
+					if (buildings.length==0){Game.Popup('<div style="font-size:80%;">没有建筑可以改进!</div>',Game.mouseX,Game.mouseY);return -1;}
 					var building=choose(buildings);
 					building.buyFree(1);
-					Game.Popup('<div style="font-size:80%;">A new '+building.single+'<br>bursts out of the ground.</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">一个新 '+building.single+'<br>冲出地面。</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
-					if (Game.BuildingsOwned==0){Game.Popup('<div style="font-size:80%;">Backfired, but no buildings to destroy!</div>',Game.mouseX,Game.mouseY);return -1;}
+					if (Game.BuildingsOwned==0){Game.Popup('<div style="font-size:80%;">适得其反，但是没有建筑可以摧毁!</div>',Game.mouseX,Game.mouseY);return -1;}
 					var buildings=[];
 					for (var i in Game.Objects)
 					{if (Game.Objects[i].amount>0) buildings.push(Game.Objects[i]);}
 					var building=choose(buildings);
 					building.sacrifice(1);
-					Game.Popup('<div style="font-size:80%;">Backfire!<br>One of your '+building.plural+'<br>disappears in a puff of smoke.</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">适得其反!<br>你的一个 '+building.plural+'<br>在一股烟雾中消失。</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'haggler\'s charm':{
 				name:'Haggler\'s Charm',
-				desc:'Upgrades are 2% cheaper for 1 minute.',
-				failDesc:'Upgrades are 2% more expensive for an hour.<q>What\'s that spell? Loadsamoney!</q>',
+				desc:'升级的价格在1分钟内降低了2%。',
+				failDesc:'升级费用在一小时内增加了2%。<q>那是什么咒语?给我钱!</q>',
 				icon:[25,11],
 				costMin:10,
 				costPercent:0.1,
@@ -157,7 +157,7 @@ M.launch=function()
 				{
 					Game.killBuff('Haggler\'s misery');
 					var buff=Game.gainBuff('haggler luck',60,2);
-					Game.Popup('<div style="font-size:80%;">Upgrades are cheaper!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">升级更便宜!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
@@ -360,9 +360,9 @@ M.launch=function()
 				var str='<div style="padding:8px 4px;min-width:350px;">'+
 				'<div class="icon" style="float:left;margin-left:-8px;margin-top:-8px;background-position:'+(-me.icon[0]*48)+'px '+(-me.icon[1]*48)+'px;"></div>'+
 				'<div class="name">'+me.name+'</div>'+
-				'<div>Magic cost : <b style="color:#'+(cost<=M.magic?'6f6':'f66')+';">'+cost+'</b>'+costBreakdown+'</div>'+
-				(me.fail?('<div><small>Chance to backfire : <b style="color:#f66">'+Math.ceil(100*backfire)+'%</b></small></div>'):'')+
-				'<div class="line"></div><div class="description"><b>Effect :</b> '+me.desc+(me.failDesc?('<div style="height:8px;"></div><b>Backfire :</b> '+me.failDesc):'')+'</div></div>';
+				'<div>魔法成本 : <b style="color:#'+(cost<=M.magic?'6f6':'f66')+';">'+cost+'</b>'+costBreakdown+'</div>'+
+				(me.fail?('<div><small>反逆机会 : <b style="color:#f66">'+Math.ceil(100*backfire)+'%</b></small></div>'):'')+
+				'<div class="line"></div><div class="description"><b>效果 :</b> '+me.desc+(me.failDesc?('<div style="height:8px;"></div><b>逆火 :</b> '+me.failDesc):'')+'</div></div>';
 				return str;
 			};
 		}
