@@ -1,4 +1,4 @@
-﻿var M={};
+var M={};
 M.parent=Game.Objects['Temple'];
 M.parent.minigame=M;
 M.launch=function()
@@ -98,11 +98,11 @@ M.launch=function()
 			'scorn':{
 				name:'Skruuia, Spirit of Scorn',
 				icon:[21,19],
-				descBefore:'All golden cookies are wrath cookies with a greater chance of a negative effect.',
-				desc1:'Wrinklers appear 150% faster and digest 15% more cookies.',
-				desc2:'Wrinklers appear 100% faster and digest 10% more cookies.',
-				desc3:'Wrinklers appear 50% faster and digest 5% more cookies.',
-				quote:'This spirit enjoys poking foul beasts and watching them squirm, but has no love for its own family.',
+				descBefore:'所有的黄金饼干都是愤怒的饼干，有更大的机会产生负面影响。',
+				desc1:'皱纹出现加速 150% 再多消化15%的饼干。',
+				desc2:'皱纹出现加速 100% 再多消化10%的饼干。',
+				desc3:'皱纹出现加速 50% 再多消化5%的饼干。',
+				quote:'这种精神喜欢刺死野兽，看着他们局促不安，但却不喜欢自己的家人。',
 			},
 			'order':{
 				name:'Rigidel, Spirit of Order',
