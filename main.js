@@ -7372,8 +7372,7 @@ Game.Launch=function()
 		new Game.Upgrade('蛙卵','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>我想说一下这些“看起来像眼球”的东西，但忘掉它。</q>',eggPrice,[9,12]);
 		new Game.Upgrade('鲨鱼卵','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>你好这是食物吗?<br/>让我告诉你关于食物的事。<br/>我为什么一直吃我的朋友</q>',eggPrice,[10,12]);
 		new Game.Upgrade('龟蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>乌龟，对吧?<br>从贝壳里孵化出来。成长为贝壳。这是怎么了?现在是我的关于飞机食物的滑稽短剧。</q>',eggPrice,[11,12]);
-		new Game.Upgrade('蚂蚁幼虫','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>我发誓，在一些国家，这是一种美味。你会让这些侵入你的消化道，你会从中获得极大的乐趣。
-，一切都会好的。</q>',eggPrice,[12,12]);
+		new Game.Upgrade('蚂蚁幼虫','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>我发誓，在一些国家，这是一种美味。你会让这些侵入你的消化道，你会从中获得极大的乐趣。，一切都会好的。</q>',eggPrice,[12,12]);
 		new Game.Upgrade('金鹅蛋','黄金饼干出现几率 <b>+5%</b>.<br>成本是你拥有多少个蛋。<q>这是一个关于错误投资的悲惨故事的唯一痕迹。</q>',eggPrice2,[13,12]);
 		new Game.Upgrade('法贝热彩蛋','所有建筑和升级 <b>降低 1% 成本</b>.<br>成本是你拥有多少个蛋。<q>这个可恶的蛋绝对是假的。</q>',eggPrice2,[14,12],function(){Game.storeToRefresh=1;});
 		new Game.Upgrade('皱纹卵','皱纹炸裂加成 <b>5% 饼干</b>.<br>成本是你拥有多少个蛋。<q>看看这个小家伙!总有一天会成为一个大男孩的!没错,是很好玩!</q>',eggPrice2,[15,12]);
@@ -8018,7 +8017,7 @@ Game.Launch=function()
 		for (var i in Game.Upgrades)
 		{
 			var me=Game.Upgrades[i];
-			if (me.order>=200 && me.order<2000 && !me.tier && me.name.indexOf('grandma')==-1 && me.pool!='prestige') console.log(me.name+' has no tier.');
+			if (me.order>=200 && me.order<2000 && !me.tier && me.name.indexOf('grandma')==-1 && me.pool!='prestige') console.log(me.name+' 没有层次。');
 		}
 		
 		Game.UpgradesByPool=[];
