@@ -517,7 +517,7 @@ Game.Launch=function()
 	'<div class="listing">&bull; buildings can now level up by using sugar lumps in the main buildings display, permanently boosting their CpS</div>'+
 	'<div class="listing">&bull; added two new features unlocked by levelling up their associated buildings, Temples and Wizard towers; more building-related minigames will be implemented in the future</div>'+
 	'<div class="listing">&bull; active buffs are now saved</div>'+
-	'<div class="listing">&bull; the background selector upgrade is now functional</div>'+
+	'<div class="listing">&bull; the 背景选择器 upgrade is now functional</div>'+
 	'<div class="listing">&bull; the top menu no longer scrolls with the rest</div>'+
 	'<div class="listing">&bull; timespans are written nicer</div>'+
 	'<div class="listing">&bull; Dragonflights now tend to supercede Click frenzies, you will rarely have both at the same time</div>'+
@@ -631,7 +631,7 @@ Game.Launch=function()
 	
 	'</div><div class="subsection update small">'+
 	'<div class="title">09/04/2014 - nightmare in heaven</div>'+
-	'<div class="listing">&bull; broke a thing; heavenly chips were corrupted for some people</div>'+
+	'<div class="listing">&bull; broke a thing; 天堂芯片 were corrupted for some people</div>'+
 	'<div class="listing">&bull; will probably update to /beta first in the future</div>'+
 	'<div class="listing">&bull; sorry again</div>'+
 	
@@ -693,7 +693,7 @@ Game.Launch=function()
 	
 	'</div><div class="subsection update small">'+
 	'<div class="title">15/10/2013 - it\'s a secret</div>'+
-	'<div class="listing">&bull; added a new heavenly upgrade that gives you 5% of your heavenly chips power for 11 cookies (if you purchased the Heavenly key, you might need to buy it again, sorry)</div>'+
+	'<div class="listing">&bull; added a new heavenly upgrade that gives you 5% of your heavenly chips power for 11 cookies (if you purchased the 天国的钥匙, you might need to buy it again, sorry)</div>'+
 	'<div class="listing">&bull; golden cookie chains should now work properly</div>'+
 	
 	'</div><div class="subsection update small">'+
@@ -725,7 +725,7 @@ Game.Launch=function()
 	'<div class="listing">&bull; new upgrade tier</div>'+
 	'<div class="listing">&bull; new milk tier</div>'+
 	'<div class="listing">&bull; cookie chains have different capping mechanics</div>'+
-	'<div class="listing">&bull; antimatter condensers are back to their previous price</div>'+
+	'<div class="listing">&bull; 反物质冷凝器像 back to their previous price</div>'+
 	'<div class="listing">&bull; heavenly chips now give +2% CpS again (they will be extensively reworked in the future)</div>'+
 	'<div class="listing">&bull; farms have been buffed a bit (to popular demand)</div>'+
 	'<div class="listing">&bull; dungeons still need a bit more work and will be released soon - we want them to be just right! (you can test an unfinished version in <a href="http://orteil.dashnet.org/cookieclicker/betadungeons/" target="_blank">the beta</a>)</div>'+
@@ -735,7 +735,7 @@ Game.Launch=function()
 	'<div class="listing">&bull; from now on, big updates will come through a beta stage first (you can <a href="http://orteil.dashnet.org/cookieclicker/betadungeons/" target="_blank">try it here</a>)</div>'+
 	'<div class="listing">&bull; first dungeons! (you need 50 factories to unlock them!)</div>'+
 	'<div class="listing">&bull; cookie chains can be longer</div>'+
-	'<div class="listing">&bull; antimatter condensers are a bit more expensive</div>'+
+	'<div class="listing">&bull; 反物质冷凝器像 a bit more expensive</div>'+
 	'<div class="listing">&bull; heavenly chips now only give +1% cps each (to account for all the cookies made from condensers)</div>'+
 	'<div class="listing">&bull; added flavor text on all upgrades</div>'+
 	
@@ -1280,8 +1280,8 @@ Game.Launch=function()
 			str+=
 			(type==3?'\n	amount of cookies contained in wrinklers : ':'')+parseFloat(Math.floor(wrinklers.amount))+';'+
 			(type==3?'\n	number of wrinklers : ':'')+parseInt(Math.floor(wrinklers.number))+';'+
-			(type==3?'\n	prestige level : ':'')+parseFloat(Game.prestige).toString()+';'+
-			(type==3?'\n	heavenly chips : ':'')+parseFloat(Game.heavenlyChips).toString()+';'+
+			(type==3?'\n	声望等级 : ':'')+parseFloat(Game.prestige).toString()+';'+
+			(type==3?'\n	天堂芯片 : ':'')+parseFloat(Game.heavenlyChips).toString()+';'+
 			(type==3?'\n	heavenly chips spent : ':'')+parseFloat(Game.heavenlyChipsSpent).toString()+';'+
 			(type==3?'\n	heavenly cookies : ':'')+parseFloat(Game.heavenlyCookies).toString()+';'+
 			(type==3?'\n	ascension mode : ':'')+parseInt(Math.floor(Game.ascensionMode))+';'+
@@ -1717,7 +1717,7 @@ Game.Launch=function()
 						
 						if (version<1.0503)//upgrades that used to be regular, but are now heavenly
 						{
-							var me=Game.Upgrades['Persistent memory'];me.unlocked=0;me.bought=0;
+							var me=Game.Upgrades['持久记忆'];me.unlocked=0;me.bought=0;
 							var me=Game.Upgrades['季节切换器'];me.unlocked=0;me.bought=0;
 						}
 						
@@ -1826,7 +1826,7 @@ Game.Launch=function()
 								if (Game.Has('Seraphim')) percent+=10;
 								if (Game.Has('God')) percent+=10;
 								
-								if (Game.Has('Chimera')) {maxTime+=60*60*24*2;percent+=5;}
+								if (Game.Has('奇美拉')) {maxTime+=60*60*24*2;percent+=5;}
 							}
 							
 							var timeOfflineOptimal=Math.min(timeOffline,maxTime);
@@ -2415,19 +2415,19 @@ Game.Launch=function()
 				Game.gainedPrestige=prestigeDifference;
 				Game.heavenlyChips+=prestigeDifference;
 				Game.prestige=prestige;
-				if (Game.prefs.popups) Game.Popup('You gain '+Beautify(prestigeDifference)+' prestige level'+(prestigeDifference==1?'':'s')+'!');
-				else Game.Notify('You forfeit your '+Beautify(cookiesForfeited)+' cookies.','You gain <b>'+Beautify(prestigeDifference)+'</b> prestige level'+(prestigeDifference==1?'':'s')+'!',[19,7]);
+				if (Game.prefs.popups) Game.Popup('你获得 '+Beautify(prestigeDifference)+' 声望等级'+(prestigeDifference==1?'':'')+'!');
+				else Game.Notify('你失去了你的 '+Beautify(cookiesForfeited)+' 饼干.','你获得 <b>'+Beautify(prestigeDifference)+'</b> 声望等级'+(prestigeDifference==1?'':'')+'!',[19,7]);
 			}
 		}
 		
 		Game.GetHeavenlyMultiplier=function()
 		{
 			var heavenlyMult=0;
-			if (Game.Has('Heavenly chip secret')) heavenlyMult+=0.05;
-			if (Game.Has('Heavenly cookie stand')) heavenlyMult+=0.20;
-			if (Game.Has('Heavenly bakery')) heavenlyMult+=0.25;
-			if (Game.Has('Heavenly confectionery')) heavenlyMult+=0.25;
-			if (Game.Has('Heavenly key')) heavenlyMult+=0.25;
+			if (Game.Has('天堂芯片的秘密')) heavenlyMult+=0.05;
+			if (Game.Has('天堂饼干站')) heavenlyMult+=0.20;
+			if (Game.Has('天堂面包店')) heavenlyMult+=0.25;
+			if (Game.Has('')) heavenlyMult+=0.25;
+			if (Game.Has('天国的钥匙')) heavenlyMult+=0.25;
 			if (Game.hasAura('Dragon God')) heavenlyMult*=1.05;
 			if (Game.Has('幸运数字')) heavenlyMult*=1.01;
 			if (Game.Has('幸运数')) heavenlyMult*=1.01;
@@ -2491,12 +2491,12 @@ Game.Launch=function()
 			var cookiesToNext=Math.floor(Game.HowManyCookiesReset(Game.HowMuchPrestige(Game.cookiesReset+Game.cookiesEarned)+1)-Game.cookiesReset-Game.cookiesEarned);
 			l('legacyPromptData').innerHTML=''+
 				'<div class="icon" style="pointer-event:none;transform:scale(2);opacity:0.25;position:absolute;right:-8px;bottom:-8px;background-position:'+(-19*48)+'px '+(-7*48)+'px;"></div>'+
-				'<div class="listing"><b>Run duration :</b> '+(startDate==''?'tiny':(startDate))+'</div>'+
+				'<div class="listing"><b>运行时间 :</b> '+(startDate==''?'tiny':(startDate))+'</div>'+
 				//'<div class="listing">Earned : '+Beautify(Game.cookiesEarned)+', Reset : '+Beautify(Game.cookiesReset)+'</div>'+
-				'<div class="listing"><b>Prestige level :</b> '+Beautify(Game.prestige)+'</div>'+
-				'<div class="listing"><b>Heavenly chips :</b> '+Beautify(Game.heavenlyChips)+'</div>'+
-				(ascendNowToGet>=1?('<div class="listing"><b>Ascending now will produce :</b> '+Beautify(ascendNowToGet)+' heavenly chip'+((ascendNowToGet)==1?'':'s')+'</div>'):
-				('<div class="listing warning"><b>'+Beautify(cookiesToNext)+'</b> more cookie'+((cookiesToNext)==1?'':'s')+' for the next prestige level.<br>You may ascend now, but will gain no benefits.</div>'))+
+				'<div class="listing"><b>声望等级 :</b> '+Beautify(Game.prestige)+'</div>'+
+				'<div class="listing"><b>天堂芯片 :</b> '+Beautify(Game.heavenlyChips)+'</div>'+
+				(ascendNowToGet>=1?('<div class="listing"><b>现在提升将产生 :</b> '+Beautify(ascendNowToGet)+' heavenly chip'+((ascendNowToGet)==1?'':'s')+'</div>'):
+				('<div class="listing warning"><b>'+Beautify(cookiesToNext)+'</b> more cookie'+((cookiesToNext)==1?'':'s')+' for the next prestige level.<br>你现在可以提升，但不会获得任何好处。</div>'))+
 			'';
 			if (1 || ascendNowToGet>=1) l('promptOption0').style.display='inline-block'; else l('promptOption0').style.display='none';
 		}
@@ -2504,18 +2504,18 @@ Game.Launch=function()
 		l('ascendOverlay').innerHTML=
 			'<div id="ascendBox">'+
 			'<div class="ascendData smallFramed prompt" '+Game.getTooltip(
-							'<div style="min-width:200px;text-align:center;font-size:11px;">Each prestige level grants you a permanent +1% CpS.<br>The more levels you have, the more cookies they require.</div>'
+							'<div style="min-width:200px;text-align:center;font-size:11px;">每一个威望等级给予你永久+ 1%的饼干每秒产量。<br />你的等级越高，他们需要的饼干就越多。</div>'
 							,'bottom-right')+' style="margin-top:8px;"><h3 id="ascendPrestige"></h3></div>'+
 			'<div class="ascendData smallFramed prompt" '+Game.getTooltip(
-							'<div style="min-width:200px;text-align:center;font-size:11px;">Heavenly chips are used to buy heavenly upgrades.<br>You gain 1 chip every time you gain a prestige level.</div>'
+							'<div style="min-width:200px;text-align:center;font-size:11px;">天堂芯片是用来购买天堂升级的。<br>每次你获得声望，你就能得到一枚芯片。</div>'
 							,'bottom-right')+'><h3 id="ascendHCs"></h3></div>'+
 			'<a id="ascendButton" class="option framed large red" '+Game.getTooltip(
-							'<div style="min-width:200px;text-align:center;font-size:11px;">Click this once you\'ve bought<br>everything you need!</div>'
-							,'bottom-right')+' style="font-size:16px;margin-top:0px;"><span class="fancyText" style="font-size:20px;">Reincarnate</span></a>'+
+							'<div style="min-width:200px;text-align:center;font-size:11px;">一旦你点击这个就购买了<br>你需要的一切!</div>'
+							,'bottom-right')+' style="font-size:16px;margin-top:0px;"><span class="fancyText" style="font-size:20px;">转生</span></a>'+
 			'<div id="ascendModeButton" style="position:absolute;right:34px;bottom:25px;display:none;"></div>'+
 			'<input type="text" style="display:block;" id="upgradePositions"/></div>'+
 			
-			'<div id="ascendInfo"><div class="ascendData smallFramed" style="margin-top:22px;width:40%;font-size:11px;">You are ascending.<br>Drag the screen around<br>or use arrow keys!<br>When you\'re ready,<br>click Reincarnate.</div></div>';
+			'<div id="ascendInfo"><div class="ascendData smallFramed" style="margin-top:22px;width:40%;font-size:11px;">你在提升。拖动屏幕<br>或使用箭头键!<br>当你准备好时，<br>单击转生。</div></div>';
 		
 		Game.UpdateAscensionModePrompt();
 		
@@ -2552,8 +2552,8 @@ Game.Launch=function()
 				Game.UpdateAscensionModePrompt();
 			}
 		}
-		Game.ReincarnateTimer=0;//how far we are into the reincarnation animation
-		Game.ReincarnateDuration=Game.fps*1;//how long the reincarnation animation is
+		Game.ReincarnateTimer=0;//how far we are into the 转生 animation
+		Game.ReincarnateDuration=Game.fps*1;//how long the 转生 animation is
 		Game.UpdateReincarnateIntro=function()
 		{
 			if (Game.ReincarnateTimer==1) PlaySound('snd/pop'+Math.floor(Math.random()*3+1)+'.mp3',0.75);
@@ -2566,22 +2566,22 @@ Game.Launch=function()
 		}
 		Game.Reincarnate=function(bypass)
 		{
-			if (!bypass) Game.Prompt('<h3>Reincarnate</h3><div class="block">Are you ready to return to the mortal world?</div>',[['Yes','Game.ClosePrompt();Game.Reincarnate(1);'],'No']);
+			if (!bypass) Game.Prompt('<h3>转生</h3><div class="block">你准备好重返人间了吗?</div>',[['是的','Game.ClosePrompt();Game.Reincarnate(1);'],'没有']);
 			else
 			{
 				Game.ascendUpgradesl.innerHTML='';
 				Game.ascensionMode=Game.nextAscensionMode;
 				Game.nextAscensionMode=0;
 				Game.Reset();
-				if (Game.HasAchiev('Rebirth'))
+				if (Game.HasAchiev('重生'))
 				{
 					if (Game.prefs.popups) Game.Popup('Reincarnated');
-					else Game.Notify('Reincarnated','Hello, 饼干！',[10,0],4);
+					else Game.Notify('Reincarnated','你好, 饼干！',[10,0],4);
 				}
-				if (Game.resets>=1000) Game.Win('Endless cycle');
-				if (Game.resets>=100) Game.Win('Reincarnation');
-				if (Game.resets>=10) Game.Win('Resurrection');
-				if (Game.resets>=1) Game.Win('Rebirth');
+				if (Game.resets>=1000) Game.Win('无限循环');
+				if (Game.resets>=100) Game.Win('转生');
+				if (Game.resets>=10) Game.Win('复活');
+				if (Game.resets>=1) Game.Win('重生');
 				Game.removeClass('ascending');
 				Game.OnAscend=0;
 				//trigger the reincarnate animation
@@ -2592,11 +2592,11 @@ Game.Launch=function()
 		}
 		Game.GiveUpAscend=function(bypass)
 		{
-			if (!bypass) Game.Prompt('<h3>Give up</h3><div class="block">Are you sure? You\'ll have to start this run over and won\'t gain any heavenly chips!</div>',[['Yes','Game.ClosePrompt();Game.GiveUpAscend(1);'],'No']);
+			if (!bypass) Game.Prompt('<h3>放弃</h3><div class="block">你确定吗?你离开的话，就得不到任何天堂芯片！</div>',[['确定','Game.ClosePrompt();Game.GiveUpAscend(1);'],'取消']);
 			else
 			{
 				if (Game.prefs.popups) Game.Popup('Game reset');
-				else Game.Notify('Gave up','Let\'s try this again!',[0,5],4);
+				else Game.Notify('放弃','让我们再试一次!',[0,5],4);
 				Game.Reset();
 			}
 		}
@@ -2752,8 +2752,8 @@ Game.Launch=function()
 			
 			if (Game.T%2==0)
 			{
-				l('ascendPrestige').innerHTML='Prestige level :<br>'+Beautify(Game.prestige);
-				l('ascendHCs').innerHTML='Heavenly chips :<br><span class="price heavenly">'+Beautify(Math.round(Game.heavenlyChipsDisplayed))+'</span>';
+				l('ascendPrestige').innerHTML='声望等级 :<br>'+Beautify(Game.prestige);
+				l('ascendHCs').innerHTML='天堂芯片 :<br><span class="price heavenly">'+Beautify(Math.round(Game.heavenlyChipsDisplayed))+'</span>';
 				if (Game.prestige>0) l('ascendModeButton').style.display='block';
 				else l('ascendModeButton').style.display='none';
 			}
@@ -3100,7 +3100,7 @@ Game.Launch=function()
 			if (Game.Has('Wishalloy mouse')) add+=Game.cookiesPs*0.01;
 			if (Game.Has('Fantasteel mouse')) add+=Game.cookiesPs*0.01;
 			if (Game.Has('Nevercrack mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Armythril mouse')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('阿迈斯里鼠标')) add+=Game.cookiesPs*0.01;
 			var mult=1;
 			
 			for (var i in Game.customMouseCps) {mult+=Game.customMouseCps[i]();}
@@ -3303,10 +3303,10 @@ Game.Launch=function()
 			if (Game.Has('奇异果')) mult*=1.04;
 			if (Game.Has('神秘的糖')) mult*=1.05;
 			
-			if (Game.Has('Increased merriness')) mult*=1.15;
-			if (Game.Has('Improved jolliness')) mult*=1.15;
-			if (Game.Has('A lump of coal')) mult*=1.01;
-			if (Game.Has('An itchy sweater')) mult*=1.01;
+			if (Game.Has('增加愉快')) mult*=1.15;
+			if (Game.Has('改良愉快')) mult*=1.15;
+			if (Game.Has('一堆煤')) mult*=1.01;
+			if (Game.Has('发痒的毛衣')) mult*=1.01;
 			if (Game.Has('Santa\'s dominion')) mult*=1.2;
 			
 			var buildMult=1;
@@ -3994,7 +3994,7 @@ Game.Launch=function()
 					me.dur=4;//duration; the cookie's lifespan in seconds before it despawns
 					
 					var dur=4;
-					if (Game.Has('Weighted sleighs')) dur*=2;
+					if (Game.Has('加重雪橇')) dur*=2;
 					me.dur=dur;
 					me.life=Math.ceil(Game.fps*me.dur);
 					me.sizeMult=1;
@@ -4073,7 +4073,7 @@ Game.Launch=function()
 				maxTime:0,
 				getTimeMod:function(m)
 				{
-					if (Game.Has('Reindeer baking grounds')) m/=2;
+					if (Game.Has('驯鹿烘烤场')) m/=2;
 					if (Game.Has('星雪')) m*=0.95;
 					if (Game.hasGod)
 					{
@@ -5379,14 +5379,14 @@ Game.Launch=function()
 					'你的办公椅很舒服。',
 					'商务会议是如此的快乐！',
 					'你花了一整天的时间 '+choose(['签订合同','填写表格','与团队接触的基地','考察令人兴奋的新的前景','玩桌上玩具','获得新的铭牌','参加研讨会','视频会议','雇用充满活力的年轻高管','会见新的投资者','在你的办公室玩迷你高尔夫'])+'!',
-					'The word of the day is : '+choose(['viral','search engine optimization','blags and wobsites','social networks','web 3.0','logistics','leveraging','branding','proactive','synergizing','market research','demographics','pie charts','blogular','blogulacious','blogastic','authenticity','electronic mail','cellular phones','rap music','cookies, I guess'])+'.',
-					'Profit\'s in the air!'
+					'今天的关键词是 : '+choose(['病毒','搜索引擎优化','又黑又歪','社交网络','web 3.0','物流','杠杆作用','品牌','先发制人','协同加强','市场研究','人口统计','饼图','博客','吹牛','博客式的','真实性','电子邮件','移动电话','饶舌音乐','饼干,我猜'])+'.',
+					'利润在空气中!'
 				]));
 				if (Game.cookiesEarned>=1000 && Math.random()<0.1) list.push(choose([
-					'If you could get some more cookies baked, that\'d be great.',
-					'So. About those TPS reports.',
-					'Another day in paradise!',
-					'Working hard, or hardly working?'
+					'如果你能多吃点饼干，那就太好了。',
+					'所以。关于那些TPS报告。',
+					'天堂里的另一天!',
+					'努力工作还是不工作?'
 				]));
 				
 				
@@ -5429,45 +5429,45 @@ Game.Launch=function()
 					]));
 					
 					if (Game.Objects['Portal'].amount>0) list.push(choose([
-					'You just released a new TV show episode!',
-					'Your cookie-themed TV show is being adapted into a new movie!'
+					'你刚刚发布了一个新的电视剧集!',
+					'你的饼干主题的电视节目正在被改编成一部新电影!'
 					]));
 					
 					if (Game.Objects['Time machine'].amount>0) list.push(choose([
-					'Your theme parks are doing well - puddles of vomit and roller-coaster casualties are being swept under the rug!',
-					'Visitors are stuffing themselves with cookies before riding your roller-coasters. You might want to hire more clean-up crews.'
+					'你的主题公园做得很好——呕吐的水洼和过山车的伤亡都被扫到地毯下面了！',
+					'在乘坐过山车之前，游客们都在用饼干填饱肚子。你可能想雇佣更多的清理人员。'
 					]));
 					
 					if (Game.Objects['Antimatter condenser'].amount>0) list.push(choose([
-					'Cookiecoin is officially the most mined digital currency in the history of mankind!',
-					'Cookiecoin piracy is rampant!'
+					'饼干硬币是人类历史上最具挖掘价值的数字货币!',
+					'饼干硬币盗版猖獗!'
 					]));
 					
 					if (Game.Objects['Prism'].amount>0) list.push(choose([
-					'Your corporate nations just gained a new parliament!',
-					'You\'ve just annexed a new nation!',
-					'A new nation joins the grand cookie conglomerate!'
+					'你们的公司刚刚获得了一个新议会!',
+					'你刚刚吞并了一个新国家!',
+					'一个新的国家加入了大饼干集团!'
 					]));
 					
 					if (Game.Objects['Chancemaker'].amount>0) list.push(choose([
-					'Your intergalactic federation of cookie-sponsored planets reports record-breaking profits!',
-					'Billions of unwashed aliens are pleased to join your workforce as you annex their planet!',
-					'New toll opened on interstellar highway, funnelling more profits into the cookie economy!'
+					'你的银河联盟的星际联盟报告打破了破纪录的利润!',
+					'数以十亿计的未经清洗的外星人很高兴加入你们的队伍，因为你们把他们的星球吞并了!',
+					'在星际高速公路上开辟了新的收费通道，将更多的利润投入到饼干经济中！'
 					]));
 				}
 				
-				if (Game.cookiesEarned<5) list.push('Such a grand day to begin a new business.');
-				else if (Game.cookiesEarned<50) list.push('You\'re baking up a storm!');
-				else if (Game.cookiesEarned<100) list.push('You are confident that one day, your cookie company will be the greatest on the market!');
-				else if (Game.cookiesEarned<1000) list.push('Business is picking up!');
-				else if (Game.cookiesEarned<5000) list.push('You\'re making sales left and right!');
-				else if (Game.cookiesEarned<20000) list.push('Everyone wants to buy your 饼干！');
-				else if (Game.cookiesEarned<50000) list.push('You are now spending most of your day signing contracts!');
-				else if (Game.cookiesEarned<500000) list.push('You\'ve been elected "business tycoon of the year"!');
-				else if (Game.cookiesEarned<1000000) list.push('Your cookies are a worldwide sensation! Well done, old chap!');
-				else if (Game.cookiesEarned<5000000) list.push('Your brand has made its way into popular culture. Children recite your slogans and adults reminisce them fondly!');
-				else if (Game.cookiesEarned<1000000000) list.push('A business day like any other. It\'s good to be at the top!');
-				else if (Game.cookiesEarned<10100000000) list.push('You look back at your career. It\'s been a fascinating journey, building your baking empire from the ground up.');//only show this for 100 millions
+				if (Game.cookiesEarned<5) list.push('这是一个崭新的开始。');
+				else if (Game.cookiesEarned<50) list.push('你在烤风暴!');
+				else if (Game.cookiesEarned<100) list.push('你有信心，有一天，你的饼干公司将会是市场上最伟大的!');
+				else if (Game.cookiesEarned<1000) list.push('生意越来越好了!');
+				else if (Game.cookiesEarned<5000) list.push('你的生意做得很好!');
+				else if (Game.cookiesEarned<20000) list.push('每个人都想买你的饼干！');
+				else if (Game.cookiesEarned<50000) list.push('你现在大部分时间都在签合同!');
+				else if (Game.cookiesEarned<500000) list.push('你被选为“年度商业大亨”!');
+				else if (Game.cookiesEarned<1000000) list.push('你的饼干是全世界的轰动!干得好,老家伙!');
+				else if (Game.cookiesEarned<5000000) list.push('你的品牌已经进入流行文化。孩子们背诵你的口号，大人们深情地追忆他们!');
+				else if (Game.cookiesEarned<1000000000) list.push('像其他任何一个工作日一样。能站在顶端真好!');
+				else if (Game.cookiesEarned<10100000000) list.push('回顾你的职业生涯。这是一次奇妙的旅程，从头开始打造你的烘焙帝国。');//only show this for 100 millions
 			}
 			
 			for (var i in Game.customTickers)
@@ -6063,7 +6063,7 @@ Game.Launch=function()
 		{
 			if (Game.Has('Season savings')) price*=0.99;
 			if (Game.Has('Santa\'s dominion')) price*=0.99;
-			if (Game.Has('Faberge egg')) price*=0.99;
+			if (Game.Has('法贝热彩蛋')) price*=0.99;
 			if (Game.Has('Divine discount')) price*=0.99;
 			if (Game.hasAura('Fierce Hoarder')) price*=0.98;
 			if (Game.hasBuff('Everything must go')) price*=0.95;
@@ -6469,7 +6469,7 @@ Game.Launch=function()
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('彩虹老奶奶');
 		});
 		
-		new Game.Object('Chancemaker','chancemaker|chancemakers|spontaneously generated|Chancemakers are powered by [X]-leaf clovers|Chancemakers are powered by [X]-leaf clovers','Generates cookies out of thin air through sheer luck.',15,19,{base:'chancemaker',xV:8,yV:64,w:64,rows:1,x:0,y:0},77777777777,function(me){
+		new Game.Object('Chancemaker','chancemaker|chancemakers|spontaneously generated|投机分子像 powered by [X]-leaf clovers|投机分子像 powered by [X]-leaf clovers','Generates cookies out of thin air through sheer luck.',15,19,{base:'chancemaker',xV:8,yV:64,w:64,rows:1,x:0,y:0},77777777777,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
 			if (Game.Has('幸运老奶奶')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
@@ -6567,7 +6567,7 @@ Game.Launch=function()
 				if (Game.Has('Toy workshop')) price*=0.95;
 				if (Game.Has('Five-finger discount')) price*=Math.pow(0.99,Game.Objects['Cursor'].amount/100);
 				if (Game.Has('Santa\'s dominion')) price*=0.98;
-				if (Game.Has('Faberge egg')) price*=0.99;
+				if (Game.Has('法贝热彩蛋')) price*=0.99;
 				if (Game.Has('Divine sales')) price*=0.99;
 				if (Game.hasBuff('Haggler\'s luck')) price*=0.98;
 				if (Game.hasBuff('Haggler\'s misery')) price*=1.02;
@@ -6859,8 +6859,8 @@ Game.Launch=function()
 			8:{name:'Cherrysilver',unlock:250,achievUnlock:350,iconRow:17,color:'#f01700',price:		500000000000000},
 			9:{name:'Hazelrald',unlock:300,achievUnlock:400,iconRow:18,color:'#9ab834',price:			500000000000000000},
 			10:{name:'Mooncandy',unlock:350,achievUnlock:450,iconRow:19,color:'#7e7ab9',price:			500000000000000000000},
-			'synergy1':{name:'Synergy I',unlock:15,iconRow:20,color:'#008595',special:1,req:'Synergies Vol. I',price:			2000},
-			'synergy2':{name:'Synergy II',unlock:75,iconRow:20,color:'#008595',special:1,req:'Synergies Vol. II',price:			2000000000},
+			'synergy1':{name:'Synergy I',unlock:15,iconRow:20,color:'#008595',special:1,req:'协同效应1',price:			2000},
+			'synergy2':{name:'Synergy II',unlock:75,iconRow:20,color:'#008595',special:1,req:'协同效应2',price:			2000000000},
 		};
 		Game.GetIcon=function(type,tier)
 		{
@@ -6904,7 +6904,7 @@ Game.Launch=function()
 			upgrade.tier=tier;
 			upgrade.buildingTie1=b1;
 			upgrade.buildingTie2=b2;
-			upgrade.priceFunc=function(){return (this.buildingTie1.basePrice*10+this.buildingTie2.basePrice*1)*Game.Tiers[this.tier].price*(Game.Has('Chimera')?0.98:1);};
+			upgrade.priceFunc=function(){return (this.buildingTie1.basePrice*10+this.buildingTie2.basePrice*1)*Game.Tiers[this.tier].price*(Game.Has('奇美拉')?0.98:1);};
 			Game.Objects[building1].synergies.push(upgrade);
 			Game.Objects[building2].synergies.push(upgrade);
 			//Game.SetTier(building1,tier);
@@ -6984,9 +6984,9 @@ Game.Launch=function()
 		new Game.TieredUpgrade('灵魂纽带','传送门像 <b>两次</b> 一样高效。<q>So I just sign up and get more cookies? Sure, whatever!</q>','Portal',3);
 		
 		order=900;
-		new Game.TieredUpgrade('Flux capacitors','Time machines are <b>两次</b> 一样高效。<q>Bake to the future.</q>','Time machine',1);
-		new Game.TieredUpgrade('Time paradox resolver','Time machines are <b>两次</b> 一样高效。<q>No more fooling around with your own grandmother!</q>','Time machine',2);
-		new Game.TieredUpgrade('Quantum conundrum','Time machines are <b>两次</b> 一样高效。<q>There is only one constant, and that is universal uncertainty.<br>Or is it?</q>','Time machine',3);
+		new Game.TieredUpgrade('Flux capacitors','时光机器像 <b>两次</b> 一样高效。<q>Bake to the future.</q>','Time machine',1);
+		new Game.TieredUpgrade('Time paradox resolver','时光机器像 <b>两次</b> 一样高效。<q>No more fooling around with your own grandmother!</q>','Time machine',2);
+		new Game.TieredUpgrade('Quantum conundrum','时光机器像 <b>两次</b> 一样高效。<q>There is only one constant, and that is universal uncertainty.<br>Or is it?</q>','Time machine',3);
 		
 		order=20000;
 		new Game.Upgrade('小猫助手','You gain <b>more CpS</b> the more milk you have.<q>meow may I help you</q>',9000000,Game.GetIcon('Kitten',1));Game.last.kitten=1;
@@ -7021,7 +7021,7 @@ Game.Launch=function()
 		new Game.Upgrade('意外的惊喜','黄金饼干出现像 <b>两倍一样的频繁</b> 并且停留 <b>两倍的时间</b>.<q>多么快乐!七个马蹄铁!</q>',77777777777,[27,6]);
 		
 		order=20000;
-		new Game.Upgrade('小猫工程师','你获得了 <b>更多饼干秒产量</b> 你的牛奶越多。<q>喵喵喵，先生</q>',90000000000000,Game.GetIcon('Kitten',3));Game.last.kitten=1;
+		new Game.Upgrade('小猫工程师','你获得了 <b>更多的饼干秒产量</b> 你的牛奶越多。<q>喵喵喵，先生</q>',90000000000000,Game.GetIcon('Kitten',3));Game.last.kitten=1;
 		
 		order=10020;
 		Game.NewUpgradeCookie({name:'Dark chocolate-coated cookies',desc:'这些光吸收的光线如此之好，你几乎需要眯着眼才能看到它们。',icon:[10,3],power:			4,	price:	99999999999});
@@ -7058,7 +7058,7 @@ Game.Launch=function()
 			if (Game.Upgrades[what] && !Game.Has(what))
 			{
 				Game.researchT=Game.baseResearchTime;
-				if (Game.Has('Persistent memory')) Game.researchT=Math.ceil(Game.baseResearchTime/10);
+				if (Game.Has('持久记忆')) Game.researchT=Math.ceil(Game.baseResearchTime/10);
 				if (Game.Has('超音波')) Game.researchT=Game.fps*5;
 				Game.nextResearch=Game.Upgrades[what].id;
 				if (Game.prefs.popups) Game.Popup('Research has begun.');
@@ -7162,10 +7162,10 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'Round chocolate british tea biscuits with heart motif',desc:'I like cookies.',icon:[11,4],require:Game.last.name,power:		2,	price:	99999999999999});
 		
 		order=1000;
-		new Game.TieredUpgrade('Sugar bosons','Antimatter condensers are <b>两次</b> 一样高效。<q>Sweet firm bosons.</q>','Antimatter condenser',1);
-		new Game.TieredUpgrade('String theory','Antimatter condensers are <b>两次</b> 一样高效。<q>Reveals new insight about the true meaning of baking cookies (and, as a bonus, the structure of the universe).</q>','Antimatter condenser',2);
-		new Game.TieredUpgrade('Large macaron collider','Antimatter condensers are <b>两次</b> 一样高效。<q>How singular!</q>','Antimatter condenser',3);
-		new Game.TieredUpgrade('Big bang bake','Antimatter condensers are <b>两次</b> 一样高效。<q>And that\'s how it all began.</q>','Antimatter condenser',4);
+		new Game.TieredUpgrade('Sugar bosons','反物质冷凝器像 <b>两次</b> 一样高效。<q>Sweet firm bosons.</q>','Antimatter condenser',1);
+		new Game.TieredUpgrade('String theory','反物质冷凝器像 <b>两次</b> 一样高效。<q>Reveals new insight about the true meaning of baking cookies (and, as a bonus, the structure of the universe).</q>','Antimatter condenser',2);
+		new Game.TieredUpgrade('Large macaron collider','反物质冷凝器像 <b>两次</b> 一样高效。<q>How singular!</q>','Antimatter condenser',3);
+		new Game.TieredUpgrade('Big bang bake','反物质冷凝器像 <b>两次</b> 一样高效。<q>And that\'s how it all began.</q>','Antimatter condenser',4);
 
 		order=255;
 		new Game.Upgrade('针对老奶奶',Game.getGrandmaSynergyUpgradeDesc('Antimatter condenser')+'<q>A mean antigrandma to vomit more cookies.<br>(Do not put in contact with normal grandmas; loss of matter may occur.)</q>',Game.Objects['Antimatter condenser'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
@@ -7190,8 +7190,8 @@ Game.Launch=function()
 		order=600;new Game.TieredUpgrade('Chocolate monoliths','装船像 <b>两次</b> 一样高效。<q>My god. It\'s full of chocolate bars.</q>','Shipment',5);
 		order=700;new Game.TieredUpgrade('Aqua crustulae','炼金实验室像<b>两次</b> 一样高效。<q>Careful with the dosing - one drop too much and you get muffins.<br>And nobody likes muffins.</q>','Alchemy lab',5);
 		order=800;new Game.TieredUpgrade('Brane transplant','传送门像<b>两次</b> 一样高效。<q>This refers to the practice of merging higher dimensional universes, or "branes", with our own, in order to facilitate transit (and harvesting of precious cookie dough).</q>','Portal',5);
-		order=900;new Game.TieredUpgrade('Yestermorrow comparators','Time machines are <b>两次</b> 一样高效。<q>Fortnights into milleniums.</q>','Time machine',5);
-		order=1000;new Game.TieredUpgrade('Reverse cyclotrons','Antimatter condensers are <b>两次</b> 一样高效。<q>These can uncollision particles and unspin atoms. For... uh... better flavor, and stuff.</q>','Antimatter condenser',5);
+		order=900;new Game.TieredUpgrade('Yestermorrow comparators','时光机器像 <b>两次</b> 一样高效。<q>Fortnights into milleniums.</q>','Time machine',5);
+		order=1000;new Game.TieredUpgrade('Reverse cyclotrons','反物质冷凝器像 <b>两次</b> 一样高效。<q>These can uncollision particles and unspin atoms. For... uh... better flavor, and stuff.</q>','Antimatter condenser',5);
 		
 		order=150;
 		new Game.Upgrade('难得素鼠标','点击获得 <b>+1% 总秒收益</b>.<q>These nice mice should suffice.</q>',5000000000000,[11,14]);
@@ -7213,56 +7213,56 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'Grease\'s cups',desc:'Extra-greasy peanut butter.',icon:[16,4],require:'Box of brand biscuits',power:												2,	price:	999999999999999*5});
 		
 		order=30000;
-		new Game.Upgrade('Heavenly chip secret','Unlocks <b>5%</b> of the potential of your prestige level.<q>Grants the knowledge of heavenly chips, and how to use them to make baking more efficient.<br>It\'s a secret to everyone.</q>',11,[19,7]);Game.last.noPerm=1;
-		new Game.Upgrade('Heavenly cookie stand','Unlocks <b>25%</b> of the potential of your prestige level.<q>Don\'t forget to visit the heavenly lemonade stand afterwards. When afterlife gives you lemons...</q>',1111,[18,7]);Game.last.noPerm=1;
-		new Game.Upgrade('Heavenly bakery','Unlocks <b>50%</b> of the potential of your prestige level.<q>Also sells godly cakes and divine pastries. The pretzels aren\'t too bad either.</q>',111111,[17,7]);Game.last.noPerm=1;
-		new Game.Upgrade('Heavenly confectionery','Unlocks <b>75%</b> of the potential of your prestige level.<q>They say angel bakers work there. They take angel lunch breaks and sometimes go on angel strikes.</q>',11111111,[16,7]);Game.last.noPerm=1;
-		new Game.Upgrade('Heavenly key','Unlocks <b>100%</b> of the potential of your prestige level.<q>This is the key to the pearly (and tasty) gates of pastry heaven, granting you access to your entire stockpile of heavenly chips for baking purposes.<br>May you use them wisely.</q>',1111111111,[15,7]);Game.last.noPerm=1;
+		new Game.Upgrade('天堂芯片的秘密','Unlocks <b>5%</b> of the potential of your prestige level.<q>Grants the knowledge of 天堂芯片, and how to use them to make baking more efficient.<br>It\'s a secret to everyone.</q>',11,[19,7]);Game.last.noPerm=1;
+		new Game.Upgrade('天堂饼干站','Unlocks <b>25%</b> of the potential of your prestige level.<q>Don\'t forget to visit the heavenly lemonade stand afterwards. When afterlife gives you lemons...</q>',1111,[18,7]);Game.last.noPerm=1;
+		new Game.Upgrade('天堂面包店','Unlocks <b>50%</b> of the potential of your prestige level.<q>Also sells godly cakes and divine pastries. The pretzels aren\'t too bad either.</q>',111111,[17,7]);Game.last.noPerm=1;
+		new Game.Upgrade('天堂糖果店','Unlocks <b>75%</b> of the potential of your prestige level.<q>They say angel bakers work there. They take angel lunch breaks and sometimes go on angel strikes.</q>',11111111,[16,7]);Game.last.noPerm=1;
+		new Game.Upgrade('天国的钥匙','Unlocks <b>100%</b> of the potential of your prestige level.<q>This is the key to the pearly (and tasty) gates of pastry heaven, granting you access to your entire stockpile of heavenly chips for baking purposes.<br>May you use them wisely.</q>',1111111111,[15,7]);Game.last.noPerm=1;
 		
 		order=10100;
-		Game.NewUpgradeCookie({name:'骷髅饼干',desc:'Wanna know something spooky? You\'ve got one of these inside your head RIGHT NOW.',locked:1,icon:[12,8],power:	2, price: 444444444444});
-		Game.NewUpgradeCookie({name:'鬼饼干',desc:'They\'re something strange, but they look pretty good!',locked:1,icon:[13,8],power:								2, price: 444444444444});
-		Game.NewUpgradeCookie({name:'蝙蝠饼干',desc:'The cookies this town deserves.',locked:1,icon:[14,8],power:														2, price: 444444444444});
-		Game.NewUpgradeCookie({name:'粘液饼干',desc:'The incredible melting 饼干！',locked:1,icon:[15,8],power: 														2, price: 444444444444});
-		Game.NewUpgradeCookie({name:'南瓜饼干',desc:'Not even pumpkin-flavored. Tastes like glazing. Yeugh.',locked:1,icon:[16,8],power:								2, price: 444444444444});
-		Game.NewUpgradeCookie({name:'眼球饼干',desc:'When you stare into the cookie, the cookie stares back at you.',locked:1,icon:[17,8],power:						2, price: 444444444444});
-		Game.NewUpgradeCookie({name:'蜘蛛饼干',desc:'You found the recipe on the web. They do whatever a cookie can.',locked:1,icon:[18,8],power:						2, price: 444444444444});
+		Game.NewUpgradeCookie({name:'骷髅饼干',desc:'想知道什么鬼东西吗?你现在脑子里有个想法。',locked:1,icon:[12,8],power:	2, price: 444444444444});
+		Game.NewUpgradeCookie({name:'鬼饼干',desc:'它们很奇怪，但看起来很不错!',locked:1,icon:[13,8],power: 2, price: 444444444444});
+		Game.NewUpgradeCookie({name:'蝙蝠饼干',desc:'这个小镇值得拥有的饼干。',locked:1,icon:[14,8],power: 2, price: 444444444444});
+		Game.NewUpgradeCookie({name:'粘液饼干',desc:'令人难以置信的融化饼干!',locked:1,icon:[15,8],power: 2, price: 444444444444});
+		Game.NewUpgradeCookie({name:'南瓜饼干',desc:'连南瓜味都没有。味道像玻璃。是啊。',locked:1,icon:[16,8],power: 2, price: 444444444444});
+		Game.NewUpgradeCookie({name:'眼球饼干',desc:'当你盯着饼干的时候，饼干会盯着你看。',locked:1,icon:[17,8],power: 2, price: 444444444444});
+		Game.NewUpgradeCookie({name:'蜘蛛饼干',desc:'你在网上找到了这个菜谱。他们做任何饼干都可以。',locked:1,icon:[18,8],power: 2, price: 444444444444});
 
 		order=0;
-		new Game.Upgrade('Persistent memory','Subsequent research will be <b>10 times</b> as fast.<q>It\'s all making sense!<br>Again!</q>',5,[9,2]);Game.last.pool='prestige';
+		new Game.Upgrade('持久记忆','后续研究将像 <b>10 次</b> 那样快。<q>这一切都是有道理的!<br>再一次!</q>',5,[9,2]);Game.last.pool='prestige';
 		
 		order=40000;
-		new Game.Upgrade('Wrinkler doormat','Wrinklers spawn much more frequently.<q>You\'re such a pushover.</q>',7,[19,8]);//debug purposes only
+		new Game.Upgrade('皱纹门垫','皱纹产生的频率要高得多。<q>你真是个软弱的人。</q>',7,[19,8]);//debug purposes only
 		Game.last.pool='debug';
 		
 		order=10200;
-		Game.NewUpgradeCookie({name:'圣诞树饼干',desc:'Whose pine is it anyway?',locked:1,icon:[12,10],power:2,price: 252525252525});
-		Game.NewUpgradeCookie({name:'雪花饼干',desc:'Mass-produced to be unique in every way.',locked:1,icon:[13,10],power:2,price: 252525252525});
-		Game.NewUpgradeCookie({name:'雪人饼干',desc:'It\'s frosted. Doubly so.',locked:1,icon:[14,10],power:2,price: 252525252525});
-		Game.NewUpgradeCookie({name:'冬青饼干',desc:'You don\'t smooch under these ones. That would be the mistletoe (which, botanically, is a smellier variant of the mistlefinger).',locked:1,icon:[15,10],power:2,price: 252525252525});
-		Game.NewUpgradeCookie({name:'糖果手杖饼干',desc:'It\'s two treats in one!<br>(Further inspection reveals the frosting does not actually taste like peppermint, but like mundane sugary frosting.)',locked:1,icon:[16,10],power:2,price: 252525252525});
-		Game.NewUpgradeCookie({name:'铃铛饼干',desc:'What do these even have to do with christmas? Who cares, ring them in!',locked:1,icon:[17,10],power:2,price: 252525252525});
-		Game.NewUpgradeCookie({name:'目前的饼干',desc:'The prequel to future biscuits. Watch out!',locked:1,icon:[18,10],power:2,price: 252525252525});
+		Game.NewUpgradeCookie({name:'圣诞树饼干',desc:'这是谁的松树?',locked:1,icon:[12,10],power:2,price: 252525252525});
+		Game.NewUpgradeCookie({name:'雪花饼干',desc:'批量生产在各个方面都是独一无二的。',locked:1,icon:[13,10],power:2,price: 252525252525});
+		Game.NewUpgradeCookie({name:'雪人饼干',desc:'它被冻起来了。更是如此。',locked:1,icon:[14,10],power:2,price: 252525252525});
+		Game.NewUpgradeCookie({name:'冬青饼干',desc:'你不能在这些东西下面接吻。这将是槲寄生(植物学上是槲寄生的一个变种)。',locked:1,icon:[15,10],power:2,price: 252525252525});
+		Game.NewUpgradeCookie({name:'糖果手杖饼干',desc:'这是一种两种享受!<br />(进一步的检查发现，糖霜并不像薄荷味，而是像普通的含糖的糖霜。)',locked:1,icon:[16,10],power:2,price: 252525252525});
+		Game.NewUpgradeCookie({name:'铃铛饼干',desc:'这些与圣诞节有什么关系呢?谁在乎，给他们打电话!',locked:1,icon:[17,10],power:2,price: 252525252525});
+		Game.NewUpgradeCookie({name:'目前的饼干',desc:'未来饼干的前传。小心!',locked:1,icon:[18,10],power:2,price: 252525252525});
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Gingerbread men',desc:'You like to bite the legs off first, right? How about tearing off the arms? You sick monster.',icon:[18,4],power:		2,price: 9999999999999999});
-		Game.NewUpgradeCookie({name:'Gingerbread trees',desc:'Evergreens in pastry form. Yule be surprised what you can come up with.',icon:[18,3],power:							2,price: 9999999999999999});
+		Game.NewUpgradeCookie({name:'姜饼人',desc:'你喜欢先咬腿，对吗?把胳膊撕掉怎么样?你这个恶心的怪物。',icon:[18,4],power:		2,price: 9999999999999999});
+		Game.NewUpgradeCookie({name:'姜饼树',desc:'常青树糕点形式。你所能想到的会让你大吃一惊。',icon:[18,3],power:							2,price: 9999999999999999});
 		
 		order=25000;
-		new Game.Upgrade('节庆帽子','<b>Unlocks... something.</b><q>Not a creature was stirring, not even a mouse.</q>',25,[19,9],function()
+		new Game.Upgrade('节庆帽子','<b>解锁了... 一些东西。</b><q>没有一只动物在动，连一只老鼠也没有。</q>',25,[19,9],function()
 		{
 			var drop=choose(Game.santaDrops);
 			Game.Unlock(drop);
-			if (Game.prefs.popups) Game.Popup('In the festive hat, you find...<br>a festive test tube<br>and '+drop+'.');
-			else Game.Notify('In the festive hat, you find...','a festive test tube<br>and <b>'+drop+'</b>.',Game.Upgrades[drop].icon);
+			if (Game.prefs.popups) Game.Popup('在节日的礼帽里，你会发现……<br>一个节日测试管<br>和 '+drop+'.');
+			else Game.Notify('在节日的礼帽里，你会发现……','一个节日测试管br>和 <b>'+drop+'</b>.',Game.Upgrades[drop].icon);
 		});
 		
-		new Game.Upgrade('Increased merriness','饼干生产增加 <b>+15%</b>.<br>Cost scales with Santa level.<q>It turns out that the key to increased merriness, strangely enough, happens to be a good campfire and some s\'mores.<br>You know what they say, after all; the s\'more, the merrier.</q>',2525,[17,9]);
-		new Game.Upgrade('Improved jolliness','饼干生产增加 <b>+15%</b>.<br>Cost scales with Santa level.<q>A nice wobbly belly goes a long way.<br>You jolly?</q>',2525,[17,9]);
-		new Game.Upgrade('A lump of coal','饼干生产增加 <b>+1%</b>.<br>Cost scales with Santa level.<q>Some of the world\'s worst stocking stuffing.<br>I guess you could try starting your own little industrial revolution, or something?...</q>',2525,[13,9]);
-		new Game.Upgrade('An itchy sweater','饼干生产增加 <b>+1%</b>.<br>Cost scales with Santa level.<q>You don\'t know what\'s worse : the embarrassingly quaint "elf on reindeer" motif, or the fact that wearing it makes you feel like you\'re wrapped in a dead sasquatch.</q>',2525,[14,9]);
-		new Game.Upgrade('Reindeer baking grounds','Reindeer appear <b>twice as frequently</b>.<br>Cost scales with Santa level.<q>Male reindeer are from Mars; female reindeer are from venison.</q>',2525,[12,9]);
-		new Game.Upgrade('Weighted sleighs','Reindeer are <b>twice as slow</b>.<br>Cost scales with Santa level.<q>Hope it was worth the weight.<br>(Something something forced into cervidude)</q>',2525,[12,9]);
+		new Game.Upgrade('增加愉快','饼干生产增加 <b>+15%</b>.<br>Cost scales with Santa level.<q>It turns out that the key to 增加愉快, strangely enough, happens to be a good campfire and some s\'mores.<br>You know what they say, after all; the s\'more, the merrier.</q>',2525,[17,9]);
+		new Game.Upgrade('改良愉快','饼干生产增加 <b>+15%</b>.<br>Cost scales with Santa level.<q>A nice wobbly belly goes a long way.<br>You jolly?</q>',2525,[17,9]);
+		new Game.Upgrade('一堆煤','饼干生产增加 <b>+1%</b>.<br>Cost scales with Santa level.<q>Some of the world\'s worst stocking stuffing.<br>I guess you could try starting your own little industrial revolution, or something?...</q>',2525,[13,9]);
+		new Game.Upgrade('发痒的毛衣','饼干生产增加 <b>+1%</b>.<br>Cost scales with Santa level.<q>You don\'t know what\'s worse : the embarrassingly quaint "elf on reindeer" motif, or the fact that wearing it makes you feel like you\'re wrapped in a dead sasquatch.</q>',2525,[14,9]);
+		new Game.Upgrade('驯鹿烘烤场','Reindeer appear <b>twice as frequently</b>.<br>Cost scales with Santa level.<q>Male reindeer are from Mars; female reindeer are from venison.</q>',2525,[12,9]);
+		new Game.Upgrade('加重雪橇','Reindeer are <b>twice as slow</b>.<br>Cost scales with Santa level.<q>Hope it was worth the weight.<br>(Something something forced into cervidude)</q>',2525,[12,9]);
 		new Game.Upgrade('Ho ho ho-flavored frosting','Reindeer give <b>twice as much</b>.<br>Cost scales with Santa level.<q>It\'s time to up the antler.</q>',2525,[12,9]);
 		new Game.Upgrade('Season savings','All buildings are <b>1% cheaper</b>.<br>Cost scales with Santa level.<q>By Santa\'s beard, what savings!<br>But who will save us?</q>',2525,[16,9],function(){Game.storeToRefresh=1;});
 		new Game.Upgrade('Toy workshop','All upgrades are <b>5% cheaper</b>.<br>Cost scales with Santa level.<q>Watch yours-elf around elvesdroppers who might steal our production secrets.<br>Or elven worse!</q>',2525,[16,9],function(){Game.upgradesToRebuild=1;});
@@ -7300,11 +7300,11 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'Eternal heart biscuits',desc:'Silver icing for a very special someone you\'ve liked for a long, long time.',require:Game.last.name,season:'valentines',icon:[19,4],							power:heartPower,price: 1000000000000000000000});
 
 		order=1100;
-		new Game.TieredUpgrade('Gem polish','Prisms are <b>两次</b> 一样高效。<q>Get rid of the grime and let more light in.<br>Truly, truly outrageous.</q>','Prism',1);
-		new Game.TieredUpgrade('9th color','Prisms are <b>两次</b> 一样高效。<q>Delve into untouched optical depths where even the mantis shrimp hasn\'t set an eye!</q>','Prism',2);
-		new Game.TieredUpgrade('Chocolate light','Prisms are <b>两次</b> 一样高效。<q>Bask into its cocoalescence.<br>(Warning : may cause various interesting albeit deadly skin conditions.)</q>','Prism',3);
-		new Game.TieredUpgrade('Grainbow','Prisms are <b>两次</b> 一样高效。<q>Remember the different grains using the handy Roy G. Biv mnemonic : R is for rice, O is for oats... uh, B for barley?...</q>','Prism',4);
-		new Game.TieredUpgrade('Pure cosmic light','Prisms are <b>两次</b> 一样高效。<q>Your prisms now receive pristine, unadulterated photons from the other end of the universe.</q>','Prism',5);
+		new Game.TieredUpgrade('Gem polish','棱镜像 <b>两次</b> 一样高效。<q>Get rid of the grime and let more light in.<br>Truly, truly outrageous.</q>','Prism',1);
+		new Game.TieredUpgrade('9th color','棱镜像 <b>两次</b> 一样高效。<q>Delve into untouched optical depths where even the mantis shrimp hasn\'t set an eye!</q>','Prism',2);
+		new Game.TieredUpgrade('Chocolate light','棱镜像 <b>两次</b> 一样高效。<q>Bask into its cocoalescence.<br>(Warning : may cause various interesting albeit deadly skin conditions.)</q>','Prism',3);
+		new Game.TieredUpgrade('Grainbow','棱镜像 <b>两次</b> 一样高效。<q>Remember the different grains using the handy Roy G. Biv mnemonic : R is for rice, O is for oats... uh, B for barley?...</q>','Prism',4);
+		new Game.TieredUpgrade('Pure cosmic light','棱镜像 <b>两次</b> 一样高效。<q>Your prisms now receive pristine, unadulterated photons from the other end of the universe.</q>','Prism',5);
 
 		order=255;
 		new Game.Upgrade('彩虹老奶奶',Game.getGrandmaSynergyUpgradeDesc('Prism')+'<q>A luminous grandma to sparkle into cookies.</q>',Game.Objects['Prism'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
@@ -7312,13 +7312,13 @@ Game.Launch=function()
 		order=24000;
 		Game.seasonTriggerBasePrice=1111111111;
 		new Game.Upgrade('季节切换器','允许你 <b>触发节庆活动</b> at will, for a price.<q>There will always be time.</q>',1111,[16,6],function(){for (var i in Game.seasons){Game.Unlock(Game.seasons[i].trigger);}});Game.last.pool='prestige';
-		new Game.Upgrade('Festive biscuit','Triggers <b>圣诞节</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>\'Twas the night before Christmas- or was it?</q>',Game.seasonTriggerBasePrice,[12,10]);Game.last.season='christmas';Game.last.pool='toggle';
-		new Game.Upgrade('Ghostly biscuit','Triggers <b>万圣节</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>spooky scary skeletons<br>will wake you with a boo</q>',Game.seasonTriggerBasePrice,[13,8]);Game.last.season='halloween';Game.last.pool='toggle';
-		new Game.Upgrade('Lovesick biscuit','Triggers <b>情人节</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>Romance never goes out of fashion.</q>',Game.seasonTriggerBasePrice,[20,3]);Game.last.season='valentines';Game.last.pool='toggle';
-		new Game.Upgrade('Fool\'s biscuit','Triggers <b>工作日</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>Business. Serious business. This is absolutely all of your business.</q>',Game.seasonTriggerBasePrice,[17,6]);Game.last.season='fools';Game.last.pool='toggle';
+		new Game.Upgrade('节日饼干','Triggers <b>圣诞节</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>\'Twas the night before Christmas- or was it?</q>',Game.seasonTriggerBasePrice,[12,10]);Game.last.season='christmas';Game.last.pool='toggle';
+		new Game.Upgrade('鬼魂饼干','Triggers <b>万圣节</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>spooky scary skeletons<br>will wake you with a boo</q>',Game.seasonTriggerBasePrice,[13,8]);Game.last.season='halloween';Game.last.pool='toggle';
+		new Game.Upgrade('相思病饼干','触发 <b>情人节</b> 在接下来的24小时<br><br>Cost increases with every season switch.<q>Romance never goes out of fashion.</q>',Game.seasonTriggerBasePrice,[20,3]);Game.last.season='valentines';Game.last.pool='toggle';
+		new Game.Upgrade('傻瓜的饼干','Triggers <b>工作日</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>Business. Serious business. This is absolutely all of your business.</q>',Game.seasonTriggerBasePrice,[17,6]);Game.last.season='fools';Game.last.pool='toggle';
 		
 		order=40000;
-		new Game.Upgrade('Eternal seasons','Seasons now last forever.<q>Season to taste.</q>',7,[16,6],function(){for (var i in Game.seasons){Game.Unlock(Game.seasons[i].trigger);}});//debug purposes only
+		new Game.Upgrade('永恒的季节','Seasons now last forever.<q>Season to taste.</q>',7,[16,6],function(){for (var i in Game.seasons){Game.Unlock(Game.seasons[i].trigger);}});//debug purposes only
 		Game.last.pool='debug';
 		
 		
@@ -7338,59 +7338,60 @@ Game.Launch=function()
 		order=600;new Game.TieredUpgrade('Generation ship','装船像 <b>两次</b> 一样高效。<q>Built to last, this humongous spacecraft will surely deliver your cookies to the deep ends of space, one day.</q>','Shipment',6);
 		order=700;new Game.TieredUpgrade('Origin crucible','炼金实验室像<b>两次</b> 一样高效。<q>Built from the rarest of earths and located at the very deepest of the largest mountain, this legendary crucible is said to retain properties from the big-bang itself.</q>','Alchemy lab',6);
 		order=800;new Game.TieredUpgrade('Deity-sized portals','传送门像<b>两次</b> 一样高效。<q>It\'s almost like, say, an elder god could fit through this thing now. Hypothetically.</q>','Portal',6);
-		order=900;new Game.TieredUpgrade('Far future enactment','Time machines are <b>两次</b> 一样高效。<q>The far future enactment authorizes you to delve deep into the future - where civilization has fallen and risen again, and cookies are plentiful.</q>','Time machine',6);
-		order=1000;new Game.TieredUpgrade('Nanocosmics','Antimatter condensers are <b>两次</b> 一样高效。<q>The theory of nanocosmics posits that each subatomic particle is in fact its own self-contained universe, holding unfathomable amounts of energy.</q>','Antimatter condenser',6);
+		order=900;new Game.TieredUpgrade('Far future enactment','时光机器像 <b>两次</b> 一样高效。<q>遥远未来的法令授权你深入挖掘未来——文明已经堕落，又重新崛起，而饼干是丰富的。</q>','Time machine',6);
+		order=1000;new Game.TieredUpgrade('Nanocosmics','反物质冷凝器像 <b>两次</b> 一样高效。<q>纳米宇宙理论认为，每一个亚原子粒子实际上都是它自己自足的宇宙，拥有不可思议的能量。</q>','Antimatter condenser',6);
 		order=1100;
-		new Game.TieredUpgrade('Glow-in-the-dark','Prisms are <b>两次</b> 一样高效。<q>Your prisms now glow in the dark, effectively doubling their output!</q>','Prism',6);
+		new Game.TieredUpgrade('Glow-in-the-dark','棱镜像 <b>两次</b> 一样高效。<q>你的棱镜现在在黑暗中发光，有效地加倍它们的输出!</q>','Prism',6);
 		
 		order=10032;
-		Game.NewUpgradeCookie({name:'Rose macarons',desc:'Although an odd flavor, these pastries recently rose in popularity.',icon:[22,3],require:'Box of macarons',		power:3,price: 9999});
-		Game.NewUpgradeCookie({name:'Lemon macarons',desc:'Tastefully sour, delightful treats.',icon:[23,3],require:'Box of macarons',										power:3,price: 9999999});
-		Game.NewUpgradeCookie({name:'Chocolate macarons',desc:'They\'re like tiny sugary burgers!',icon:[24,3],require:'Box of macarons',									power:3,price: 9999999999});
-		Game.NewUpgradeCookie({name:'Pistachio macarons',desc:'Pistachio shells now removed after multiple complaints.',icon:[22,4],require:'Box of macarons',										power:3,price: 9999999999999});
-		Game.NewUpgradeCookie({name:'Hazelnut macarons',desc:'These go especially well with coffee.',icon:[23,4],require:'Box of macarons',									power:3,price: 9999999999999999});
-		Game.NewUpgradeCookie({name:'Violet macarons',desc:'It\'s like spraying perfume into your mouth!',icon:[24,4],require:'Box of macarons',							power:3,price: 9999999999999999999});
+		Game.NewUpgradeCookie({name:'Rose macarons',desc:'虽然味道很怪，但这些糕点最近越来越受欢迎。',icon:[22,3],require:'Box of macarons',		power:3,price: 9999});
+		Game.NewUpgradeCookie({name:'Lemon macarons',desc:'酸甜的，令人愉快的款待。',icon:[23,3],require:'Box of macarons',										power:3,price: 9999999});
+		Game.NewUpgradeCookie({name:'Chocolate macarons',desc:'它们就像小小的含糖的汉堡!',icon:[24,3],require:'Box of macarons',									power:3,price: 9999999999});
+		Game.NewUpgradeCookie({name:'Pistachio macarons',desc:'在多次投诉后，开心果壳被移除。',icon:[22,4],require:'Box of macarons',										power:3,price: 9999999999999});
+		Game.NewUpgradeCookie({name:'Hazelnut macarons',desc:'这些咖啡特别适合饮用。',icon:[23,4],require:'Box of macarons',									power:3,price: 9999999999999999});
+		Game.NewUpgradeCookie({name:'Violet macarons',desc:'这就像向你的嘴里喷香水!',icon:[24,4],require:'Box of macarons',							power:3,price: 9999999999999999999});
 		
 		order=40000;
-		new Game.Upgrade('神奇的恶作剧','Cookie production <b>multiplied by 1,000</b>.<q>It\'s magic. I ain\'t gotta explain sh<div style="display:inline-block;background:url(img/money.png);width:16px;height:16px;position:relative;top:4px;left:0px;margin:0px -2px;"></div>t.</q>',7,[17,5]);//debug purposes only
+		new Game.Upgrade('神奇的恶作剧','饼干生产 <b>乘以 1,000</b>。<q>这是魔法。我不需要解释<div style="display:inline-block;background:url(img/money.png);width:16px;height:16px;position:relative;top:4px;left:0px;margin:0px -2px;"></div></q>',7,[17,5]);//debug purposes only
 		Game.last.pool='debug';
 		
 		
 		order=24000;
-		new Game.Upgrade('Bunny biscuit','Triggers <b>Easter season</b> for the next 24 hours.<br>Triggering another season will cancel this one.<br>Cost increases with every season switch.<q>All the world will be your enemy<br>and when they catch you,<br>they will kill you...<br>but first they must catch you.</q>',Game.seasonTriggerBasePrice,[0,12]);Game.last.season='easter';Game.last.pool='toggle';
+		new Game.Upgrade('兔子饼干','触发 <b>复活节</b> 在接下来的24小时。<br>触发另一个季节将会取消这个。<br>每个季节的开关都会增加成本。<q>全世界都会成为你的敌人<br>并且当他们抓到你，<br>他们会杀了你...<br>但首先，他们必须抓住你。</q>',Game.seasonTriggerBasePrice,[0,12]);Game.last.season='easter';Game.last.pool='toggle';
 		
 		var eggPrice=999999999999;
 		var eggPrice2=99999999999999;
-		new Game.Upgrade('鸡蛋','饼干生产增加 <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>The egg. The egg came first. Get over it.</q>',eggPrice,[1,12]);
-		new Game.Upgrade('鸭蛋','饼干生产增加 <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>Then he waddled away.</q>',eggPrice,[2,12]);
-		new Game.Upgrade('火鸡蛋','饼干生产增加 <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>These hatch into strange, hand-shaped creatures.</q>',eggPrice,[3,12]);
-		new Game.Upgrade('鹌鹑蛋','饼干生产增加 <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>These eggs are positively tiny. I mean look at them. How does this happen? Whose idea was that?</q>',eggPrice,[4,12]);
-		new Game.Upgrade('知更鸟蛋','饼干生产增加 <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>Holy azure-hued shelled embryos!</q>',eggPrice,[5,12]);
-		new Game.Upgrade('鸵鸟蛋','饼干生产增加 <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>One of the largest eggs in the world. More like ostrouch, am I right?<br>Guys?</q>',eggPrice,[6,12]);
-		new Game.Upgrade('食火鸡蛋','饼干生产增加 <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>The cassowary is taller than you, possesses murderous claws and can easily outrun you.<br>You\'d do well to be casso-wary of them.</q>',eggPrice,[7,12]);
-		new Game.Upgrade('鲑鱼籽','饼干生产增加 <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>Do the impossible, see the invisible.<br>Roe roe, fight the power?</q>',eggPrice,[8,12]);
-		new Game.Upgrade('蛙卵','饼干生产增加 <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>I was going to make a pun about how these "toadally look like eyeballs", but froget it.</q>',eggPrice,[9,12]);
-		new Game.Upgrade('鲨鱼卵','饼干生产增加 <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>HELLO IS THIS FOOD?<br>LET ME TELL YOU ABOUT FOOD.<br>WHY DO I KEEP EATING MY FRIENDS</q>',eggPrice,[10,12]);
-		new Game.Upgrade('龟蛋','饼干生产增加 <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>Turtles, right? Hatch from shells. Grow into shells. What\'s up with that?<br>Now for my skit about airplane food.</q>',eggPrice,[11,12]);
-		new Game.Upgrade('蚂蚁幼虫','饼干生产增加 <b>+1%</b>.<br>Cost scales with how many eggs you own.<q>These are a delicacy in some countries, I swear. You will let these invade your digestive tract, and you will derive great pleasure from it.<br>And all will be well.</q>',eggPrice,[12,12]);
-		new Game.Upgrade('金鹅蛋','黄金饼干出现 <b>5% more often</b>.<br>Cost scales with how many eggs you own.<q>The sole vestige of a tragic tale involving misguided investments.</q>',eggPrice2,[13,12]);
-		new Game.Upgrade('Faberge egg','All buildings and upgrades are <b>1% cheaper</b>.<br>Cost scales with how many eggs you own.<q>This outrageous egg is definitely fab.</q>',eggPrice2,[14,12],function(){Game.storeToRefresh=1;});
-		new Game.Upgrade('Wrinklerspawn','Wrinklers explode into <b>5% more cookies</b>.<br>Cost scales with how many eggs you own.<q>Look at this little guy! It\'s gonna be a big boy someday! Yes it is!</q>',eggPrice2,[15,12]);
-		new Game.Upgrade('Cookie egg','Clicking is <b>10% more powerful</b>.<br>Cost scales with how many eggs you own.<q>The shell appears to be chipped.<br>I wonder what\'s inside this one!</q>',eggPrice2,[16,12]);
-		new Game.Upgrade('Omelette','Other eggs appear <b>10% more frequently</b>.<br>Cost scales with how many eggs you own.<q>Fromage not included.</q>',eggPrice2,[17,12]);
-		new Game.Upgrade('Chocolate egg','Contains <b>a lot of cookies</b>.<br>Cost scales with how many eggs you own.<q>Laid by the elusive cocoa bird. There\'s a surprise inside!</q>',eggPrice2,[18,12],function()
+		new Game.Upgrade('鸡蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>鸡蛋。鸡蛋是第一位的。克服它。</q>',eggPrice,[1,12]);
+		new Game.Upgrade('鸭蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>然后他摇摇摆摆地走了。</q>',eggPrice,[2,12]);
+		new Game.Upgrade('火鸡蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>这些孵化成奇异的手形生物。</q>',eggPrice,[3,12]);
+		new Game.Upgrade('鹌鹑蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>这些蛋确实很小。我是说，看看他们。这是如何发生的?这是谁的主意?</q>',eggPrice,[4,12]);
+		new Game.Upgrade('知更鸟蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>神圣的，有壳的胚胎!</q>',eggPrice,[5,12]);
+		new Game.Upgrade('鸵鸟蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>世界上最大的蛋之一。更像奥斯垂奇，对吧?<br>伙计们?</q>',eggPrice,[6,12]);
+		new Game.Upgrade('食火鸡蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>食火鸡比你高，拥有凶残的爪子，很容易跑得比你快。<br/>你最好对他们小心些。</q>',eggPrice,[7,12]);
+		new Game.Upgrade('鲑鱼籽','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>做不可能的事，看不见的。<br>罗伊·罗伊，反抗权力?</q>',eggPrice,[8,12]);
+		new Game.Upgrade('蛙卵','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>我想说一下这些“看起来像眼球”的东西，但忘掉它。</q>',eggPrice,[9,12]);
+		new Game.Upgrade('鲨鱼卵','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>你好这是食物吗?<br/>让我告诉你关于食物的事。<br/>我为什么一直吃我的朋友</q>',eggPrice,[10,12]);
+		new Game.Upgrade('龟蛋','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>乌龟，对吧?<br>从贝壳里孵化出来。成长为贝壳。这是怎么了?现在是我的关于飞机食物的滑稽短剧。</q>',eggPrice,[11,12]);
+		new Game.Upgrade('蚂蚁幼虫','饼干生产增加 <b>+1%</b>.<br>成本是你拥有多少个蛋。<q>我发誓，在一些国家，这是一种美味。你会让这些侵入你的消化道，你会从中获得极大的乐趣。
+，一切都会好的。</q>',eggPrice,[12,12]);
+		new Game.Upgrade('金鹅蛋','黄金饼干出现几率 <b>+5%</b>.<br>成本是你拥有多少个蛋。<q>这是一个关于错误投资的悲惨故事的唯一痕迹。</q>',eggPrice2,[13,12]);
+		new Game.Upgrade('法贝热彩蛋','所有建筑和升级 <b>降低 1% 成本</b>.<br>成本是你拥有多少个蛋。<q>这个可恶的蛋绝对是假的。</q>',eggPrice2,[14,12],function(){Game.storeToRefresh=1;});
+		new Game.Upgrade('皱纹卵','皱纹炸裂加成 <b>5% 饼干</b>.<br>成本是你拥有多少个蛋。<q>看看这个小家伙!总有一天会成为一个大男孩的!没错,是很好玩!</q>',eggPrice2,[15,12]);
+		new Game.Upgrade('Cookie egg','Clicking is <b>10% more powerful</b>.<br>成本是你拥有多少个蛋。<q>The shell appears to be chipped.<br>I wonder what\'s inside this one!</q>',eggPrice2,[16,12]);
+		new Game.Upgrade('Omelette','Other eggs appear <b>10% more frequently</b>.<br>成本是你拥有多少个蛋。<q>Fromage not included.</q>',eggPrice2,[17,12]);
+		new Game.Upgrade('Chocolate egg','Contains <b>a lot of cookies</b>.<br>成本是你拥有多少个蛋。<q>Laid by the elusive cocoa bird. There\'s a surprise inside!</q>',eggPrice2,[18,12],function()
 		{
 			var cookies=Game.cookies*0.05;
 			if (Game.prefs.popups) Game.Popup('The chocolate egg bursts into<br>'+Beautify(cookies)+'!');
 			else Game.Notify('Chocolate egg','The egg bursts into <b>'+Beautify(cookies)+'</b> 饼干！',Game.Upgrades['Chocolate egg'].icon);
 			Game.Earn(cookies);
 		});
-		new Game.Upgrade('世纪蛋','You continually gain <b>more CpS the longer you\'ve played</b> in the current session.<br>Cost scales with how many eggs you own.<q>Actually not centuries-old. This one isn\'t a day over 86!</q>',eggPrice2,[19,12]);
+		new Game.Upgrade('世纪蛋','You continually gain <b>more CpS the longer you\'ve played</b> in the current session.<br>成本是你拥有多少个蛋。<q>Actually not centuries-old. This one isn\'t a day over 86!</q>',eggPrice2,[19,12]);
 		new Game.Upgrade('"egg"','<b>+9 CpS</b><q>hey it\'s "egg"</q>',eggPrice2,[20,12]);
 		
-		Game.easterEggs=['鸡蛋','鸭蛋','火鸡蛋','鹌鹑蛋','知更鸟蛋','鸵鸟蛋','食火鸡蛋','鲑鱼籽','蛙卵','鲨鱼卵','龟蛋','蚂蚁幼虫','金鹅蛋','Faberge egg','Wrinklerspawn','Cookie egg','Omelette','Chocolate egg','世纪蛋','"egg"'];
+		Game.easterEggs=['鸡蛋','鸭蛋','火鸡蛋','鹌鹑蛋','知更鸟蛋','鸵鸟蛋','食火鸡蛋','鲑鱼籽','蛙卵','鲨鱼卵','龟蛋','蚂蚁幼虫','金鹅蛋','法贝热彩蛋','皱纹卵','Cookie egg','Omelette','Chocolate egg','世纪蛋','"egg"'];
 		Game.eggDrops=['鸡蛋','鸭蛋','火鸡蛋','鹌鹑蛋','知更鸟蛋','鸵鸟蛋','食火鸡蛋','鲑鱼籽','蛙卵','鲨鱼卵','龟蛋','蚂蚁幼虫'];
-		Game.rareEggDrops=['金鹅蛋','Faberge egg','Wrinklerspawn','Cookie egg','Omelette','Chocolate egg','世纪蛋','"egg"'];
+		Game.rareEggDrops=['金鹅蛋','法贝热彩蛋','皱纹卵','Cookie egg','Omelette','Chocolate egg','世纪蛋','"egg"'];
 		
 		Game.GetHowManyEggs=function()
 		{
@@ -7442,20 +7443,20 @@ Game.Launch=function()
 		
 		
 		order=525;
-		new Game.TieredUpgrade('Taller tellers','Banks are <b>两次</b> 一样高效。<q>Able to process a higher amount of transactions. Careful though, as taller tellers tell tall tales.</q>','Bank',1);
-		new Game.TieredUpgrade('Scissor-resistant credit cards','Banks are <b>两次</b> 一样高效。<q>For those truly valued customers.</q>','Bank',2);
-		new Game.TieredUpgrade('Acid-proof vaults','Banks are <b>两次</b> 一样高效。<q>You know what they say : better safe than sorry.</q>','Bank',3);
-		new Game.TieredUpgrade('Chocolate coins','Banks are <b>两次</b> 一样高效。<q>This revolutionary currency is much easier to melt from and into ingots - and tastes much better, for a change.</q>','Bank',4);
-		new Game.TieredUpgrade('Exponential interest rates','Banks are <b>两次</b> 一样高效。<q>Can\'t argue with mathematics! Now fork it over.</q>','Bank',5);
-		new Game.TieredUpgrade('Financial zen','Banks are <b>两次</b> 一样高效。<q>The ultimate grail of economic thought; the feng shui of big money, the stock market yoga - the Heimlich maneuver of dimes and nickels.</q>','Bank',6);
+		new Game.TieredUpgrade('Taller tellers','银行像 <b>两次</b> 一样高效。<q>Able to process a higher amount of transactions. Careful though, as taller tellers tell tall tales.</q>','Bank',1);
+		new Game.TieredUpgrade('Scissor-resistant credit cards','银行像 <b>两次</b> 一样高效。<q>For those truly valued customers.</q>','Bank',2);
+		new Game.TieredUpgrade('Acid-proof vaults','银行像 <b>两次</b> 一样高效。<q>You know what they say : better safe than sorry.</q>','Bank',3);
+		new Game.TieredUpgrade('Chocolate coins','银行像 <b>两次</b> 一样高效。<q>This revolutionary currency is much easier to melt from and into ingots - and tastes much better, for a change.</q>','Bank',4);
+		new Game.TieredUpgrade('Exponential interest rates','银行像 <b>两次</b> 一样高效。<q>Can\'t argue with mathematics! Now fork it over.</q>','Bank',5);
+		new Game.TieredUpgrade('Financial zen','银行像 <b>两次</b> 一样高效。<q>The ultimate grail of economic thought; the feng shui of big money, the stock market yoga - the Heimlich maneuver of dimes and nickels.</q>','Bank',6);
 		
 		order=550;
-		new Game.TieredUpgrade('Golden idols','Temples are <b>两次</b> 一样高效。<q>Lure even greedier adventurers to retrieve your cookies. Now that\'s a real idol game!</q>','Temple',1);
-		new Game.TieredUpgrade('Sacrifices','Temples are <b>两次</b> 一样高效。<q>What\'s a life to a gigaton of cookies?</q>','Temple',2);
-		new Game.TieredUpgrade('Delicious blessing','Temples are <b>两次</b> 一样高效。<q>And lo, the Baker\'s almighty spoon came down and distributed holy gifts unto the believers - shimmering sugar, and chocolate dark as night, and all manner of wheats. And boy let me tell you, that party was mighty gnarly.</q>','Temple',3);
-		new Game.TieredUpgrade('Sun festival','Temples are <b>两次</b> 一样高效。<q>Free the primordial powers of your temples with these annual celebrations involving fire-breathers, traditional dancing, ritual beheadings and other merriments!</q>','Temple',4);
-		new Game.TieredUpgrade('Enlarged pantheon','Temples are <b>两次</b> 一样高效。<q>Enough spiritual inadequacy! More divinities than you\'ll ever need, or your money back! 100% guaranteed!</q>','Temple',5);
-		new Game.TieredUpgrade('Great Baker in the sky','Temples are <b>两次</b> 一样高效。<q>This is it. The ultimate deity has finally cast Their sublimely divine eye upon your operation; whether this is a good thing or possibly the end of days is something you should find out very soon.</q>','Temple',6);
+		new Game.TieredUpgrade('Golden idols','寺庙想 <b>两次</b> 一样高效。<q>Lure even greedier adventurers to retrieve your cookies. Now that\'s a real idol game!</q>','Temple',1);
+		new Game.TieredUpgrade('Sacrifices','寺庙想 <b>两次</b> 一样高效。<q>What\'s a life to a gigaton of cookies?</q>','Temple',2);
+		new Game.TieredUpgrade('Delicious blessing','寺庙想 <b>两次</b> 一样高效。<q>And lo, the Baker\'s almighty spoon came down and distributed holy gifts unto the believers - shimmering sugar, and chocolate dark as night, and all manner of wheats. And boy let me tell you, that party was mighty gnarly.</q>','Temple',3);
+		new Game.TieredUpgrade('Sun festival','寺庙想 <b>两次</b> 一样高效。<q>Free the primordial powers of your temples with these annual celebrations involving fire-breathers, traditional dancing, ritual beheadings and other merriments!</q>','Temple',4);
+		new Game.TieredUpgrade('Enlarged pantheon','寺庙想 <b>两次</b> 一样高效。<q>Enough spiritual inadequacy! More divinities than you\'ll ever need, or your money back! 100% guaranteed!</q>','Temple',5);
+		new Game.TieredUpgrade('Great Baker in the sky','寺庙想 <b>两次</b> 一样高效。<q>This is it. The ultimate deity has finally cast Their sublimely divine eye upon your operation; whether this is a good thing or possibly the end of days is something you should find out very soon.</q>','Temple',6);
 		
 		order=575;
 		new Game.TieredUpgrade('尖尖的帽子','精灵塔像 <b>两次</b> 一样高效。<q>测试显示，相对于神奇的圆锥工具的几何比例，它的可接受性增加了。</q>','Wizard tower',1);
@@ -7473,9 +7474,9 @@ Game.Launch=function()
 		
 		
 		order=0;
-		new Game.Upgrade('Tin of british tea biscuits','Contains an assortment of fancy biscuits.<q>Every time is tea time.</q>',25,[21,8]);Game.last.pool='prestige';Game.last.parents=['Heavenly cookies'];
-		new Game.Upgrade('Box of macarons','Contains an assortment of macarons.<q>Multicolored delicacies filled with various kinds of jam.<br>Not to be confused with macaroons, macaroni, macarena or any of that nonsense.</q>',25,[20,8]);Game.last.pool='prestige';Game.last.parents=['Heavenly cookies'];
-		new Game.Upgrade('Box of brand biscuits','Contains an assortment of popular biscuits.<q>They\'re brand new!</q>',25,[20,9]);Game.last.pool='prestige';Game.last.parents=['Heavenly cookies'];
+		new Game.Upgrade('Tin of british tea biscuits','Contains an assortment of fancy biscuits.<q>Every time is tea time.</q>',25,[21,8]);Game.last.pool='prestige';Game.last.parents=['天堂饼干'];
+		new Game.Upgrade('Box of macarons','Contains an assortment of macarons.<q>Multicolored delicacies filled with various kinds of jam.<br>Not to be confused with macaroons, macaroni, macarena or any of that nonsense.</q>',25,[20,8]);Game.last.pool='prestige';Game.last.parents=['天堂饼干'];
+		new Game.Upgrade('Box of brand biscuits','Contains an assortment of popular biscuits.<q>They\'re brand new!</q>',25,[20,9]);Game.last.pool='prestige';Game.last.parents=['天堂饼干'];
 	
 		order=10020;
 		Game.NewUpgradeCookie({name:'Pure black chocolate cookies',desc:'Dipped in a lab-made substance darker than the darkest cocoa (dubbed "chocoalate").',icon:[26,3],power:									4,price: 9999999999999999*5});
@@ -7586,32 +7587,32 @@ Game.Launch=function()
 		order=300;new Game.TieredUpgrade('Fudge fungus','农场生产像 <b>两次</b> 一样高效。<q>A sugary parasite whose tendrils help cookie growth.<br>Please do not breathe in the spores. In case of spore ingestion, seek medical help within the next 36 seconds.</q>','Farm',7);
 		order=400;new Game.TieredUpgrade('Planetsplitters','矿山像 <b>两次</b> 一样高效。<q>These new state-of-the-art excavators have been tested on Merula, Globort and Flwanza VI, among other distant planets which have been curiously quiet lately.</q>','Mine',7);
 		order=500;new Game.TieredUpgrade('Cyborg workforce','工厂生产像 <b>两次</b> 一样高效。<q>Semi-synthetic organisms don\'t slack off, don\'t unionize, and have 20% shorter lunch breaks, making them ideal labor fodder.</q>','Factory',7);
-		order=525;new Game.TieredUpgrade('Way of the wallet','Banks are <b>两次</b> 一样高效。<q>This new monetary school of thought is all the rage on the banking scene; follow its precepts and you may just profit from it.</q>','Bank',7);
-		order=550;new Game.TieredUpgrade('Creation myth','Temples are <b>两次</b> 一样高效。<q>Stories have been circulating about the origins of the very first cookie that was ever baked; tales of how it all began, in the Dough beyond time and the Ovens of destiny.</q>','Temple',7);
+		order=525;new Game.TieredUpgrade('Way of the wallet','银行像 <b>两次</b> 一样高效。<q>This new monetary school of thought is all the rage on the banking scene; follow its precepts and you may just profit from it.</q>','Bank',7);
+		order=550;new Game.TieredUpgrade('Creation myth','寺庙想 <b>两次</b> 一样高效。<q>Stories have been circulating about the origins of the very first cookie that was ever baked; tales of how it all began, in the Dough beyond time and the Ovens of destiny.</q>','Temple',7);
 		order=575;new Game.TieredUpgrade('Cookiemancy','精灵塔像 <b>两次</b> 一样高效。<q>There it is; the perfected school of baking magic. From summoning chips to hexing nuts, there is not a single part of cookie-making that hasn\'t been improved tenfold by magic tricks.</q>','Wizard tower',7);
 		order=600;new Game.TieredUpgrade('Dyson sphere','装船像 <b>两次</b> 一样高效。<q>You\'ve found a way to apply your knowledge of cosmic technology to slightly more local endeavors; this gigantic sphere of meta-materials, wrapping the solar system, is sure to kick your baking abilities up a notch.</q>','Shipment',7);
 		order=700;new Game.TieredUpgrade('Theory of atomic fluidity','炼金实验室像<b>两次</b> 一样高效。<q>Pushing alchemy to its most extreme limits, you find that everything is transmutable into anything else - lead to gold, mercury to water; more importantly, you realize that anything can -and should- be converted to cookies.</q>','Alchemy lab',7);
 		order=800;new Game.TieredUpgrade('End of times back-up plan','传送门像<b>两次</b> 一样高效。<q>Just in case, alright?</q>','Portal',7);
-		order=900;new Game.TieredUpgrade('Great loop hypothesis','Time machines are <b>两次</b> 一样高效。<q>What if our universe is just one instance of an infinite cycle? What if, before and after it, stretched infinite amounts of the same universe, themselves containing infinite amounts of cookies?</q>','Time machine',7);
-		order=1000;new Game.TieredUpgrade('The Pulse','Antimatter condensers are <b>两次</b> 一样高效。<q>You\'ve tapped into the very pulse of the cosmos, a timeless rhythm along which every material and antimaterial thing beats in unison. This, somehow, means more cookies.</q>','Antimatter condenser',7);
+		order=900;new Game.TieredUpgrade('Great loop hypothesis','时光机器像 <b>两次</b> 一样高效。<q>What if our universe is just one instance of an infinite cycle? What if, before and after it, stretched infinite amounts of the same universe, themselves containing infinite amounts of cookies?</q>','Time machine',7);
+		order=1000;new Game.TieredUpgrade('The Pulse','反物质冷凝器像 <b>两次</b> 一样高效。<q>You\'ve tapped into the very pulse of the cosmos, a timeless rhythm along which every material and antimaterial thing beats in unison. This, somehow, means more cookies.</q>','Antimatter condenser',7);
 		order=1100;
-		new Game.TieredUpgrade('Lux sanctorum','Prisms are <b>两次</b> 一样高效。<q>Your prism attendants have become increasingly mesmerized with something in the light - or maybe something beyond it; beyond us all, perhaps?</q>','Prism',7);
+		new Game.TieredUpgrade('Lux sanctorum','棱镜像 <b>两次</b> 一样高效。<q>Your prism attendants have become increasingly mesmerized with something in the light - or maybe something beyond it; beyond us all, perhaps?</q>','Prism',7);
 		
 		
 		order=200;new Game.TieredUpgrade('The Unbridling','老奶奶生产像 <b>两次</b> 一样高效。<q>It might be a classic tale of bad parenting, but let\'s see where grandma is going with this.</q>','Grandma',8);
 		order=300;new Game.TieredUpgrade('Wheat triffids','农场生产像 <b>两次</b> 一样高效。<q>Taking care of crops is so much easier when your plants can just walk about and help around the farm.<br>Do not pet. Do not feed. Do not attempt to converse with.</q>','Farm',8);
 		order=400;new Game.TieredUpgrade('Canola oil wells','矿山像 <b>两次</b> 一样高效。<q>A previously untapped resource, canola oil permeates the underground olifers which grant it its particular taste and lucrative properties.</q>','Mine',8);
 		order=500;new Game.TieredUpgrade('78-hour days','工厂生产像 <b>两次</b> 一样高效。<q>Why didn\'t we think of this earlier?</q>','Factory',8);
-		order=525;new Game.TieredUpgrade('The stuff rationale','Banks are <b>两次</b> 一样高效。<q>If not now, when? If not it, what? If not things... stuff?</q>','Bank',8);
-		order=550;new Game.TieredUpgrade('Theocracy','Temples are <b>两次</b> 一样高效。<q>You\'ve turned your cookie empire into a perfect theocracy, gathering the adoration of zillions of followers from every corner of the universe.<br>Don\'t let it go to your head.</q>','Temple',8);
+		order=525;new Game.TieredUpgrade('The stuff rationale','银行像 <b>两次</b> 一样高效。<q>If not now, when? If not it, what? If not things... stuff?</q>','Bank',8);
+		order=550;new Game.TieredUpgrade('Theocracy','寺庙想 <b>两次</b> 一样高效。<q>You\'ve turned your cookie empire into a perfect theocracy, gathering the adoration of zillions of followers from every corner of the universe.<br>Don\'t let it go to your head.</q>','Temple',8);
 		order=575;new Game.TieredUpgrade('Rabbit trick','精灵塔像 <b>两次</b> 一样高效。<q>Using nothing more than a fancy top hat, your wizards have found a way to simultaneously curb rabbit population and produce heaps of extra cookies for basically free!<br>Resulting cookies may or may not be fit for vegans.</q>','Wizard tower',8);
 		order=600;new Game.TieredUpgrade('The final frontier','装船像 <b>两次</b> 一样高效。<q>It\'s been a long road, getting from there to here. It\'s all worth it though - the sights are lovely and the oil prices slightly more reasonable.</q>','Shipment',8);
 		order=700;new Game.TieredUpgrade('Beige goo','炼金实验室像<b>两次</b> 一样高效。<q>Well now you\'ve done it. Good job. Very nice. That\'s 3 galaxies you\'ve just converted into cookies. Good thing you can hop from universe to universe.</q>','Alchemy lab',8);
 		order=800;new Game.TieredUpgrade('Maddening chants','传送门像<b>两次</b> 一样高效。<q>A popular verse goes like so : "jau\'hn madden jau\'hn madden aeiouaeiouaeiou brbrbrbrbrbrbr"</q>','Portal',8);
-		order=900;new Game.TieredUpgrade('Cookietopian moments of maybe','Time machines are <b>两次</b> 一样高效。<q>Reminiscing how things could have been, should have been, will have been.</q>','Time machine',8);
-		order=1000;new Game.TieredUpgrade('Some other super-tiny fundamental particle? Probably?','Antimatter condensers are <b>两次</b> 一样高效。<q>When even the universe is running out of ideas, that\'s when you know you\'re nearing the end.</q>','Antimatter condenser',8);
+		order=900;new Game.TieredUpgrade('Cookietopian moments of maybe','时光机器像 <b>两次</b> 一样高效。<q>Reminiscing how things could have been, should have been, will have been.</q>','Time machine',8);
+		order=1000;new Game.TieredUpgrade('Some other super-tiny fundamental particle? Probably?','反物质冷凝器像 <b>两次</b> 一样高效。<q>When even the universe is running out of ideas, that\'s when you know you\'re nearing the end.</q>','Antimatter condenser',8);
 		order=1100;
-		new Game.TieredUpgrade('Reverse shadows','Prisms are <b>两次</b> 一样高效。<q>Oh man, this is really messing with your eyes.</q>','Prism',8);
+		new Game.TieredUpgrade('Reverse shadows','棱镜像 <b>两次</b> 一样高效。<q>Oh man, this is really messing with your eyes.</q>','Prism',8);
 		
 		
 		order=20000;
@@ -7619,18 +7620,18 @@ Game.Launch=function()
 		new Game.Upgrade('小猫专家','You gain <b>more CpS</b> the more milk you have.<q>optimeowzing your workflow like whoah, sir</q>',900000000000000000000000000,Game.GetIcon('Kitten',7));Game.last.kitten=1;
 		new Game.Upgrade('小猫能手','You gain <b>more CpS</b> the more milk you have.<q>10 years expurrrtise in the cookie business, sir</q>',900000000000000000000000000000,Game.GetIcon('Kitten',8));Game.last.kitten=1;
 		
-		new Game.Upgrade('如何烤你的龙','Allows you to purchase a <b>crumbly egg</b> once you have earned 1 million cookies.<q>A tome full of helpful tips such as "oh god, stay away from it", "why did we buy this thing, it\'s not even house-broken" and "groom twice a week in the direction of the scales".</q>',9,[22,12]);Game.last.pool='prestige';
+		new Game.Upgrade('如何烤你的龙','一旦你获得了100万个饼干，你就可以购买一个<b>易碎的鸡蛋</b>。<q>这本书里有很多有用的建议，比如“哦，上帝，离它远点”，“我们为什么要买这个东西，它甚至连房子都没破”和“一周两次，朝着天平的方向”。</q>',9,[22,12]);Game.last.pool='prestige';
 
 		order=25100;
-		new Game.Upgrade('易碎的鸡蛋','Unlocks the <b>cookie dragon egg</b>.<q>Thank you for adopting this robust, fun-loving cookie dragon! It will bring you years of joy and entertainment.<br>Keep in a dry and cool place, and away from other house pets. Subscription to home insurance is strongly advised.</q>',25,[21,12]);
+		new Game.Upgrade('易碎的鸡蛋','解锁 <b>饼干龙蛋</b>.<q>谢谢你收养了这个健壮的，有趣的饼干龙!它将给你带来数年的欢乐和娱乐。<br>保持干燥凉爽的环境，远离其他宠物。强烈建议购买家庭保险。</q>',25,[21,12]);
 		
-		new Game.Upgrade('Chimera','Synergy upgrades are <b>2% cheaper</b>.<br>You gain another <b>+5%</b> of your regular CpS while the game is closed.<br>You retain optimal cookie production while the game is closed for <b>2 more days</b>.<q>More than the sum of its parts.</q>',Math.pow(angelPriceFactor,8),[24,7]);Game.last.pool='prestige';Game.last.parents=['God','Lucifer','Synergies Vol. II'];
+		new Game.Upgrade('奇美拉','协同升级的成本<b>降低了2%</b>。<br>你获得了另外 <b>+5%</b> 基本饼干产量，当游戏关闭时。<br>当游戏关闭 <b>2 天以上</b> 时，会保持最优的饼干生产。<q>比它的各个部分的总和还多。</q>',Math.pow(angelPriceFactor,8),[24,7]);Game.last.pool='prestige';Game.last.parents=['God','Lucifer','协同效应2'];
 		
-		new Game.Upgrade('Tin of butter cookies','Contains an assortment of rich butter cookies.<q>Five varieties of danish cookies.<br>Complete with little paper cups.</q>',25,[21,9]);Game.last.pool='prestige';Game.last.parents=['Heavenly cookies'];
+		new Game.Upgrade('Tin of butter cookies','Contains an assortment of rich butter cookies.<q>Five varieties of danish cookies.<br>Complete with little paper cups.</q>',25,[21,9]);Game.last.pool='prestige';Game.last.parents=['天堂饼干'];
 		
-		new Game.Upgrade('Golden switch','Unlocks the <b>golden switch</b>, which passively boosts your CpS by 50% but disables golden cookies.<q>Less clicking, more idling.</q>',999,[21,10]);Game.last.pool='prestige';Game.last.parents=['天上的运气'];
+		new Game.Upgrade('Golden switch','解锁 <b>golden switch</b>, which passively boosts your CpS by 50% but disables golden cookies.<q>Less clicking, more idling.</q>',999,[21,10]);Game.last.pool='prestige';Game.last.parents=['天上的运气'];
 		
-		new Game.Upgrade('Classic dairy selection','Unlocks the <b>milk selector</b>, letting you pick which milk is displayed under your cookie.<br>Comes with a variety of basic flavors.<q>Don\'t have a cow, man.</q>',9,[1,8]);Game.last.pool='prestige';Game.last.parents=[];
+		new Game.Upgrade('Classic dairy selection','解锁 <b>milk selector</b>, letting you pick which milk is displayed under your cookie.<br>Comes with a variety of basic flavors.<q>Don\'t have a cow, man.</q>',9,[1,8]);Game.last.pool='prestige';Game.last.parents=[];
 		
 		new Game.Upgrade('Fanciful dairy selection','Contains more exotic flavors for your milk selector.<q>Strong bones for the skeleton army.</q>',1000000,[9,7]);Game.last.pool='prestige';Game.last.parents=['Classic dairy selection'];
 		
@@ -7754,7 +7755,7 @@ Game.Launch=function()
 		new Game.Upgrade('Beelzebub',desc(64)+'<q>The festering incarnation of blight and disease, Beelzebub rules over the vast armies of pastry inferno.</q>',Math.pow(angelPriceFactor,6),[12,11]);Game.last.pool='prestige';Game.last.parents=['Asmodeus'];
 		new Game.Upgrade('Lucifer',desc(128)+'<q>Also known as the Lightbringer, this infernal prince\'s tremendous ego caused him to be cast down from pastry heaven.</q>',Math.pow(angelPriceFactor,7),[13,11]);Game.last.pool='prestige';Game.last.parents=['Beelzebub'];
 		
-		new Game.Upgrade('Golden cookie alert sound','Unlocks the <b>golden cookie sound selector</b>, which lets you pick whether golden cookies emit a sound when appearing or not.<q>A sound decision.</q>',9999,[28,6]);Game.last.pool='prestige';Game.last.parents=['决定性的命运','Golden switch'];
+		new Game.Upgrade('Golden cookie alert sound','解锁 <b>golden cookie sound selector</b>, which lets you pick whether golden cookies emit a sound when appearing or not.<q>A sound decision.</q>',9999,[28,6]);Game.last.pool='prestige';Game.last.parents=['决定性的命运','Golden switch'];
 		
 		order=49900;
 		new Game.Upgrade('Golden cookie sound selector','Lets you change the sound golden cookies make when they spawn.',0,[28,6]);
@@ -7772,19 +7773,19 @@ Game.Launch=function()
 		{Game.chimeType=id;}
 		
 		
-		new Game.Upgrade('Basic wallpaper assortment','Unlocks the <b>background selector</b>, letting you select the game\'s background.<br>Comes with a variety of basic flavors.<q>Prioritizing aesthetics over crucial utilitarian upgrades? Color me impressed.</q>',99,[29,5]);Game.last.pool='prestige';Game.last.parents=['Classic dairy selection'];
+		new Game.Upgrade('Basic wallpaper assortment','解锁 <b>背景选择器</b>, 让你可以选择游戏的背景。<br>有各种各样的基本口味。<q>优先考虑美学而不是关键的实用升级?让我印象深刻。</q>',99,[29,5]);Game.last.pool='prestige';Game.last.parents=['Classic dairy selection'];
 		
-		new Game.Upgrade('Legacy','This is the first heavenly upgrade; it unlocks the <b>Heavenly chips</b> system.<div class="line"></div>Each time you ascend, the cookies you made in your past life are turned into <b>heavenly chips</b> and <b>prestige</b>.<div class="line"></div><b>Heavenly chips</b> can be spent on a variety of permanent transcendental upgrades.<div class="line"></div>Your <b>prestige level</b> also gives you a permanent <b>+1% CpS</b> per level.<q>We\'ve all been waiting for you.</q>',1,[21,6]);Game.last.pool='prestige';Game.last.parents=[];
+		new Game.Upgrade('遗产','这是第一次天堂的升级;它解锁<b>天堂芯片</b>系统。<div class="line"></div>你每提升一次，你过去生活中的饼干就变成了 <b>天堂芯片</b> 和 <b>声望</b>.<div class="line"></div><b>天堂芯片</b> 可以用于各种永久的超越升级。<div class="line"></div>您的 <b>声望等级</b> 每一级会给你永久的 <b>+1% 饼干秒生产量</b> 。<q>我们都在等你。</q>',1,[21,6]);Game.last.pool='prestige';Game.last.parents=[];
 		
-		new Game.Upgrade('Elder spice','You can attract <b>2 more wrinklers</b>.<q>The cookie your cookie could smell like.</q>',444444,[19,8]);Game.last.pool='prestige';Game.last.parents=['Unholy bait'];
+		new Game.Upgrade('Elder spice','你可以吸引 <b>2 更多的皱纹</b>.<q>你的饼干闻起来像的饼干。</q>',444444,[19,8]);Game.last.pool='prestige';Game.last.parents=['Unholy bait'];
 		
-		new Game.Upgrade('残余运气','While the golden switch is on, you gain an additional <b>+10% CpS</b> per golden cookie upgrade owned.<q>Fortune comes in many flavors.</q>',99999,[27,6]);Game.last.pool='prestige';Game.last.parents=['Golden switch'];
+		new Game.Upgrade('残余运气','当金色开关打开时，你会得到额外的 <b>+10% 饼干秒生产量</b> 每个黄金饼干升级所有。<q>财富的方法有许多种。</q>',99999,[27,6]);Game.last.pool='prestige';Game.last.parents=['Golden switch'];
 		
-		order=150;new Game.Upgrade('Fantasteel mouse','点击获得 <b>+1% 总秒收益</b>.<q>You could be clicking using your touchpad and we\'d be none the wiser.</q>',5000000000000000000,[11,17]);
-		new Game.Upgrade('Nevercrack mouse','点击获得 <b>+1% 总秒收益</b>.<q>How much beefier can you make a mouse until it\'s considered a rat?</q>',500000000000000000000,[11,18]);
+		order=150;new Game.Upgrade('Fantasteel mouse','点击获得 <b>+1% 饼干秒生产量</b>.<q>你可以用你的触摸板来点击，而我们不会变得更聪明。</q>',5000000000000000000,[11,17]);
+		new Game.Upgrade('Nevercrack mouse','点击获得 <b>+1% 总秒收益</b>.<q>你能造一只老鼠直到它被认为是老鼠吗?</q>',500000000000000000000,[11,18]);
 		
 		
-		new Game.Upgrade('Five-finger discount','All upgrades are <b>1% cheaper per 100 cursors</b>.<q>Stick it to the man.</q>',555555,[28,7],function(){Game.upgradesToRebuild=1;});Game.last.pool='prestige';Game.last.parents=['Halo gloves','Abaddon'];
+		new Game.Upgrade('Five-finger discount','All upgrades are <b>1% cheaper per 100 cursors</b>.<q>它贴在男人身上。</q>',555555,[28,7],function(){Game.upgradesToRebuild=1;});Game.last.pool='prestige';Game.last.parents=['Halo gloves','Abaddon'];
 		
 		
 		order=5000;
@@ -7825,10 +7826,10 @@ Game.Launch=function()
 		new Game.SynergyUpgrade('Mystical energies','<q>Something beckons from within the light. It is warm, comforting, and apparently the cause for several kinds of exotic skin cancers.</q>','Prism','Temple','synergy2');
 		
 		
-		new Game.Upgrade('Synergies Vol. I','Unlocks a new tier of upgrades that affect <b>2 buildings at the same time</b>.<br>Synergies appear once you have <b>15</b> of both buildings.<q>The many beats the few.</q>',2525,[10,20]);Game.last.pool='prestige';Game.last.parents=['Satan','Dominions'];
-		new Game.Upgrade('Synergies Vol. II','Unlocks a new tier of upgrades that affect <b>2 buildings at the same time</b>.<br>Synergies appear once you have <b>75</b> of both buildings.<q>The several beats the many.</q>',252525,[10,20]);Game.last.pool='prestige';Game.last.parents=['Beelzebub','Seraphim','Synergies Vol. I'];
+		new Game.Upgrade('协同效应1','Unlocks a new tier of upgrades that affect <b>2 buildings at the same time</b>.<br>Synergies appear once you have <b>15</b> of both buildings.<q>The many beats the few.</q>',2525,[10,20]);Game.last.pool='prestige';Game.last.parents=['Satan','Dominions'];
+		new Game.Upgrade('协同效应2','Unlocks a new tier of upgrades that affect <b>2 buildings at the same time</b>.<br>Synergies appear once you have <b>75</b> of both buildings.<q>The several beats the many.</q>',252525,[10,20]);Game.last.pool='prestige';Game.last.parents=['Beelzebub','Seraphim','协同效应1'];
 		
-		new Game.Upgrade('Heavenly cookies','饼干生产增加 <b>+10% permanently</b>.<q>Baked with heavenly chips. An otherwordldly flavor that transcends time and space.</q>',3,[25,12]);Game.last.pool='prestige';Game.last.parents=['Legacy'];Game.last.power=10;Game.last.pseudoCookie=true;
+		new Game.Upgrade('天堂饼干','饼干生产增加 <b>+10% 永久产量</b>.<q>和天堂芯片一起拷。另一种超越时间和空间的文字。</q>',3,[25,12]);Game.last.pool='prestige';Game.last.parents=['遗产'];Game.last.power=10;Game.last.pseudoCookie=true;
 		new Game.Upgrade('Wrinkly cookies','饼干生产增加 <b>+10% permanently</b>.<q>The result of regular cookies left to age out for countless eons in a place where time and space are meaningless.</q>',6666666,[26,12]);Game.last.pool='prestige';Game.last.parents=['Sacrilegious corruption','Elder spice'];Game.last.power=10;Game.last.pseudoCookie=true;
 		new Game.Upgrade('Distilled essence of redoubled luck','Golden cookies have <b>1% chance of being doubled</b>.<q>Tastes glittery. The empty phial makes for a great pencil holder.</q>',7777777,[27,12]);Game.last.pool='prestige';Game.last.parents=['Divine bakeries','残余运气'];
 		
@@ -7862,7 +7863,7 @@ Game.Launch=function()
 		new Game.Upgrade('幸运的支付','<b>+1%</b> prestige level effect on CpS.<br><b>+1%</b> golden cookie effect duration.<br><b>+1%</b> golden cookie lifespan.<q>This upgrade took an oath of complete seclusion from the rest of the world and only appears when your prestige level ends in 777777.</q>',77777777,[24,15]);Game.last.pool='prestige';Game.last.parents=['幸运数','决定性的命运'];Game.last.showIf=function(){return (Math.ceil(Game.prestige)%1000000==777777);};
 		
 		order=50000;
-		new Game.Upgrade('Background selector','Lets you pick which wallpaper to display.',0,[29,5]);
+		new Game.Upgrade('背景选择器','让您选择要显示的墙纸。',0,[29,5]);
 		Game.last.pool='toggle';
 		Game.last.choicesFunction=function()
 		{
@@ -7897,62 +7898,62 @@ Game.Launch=function()
 		};
 		
 		order=255;
-		new Game.Upgrade('幸运老奶奶',Game.getGrandmaSynergyUpgradeDesc('Chancemaker')+'<q>A fortunate grandma that always seems to find more cookies.</q>',Game.Objects['Chancemaker'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
+		new Game.Upgrade('幸运老奶奶',Game.getGrandmaSynergyUpgradeDesc('Chancemaker')+'<q>一位幸运的奶奶总是能找到更多的饼干。</q>',Game.Objects['Chancemaker'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
 		
 		order=1200;
-		new Game.TieredUpgrade('Your lucky cookie','Chancemakers are <b>两次</b> 一样高效。<q>This is the first cookie you\'ve ever baked. It holds a deep sentimental value and, after all this time, an interesting smell.</q>','Chancemaker',1);
-		new Game.TieredUpgrade('"All Bets Are Off" magic coin','Chancemakers are <b>两次</b> 一样高效。<q>A coin that always lands on the other side when flipped. Not heads, not tails, not the edge. The <i>other side</i>.</q>','Chancemaker',2);
-		new Game.TieredUpgrade('Winning lottery ticket','Chancemakers are <b>两次</b> 一样高效。<q>What lottery? THE lottery, that\'s what lottery! Only lottery that matters!</q>','Chancemaker',3);
-		new Game.TieredUpgrade('Four-leaf clover field','Chancemakers are <b>两次</b> 一样高效。<q>No giant monsters here, just a whole lot of lucky grass.</q>','Chancemaker',4);
-		new Game.TieredUpgrade('A recipe book about books','Chancemakers are <b>两次</b> 一样高效。<q>Tip the scales in your favor with 28 creative new ways to cook the books.</q>','Chancemaker',5);
-		new Game.TieredUpgrade('Leprechaun village','Chancemakers are <b>两次</b> 一样高效。<q>You\'ve finally become accepted among the local leprechauns, who lend you their mythical luck as a sign of friendship (as well as some rather foul-tasting tea).</q>','Chancemaker',6);
-		new Game.TieredUpgrade('Improbability drive','Chancemakers are <b>两次</b> 一样高效。<q>A strange engine that turns statistics on their head. Recommended by the Grandmother\'s Guide to the Bakery.</q>','Chancemaker',7);
-		new Game.TieredUpgrade('Antisuperstistronics','Chancemakers are <b>两次</b> 一样高效。<q>An exciting new field of research that makes unlucky things lucky. No mirror unbroken, no ladder unwalked under!</q>','Chancemaker',8);
+		new Game.TieredUpgrade('你的幸运饼干','投机分子像 <b>两次</b> 一样高效。<q>这是你烤过的第一块饼干。它具有很深的情感价值，而且，在这之后，有一种有趣的味道。</q>','Chancemaker',1);
+		new Game.TieredUpgrade('所有的赌注都在"魔法硬币"上','投机分子像 <b>两次</b> 一样高效。<q>抛硬币时总是落在另一边的硬币。不是正面，不是反面，不是边缘。是<i>另一边</i>.</q>','Chancemaker',2);
+		new Game.TieredUpgrade('中奖彩票','投机分子像 <b>两次</b> 一样高效。<q>什么彩票?彩票，那就是彩票！只有彩票才重要!</q>','Chancemaker',3);
+		new Game.TieredUpgrade('四叶苜蓿田','投机分子像 <b>两次</b> 一样高效。<q>这里没有巨型怪物，只有一大堆幸运草。</q>','Chancemaker',4);
+		new Game.TieredUpgrade('一本关于书的食谱','投机分子像 <b>两次</b> 一样高效。<q>用28种创造性的新方法来帮你烹饪书。</q>','Chancemaker',5);
+		new Game.TieredUpgrade('小妖精村','投机分子像 <b>两次</b> 一样高效。<q>你最终会被当地的小妖精们所接受，他们把神话般的运气当作友谊的象征(还有一些很臭的茶)。</q>','Chancemaker',6);
+		new Game.TieredUpgrade('非概率驱动','投机分子像 <b>两次</b> 一样高效。<q>这是一个奇怪的引擎，它会把统计数据转到他们的头上。由祖母推荐的面包房指南。</q>','Chancemaker',7);
+		new Game.TieredUpgrade('反超级美味','投机分子像 <b>两次</b> 一样高效。<q>一个令人兴奋的新领域的研究使不幸的事情变得幸运。没有镜子没有被打破，没有梯子在下面！</q>','Chancemaker',8);
 		
 		order=5000;
-		new Game.SynergyUpgrade('Gemmed talismans','<q>Good-luck charms covered in ancient and excruciatingly rare crystals. A must have for job interviews!</q>','Chancemaker','Mine','synergy1');
+		new Game.SynergyUpgrade('宝石护身符','<q>幸运的符咒覆盖着古老的、极其稀有的晶体。一定要有面试的机会！</q>','Chancemaker','Mine','synergy1');
 		
 		order=20000;
-		new Game.Upgrade('小猫顾问','You gain <b>more CpS</b> the more milk you have.<q>glad to be overpaid to work with you, sir</q>',900000000000000000000000000000000,Game.GetIcon('Kitten',9));Game.last.kitten=1;
+		new Game.Upgrade('小猫顾问','你获得了 <b>更多饼干秒产量</b> 你有更多的牛奶。<q>很高兴能和你一起工作，先生。</q>',900000000000000000000000000000000,Game.GetIcon('Kitten',9));Game.last.kitten=1;
 		
 		order=99999;
 		var years=Math.floor((Date.now()-new Date(2013,7,8))/(1000*60*60*24*365));
 		//only updates on page load
 		//may behave strangely on leap years
-		Game.NewUpgradeCookie({name:'Birthday cookie',desc:'-',icon:[22,13],power:years,price:99999999999999999999999999999});Game.last.baseDesc='饼干生产增加 <b>+1%</b> for every year Cookie Clicker has existed (currently : <b>+'+Beautify(years)+'%</b>).<q>Thank you for playing Cookie Clicker!<br>-Orteil</q>';Game.last.desc=BeautifyInText(Game.last.baseDesc);
+		Game.NewUpgradeCookie({name:'生日饼干',desc:'-',icon:[22,13],power:years,price:99999999999999999999999999999});Game.last.baseDesc='饼干生产增加 <b>+1%</b> 你玩无尽的饼干的年数 (当前 : <b>+'+Beautify(years)+'%</b>).<q>感谢您的无尽的饼干<br>-奥泰伊</q>';Game.last.desc=BeautifyInText(Game.last.baseDesc);
 		
 		
-		order=150;new Game.Upgrade('Armythril mouse','点击获得 <b>+1% 总秒收益</b>.<q>This one takes about 53 people to push it around and another 48 to jump down on the button and trigger a click. You could say it\'s got some heft to it.</q>',50000000000000000000000,[11,19]);
+		order=150;new Game.Upgrade('阿迈斯里鼠标','点击获得 <b>+1% 总秒收益</b>.<q>这个需要大约53人来推动它，另外48人跳下来按下按钮并触发点击。你可以说它有一些分量。</q>',50000000000000000000000,[11,19]);
 		
-		order=200;new Game.TieredUpgrade('Reverse dementia','老奶奶生产像 <b>两次</b> 一样高效。<q>Extremely unsettling, and somehow even worse than the regular kind.</q>','Grandma',9);
-		order=300;new Game.TieredUpgrade('Humane pesticides','农场生产像 <b>两次</b> 一样高效。<q>Made by people, for people, from people and ready to unleash some righteous scorching pain on those pesky insects that so deserve it.</q>','Farm',9);
-		order=400;new Game.TieredUpgrade('Mole people','矿山像 <b>两次</b> 一样高效。<q>Engineered from real human beings within your very labs, these sturdy little folks have a knack for finding the tastiest underground minerals in conditions that more expensive machinery probably wouldn\'t survive.</q>','Mine',9);
-		order=500;new Game.TieredUpgrade('Machine learning','工厂生产像 <b>两次</b> 一样高效。<q>You figured you might get better productivity if you actually told your workers to learn how to work the machines. Sometimes, it\'s the little things...</q>','Factory',9);
-		order=525;new Game.TieredUpgrade('Edible money','Banks are <b>两次</b> 一样高效。<q>It\'s really quite simple; you make all currency too delicious not to eat, solving world hunger and inflation in one fell swoop!</q>','Bank',9);
-		order=550;new Game.TieredUpgrade('Sick rap prayers','Temples are <b>两次</b> 一样高效。<q>With their ill beat and radical rhymes, these way-hip religious tunes are sure to get all the youngins who thought they were 2 cool 4 church back on the pews and praying for more! Wicked!</q>','Temple',9);
-		order=575;new Game.TieredUpgrade('Deluxe tailored wands','精灵塔像 <b>两次</b> 一样高效。<q>In this age of science, most skillful wand-makers are now long gone; but thankfully - not all those wanders are lost.</q>','Wizard tower',9);
-		order=600;new Game.TieredUpgrade('Autopilot','装船像 <b>两次</b> 一样高效。<q>Your ships are now fitted with completely robotic crews! It\'s crazy how much money you save when you don\'t have to compensate the families of those lost in space.</q>','Shipment',9);
-		order=700;new Game.TieredUpgrade('The advent of chemistry','炼金实验室像<b>两次</b> 一样高效。<q>You know what? That whole alchemy nonsense was a load of baseless rubbish. Dear god, what were you thinking?</q>','Alchemy lab',9);
-		order=800;new Game.TieredUpgrade('The real world','传送门像<b>两次</b> 一样高效。<q>It turns out that our universe is actually the twisted dimension of another, saner plane of reality. Time to hop on over there and loot the place!</q>','Portal',9);
-		order=900;new Game.TieredUpgrade('Second seconds','Time machines are <b>两次</b> 一样高效。<q>That\'s twice as many seconds in the same amount of time! What a deal! Also, what in god\'s name!</q>','Time machine',9);
-		order=1000;new Game.TieredUpgrade('Quantum comb','Antimatter condensers are <b>两次</b> 一样高效。<q>Quantum entanglement is one of those things that are so annoying to explain that we might honestly be better off without it. This is finally possible thanks to the quantum comb!</q>','Antimatter condenser',9);
-		order=1100;new Game.TieredUpgrade('Crystal mirrors','Prisms are <b>两次</b> 一样高效。<q>Designed to filter more light back into your prisms, reaching levels of brightness that reality itself had never planned for.</q>','Prism',9);
-		order=1200;new Game.TieredUpgrade('Bunnypedes','Chancemakers are <b>两次</b> 一样高效。<q>You\'ve taken to breeding rabbits with hundreds of paws, which makes them intrinsically very lucky and thus a very handy (if very disturbing) pet.</q>','Chancemaker',9);
+		order=200;new Game.TieredUpgrade('逆转痴呆','老奶奶生产像 <b>两次</b> 一样高效。<q>非常令人不安，甚至比普通的还要糟糕。</q>','Grandma',9);
+		order=300;new Game.TieredUpgrade('人道杀虫剂','农场生产像 <b>两次</b> 一样高效。<q>这是由人，为人们，从人们，准备释放一些正义的灼伤的那些讨厌的昆虫，所以应该得到它。</q>','Farm',9);
+		order=400;new Game.TieredUpgrade('鼹鼠人','矿山像 <b>两次</b> 一样高效。<q>这些壮实的小人物，在你的实验室里，从真实的人类身上设计出来，他们有本事找到最美味的地下矿石，条件是更昂贵的机器可能无法生存。</q>','Mine',9);
+		order=500;new Game.TieredUpgrade('机器学习','工厂生产像 <b>两次</b> 一样高效。<q>如果你真的告诉你的员工学会如何操作机器，你就会得到更好的工作效率。有时候，这是小事……</q>','Factory',9);
+		order=525;new Game.TieredUpgrade('可食用货币','银行像 <b>两次</b> 一样高效。<q>这真的很简单;你让所有的货币都太好吃了，不吃，一下子解决世界饥饿和通货膨胀!</q>','Bank',9);
+		order=550;new Game.TieredUpgrade('病态的说唱祈祷','寺庙想 <b>两次</b> 一样高效。<q>这些时髦的宗教曲调以其糟糕的节奏和激流的韵律，肯定能让所有的年轻人们相信他们是在教堂的长凳上，祈祷更多!邪恶的!</q>','Temple',9);
+		order=575;new Game.TieredUpgrade('豪华的魔杖','精灵塔像 <b>两次</b> 一样高效。<q>在这个科学的时代，大多数熟练的魔杖制造者都已经远去了;但值得庆幸的是，并非所有的游荡者都迷失了。</q>','Wizard tower',9);
+		order=600;new Game.TieredUpgrade('自动驾驶仪','装船像 <b>两次</b> 一样高效。<q>你的船现在安装了完全的机器人船员!当你不需要补偿那些在太空中迷失的人的家人时，你能省下多少钱，真是太疯狂了。</q>','Shipment',9);
+		order=700;new Game.TieredUpgrade('化学的出现','炼金实验室像<b>两次</b> 一样高效。<q>你知道吗?那全是炼金术的胡说八道，是一堆毫无根据的废话。亲爱的上帝，你在想什么?</q>','Alchemy lab',9);
+		order=800;new Game.TieredUpgrade('真实的世界','传送门像<b>两次</b> 一样高效。<q>事实证明，我们的宇宙实际上是另一种更理智的现实世界的扭曲维度。是时候跳到那边去了!</q>','Portal',9);
+		order=900;new Game.TieredUpgrade('第二秒','时光机器像 <b>两次</b> 一样高效。<q>在相同的时间内，它的秒数是原来的两倍!什么交易!还有，以上帝的名义!</q>','Time machine',9);
+		order=1000;new Game.TieredUpgrade('量子梳','反物质冷凝器像 <b>两次</b> 一样高效。<q>量子纠缠是一种很烦人的解释，我们可以坦白地说，如果没有它，我们可能会过得更好。这终于有可能多亏了量子梳子!</q>','Antimatter condenser',9);
+		order=1100;new Game.TieredUpgrade('水晶镜子','棱镜像 <b>两次</b> 一样高效。<q>它的设计是为了将更多的光线过滤回你的棱镜，达到了现实本身从未计划过的亮度水平。</q>','Prism',9);
+		order=1200;new Game.TieredUpgrade('兔子脚','投机分子像 <b>两次</b> 一样高效。<q>你会用几百只爪子去饲养兔子，这使它们在本质上非常幸运，因此是一个非常方便(如果非常令人不安)的宠物。</q>','Chancemaker',9);
 		
 		order=20000;
-		new Game.Upgrade('小猫助理到区域经理那里','You gain <b>more CpS</b> the more milk you have.<q>nothing stresses meowt... except having to seek the approval of my inferiors, sir</q>',900000000000000000000000000000000000,Game.GetIcon('Kitten',10));Game.last.kitten=1;
+		new Game.Upgrade('小猫助理到区域经理那里','你获得了 <b>更多饼干秒产量</b> 你的牛奶越多。<q>没有什么能强调……除了必须征得我的下级的同意外，先生</q>',900000000000000000000000000000000000,Game.GetIcon('Kitten',10));Game.last.kitten=1;
 		
 		order=5000;
-		new Game.SynergyUpgrade('Charm quarks','<q>他们是你的幸运夸克！</q>','Chancemaker','Antimatter condenser','synergy2');
+		new Game.SynergyUpgrade('魅力夸克','<q>他们是你的幸运夸克！</q>','Chancemaker','Antimatter condenser','synergy2');
 		
 		//end of upgrades
 		
 		Game.seasons={
-			'christmas':{name:'Christmas',start:'圣诞节已经开始了！',over:'圣诞节已经结束。',trigger:'Festive biscuit'},
-			'valentines':{name:'Valentine\'s day',start:'情人节已经开始了！',over:'情人节已经结束。',trigger:'Lovesick biscuit'},
-			'fools':{name:'Business day',start:'工作日已经开始了！',over:'工作日已经结束。',trigger:'Fool\'s biscuit'},
-			'easter':{name:'Easter',start:'复活节已经开始了！',over:'复活节已经结束。',trigger:'Bunny biscuit'},
-			'halloween':{name:'Halloween',start:'万圣节已经开始了！',over:'万圣节已经结束。',trigger:'Ghostly biscuit'}
+			'christmas':{name:'Christmas',start:'圣诞节已经开始了！',over:'圣诞节已经结束。',trigger:'节日饼干'},
+			'valentines':{name:'Valentine\'s day',start:'情人节已经开始了！',over:'情人节已经结束。',trigger:'相思病饼干'},
+			'fools':{name:'Business day',start:'工作日已经开始了！',over:'工作日已经结束。',trigger:'傻瓜的饼干'},
+			'easter':{name:'Easter',start:'复活节已经开始了！',over:'复活节已经结束。',trigger:'兔子饼干'},
+			'halloween':{name:'Halloween',start:'万圣节已经开始了！',over:'万圣节已经结束。',trigger:'鬼魂饼干'}
 		};
 		
 		Game.computeSeasonPrices=function()
@@ -8005,8 +8006,8 @@ Game.Launch=function()
 					else Game.Notify(str,'',this.icon,4);
 				}
 				
-				me.displayFuncWhenOwned=function(){return '<div style="text-align:center;">Time remaining :<br><b>'+(Game.Has('Eternal seasons')?'forever':Game.sayTime(Game.seasonT,-1))+'</b></div>';}
-				me.timerDisplay=function(upgrade){return function(){if (!Game.Upgrades[upgrade.name].bought || Game.Has('Eternal seasons')) return -1; else return 1-Game.seasonT/Game.getSeasonDuration();}}(me);
+				me.displayFuncWhenOwned=function(){return '<div style="text-align:center;">剩余时间 :<br><b>'+(Game.Has('永恒的季节')?'forever':Game.sayTime(Game.seasonT,-1))+'</b></div>';}
+				me.timerDisplay=function(upgrade){return function(){if (!Game.Upgrades[upgrade.name].bought || Game.Has('永恒的季节')) return -1; else return 1-Game.seasonT/Game.getSeasonDuration();}}(me);
 				
 			}
 		}
@@ -8035,7 +8036,7 @@ Game.Launch=function()
 				Game.PrestigeUpgrades.push(Game.Upgrades[i]);
 				Game.Upgrades[i].posX=0;
 				Game.Upgrades[i].posY=0;
-				if (Game.Upgrades[i].parents.length==0 && Game.Upgrades[i].name!='Legacy') Game.Upgrades[i].parents=['Legacy'];
+				if (Game.Upgrades[i].parents.length==0 && Game.Upgrades[i].name!='遗产') Game.Upgrades[i].parents=['遗产'];
 				Game.Upgrades[i].parents=Game.Upgrades[i].parents||[-1];
 				for (var ii in Game.Upgrades[i].parents) {if (Game.Upgrades[i].parents[ii]!=-1) Game.Upgrades[i].parents[ii]=Game.Upgrades[Game.Upgrades[i].parents[ii]];}
 			}
@@ -8518,15 +8519,15 @@ Game.Launch=function()
 		new Game.Achievement('A still more glorious dawn','Make <b>1,000,000,000,000,000,000,000,000,000</b> cookies just from prisms.',[14,23]);
 		
 		order=30000;
-		new Game.Achievement('Rebirth','Ascend at least once.',[21,6]);
+		new Game.Achievement('重生','Ascend at least once.',[21,6]);
 		
 		order=11000;
 		new Game.Achievement('Here you go','Click this achievement\'s slot.<q>All you had to do was ask.</q>',[1,7]);Game.last.clickFunction=function(){if (!Game.HasAchiev('Here you go')){PlaySound('snd/tick.mp3');Game.Win('Here you go');}};
 		
 		order=30000;
-		new Game.Achievement('Resurrection','Ascend <b>10 times</b>.',[21,6]);
-		new Game.Achievement('Reincarnation','Ascend <b>100 times</b>.',[21,6]);
-		new Game.Achievement('Endless cycle','Ascend <b>1000 times</b>.<q>Oh hey, it\'s you again.</q>',[2,7]);Game.last.pool='shadow';
+		new Game.Achievement('复活','Ascend <b>10 times</b>.',[21,6]);
+		new Game.Achievement('转生','Ascend <b>100 times</b>.',[21,6]);
+		new Game.Achievement('无限循环','Ascend <b>1000 times</b>.<q>Oh hey, it\'s you again.</q>',[2,7]);Game.last.pool='shadow';
 		
 		
 		
@@ -9257,7 +9258,7 @@ Game.Launch=function()
 						else if (godLvl==2) chance*=2;
 						else if (godLvl==3) chance*=1.5;
 					}
-					if (Game.Has('Wrinkler doormat')) chance=0.1;
+					if (Game.Has('皱纹门垫')) chance=0.1;
 					if (Math.random()<chance)//respawn
 					{
 						Game.SpawnWrinkler(me);
@@ -9352,7 +9353,7 @@ Game.Launch=function()
 					if (Game.Has('Sacrilegious corruption')) toSuck*=1.05;
 					if (me.type==1) toSuck*=3;//shiny wrinklers are an elusive, profitable breed
 					me.sucked*=toSuck;//cookie dough does weird things inside wrinkler digestive tracts
-					if (Game.Has('Wrinklerspawn')) me.sucked*=1.05;
+					if (Game.Has('皱纹卵')) me.sucked*=1.05;
 					if (Game.hasGod)
 					{
 						var godLvl=Game.hasGod('scorn');
@@ -9555,8 +9556,8 @@ Game.Launch=function()
 			}
 		}
 		
-		Game.santaLevels=['Festive test tube','Festive ornament','Festive wreath','Festive tree','Festive present','Festive elf fetus','Elf toddler','Elfling','Young elf','Bulky elf','Nick','Santa Claus','Elder Santa','True Santa','Final Claus'];
-		Game.santaDrops=['Increased merriness','Improved jolliness','A lump of coal','An itchy sweater','Reindeer baking grounds','Weighted sleighs','Ho ho ho-flavored frosting','Season savings','Toy workshop','Naughty list','圣诞老人的无底包','Santa\'s helpers','Santa\'s legacy','Santa\'s milk and cookies'];
+		Game.santaLevels=['一个节日测试管','节日装饰','节日花环','节日树','Festive present','Festive elf fetus','Elf toddler','Elfling','Young elf','Bulky elf','Nick','Santa Claus','Elder Santa','True Santa','Final Claus'];
+		Game.santaDrops=['增加愉快','改良愉快','一堆煤','发痒的毛衣','驯鹿烘烤场','加重雪橇','Ho ho ho-flavored frosting','Season savings','Toy workshop','Naughty list','圣诞老人的无底包','Santa\'s helpers','Santa\'s legacy','Santa\'s milk and cookies'];
 		for (var i in Game.santaDrops)//scale christmas upgrade prices with santa level
 		{Game.Upgrades[Game.santaDrops[i]].priceFunc=function(){return Math.pow(3,Game.santaLevel)*2525;}}
 		
@@ -10926,7 +10927,7 @@ Game.Launch=function()
 			{
 				Game.seasonT--;
 			}
-			if (Game.seasonT<=0 && Game.season!='' && Game.season!=Game.baseSeason && !Game.Has('Eternal seasons'))
+			if (Game.seasonT<=0 && Game.season!='' && Game.season!=Game.baseSeason && !Game.Has('永恒的季节'))
 			{
 				var str=Game.seasons[Game.season].over;
 				if (Game.prefs.popups) Game.Popup(str);
@@ -11030,7 +11031,7 @@ Game.Launch=function()
 				
 				if (Game.Has('Golden switch')) Game.Unlock('黄金开关[关闭]');
 				if (Game.Has('Classic dairy selection')) Game.Unlock('Milk selector');
-				if (Game.Has('Basic wallpaper assortment')) Game.Unlock('Background selector');
+				if (Game.Has('Basic wallpaper assortment')) Game.Unlock('背景选择器');
 				if (Game.Has('Golden cookie alert sound')) Game.Unlock('Golden cookie sound selector');
 				
 				if (Game.Has('Eternal heart biscuits')) Game.Win('Lovely cookies');
@@ -11049,13 +11050,13 @@ Game.Launch=function()
 				
 				if (Game.prestige>0 && Game.ascensionMode!=1)
 				{
-					Game.Unlock('Heavenly chip secret');
-					if (Game.Has('Heavenly chip secret')) Game.Unlock('Heavenly cookie stand');
-					if (Game.Has('Heavenly cookie stand')) Game.Unlock('Heavenly bakery');
-					if (Game.Has('Heavenly bakery')) Game.Unlock('Heavenly confectionery');
-					if (Game.Has('Heavenly confectionery')) Game.Unlock('Heavenly key');
+					Game.Unlock('天堂芯片的秘密');
+					if (Game.Has('天堂芯片的秘密')) Game.Unlock('天堂饼干站');
+					if (Game.Has('天堂饼干站')) Game.Unlock('天堂面包店');
+					if (Game.Has('天堂面包店')) Game.Unlock('天堂糖果店');
+					if (Game.Has('天堂糖果店')) Game.Unlock('天国的钥匙');
 					
-					if (Game.Has('Heavenly key')) Game.Win('健康');
+					if (Game.Has('天国的钥匙')) Game.Win('健康');
 				}
 			
 				for (var i in Game.BankAchievements)
@@ -11092,7 +11093,7 @@ Game.Launch=function()
 				if (Game.handmadeCookies>=1000000000000000) {Game.Win('Clicknarok');Game.Unlock('Wishalloy mouse');}
 				if (Game.handmadeCookies>=100000000000000000) {Game.Win('点击祸患');Game.Unlock('Fantasteel mouse');}
 				if (Game.handmadeCookies>=10000000000000000000) {Game.Win('点击大灾变');Game.Unlock('Nevercrack mouse');}
-				if (Game.handmadeCookies>=1000000000000000000000) {Game.Win('The ultimate clickdown');Game.Unlock('Armythril mouse');}
+				if (Game.handmadeCookies>=1000000000000000000000) {Game.Win('The ultimate clickdown');Game.Unlock('阿迈斯里鼠标');}
 				
 				if (Game.cookiesEarned<Game.cookies) Game.Win('被骗的饼干味道很糟糕');
 				
@@ -11216,8 +11217,8 @@ Game.Launch=function()
 		if (Game.T%(Game.fps*2)==0)
 		{
 			var title='无尽的饼干';
-			if (Game.season=='fools') title='Cookie Baker';
-			document.title=(Game.OnAscend?'Ascending! ':'')+Beautify(Game.cookies)+' '+(Game.cookies==1?'饼干':'饼干')+' - '+title;
+			if (Game.season=='fools') title='无尽的饼干';
+			document.title=(Game.OnAscend?'转生! ':'')+Beautify(Game.cookies)+' '+(Game.cookies==1?'饼干':'饼干')+' - '+title;
 		}
 		if (Game.T%15==0)
 		{
