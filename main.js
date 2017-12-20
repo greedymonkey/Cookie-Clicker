@@ -1910,7 +1910,7 @@ Game.Launch=function()
 				if (cookiesForfeited>=1000000000000000000000000) Game.Win('Transcendence');
 				if (cookiesForfeited>=1000000000000000000000000000) Game.Win('Obliterate');
 				if (cookiesForfeited>=1000000000000000000000000000000) Game.Win('Negative void');
-				if (cookiesForfeited>=1000000000000000000000000000000000) Game.Win('To crumbs, you say?');
+				if (cookiesForfeited>=1000000000000000000000000000000000) Game.Win('你说的是面包屑?');
 			}
 			
 			Game.killBuffs();
@@ -3686,8 +3686,8 @@ Game.Launch=function()
 						if (Game.goldenClicks>=27) Game.Unlock('意外的惊喜');
 						if (Game.goldenClicks>=77) Game.Unlock('走运');
 						
-						if ((me.life/Game.fps)>(me.dur-1)) Game.Win('Early bird');
-						if (me.life<Game.fps) Game.Win('Fading luck');
+						if ((me.life/Game.fps)>(me.dur-1)) Game.Win('早起的鸟儿');
+						if (me.life<Game.fps) Game.Win('逝去的运气');
 					}
 					
 					if (Game.forceUnslotGod)
@@ -4021,7 +4021,7 @@ Game.Launch=function()
 					var moni=Math.max(25,val);//1 minute of cookie production, or 25 cookies - whichever is highest
 					if (Game.Has('何蚝味糖霜')) moni*=2;
 					Game.Earn(moni);
-					if (Game.hasBuff('老者狂怒')) Game.Win('Eldeer');
+					if (Game.hasBuff('老者狂怒')) Game.Win('麋鹿');
 					
 					var failRate=0.8;
 					var cookie='';
@@ -5230,8 +5230,8 @@ Game.Launch=function()
 				
 				if (Game.cookiesEarned>=10000) list.push(
 				'新闻：'+choose([
-					'cookies found to '+choose(['increase lifespan','sensibly increase intelligence','reverse aging','decrease hair loss','prevent arthritis','cure blindness'])+' 在 '+choose(animals)+'!',
-					'发现的饼干 '+choose(animals)+' '+choose(['more docile','more handsome','nicer','less hungry','more pragmatic','tastier'])+'!',
+					'饼干被发现可以 '+choose(['延长寿命','明智的提高智力','逆转老化','减少脱发','防止关节炎','治愈失明'])+' 在 '+choose(animals)+'!',
+					'发现的饼干 '+choose(animals)+' '+choose(['更温顺','更英俊','更好的','不饿了','更加务实','更美味的'])+'!',
 					'饼干经过测试 '+choose(animals)+', 发现没有不良影响。',
 					'饼干意外流行之中 '+choose(animals)+'!',
 					'难看的肿块被发现在 '+choose(animals)+' 靠近饼干设施; “他们几乎总是这样看”，生物学家说。',
@@ -5254,33 +5254,33 @@ Game.Launch=function()
 					'当我情绪低落的时候，饼干真的帮了我',
 					'饼干是我完美肌肤背后的秘密',
 					'在拍摄即将上映的电影时，饼干帮助我保持清醒',
-					'cookies helped me stay thin and healthy',
-					'I\'ll say one word, just one : cookies',
-					'alright, I\'ll say it - I\'ve never eaten a single cookie in my life'
-					])+'", reveals celebrity.',
+					'饼干帮助我保持苗条和健康',
+					'我只会说一个词:饼干',
+					'好吧，我要说，我这辈子从来没吃过一块饼干'
+					])+'", 揭露名人。',
 				choose([
-					'新闻：scientist predicts imminent cookie-related "end of the world"; becomes joke among peers.',
-					'新闻：man robs bank, buys cookies.',
-					'新闻：scientists establish that the deal with airline food is, in fact, a critical lack of cookies.',
-					'新闻：hundreds of tons of cookies dumped into starving country from airplanes; thousands dead, nation grateful.',
-					'新闻：new study suggests cookies neither speed up nor slow down aging, but instead "take you in a different direction".',
-					'新闻：overgrown cookies found in fishing nets, raise questions about hormone baking.',
-					'新闻："all-you-can-eat" cookie restaurant opens in big city; waiters trampled in minutes.',
-					'新闻：man dies in cookie-eating contest; "a less-than-impressive performance", says judge.',
-					'新闻：what makes cookies taste so right? "Probably all the [*****] they put in them", says anonymous tipper.',
-					'新闻：man found allergic to cookies; "what a weirdo", says family.',
-					'新闻：foreign politician involved in cookie-smuggling scandal.',
-					'新闻：cookies now more popular than '+choose(['cough drops','broccoli','smoked herring','cheese','video games','stable jobs','relationships','time travel','cat videos','tango','fashion','television','nuclear warfare','whatever it is we ate before','politics','oxygen','lamps'])+', says study.',
-					'新闻：obesity epidemic strikes nation; experts blame '+choose(['twerking','that darn rap music','video-games','lack of cookies','mysterious ghostly entities','aliens','parents','schools','comic-books','cookie-snorting fad'])+'.',
-					'新闻：cookie shortage strikes town, people forced to eat cupcakes; "just not the same", concedes mayor.',
-					'新闻："you gotta admit, all this cookie stuff is a bit ominous", says confused idiot.',
-					'新闻：movie cancelled from lack of actors; "everybody\'s at home eating cookies", laments director.',
-					'新闻：comedian forced to cancel cookie routine due to unrelated indigestion.',
-					'新闻：new cookie-based religion sweeps the nation.',
-					'新闻：fossil records show cookie-based organisms prevalent during Cambrian explosion, scientists say.',
-					'新闻：mysterious illegal cookies seized; "tastes terrible", says police.',
-					'新闻：man found dead after ingesting cookie; investigators favor "mafia snitch" hypothesis.',
-					'新闻："the universe pretty much loops on itself," suggests researcher; "it\'s cookies all the way down."',
+					'新闻：科学家预言即将到来的与饼干有关的“世界末日”;成为同行之间的笑话。',
+					'新闻：人民抢劫银行，为了买饼干。',
+					'新闻：科学家们证实，与航空食品的交易实际上是缺乏饼干的关键。',
+					'新闻：成百上千吨的饼干从飞机上被扔到挨饿的国家;成千上万的人死去，举国感激。',
+					'新闻：新的研究表明，饼干既不会加速衰老，也不会减缓衰老，相反，它会“把你带到一个不同的方向”。',
+					'新闻：在渔网中发现的过度生长的饼干，会引起人们对激素烘烤的疑问。',
+					'新闻：“随便吃”饼干餐厅在大城市开张;服务员在几分钟内就被踩踏了。',
+					'新闻：人们死于饼干比赛;法官说"表现不那么出色"',
+					'新闻：是什么让饼干如此美味?"可能所有的人都在里面放了"匿名的小费。',
+					'新闻：对饼干过敏的人;“真是个怪人”，家人说。',
+					'新闻：外国政客卷入了一起走私饼干丑闻。',
+					'新闻：研究说，饼干现在比 '+choose(['止咳药片','西兰花','烟熏鲱鱼','奶酪','视频游戏','稳定工作','关系','时间旅行','猫咪视频','探戈','时尚','电视','核战争','不管我们以前吃过什么','政治','氧气','灯'])+'更受欢迎了。',
+					'新闻：肥胖症蔓延全国;专家们指责 '+choose(['电臀舞','这该死的说唱音乐','电子游戏','缺乏饼干','神秘的幽灵实体','外星人','父母','学校','漫画书','小饼干的流行'])+'。',
+					'新闻：饼干短缺袭击城镇，人们被迫吃纸杯蛋糕;“只是不一样”，市长承认。',
+					'新闻：“你得承认，所有这些甜甜的东西都有点不妙”，糊涂的白痴说。',
+					'新闻：电影因缺乏演员而被取消;“每个人都在家吃饼干”，导演哀叹道。',
+					'新闻：喜剧演员因为不相关的消化不良而被迫取消了饼干程序。',
+					'新闻：新的基于饼干的宗教席卷全国。',
+					'新闻：科学家说，化石记录显示，在寒武纪大爆发期间，以饼干为基础的微生物普遍存在。',
+					'新闻：查获了神秘的非法饼干;“味道很糟糕”，警方说。',
+					'新闻：人类在摄入饼干后发现死亡;调查人员倾向于"黑手党告密者"的假设。',
+					'新闻：“宇宙本身就有很多循环，”研究者建议说。“它一直都在吃饼干。”',
 					'新闻：minor cookie-related incident turns whole town to ashes; neighboring cities asked to chip in for reconstruction.',
 					'新闻：is our media controlled by the cookie industry? This could very well be the case, says crackpot conspiracy theorist.',
 					'新闻：'+choose(['cookie-flavored popcorn pretty damn popular; "we kinda expected that", say scientists.','cookie-flavored cereals break all known cereal-related records','cookies popular among all age groups, including fetuses, says study.','cookie-flavored popcorn sales exploded during screening of Grandmothers II : The Moistening.']),
@@ -5295,20 +5295,20 @@ Game.Launch=function()
 					'新闻：new popularity survey says '+Game.bakeryName+'\'s the word when it comes to cookies.',
 					'新闻：major city being renamed '+Game.bakeryName+'ville after world-famous cookie manufacturer.',
 					'新闻：'+choose(['street','school','nursing home','stadium','new fast food chain','new planet','new disease','flesh-eating virus','deadly bacteria','new species of '+choose(animals),'new law','baby','programming language'])+' to be named after '+Game.bakeryName+', the world-famous cookie manufacturer.',
-					'新闻：don\'t miss tonight\'s biopic on '+Game.bakeryName+'\'s irresistible rise to success!',
-					'新闻：don\'t miss tonight\'s interview of '+Game.bakeryName+' by '+choose(['Bloprah','Blavid Bletterman','Blimmy Blimmel','Blellen Blegeneres','Blimmy Blallon','Blonan Blo\'Brien','Blay Bleno','Blon Blewart','Bleven Blolbert','Lord Toxikhron of dimension 7-B19',Game.bakeryName+'\'s own evil clone'])+'!',
-					'新闻：people all over the internet still scratching their heads over nonsensical reference : "Okay, but why an egg?"',
-					'新闻：viral video "Too Many Cookies" could be "a grim commentary on the impending crisis our world is about to face", says famous economist.',
-					'新闻："memes from last year somehow still relevant", deplore experts.',
-					'新闻：cookie emoji most popular among teenagers, far ahead of "judgemental OK hand sign" and "shifty-looking dark moon", says study.',
-					'新闻：births of suspiciously bald babies on the rise; reptilian overlords deny involvement.',
-					'新闻："at this point, cookies permeate the economy", says economist. "If we start eating anything else, we\'re all dead."',
-					'新闻：pun in headline infuriates town, causes riot. 21 wounded, 5 dead; mayor still missing.',
-					'Nws : ky btwn W and R brokn, plas snd nw typwritr ASAP.',
-					'Neeeeews : "neeeew EEEEEE keeeeey working fineeeeeeeee", reeeports gleeeeeeeeful journalist.',
-					'新闻：cookies now illegal in some backwards country nobody cares about. Political tensions rising; war soon, hopefully.',
-					'新闻：irate radio host rambles about pixelated icons. "None of the cookies are aligned! Can\'t anyone else see it? I feel like I\'m taking crazy pills!"',
-					'新闻："average person bakes '+Beautify(Math.ceil(Game.cookiesEarned/7300000000))+' cookie'+(Math.ceil(Game.cookiesEarned/7300000000)==1?'':'s')+' a year" factoid actually just statistical error; '+Game.bakeryName+', who has produced '+Beautify(Game.cookiesEarned)+' cookies in their lifetime, is an outlier and should not have been counted.'
+					'新闻：不要错过今晚的传记片 '+Game.bakeryName+' 不可抗拒的成功!',
+					'新闻：不要错过今晚的采访 '+Game.bakeryName+' 来自 '+choose(['布奥普拉','布利斯特·布莱特曼','Blimmy Blimmel','Blellen Blegeneres','Blimmy Blallon','Blonan Blo\'Brien','Blay Bleno','Blon Blewart','Bleven Blolbert','7-b19维空间的托克罗大人',Game.bakeryName+'的邪恶克隆人'])+'!',
+					'新闻：互联网上的人们仍然在为毫无意义的引用而挠头:“好吧，但是为什么要一个鸡蛋呢?”',
+					'新闻：著名的经济学家说，病毒视频“太多的饼干”可能是“对即将到来的世界即将面临的危机的严峻评论”。',
+					'新闻：“从去年开始的迷因仍然是相关的”，专家们谴责。',
+					'新闻：研究表明，在青少年中最受欢迎的甜饼表情，远远超过了“判断正常的手势”和“表情不正常的黑月亮”。',
+					'新闻：令人怀疑的秃头婴儿的出生率在上升;爬虫类的领主否认参与。',
+					'新闻：经济学家说:“现在，饼干渗透了整个经济。”“如果我们开始吃别的东西，我们就全死了。”',
+					'新闻：双关语的标题激怒了城镇，引起骚乱。21人受伤,5死;市长失踪。',
+					'新闻：这是我们的产品。',
+					'新闻：“我是一名工作的人，”他说，“我的工作是我的工作，我的工作是我的工作，我的工作是我的工作。”',
+					'新闻：在一些落后国家，饼干是非法的，没有人在意。政治紧张局势上升;希望很快就会爆发战争。',
+					'新闻：愤怒的电台主持人漫谈像素化的图标。“没有一个饼干是对齐的!”没人能看见吗?我觉得我在吃疯狂的药!',
+					'新闻："平均人烘焙 '+Beautify(Math.ceil(Game.cookiesEarned/7300000000))+' 饼干'+(Math.ceil(Game.cookiesEarned/7300000000)==1?'':'')+' 一年" 事实证明其实只是统计错误; '+Game.bakeryName+', 谁生产的 '+Beautify(Game.cookiesEarned)+' 饼干在他们的一生中，是一个例外，不应该被计算在内。'
 					])
 				);
 			}
@@ -6257,7 +6257,7 @@ Game.Launch=function()
 			if (this.amount>=350) Game.Unlock('巨量的手指');
 			if (this.amount>=400) Game.Unlock('千的九次方手指');
 			
-			if (this.amount>=1) Game.Win('单击');if (this.amount>=2) Game.Win('双击');if (this.amount>=50) Game.Win('鼠标滚轮');if (this.amount>=100) Game.Win('老鼠和人');if (this.amount>=200) Game.Win('数字');if (this.amount>=300) Game.Win('极端多指');if (this.amount>=400) Game.Win('T博士');if (this.amount>=500) Game.Win('大拇指，指骨，掌骨');
+			if (this.amount>=1) Game.Win('单击');if (this.amount>=2) Game.Win('双击');if (this.amount>=50) Game.Win('鼠标滚轮');if (this.amount>=100) Game.Win('鼠标和人');if (this.amount>=200) Game.Win('数字');if (this.amount>=300) Game.Win('极端多指');if (this.amount>=400) Game.Win('T博士');if (this.amount>=500) Game.Win('大拇指，指骨，掌骨');
 		});
 		
 		Game.SpecialGrandmaUnlock=15;
@@ -7639,11 +7639,11 @@ Game.Launch=function()
 		
 		
 		order=40000;
-		new Game.Upgrade('黄金开关[关闭]','打开这个会让你变得被动 <b>+50% 饼干秒产量</b>, 但是阻止了金色饼干的产卵。<br>成本等于生产一小时。',1000000,[20,10]);
+		new Game.Upgrade('黄金开关[关闭]','打开这个会让你变得被动 <b>+50% 饼干秒产量</b>, 但是阻止了金色饼干的产生。<br>成本等于生产一小时。',1000000,[20,10]);
 		Game.last.pool='toggle';Game.last.toggleInto='黄金开关 [on]';
 		Game.last.priceFunc=function(){return Game.cookiesPs*60*60;}
 		
-		new Game.Upgrade('黄金开关 [on]','这个开关现在是被动的 <b>+50% 饼干秒产量</b>; 它还可以防止黄金饼干产卵。<br>关闭它将恢复这些效果。<br>成本等于1小时的生产。',1000000,[21,10]);
+		new Game.Upgrade('黄金开关 [on]','这个开关现在是被动的 <b>+50% 饼干秒产量</b>; 它还可以防止黄金饼干产生。<br>关闭它将恢复这些效果。<br>成本等于1小时的生产。',1000000,[21,10]);
 		Game.last.pool='toggle';Game.last.toggleInto='黄金开关[关闭]';
 		Game.last.priceFunc=function(){return Game.cookiesPs*60*60;}
 		
@@ -8398,36 +8398,36 @@ Game.Launch=function()
 		new Game.Achievement('你赢了一个饼干','这是为了烘培10万亿个小甜饼，并在当地新闻上发表。<q>我们都为你感到骄傲。</q>',[10,0]);
 		
 		order=1070;
-		new Game.Achievement('Click delegator','制作 <b>10,000,000,000,000,000,000</b> 饼干通过游标。',[0,22]);
+		new Game.Achievement('点击委托','制作 <b>10,000,000,000,000,000,000</b> 饼干通过游标。',[0,22]);
 		order=1120;
-		new Game.Achievement('Gushing grannies','制作 <b>10,000,000,000,000,000,000</b> 饼干通过老奶奶。',[1,22]);
+		new Game.Achievement('滔滔不绝','制作 <b>10,000,000,000,000,000,000</b> 饼干通过老奶奶。',[1,22]);
 		order=1220;
-		new Game.Achievement('I hate manure','制作 <b>10,000,000,000,000</b> 饼干通过农场。',[2,22]);
+		new Game.Achievement('我讨厌肥料','制作 <b>10,000,000,000,000</b> 饼干通过农场。',[2,22]);
 		order=1320;
-		new Game.Achievement('Never dig down','制作 <b>100,000,000,000,000</b> 饼干通过矿山。',[3,22]);
+		new Game.Achievement('千万别挖','制作 <b>100,000,000,000,000</b> 饼干通过矿山。',[3,22]);
 		order=1420;
-		new Game.Achievement('The incredible machine','制作 <b>1,000,000,000,000,000</b> 饼干通过工厂。',[4,22]);
+		new Game.Achievement('神奇的机器','制作 <b>1,000,000,000,000,000</b> 饼干通过工厂。',[4,22]);
 		order=1520;
-		new Game.Achievement('And beyond','制作 <b>10,000,000,000,000,000,000</b> 饼干通过装船。',[5,22]);
+		new Game.Achievement('超越','制作 <b>10,000,000,000,000,000,000</b> 饼干通过装船。',[5,22]);
 		order=1620;
-		new Game.Achievement('Magnum Opus','制作 <b>100,000,000,000,000,000,000</b> 饼干通过炼金术实验室。',[6,22]);
+		new Game.Achievement('代表作','制作 <b>100,000,000,000,000,000,000</b> 饼干通过炼金术实验室。',[6,22]);
 		order=1720;
-		new Game.Achievement('With strange eons','制作 <b>1,000,000,000,000,000,000,000</b> 饼干通过传送门。',[7,22]);
+		new Game.Achievement('奇怪地','制作 <b>1,000,000,000,000,000,000,000</b> 饼干通过传送门。',[7,22]);
 		order=1820;
-		new Game.Achievement('Spacetime jigamaroo','制作 <b>10,000,000,000,000,000,000,000</b> 饼干通过时光机器。',[8,22]);
+		new Game.Achievement('时空拼图','制作 <b>10,000,000,000,000,000,000,000</b> 饼干通过时光机器。',[8,22]);
 		order=1920;
-		new Game.Achievement('Supermassive','制作 <b>100,000,000,000,000,000,000,000</b> 饼干通过反物质冷凝器。',[13,22]);
+		new Game.Achievement('超大质量','制作 <b>100,000,000,000,000,000,000,000</b> 饼干通过反物质冷凝器。',[13,22]);
 		order=2020;
-		new Game.Achievement('Praise the sun','制作 <b>1,000,000,000,000,000,000,000,000</b> 饼干通过棱镜。',[14,22]);
+		new Game.Achievement('赞美太阳','制作 <b>1,000,000,000,000,000,000,000,000</b> 饼干通过棱镜。',[14,22]);
 		
 		
 		order=1000;
-		new Game.Achievement('Clickageddon','制作 <b>10,000,000,000,000</b> 饼干通过点击。',[11,15]);
-		new Game.Achievement('Clicknarok','制作 <b>1,000,000,000,000,000</b> 饼干通过点击。',[11,16]);
+		new Game.Achievement('点击时代','制作 <b>10,000,000,000,000</b> 饼干通过点击。',[11,15]);
+		new Game.Achievement('单击中心','制作 <b>1,000,000,000,000,000</b> 饼干通过点击。',[11,16]);
 		
 		order=1050;
-		new Game.Achievement('Extreme polydactyly','拥有 <b>300</b> 游标。',[0,13]);
-		new Game.Achievement('Dr. T','拥有 <b>400</b> 游标。',[0,14]);
+		new Game.Achievement('极端多指','拥有 <b>300</b> 游标。',[0,13]);
+		new Game.Achievement('T博士','拥有 <b>400</b> 游标。',[0,14]);
 		
 		order=1100;new Game.TieredAchievement('反正老奶奶从不烦我','拥有 <b>250</b> 老奶奶。','Grandma',6);
 		order=1200;new Game.TieredAchievement('国产','拥有 <b>200</b> 农场。','Farm',5);
@@ -8437,8 +8437,8 @@ Game.Launch=function()
 		order=1600;new Game.TieredAchievement('宇宙的秘密','拥有 <b>200</b> 炼金术实验室。','Alchemy lab',5);
 		order=1700;new Game.TieredAchievement('疯狂的上帝的王国','拥有 <b>200</b> 传送门。','Portal',5);
 		order=1800;new Game.TieredAchievement('永永远远','拥有 <b>200</b> 时光机器。','Time machine',5);
-		order=1900;new Game.TieredAchievement('Walk the planck','拥有 <b>200</b> 反物质冷凝器。','Antimatter condenser',5);
-		order=2000;new Game.TieredAchievement('Rise and shine','拥有 <b>200</b> 棱镜。','Prism',5);
+		order=1900;new Game.TieredAchievement('走普朗克','拥有 <b>200</b> 反物质冷凝器。','Antimatter condenser',5);
+		order=2000;new Game.TieredAchievement('升起，闪耀','拥有 <b>200</b> 棱镜。','Prism',5);
 		
 		order=30200;
 		new Game.Achievement('God complex','Name yourself <b>Orteil</b>.<div class="warning">Note : usurpers incur a -1% CpS penalty until they rename themselves something else.</div><q>But that\'s not you, is it?</q>',[17,5]);Game.last.pool='shadow';
@@ -8463,29 +8463,29 @@ Game.Launch=function()
 	
 		order=1425;
 		new Game.TieredAchievement('Pretty penny','拥有 <b>1</b> bank.','Bank',1);
-		new Game.TieredAchievement('Fit the bill','拥有 <b>50</b> banks.','Bank',2);
-		new Game.TieredAchievement('A loan in the dark','拥有 <b>100</b> banks.','Bank',3);
-		new Game.TieredAchievement('Need for greed','拥有 <b>150</b> banks.','Bank',4);
-		new Game.TieredAchievement('It\'s the economy, stupid','拥有 <b>200</b> banks.','Bank',5);
+		new Game.TieredAchievement('Fit the bill','拥有 <b>50</b> 银行。','Bank',2);
+		new Game.TieredAchievement('A loan in the dark','拥有 <b>100</b> 银行。','Bank',3);
+		new Game.TieredAchievement('Need for greed','拥有 <b>150</b> 银行。','Bank',4);
+		new Game.TieredAchievement('It\'s the economy, stupid','拥有 <b>200</b> 银行。','Bank',5);
 		order=1450;
 		new Game.TieredAchievement('Your time to shrine','拥有 <b>1</b> temple.','Temple',1);
-		new Game.TieredAchievement('Shady sect','拥有 <b>50</b> temples.','Temple',2);
-		new Game.TieredAchievement('New-age cult','拥有 <b>100</b> temples.','Temple',3);
-		new Game.TieredAchievement('Organized religion','拥有 <b>150</b> temples.','Temple',4);
-		new Game.TieredAchievement('Fanaticism','拥有 <b>200</b> temples.','Temple',5);
+		new Game.TieredAchievement('Shady sect','拥有 <b>50</b> 寺庙。','Temple',2);
+		new Game.TieredAchievement('New-age cult','拥有 <b>100</b> 寺庙。','Temple',3);
+		new Game.TieredAchievement('Organized religion','拥有 <b>150</b> 寺庙。','Temple',4);
+		new Game.TieredAchievement('Fanaticism','拥有 <b>200</b> 寺庙。','Temple',5);
 		order=1475;
 		new Game.TieredAchievement('Bewitched','拥有 <b>1</b> wizard tower.','Wizard tower',1);
-		new Game.TieredAchievement('The sorcerer\'s apprentice','拥有 <b>50</b> wizard towers.','Wizard tower',2);
-		new Game.TieredAchievement('Charms and enchantments','拥有 <b>100</b> wizard towers.','Wizard tower',3);
-		new Game.TieredAchievement('Curses and maledictions','拥有 <b>150</b> wizard towers.','Wizard tower',4);
-		new Game.TieredAchievement('Magic kingdom','拥有 <b>200</b> wizard towers.','Wizard tower',5);
+		new Game.TieredAchievement('The sorcerer\'s apprentice','拥有 <b>50</b> 精灵塔。','Wizard tower',2);
+		new Game.TieredAchievement('Charms and enchantments','拥有 <b>100</b> 精灵塔。','Wizard tower',3);
+		new Game.TieredAchievement('Curses and maledictions','拥有 <b>150</b> 精灵塔。','Wizard tower',4);
+		new Game.TieredAchievement('Magic kingdom','拥有 <b>200</b> 精灵塔。','Wizard tower',5);
 		
 		order=1445;
-		new Game.Achievement('Vested interest','制作 <b>10,000,000,000,000,000</b> 饼干通过banks.',[15,22]);
+		new Game.Achievement('Vested interest','制作 <b>10,000,000,000,000,000</b> 饼干通过银行。',[15,22]);
 		order=1470;
-		new Game.Achievement('New world order','制作 <b>100,000,000,000,000,000</b> 饼干通过temples.',[16,22]);
+		new Game.Achievement('New world order','制作 <b>100,000,000,000,000,000</b> 饼干通过寺庙。',[16,22]);
 		order=1495;
-		new Game.Achievement('Hocus pocus','制作 <b>1,000,000,000,000,000,000</b> 饼干通过wizard towers.',[17,22]);
+		new Game.Achievement('Hocus pocus','制作 <b>1,000,000,000,000,000,000</b> 饼干通过精灵塔。',[17,22]);
 		
 		
 		order=1070;
@@ -8499,11 +8499,11 @@ Game.Launch=function()
 		order=1420;
 		new Game.Achievement('Yes I love technology','制作 <b>1,000,000,000,000,000,000</b> 饼干通过工厂。',[4,23]);
 		order=1445;
-		new Game.Achievement('Paid in full','制作 <b>10,000,000,000,000,000,000</b> 饼干通过banks.',[15,23]);
+		new Game.Achievement('Paid in full','制作 <b>10,000,000,000,000,000,000</b> 饼干通过银行。',[15,23]);
 		order=1470;
-		new Game.Achievement('Church of Cookiology','制作 <b>100,000,000,000,000,000,000</b> 饼干通过temples.',[16,23]);
+		new Game.Achievement('Church of Cookiology','制作 <b>100,000,000,000,000,000,000</b> 饼干通过寺庙。',[16,23]);
 		order=1495;
-		new Game.Achievement('Too many rabbits, not enough hats','制作 <b>1,000,000,000,000,000,000,000</b> 饼干通过wizard towers.',[17,23]);
+		new Game.Achievement('Too many rabbits, not enough hats','制作 <b>1,000,000,000,000,000,000,000</b> 饼干通过精灵塔。',[17,23]);
 		order=1520;
 		new Game.Achievement('The most precious cargo','制作 <b>10,000,000,000,000,000,000,000</b> 饼干通过装船。',[5,23]);
 		order=1620;
@@ -8537,9 +8537,9 @@ Game.Launch=function()
 		order=1200;new Game.TieredAchievement('Gardener extraordinaire','拥有 <b>250</b> 农场。','Farm',6);
 		order=1300;new Game.TieredAchievement('Tectonic ambassador','拥有 <b>250</b> 矿山。','Mine',6);
 		order=1400;new Game.TieredAchievement('Rise of the machines','拥有 <b>250</b> 工厂。','Factory',6);
-		order=1425;new Game.TieredAchievement('Acquire currency','拥有 <b>250</b> banks.','Bank',6);
-		order=1450;new Game.TieredAchievement('Zealotry','拥有 <b>250</b> temples.','Temple',6);
-		order=1475;new Game.TieredAchievement('The wizarding world','拥有 <b>250</b> wizard towers.','Wizard tower',6);
+		order=1425;new Game.TieredAchievement('Acquire currency','拥有 <b>250</b> 银行。','Bank',6);
+		order=1450;new Game.TieredAchievement('Zealotry','拥有 <b>250</b> 寺庙。','Temple',6);
+		order=1475;new Game.TieredAchievement('The wizarding world','拥有 <b>250</b> 精灵塔。','Wizard tower',6);
 		order=1500;new Game.TieredAchievement('Parsec-masher','拥有 <b>250</b> 装船。','Shipment',6);
 		order=1600;new Game.TieredAchievement('The work of a lifetime','拥有 <b>250</b> 炼金术实验室。','Alchemy lab',6);
 		order=1700;new Game.TieredAchievement('A place lost in time','拥有 <b>250</b> 传送门。','Portal',6);
@@ -8569,7 +8569,7 @@ Game.Launch=function()
 		Game.CpsAchievement('更快的人');
 		Game.CpsAchievement('但你仍然很饿');
 		Game.CpsAchievement('觉醒');
-		Game.CpsAchievement('There\'s really no hard limit to how long these achievement names can be and to be quite honest I\'m rather curious to see how far we can go.<br>Adolphus W. Green (1844–1917) started as the Principal of the Groton School in 1864. By 1865, he became second assistant librarian at the New York Mercantile Library; from 1867 to 1869, he was promoted to full librarian. From 1869 to 1873, he worked for Evarts, Southmayd & Choate, a law firm co-founded by William M. Evarts, Charles Ferdinand Southmayd and Joseph Hodges Choate. He was admitted to the New York State Bar Association in 1873.<br>Anyway, how\'s your day been?');//Game.last.shortName='There\'s really no hard limit to how long these achievement names can be and to be quite honest I\'m [...]';
+		Game.CpsAchievement('这些成就的名字能有多长，我真的不知道有多大的限制，我很想看看我们能走多远。<br>阿道弗斯·w·格林(1844 - 1917)于1864年开始担任格罗顿学校的校长。1865年，他成为纽约商业图书馆的第二助理馆长;从1867年到1869年，他被提升为图书馆员。从1869年到1873年，他为Evarts工作，他是Southmayd & Choate律师事务所，由William m . Evarts联合创立，Charles Ferdinand Southmayd和Joseph Hodges Choate。1873年，他被纽约州律师协会录取。<br>不管怎样，你这一天过得怎么样?');//Game.last.shortName='There\'s really no hard limit to how long these achievement names can be and to be quite honest I\'m [...]';
 		Game.CpsAchievement('快速');Game.last.baseDesc+='<q>哇!</q>';Game.last.desc=BeautifyInText(Game.last.baseDesc);
 		
 		order=7002;
@@ -8583,7 +8583,7 @@ Game.Launch=function()
 		new Game.Achievement('点击大灾变','通过点击制作 <b>10,000,000,000,000,000,000</b> 饼干。',[11,18]);
 		
 		order=1050;
-		new Game.Achievement('拇指，指骨，掌骨','拥有 <b>500</b> 游标。<q>& 指关节</q>',[0,15]);
+		new Game.Achievement('大拇指，指骨，掌骨','拥有 <b>500</b> 游标。<q>& 指关节</q>',[0,15]);
 		
 		order=6000;
 		new Game.Achievement('博学','拥有<b>300</b> 升级 <b>3000</b> 建筑。<q>卓越不是一蹴而就的 - 通常需要好几天的时间。</q>',[29,7]);
@@ -8591,30 +8591,30 @@ Game.Launch=function()
 		new Game.Achievement('上古卷轴','拥有一个组合 <b>777</b> 老奶奶和游标。<q>让我猜猜。 有人偷了你的饼干。</q>',[10,9]);
 		
 		order=30050;
-		new Game.Achievement('To crumbs, you say?','转生时有 <b>1 decillion</b> 烘烤的饼干。<q>Very well then.</q>',[29,6]);
+		new Game.Achievement('你说的是面包屑?','转生时有 <b>1 decillion</b> 烘烤的饼干。<q>很好。</q>',[29,6]);
 		
-		order=1200;new Game.TieredAchievement('Seedy business','拥有 <b>300</b> 农场。','Farm',7);
-		order=1300;new Game.TieredAchievement('Freak fracking','拥有 <b>300</b> 矿山。','Mine',7);
-		order=1400;new Game.TieredAchievement('Modern times','拥有 <b>300</b> 工厂。','Factory',7);
-		order=1425;new Game.TieredAchievement('The nerve of war','拥有 <b>300</b> banks.','Bank',7);
-		order=1450;new Game.TieredAchievement('Wololo','拥有 <b>300</b> temples.','Temple',7);
-		order=1475;new Game.TieredAchievement('And now for my next trick, I\'ll need a volunteer from the audience','拥有 <b>300</b> wizard towers.','Wizard tower',7);
-		order=1500;new Game.TieredAchievement('It\'s not delivery','拥有 <b>300</b> 装船。','Shipment',7);
-		order=1600;new Game.TieredAchievement('Gold, Jerry! Gold!','拥有 <b>300</b> 炼金术实验室。','Alchemy lab',7);
-		order=1700;new Game.TieredAchievement('Forbidden zone','拥有 <b>300</b> 传送门。','Portal',7);
-		order=1800;new Game.TieredAchievement('cookie clicker forever and forever a hundred years cookie clicker, all day long forever, forever a hundred times, over and over cookie clicker adventures dot com','拥有 <b>300</b> 时光机器。','Time machine',7);
-		order=1900;new Game.TieredAchievement('Scientists baffled everywhere','拥有 <b>300</b> 反物质冷凝器。','Antimatter condenser',7);
-		order=2000;new Game.TieredAchievement('Harmony of the spheres','拥有 <b>300</b> 棱镜。','Prism',7);
+		order=1200;new Game.TieredAchievement('破烂生意','拥有 <b>300</b> 农场。','Farm',7);
+		order=1300;new Game.TieredAchievement('反常压裂法','拥有 <b>300</b> 矿山。','Mine',7);
+		order=1400;new Game.TieredAchievement('摩登时代','拥有 <b>300</b> 工厂。','Factory',7);
+		order=1425;new Game.TieredAchievement('战争的勇气','拥有 <b>300</b> 银行。','Bank',7);
+		order=1450;new Game.TieredAchievement('Wololo','拥有 <b>300</b> 寺庙。','Temple',7);
+		order=1475;new Game.TieredAchievement('现在我要做的下一个技巧是，我需要一个来自观众的志愿者','拥有 <b>300</b> 精灵塔。','Wizard tower',7);
+		order=1500;new Game.TieredAchievement('这是不送的','拥有 <b>300</b> 装船。','Shipment',7);
+		order=1600;new Game.TieredAchievement('黄金,杰瑞!黄金!','拥有 <b>300</b> 炼金术实验室。','Alchemy lab',7);
+		order=1700;new Game.TieredAchievement('禁区','拥有 <b>300</b> 传送门。','Portal',7);
+		order=1800;new Game.TieredAchievement('无尽的饼干永远和永远一百年的无尽的饼干，永远的一天，永远一百倍，一遍又一遍的无尽的饼干冒险。','拥有 <b>300</b> 时光机器。','Time machine',7);
+		order=1900;new Game.TieredAchievement('科学家们束手无策','拥有 <b>300</b> 反物质冷凝器。','Antimatter condenser',7);
+		order=2000;new Game.TieredAchievement('和谐的球体','拥有 <b>300</b> 棱镜。','Prism',7);
 		
 		order=35000;
-		new Game.Achievement('最后机会','Burst the near-extinct <b>shiny wrinkler</b>.<q>You monster!</q>',[24,12]);Game.last.pool='shadow';
+		new Game.Achievement('最后机会','冲破濒临灭绝的<b>闪亮的皱纹</b>.<q>你这个怪物!</q>',[24,12]);Game.last.pool='shadow';
 		
 		order=10000;
-		new Game.Achievement('Early bird','Click a golden cookie <b>less than 1 second after it spawns</b>.',[10,14]);
-		new Game.Achievement('Fading luck','Click a golden cookie <b>less than 1 second before it dies</b>.',[10,14]);
+		new Game.Achievement('早起的鸟儿','点击黄金饼干 <b>在它产生后不到1秒</b>.',[10,14]);
+		new Game.Achievement('逝去的运气','点击黄金饼干 <b>在它消失前不到1秒</b>.',[10,14]);
 		
 		order=22100;
-		new Game.Achievement('Eldeer','Pop a reindeer <b>during an elder frenzy</b>.',[12,9]);
+		new Game.Achievement('麋鹿','放一只驯鹿 <b>在一场老年狂潮中</b>.',[12,9]);
 		
 		order=21100;
 		new Game.Achievement('伙计，亲爱的','Harvest <b>7 coalescing sugar lumps</b>.',[24,14]);
@@ -8661,11 +8661,11 @@ Game.Launch=function()
 		order=1420;
 		new Game.Achievement('Labor of love','制作 <b>1,000,000,000,000,000,000,000</b> 饼干通过工厂。',[4,24]);
 		order=1445;
-		new Game.Achievement('Reverse funnel system','制作 <b>10,000,000,000,000,000,000,000</b> 饼干通过banks.',[15,24]);
+		new Game.Achievement('Reverse funnel system','制作 <b>10,000,000,000,000,000,000,000</b> 饼干通过银行。',[15,24]);
 		order=1470;
-		new Game.Achievement('Thus spoke you','制作 <b>100,000,000,000,000,000,000,000</b> 饼干通过temples.',[16,24]);
+		new Game.Achievement('Thus spoke you','制作 <b>100,000,000,000,000,000,000,000</b> 饼干通过寺庙。',[16,24]);
 		order=1495;
-		new Game.Achievement('Manafest destiny','制作 <b>1,000,000,000,000,000,000,000,000</b> 饼干通过wizard towers.',[17,24]);
+		new Game.Achievement('Manafest destiny','制作 <b>1,000,000,000,000,000,000,000,000</b> 饼干通过精灵塔。',[17,24]);
 		order=1520;
 		new Game.Achievement('Neither snow nor rain nor heat nor gloom of night','制作 <b>10,000,000,000,000,000,000,000,000</b> 饼干通过装船。',[5,24]);
 		order=1620;
@@ -8690,11 +8690,11 @@ Game.Launch=function()
 		order=1420;
 		new Game.Achievement('Patently genius','Reach level <b>10</b> 工厂。',[4,26]);Game.Objects['Factory'].levelAchiev10=Game.last;
 		order=1445;
-		new Game.Achievement('A capital idea','Reach level <b>10</b> banks.',[15,26]);Game.Objects['Bank'].levelAchiev10=Game.last;
+		new Game.Achievement('A capital idea','Reach level <b>10</b> 银行。',[15,26]);Game.Objects['Bank'].levelAchiev10=Game.last;
 		order=1470;
-		new Game.Achievement('It belongs in a bakery','Reach level <b>10</b> temples.',[16,26]);Game.Objects['Temple'].levelAchiev10=Game.last;
+		new Game.Achievement('It belongs in a bakery','Reach level <b>10</b> 寺庙。',[16,26]);Game.Objects['Temple'].levelAchiev10=Game.last;
 		order=1495;
-		new Game.Achievement('Motormouth','Reach level <b>10</b> wizard towers.',[17,26]);Game.Objects['Wizard tower'].levelAchiev10=Game.last;
+		new Game.Achievement('Motormouth','Reach level <b>10</b> 精灵塔。',[17,26]);Game.Objects['Wizard tower'].levelAchiev10=Game.last;
 		order=1520;
 		new Game.Achievement('Been there done that','Reach level <b>10</b> 装船。',[5,26]);Game.Objects['Shipment'].levelAchiev10=Game.last;
 		order=1620;
@@ -11088,8 +11088,8 @@ Game.Launch=function()
 				if (Game.handmadeCookies>=10000000) {Game.Win('点击奥林匹克');Game.Unlock('钛制鼠标');}
 				if (Game.handmadeCookies>=1000000000) {Game.Win('点击奥腊马');Game.Unlock('釉质鼠标');}
 				if (Game.handmadeCookies>=100000000000) {Game.Win('点击狂魔');Game.Unlock('难得素鼠标');}
-				if (Game.handmadeCookies>=10000000000000) {Game.Win('Clickageddon');Game.Unlock('E合金鼠标');}
-				if (Game.handmadeCookies>=1000000000000000) {Game.Win('Clicknarok');Game.Unlock('叉合金鼠标');}
+				if (Game.handmadeCookies>=10000000000000) {Game.Win('点击时代');Game.Unlock('E合金鼠标');}
+				if (Game.handmadeCookies>=1000000000000000) {Game.Win('单击中心');Game.Unlock('叉合金鼠标');}
 				if (Game.handmadeCookies>=100000000000000000) {Game.Win('点击祸患');Game.Unlock('Fantasteel mouse');}
 				if (Game.handmadeCookies>=10000000000000000000) {Game.Win('点击大灾变');Game.Unlock('Nevercrack mouse');}
 				if (Game.handmadeCookies>=1000000000000000000000) {Game.Win('The ultimate clickdown');Game.Unlock('阿迈斯里鼠标');}
@@ -11146,20 +11146,20 @@ Game.Launch=function()
 				if (Game.Objects['Cursor'].amount+Game.Objects['Grandma'].amount>=777) Game.Win('上古卷轴');
 				
 				var base=10000000000000;
-				if (Game.Objects['Cursor'].totalCookies>=base*1000000) 		Game.Win('Click delegator');
-				if (Game.Objects['Grandma'].totalCookies>=base*1000000) 	Game.Win('Gushing grannies');
-				if (Game.Objects['Farm'].totalCookies>=base) 				Game.Win('I hate manure');
-				if (Game.Objects['Mine'].totalCookies>=base*				10) Game.Win('Never dig down');
-				if (Game.Objects['Factory'].totalCookies>=base*				100) Game.Win('The incredible machine');
+				if (Game.Objects['Cursor'].totalCookies>=base*1000000) 		Game.Win('点击委托');
+				if (Game.Objects['Grandma'].totalCookies>=base*1000000) 	Game.Win('滔滔不绝');
+				if (Game.Objects['Farm'].totalCookies>=base) 				Game.Win('我讨厌肥料');
+				if (Game.Objects['Mine'].totalCookies>=base*				10) Game.Win('千万别挖');
+				if (Game.Objects['Factory'].totalCookies>=base*				100) Game.Win('神奇的机器');
 				if (Game.Objects['Bank'].totalCookies>=base*				1000) Game.Win('Vested interest');
 				if (Game.Objects['Temple'].totalCookies>=base*				10000) Game.Win('New world order');
 				if (Game.Objects['Wizard tower'].totalCookies>=base*		100000) Game.Win('Hocus pocus');
-				if (Game.Objects['Shipment'].totalCookies>=base*			1000000) Game.Win('And beyond');
-				if (Game.Objects['Alchemy lab'].totalCookies>=base*			10000000) Game.Win('Magnum Opus');
-				if (Game.Objects['Portal'].totalCookies>=base*				100000000) Game.Win('With strange eons');
-				if (Game.Objects['Time machine'].totalCookies>=base*		1000000000) Game.Win('Spacetime jigamaroo');
-				if (Game.Objects['Antimatter condenser'].totalCookies>=base*10000000000) Game.Win('Supermassive');
-				if (Game.Objects['Prism'].totalCookies>=base*				100000000000) Game.Win('Praise the sun');
+				if (Game.Objects['Shipment'].totalCookies>=base*			1000000) Game.Win('超越');
+				if (Game.Objects['Alchemy lab'].totalCookies>=base*			10000000) Game.Win('代表作');
+				if (Game.Objects['Portal'].totalCookies>=base*				100000000) Game.Win('奇怪地');
+				if (Game.Objects['Time machine'].totalCookies>=base*		1000000000) Game.Win('时空拼图');
+				if (Game.Objects['Antimatter condenser'].totalCookies>=base*10000000000) Game.Win('超大质量');
+				if (Game.Objects['Prism'].totalCookies>=base*				100000000000) Game.Win('赞美太阳');
 				if (Game.Objects['Chancemaker'].totalCookies>=base*			1000000000000) Game.Win('Fingers crossed');
 
 				var base=10000000000000000;
