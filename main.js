@@ -1809,13 +1809,13 @@ Game.Launch=function()
 							else
 							{
 								var maxTime=60*60;
-								if (Game.Has('Belphegor')) maxTime*=2;
-								if (Game.Has('Mammon')) maxTime*=2;
-								if (Game.Has('Abaddon')) maxTime*=2;
-								if (Game.Has('Satan')) maxTime*=2;
-								if (Game.Has('Asmodeus')) maxTime*=2;
-								if (Game.Has('Beelzebub')) maxTime*=2;
-								if (Game.Has('Lucifer')) maxTime*=2;
+								if (Game.Has('贝尔菲格')) maxTime*=2;
+								if (Game.Has('财神')) maxTime*=2;
+								if (Game.Has('阿巴登')) maxTime*=2;
+								if (Game.Has('撒旦')) maxTime*=2;
+								if (Game.Has('魔王')) maxTime*=2;
+								if (Game.Has('恶魔')) maxTime*=2;
+								if (Game.Has('路西法')) maxTime*=2;
 								
 								var percent=5;
 								if (Game.Has('Angels')) percent+=10;
@@ -2922,7 +2922,7 @@ Game.Launch=function()
 				else if (godLvl==3) Game.lumpRipeAge-=(hour/3);
 			}
 			Game.lumpOverripeAge=Game.lumpRipeAge+hour;
-			if (Game.Has('Glucose-charged air')) {Game.lumpMatureAge/=2000;Game.lumpRipeAge/=2000;Game.lumpOverripeAge/=2000;}
+			if (Game.Has('葡萄糖空气')) {Game.lumpMatureAge/=2000;Game.lumpRipeAge/=2000;Game.lumpOverripeAge/=2000;}
 		}
 		Game.loadLumps=function(time)
 		{
@@ -3098,8 +3098,8 @@ Game.Launch=function()
 			if (Game.Has('难得素鼠标')) add+=Game.cookiesPs*0.01;
 			if (Game.Has('E合金鼠标')) add+=Game.cookiesPs*0.01;
 			if (Game.Has('叉合金鼠标')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Fantasteel mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Nevercrack mouse')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('范塔钢鼠标')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('永不崩溃的鼠标')) add+=Game.cookiesPs*0.01;
 			if (Game.Has('阿迈斯里鼠标')) add+=Game.cookiesPs*0.01;
 			var mult=1;
 			
@@ -3556,7 +3556,7 @@ Game.Launch=function()
 						{
 							var newShimmer=new Game.shimmer(i);
 							newShimmer.spawnLead=1;
-							if (Game.Has('Distilled essence of redoubled luck') && Math.random()<0.01) var newShimmer=new Game.shimmer(i);
+							if (Game.Has('翻倍运气的精华') && Math.random()<0.01) var newShimmer=new Game.shimmer(i);
 							me.spawned=1;
 						}
 					}
@@ -5281,22 +5281,22 @@ Game.Launch=function()
 					'新闻：查获了神秘的非法饼干;“味道很糟糕”，警方说。',
 					'新闻：人类在摄入饼干后发现死亡;调查人员倾向于"黑手党告密者"的假设。',
 					'新闻：“宇宙本身就有很多循环，”研究者建议说。“它一直都在吃饼干。”',
-					'新闻：minor cookie-related incident turns whole town to ashes; neighboring cities asked to chip in for reconstruction.',
-					'新闻：is our media controlled by the cookie industry? This could very well be the case, says crackpot conspiracy theorist.',
-					'新闻：'+choose(['cookie-flavored popcorn pretty damn popular; "we kinda expected that", say scientists.','cookie-flavored cereals break all known cereal-related records','cookies popular among all age groups, including fetuses, says study.','cookie-flavored popcorn sales exploded during screening of Grandmothers II : The Moistening.']),
-					'新闻：all-cookie restaurant opening downtown. Dishes such as braised cookies, cookie thermidor, and for dessert : crepes.',
-					'新闻："Ook", says interviewed orangutan.',
-					'新闻：cookies could be the key to '+choose(['eternal life','infinite riches','eternal youth','eternal beauty','curing baldness','world peace','solving world hunger','ending all wars world-wide','making contact with extraterrestrial life','mind-reading','better living','better eating','more interesting TV shows','faster-than-light travel','quantum baking','chocolaty goodness','gooder thoughtness'])+', say scientists.',
-					'新闻：flavor text '+choose(["not particularly flavorful","kind of unsavory"])+', study finds.',
-					'新闻：what do golden cookies taste like? Study reveals a flavor "somewhere between spearmint and liquorice".',
-					'新闻：what do red cookies taste like? Study reveals a flavor "somewhere between blood sausage and seawater".',
-					'新闻：'+Game.bakeryName+'-brand cookies "'+choose(['much less soggy','much tastier','relatively less crappy','marginally less awful','less toxic','possibly more edible','more fashionable','slightly nicer','trendier','arguably healthier','objectively better choice','slightly less terrible','decidedly cookier','a tad cheaper'])+' than competitors", says consumer survey.',
-					'新闻："'+Game.bakeryName+'" set to be this year\'s most popular baby name.',
-					'新闻：new popularity survey says '+Game.bakeryName+'\'s the word when it comes to cookies.',
-					'新闻：major city being renamed '+Game.bakeryName+'ville after world-famous cookie manufacturer.',
-					'新闻：'+choose(['street','school','nursing home','stadium','new fast food chain','new planet','new disease','flesh-eating virus','deadly bacteria','new species of '+choose(animals),'new law','baby','programming language'])+' to be named after '+Game.bakeryName+', the world-famous cookie manufacturer.',
+					'新闻：小甜饼事件使整个城镇化为灰烬;邻近的城市要求重建。',
+					'新闻：我们的媒体是由饼干行业控制的吗?“这很可能是事实，”疯子阴谋论者说。',
+					'新闻：'+choose(['饼干味的爆米花很受欢迎;科学家们说:“我们有点期待。”','饼干味的谷物打破了所有已知的与大脑有关的记录','研究表明，包括胎儿在内的所有年龄组的饼干都很受欢迎。','在祖母二世的放映过程中，饼干味的爆米花销量爆增。']),
+					'新闻：全饼干餐厅在市中心开业。诸如红烧饼干、饼干热和甜点的菜肴:薄饼。',
+					'新闻：“拿”,采访了猩猩说。',
+					'新闻：饼干可能是 '+choose(['永恒的生命','无限的财富','永恒的青春','永恒的美丽','治疗脱发','世界和平','解决世界饥饿','结束全世界的战争','与地外生命接触','读心术','更好的生活','更好的饮食','更有趣的电视节目','超越光速','量子烘焙','巧克力精华','古时的思想'])+'的关键, 科学家说。',
+					'新闻：风味文字 '+choose(["不是特别美味","有点讨厌"])+', 研究发现。',
+					'新闻：黄金饼干尝起来像什么?研究揭示了“薄荷和甘草之间”的味道。',
+					'新闻：红色饼干尝起来像什么?研究揭示了一种“介于血肠和海水之间”的味道。',
+					'新闻：'+Game.bakeryName+'-品牌的饼干 "'+choose(['不那么潮湿','更美味','没那么糟糕','不那么可怕','毒性更小','可能更能吃','更时尚','稍微更好','时髦的','可以说是健康的','客观上更好的选择','稍微不那么可怕','毫无疑问','有点便宜'])+' 消费者调查显示。',
+					'新闻：“'+Game.bakeryName+'” 将成为今年最受欢迎的婴儿名字。',
+					'新闻：最新的民意调查显示 '+Game.bakeryName+'说到饼干，这个词就不一样了。',
+					'新闻：主要城市被命名为 '+Game.bakeryName+'世界著名的饼干制造商。',
+					'新闻：'+choose(['街道','学校','养老院','体育场','新快餐连锁店','新行星','新的疾病','食肉病毒','致命的细菌','新物种 '+choose(animals),'新法律','婴儿','编程语言'])+' 被命名为 '+Game.bakeryName+',世界著名的饼干制造商。',
 					'新闻：不要错过今晚的传记片 '+Game.bakeryName+' 不可抗拒的成功!',
-					'新闻：不要错过今晚的采访 '+Game.bakeryName+' 来自 '+choose(['布奥普拉','布利斯特·布莱特曼','Blimmy Blimmel','Blellen Blegeneres','Blimmy Blallon','Blonan Blo\'Brien','Blay Bleno','Blon Blewart','Bleven Blolbert','7-b19维空间的托克罗大人',Game.bakeryName+'的邪恶克隆人'])+'!',
+					'新闻：不要错过今晚的采访 '+Game.bakeryName+' 来自 '+choose(['布奥普拉','布利斯特·布莱特曼','Blimmy Blimmel','Blellen Blegeneres','Blimmy Blallon','布朗布莱恩','布雷·布莱诺','Blon Blewart','Bleven Blolbert','7-b19维空间的托克罗大人',Game.bakeryName+'的邪恶克隆人'])+'!',
 					'新闻：互联网上的人们仍然在为毫无意义的引用而挠头:“好吧，但是为什么要一个鸡蛋呢?”',
 					'新闻：著名的经济学家说，病毒视频“太多的饼干”可能是“对即将到来的世界即将面临的危机的严峻评论”。',
 					'新闻：“从去年开始的迷因仍然是相关的”，专家们谴责。',
@@ -6565,7 +6565,7 @@ Game.Launch=function()
 			if (this.pool!='prestige')
 			{
 				if (Game.Has('玩具车间')) price*=0.95;
-				if (Game.Has('Five-finger discount')) price*=Math.pow(0.99,Game.Objects['Cursor'].amount/100);
+				if (Game.Has('五指折扣')) price*=Math.pow(0.99,Game.Objects['Cursor'].amount/100);
 				if (Game.Has('圣诞老人的统治')) price*=0.98;
 				if (Game.Has('法贝热彩蛋')) price*=0.99;
 				if (Game.Has('神圣销售')) price*=0.99;
@@ -7624,7 +7624,7 @@ Game.Launch=function()
 		order=25100;
 		new Game.Upgrade('易碎的鸡蛋','解锁 <b>饼干龙蛋</b>.<q>谢谢你收养了这个健壮的，有趣的饼干龙!它将给你带来数年的欢乐和娱乐。<br>保持干燥凉爽的环境，远离其他宠物。强烈建议购买家庭保险。</q>',25,[21,12]);
 		
-		new Game.Upgrade('奇美拉','协同升级的成本<b>降低了2%</b>。<br>你获得了另外 <b>+5%</b> 基本饼干产量，当游戏关闭时。<br>当游戏关闭 <b>2 天以上</b> 时，会保持最优的饼干生产。<q>比它的各个部分的总和还多。</q>',Math.pow(angelPriceFactor,8),[24,7]);Game.last.pool='prestige';Game.last.parents=['God','Lucifer','协同效应2'];
+		new Game.Upgrade('奇美拉','协同升级的成本<b>降低了2%</b>。<br>你获得了另外 <b>+5%</b> 基本饼干产量，当游戏关闭时。<br>当游戏关闭 <b>2 天以上</b> 时，会保持最优的饼干生产。<q>比它的各个部分的总和还多。</q>',Math.pow(angelPriceFactor,8),[24,7]);Game.last.pool='prestige';Game.last.parents=['God','路西法','协同效应2'];
 		
 		new Game.Upgrade('奶油饼干罐头','含有丰富的奶油饼干。<q>丹麦饼干的五个品种。<br/>配小纸杯。</q>',25,[21,9]);Game.last.pool='prestige';Game.last.parents=['天堂饼干'];
 		
@@ -7742,22 +7742,22 @@ Game.Launch=function()
 		var desc=function(totalHours){
 			var hours=totalHours%24;
 			var days=Math.floor(totalHours/24);
-			var str=hours+(hours==1?' hour':' hours');
-			if (days>0) str=days+(days==1?' day':' days')+' and '+str;
-			return 'You retain optimal cookie production while the game is closed for twice as long, for a total of <b>'+str+'</b>.';
+			var str=hours+(hours==1?' 小时':' 小时');
+			if (days>0) str=days+(days==1?' 天':' 天')+' 和 '+str;
+			return '在游戏结束的时候，你保持最佳的饼干制作时间是所有的两倍 <b>'+str+'</b>.';
 		}
-		new Game.Upgrade('Belphegor',desc(2)+'<q>A demon of shortcuts and laziness, Belphegor commands machines to do work in his stead.</q>',Math.pow(angelPriceFactor,1),[7,11]);Game.last.pool='prestige';Game.last.parents=['双重超越之门'];
-		new Game.Upgrade('Mammon',desc(4)+'<q>The demonic embodiment of wealth, Mammon requests a tithe of blood and gold from all his worshippers.</q>',Math.pow(angelPriceFactor,2),[8,11]);Game.last.pool='prestige';Game.last.parents=['Belphegor'];
-		new Game.Upgrade('Abaddon',desc(8)+'<q>Master of overindulgence, Abaddon governs the wrinkler brood and inspires their insatiability.</q>',Math.pow(angelPriceFactor,3),[9,11]);Game.last.pool='prestige';Game.last.parents=['Mammon'];
-		new Game.Upgrade('Satan',desc(16)+'<q>The counterpoint to everything righteous, this demon represents the nefarious influence of deceit and temptation.</q>',Math.pow(angelPriceFactor,4),[10,11]);Game.last.pool='prestige';Game.last.parents=['Abaddon'];
-		new Game.Upgrade('Asmodeus',desc(32)+'<q>This demon with three monstrous heads draws his power from the all-consuming desire for cookies and all things sweet.</q>',Math.pow(angelPriceFactor,5),[11,11]);Game.last.pool='prestige';Game.last.parents=['Satan'];
-		new Game.Upgrade('Beelzebub',desc(64)+'<q>The festering incarnation of blight and disease, Beelzebub rules over the vast armies of pastry inferno.</q>',Math.pow(angelPriceFactor,6),[12,11]);Game.last.pool='prestige';Game.last.parents=['Asmodeus'];
-		new Game.Upgrade('Lucifer',desc(128)+'<q>Also known as the Lightbringer, this infernal prince\'s tremendous ego caused him to be cast down from pastry heaven.</q>',Math.pow(angelPriceFactor,7),[13,11]);Game.last.pool='prestige';Game.last.parents=['Beelzebub'];
+		new Game.Upgrade('贝尔菲格',desc(2)+'<q>一个有捷径和懒惰的恶魔，他命令机器替他干活。</q>',Math.pow(angelPriceFactor,1),[7,11]);Game.last.pool='prestige';Game.last.parents=['双重超越之门'];
+		new Game.Upgrade('财神',desc(4)+'<q>财富的恶魔化身,财神从他所有的信徒请求一个小部分血和黄金。</q>',Math.pow(angelPriceFactor,2),[8,11]);Game.last.pool='prestige';Game.last.parents=['贝尔菲格'];
+		new Game.Upgrade('阿巴登',desc(8)+'<q>放纵的大师,阿巴登着皱纹窝和激发他们的不知足。</q>',Math.pow(angelPriceFactor,3),[9,11]);Game.last.pool='prestige';Game.last.parents=['财神'];
+		new Game.Upgrade('撒旦',desc(16)+'<q>对一切正直的人来说，这个魔鬼代表着欺骗和诱惑的邪恶势力。</q>',Math.pow(angelPriceFactor,4),[10,11]);Game.last.pool='prestige';Game.last.parents=['阿巴登'];
+		new Game.Upgrade('魔王',desc(32)+'<q>这个恶魔有三个可怕的脑袋，他的力量来自于对饼干和所有甜食的强烈渴望。</q>',Math.pow(angelPriceFactor,5),[11,11]);Game.last.pool='prestige';Game.last.parents=['撒旦'];
+		new Game.Upgrade('恶魔',desc(64)+'<q>枯萎病和疾病的不断恶化的化身,恶的大军糕点地狱魔规则。</q>',Math.pow(angelPriceFactor,6),[12,11]);Game.last.pool='prestige';Game.last.parents=['魔王'];
+		new Game.Upgrade('路西法',desc(128)+'<q>也被称为光明使者，这个可恶的王子的自负让他从糕点天堂被抛弃了。</q>',Math.pow(angelPriceFactor,7),[13,11]);Game.last.pool='prestige';Game.last.parents=['恶魔'];
 		
-		new Game.Upgrade('Golden cookie alert sound','解锁 <b>golden cookie sound selector</b>, which lets you pick whether golden cookies emit a sound when appearing or not.<q>A sound decision.</q>',9999,[28,6]);Game.last.pool='prestige';Game.last.parents=['决定性的命运','黄金开关'];
+		new Game.Upgrade('金色饼干提示音','解锁 <b>黄金饼干声音选择器</b>, 这让你可以选择黄金饼干是否在出现时发出声音。<q>一个良好的决策。</q>',9999,[28,6]);Game.last.pool='prestige';Game.last.parents=['决定性的命运','黄金开关'];
 		
 		order=49900;
-		new Game.Upgrade('Golden cookie sound selector','Lets you change the sound golden cookies make when they spawn.',0,[28,6]);
+		new Game.Upgrade('黄金饼干声音选择器','让你改变黄金饼干产生时的声音。',0,[28,6]);
 		Game.last.pool='toggle';
 		Game.last.choicesFunction=function()
 		{
@@ -7772,78 +7772,78 @@ Game.Launch=function()
 		{Game.chimeType=id;}
 		
 		
-		new Game.Upgrade('Basic wallpaper assortment','解锁 <b>背景选择器</b>, 让你可以选择游戏的背景。<br>有各种各样的基本口味。<q>优先考虑美学而不是关键的实用升级?让我印象深刻。</q>',99,[29,5]);Game.last.pool='prestige';Game.last.parents=['选择经典的乳制品'];
+		new Game.Upgrade('基本壁纸分类','解锁 <b>背景选择器</b>, 让你可以选择游戏的背景。<br>有各种各样的基本口味。<q>优先考虑美学而不是关键的实用升级?让我印象深刻。</q>',99,[29,5]);Game.last.pool='prestige';Game.last.parents=['选择经典的乳制品'];
 		
 		new Game.Upgrade('遗产','这是第一次天堂的升级;它解锁<b>天堂芯片</b>系统。<div class="line"></div>你每提升一次，你过去生活中的饼干就变成了 <b>天堂芯片</b> 和 <b>声望</b>.<div class="line"></div><b>天堂芯片</b> 可以用于各种永久的超越升级。<div class="line"></div>您的 <b>声望等级</b> 每一级会给你永久的 <b>+1% 饼干秒生产量</b> 。<q>我们都在等你。</q>',1,[21,6]);Game.last.pool='prestige';Game.last.parents=[];
 		
-		new Game.Upgrade('Elder spice','你可以吸引 <b>2 更多的皱纹</b>.<q>你的饼干闻起来像的饼干。</q>',444444,[19,8]);Game.last.pool='prestige';Game.last.parents=['邪恶的诱饵'];
+		new Game.Upgrade('老香料','你可以吸引 <b>2 更多的皱纹</b>.<q>你的饼干闻起来像的饼干。</q>',444444,[19,8]);Game.last.pool='prestige';Game.last.parents=['邪恶的诱饵'];
 		
 		new Game.Upgrade('残余运气','当金色开关打开时，你会得到额外的 <b>+10% 饼干秒生产量</b> 每个黄金饼干升级所有。<q>财富的方法有许多种。</q>',99999,[27,6]);Game.last.pool='prestige';Game.last.parents=['黄金开关'];
 		
-		order=150;new Game.Upgrade('Fantasteel mouse','点击获得 <b>+1% 饼干秒生产量</b>.<q>你可以用你的触摸板来点击，而我们不会变得更聪明。</q>',5000000000000000000,[11,17]);
-		new Game.Upgrade('Nevercrack mouse','点击获得 <b>+1% 总秒收益</b>.<q>你能造一只老鼠直到它被认为是老鼠吗?</q>',500000000000000000000,[11,18]);
+		order=150;new Game.Upgrade('范塔钢鼠标','点击获得 <b>+1% 饼干秒生产量</b>.<q>你可以用你的触摸板来点击，而我们不会变得更聪明。</q>',5000000000000000000,[11,17]);
+		new Game.Upgrade('永不崩溃的鼠标','点击获得 <b>+1% 总秒收益</b>.<q>你能造一只鼠标直到它被认为是鼠标吗?</q>',500000000000000000000,[11,18]);
 		
 		
-		new Game.Upgrade('Five-finger discount','All upgrades are <b>1% cheaper per 100 cursors</b>.<q>它贴在男人身上。</q>',555555,[28,7],function(){Game.upgradesToRebuild=1;});Game.last.pool='prestige';Game.last.parents=['光环手套','Abaddon'];
+		new Game.Upgrade('五指折扣','所有升级 <b>便宜1% ，当你有每100个游标时</b>.<q>它贴在男人身上。</q>',555555,[28,7],function(){Game.upgradesToRebuild=1;});Game.last.pool='prestige';Game.last.parents=['光环手套','阿巴登'];
 		
 		
 		order=5000;
-		new Game.SynergyUpgrade('Future almanacs','<q>Lets you predict optimal planting times. It\'s crazy what time travel can do!</q>','Farm','Time machine','synergy1');
-		new Game.SynergyUpgrade('Rain prayer','<q>A deeply spiritual ceremonial involving complicated dance moves and high-tech cloud-busting lasers.</q>','Farm','Temple','synergy2');
+		new Game.SynergyUpgrade('未来年鉴','<q>让你预测最佳的种植时间。时间旅行能做的事真是太疯狂了!</q>','Farm','Time machine','synergy1');
+		new Game.SynergyUpgrade('雨中的祈祷','<q>这是一种涉及复杂的舞蹈动作和高科技的云计算激光的精神仪式。</q>','Farm','Temple','synergy2');
 		
-		new Game.SynergyUpgrade('Seismic magic','<q>Surprise earthquakes are an old favorite of wizardly frat houses.</q>','Mine','Wizard tower','synergy1');
-		new Game.SynergyUpgrade('Asteroid mining','<q>As per the <span>19</span>74 United Cosmic Convention, comets, moons, and inhabited planetoids are no longer legally excavatable.<br>But hey, a space bribe goes a long way.</q>','Mine','Shipment','synergy2');
+		new Game.SynergyUpgrade('地震魔法','<q>意外地震是魔法兄弟会的老宠儿。</q>','Mine','Wizard tower','synergy1');
+		new Game.SynergyUpgrade('小行星采矿','<q>As per the <span>19</span>74 United Cosmic Convention, comets, moons, and inhabited planetoids are no longer legally excavatable.<br>But hey, a space bribe goes a long way.</q>','Mine','Shipment','synergy2');
 		
-		new Game.SynergyUpgrade('Quantum electronics','<q>Your machines won\'t even be sure if they\'re on or off!</q>','Factory','Antimatter condenser','synergy1');
-		new Game.SynergyUpgrade('Temporal overclocking','<q>Introduce more quickitude in your system for increased speedation of fastness.</q>','Factory','Time machine','synergy2');
+		new Game.SynergyUpgrade('量子电子学','<q>Your machines won\'t even be sure if they\'re on or off!</q>','Factory','Antimatter condenser','synergy1');
+		new Game.SynergyUpgrade('时间超频','<q>Introduce more quickitude in your system for increased speedation of fastness.</q>','Factory','Time machine','synergy2');
 		
-		new Game.SynergyUpgrade('Contracts from beyond','<q>Make sure to read the fine print!</q>','Bank','Portal','synergy1');
-		new Game.SynergyUpgrade('Printing presses','<q>Fake bills so real, they\'re almost worth the ink they\'re printed with.</q>','Bank','Factory','synergy2');
+		new Game.SynergyUpgrade('合同之外','<q>Make sure to read the fine print!</q>','Bank','Portal','synergy1');
+		new Game.SynergyUpgrade('印刷机','<q>Fake bills so real, they\'re almost worth the ink they\'re printed with.</q>','Bank','Factory','synergy2');
 		
-		new Game.SynergyUpgrade('Paganism','<q>Some deities are better left unworshipped.</q>','Temple','Portal','synergy1');
-		new Game.SynergyUpgrade('God particle','<q>Turns out God is much tinier than we thought, I guess.</q>','Temple','Antimatter condenser','synergy2');
+		new Game.SynergyUpgrade('异教','<q>Some deities are better left unworshipped.</q>','Temple','Portal','synergy1');
+		new Game.SynergyUpgrade('上帝粒子','<q>Turns out God is much tinier than we thought, I guess.</q>','Temple','Antimatter condenser','synergy2');
 		
-		new Game.SynergyUpgrade('Arcane knowledge','<q>Some things were never meant to be known - only mildly speculated.</q>','Wizard tower','Alchemy lab','synergy1');
-		new Game.SynergyUpgrade('Magical botany','<q>Already known in some reactionary newspapers as "the wizard\'s GMOs".</q>','Wizard tower','Farm','synergy2');
+		new Game.SynergyUpgrade('奥术知识','<q>Some things were never meant to be known - only mildly speculated.</q>','Wizard tower','Alchemy lab','synergy1');
+		new Game.SynergyUpgrade('神奇植物学','<q>Already known in some reactionary newspapers as "the wizard\'s GMOs".</q>','Wizard tower','Farm','synergy2');
 		
-		new Game.SynergyUpgrade('Fossil fuels','<q>Somehow better than plutonium for powering rockets.<br>Extracted from the fuels of ancient, fossilized civilizations.</q>','Shipment','Mine','synergy1');
-		new Game.SynergyUpgrade('Shipyards','<q>Where carpentry, blind luck, and asbestos insulation unite to produce the most dazzling spaceships on the planet.</q>','Shipment','Factory','synergy2');
+		new Game.SynergyUpgrade('化石燃料','<q>Somehow better than plutonium for powering rockets.<br>Extracted from the fuels of ancient, fossilized civilizations.</q>','Shipment','Mine','synergy1');
+		new Game.SynergyUpgrade('船厂','<q>Where carpentry, blind luck, and asbestos insulation unite to produce the most dazzling spaceships on the planet.</q>','Shipment','Factory','synergy2');
 		
-		new Game.SynergyUpgrade('Primordial ores','<q>Only when refining the purest metals will you extract the sweetest sap of the earth.</q>','Alchemy lab','Mine','synergy1');
-		new Game.SynergyUpgrade('Gold fund','<q>If gold is the backbone of the economy, cookies, surely, are its hip joints.</q>','Alchemy lab','Bank','synergy2');
+		new Game.SynergyUpgrade('原始矿石','<q>Only when refining the purest metals will you extract the sweetest sap of the earth.</q>','Alchemy lab','Mine','synergy1');
+		new Game.SynergyUpgrade('黄金基金','<q>If gold is the backbone of the economy, cookies, surely, are its hip joints.</q>','Alchemy lab','Bank','synergy2');
 		
-		new Game.SynergyUpgrade('Infernal crops','<q>Sprinkle regularly with FIRE.</q>','Portal','Farm','synergy1');
-		new Game.SynergyUpgrade('Abysmal glimmer','<q>Someone, or something, is staring back at you.<br>Perhaps at all of us.</q>','Portal','Prism','synergy2');
+		new Game.SynergyUpgrade('低等农作物','<q>Sprinkle regularly with FIRE.</q>','Portal','Farm','synergy1');
+		new Game.SynergyUpgrade('深不可测的微光','<q>Someone, or something, is staring back at you.<br>Perhaps at all of us.</q>','Portal','Prism','synergy2');
 		
-		new Game.SynergyUpgrade('Relativistic parsec-skipping','<q>People will tell you this isn\'t physically possible.<br>These are people you don\'t want on your ship.</q>','Time machine','Shipment','synergy1');
-		new Game.SynergyUpgrade('Primeval glow','<q>From unending times, an ancient light still shines, impossibly pure and fragile in its old age.</q>','Time machine','Prism','synergy2');
+		new Game.SynergyUpgrade('相对论性的省略','<q>People will tell you this isn\'t physically possible.<br>These are people you don\'t want on your ship.</q>','Time machine','Shipment','synergy1');
+		new Game.SynergyUpgrade('原始辉光','<q>From unending times, an ancient light still shines, impossibly pure and fragile in its old age.</q>','Time machine','Prism','synergy2');
 		
-		new Game.SynergyUpgrade('Extra physics funding','<q>Time to put your money where your particle colliders are.</q>','Antimatter condenser','Bank','synergy1');
-		new Game.SynergyUpgrade('Chemical proficiency','<q>Discover exciting new elements, such as Fleshmeltium, Inert Shampoo Byproduct #17 and Carbon++!</q>','Antimatter condenser','Alchemy lab','synergy2');
+		new Game.SynergyUpgrade('额外的物理资金','<q>Time to put your money where your particle colliders are.</q>','Antimatter condenser','Bank','synergy1');
+		new Game.SynergyUpgrade('化学水平','<q>Discover exciting new elements, such as Fleshmeltium, Inert Shampoo Byproduct #17 and Carbon++!</q>','Antimatter condenser','Alchemy lab','synergy2');
 		
-		new Game.SynergyUpgrade('Light magic','<q>Actually not to be taken lightly! No, I\'m serious. 178 people died last year. You don\'t mess around with magic.</q>','Prism','Wizard tower','synergy1');
-		new Game.SynergyUpgrade('Mystical energies','<q>Something beckons from within the light. It is warm, comforting, and apparently the cause for several kinds of exotic skin cancers.</q>','Prism','Temple','synergy2');
+		new Game.SynergyUpgrade('光明魔法','<q>Actually not to be taken lightly! No, I\'m serious. 178 people died last year. You don\'t mess around with magic.</q>','Prism','Wizard tower','synergy1');
+		new Game.SynergyUpgrade('神秘的能量','<q>Something beckons from within the light. It is warm, comforting, and apparently the cause for several kinds of exotic skin cancers.</q>','Prism','Temple','synergy2');
 		
 		
-		new Game.Upgrade('协同效应1','解锁 a new tier of upgrades that affect <b>2 buildings at the same time</b>.<br>Synergies appear once you have <b>15</b> of both buildings.<q>The many beats the few.</q>',2525,[10,20]);Game.last.pool='prestige';Game.last.parents=['Satan','Dominions'];
-		new Game.Upgrade('协同效应2','解锁 a new tier of upgrades that affect <b>2 buildings at the same time</b>.<br>Synergies appear once you have <b>75</b> of both buildings.<q>The several beats the many.</q>',252525,[10,20]);Game.last.pool='prestige';Game.last.parents=['Beelzebub','Seraphim','协同效应1'];
+		new Game.Upgrade('协同效应1','解锁 a new tier of upgrades that affect <b>2 buildings at the same time</b>.<br>Synergies appear once you have <b>15</b> of both buildings.<q>The many beats the few.</q>',2525,[10,20]);Game.last.pool='prestige';Game.last.parents=['撒旦','Dominions'];
+		new Game.Upgrade('协同效应2','解锁 a new tier of upgrades that affect <b>2 buildings at the same time</b>.<br>Synergies appear once you have <b>75</b> of both buildings.<q>The several beats the many.</q>',252525,[10,20]);Game.last.pool='prestige';Game.last.parents=['恶魔','Seraphim','协同效应1'];
 		
 		new Game.Upgrade('天堂饼干','饼干生产增加 <b>+10% 永久产量</b>.<q>和天堂芯片一起拷。另一种超越时间和空间的文字。</q>',3,[25,12]);Game.last.pool='prestige';Game.last.parents=['遗产'];Game.last.power=10;Game.last.pseudoCookie=true;
-		new Game.Upgrade('Wrinkly cookies','饼干生产增加 <b>+10% permanently</b>.<q>The result of regular cookies left to age out for countless eons in a place where time and space are meaningless.</q>',6666666,[26,12]);Game.last.pool='prestige';Game.last.parents=['亵渎神明','Elder spice'];Game.last.power=10;Game.last.pseudoCookie=true;
-		new Game.Upgrade('Distilled essence of redoubled luck','Golden cookies have <b>1% chance of being doubled</b>.<q>Tastes glittery. The empty phial makes for a great pencil holder.</q>',7777777,[27,12]);Game.last.pool='prestige';Game.last.parents=['神圣的面包店','残余运气'];
+		new Game.Upgrade('皱纹饼干','饼干生产增加 <b>+10% 永久地</b>.<q>在一个时间和空间都没有意义的地方，普通饼干的结果会让无数的电子人离开。</q>',6666666,[26,12]);Game.last.pool='prestige';Game.last.parents=['亵渎神明','老香料'];Game.last.power=10;Game.last.pseudoCookie=true;
+		new Game.Upgrade('翻倍运气的精华','黄金饼干有 <b>1% 几率翻倍</b>.<q>味道亮闪闪的。空的小瓶是用来做大铅笔的。</q>',7777777,[27,12]);Game.last.pool='prestige';Game.last.parents=['神圣的面包店','残余运气'];
 		
 		order=40000;
-		new Game.Upgrade('神秘障碍','Cookie production <b>reduced to 0</b>.<q>If symptoms persist, consult a doctor.</q>',7,[15,5]);//debug purposes only
+		new Game.Upgrade('神秘障碍','饼干生产 <b>减少到 0</b>.<q>如果症状持续，请咨询医生。</q>',7,[15,5]);//debug purposes only
 		Game.last.pool='debug';
-		new Game.Upgrade('Glucose-charged air','Sugar lumps coalesce <b>a whole lot faster</b>.<q>Don\'t breathe too much or you\'ll get diabetes!</q>',7,[29,16]);//debug purposes only
+		new Game.Upgrade('葡萄糖空气','糖块会<b>更快地</b>结合在一起.<q>不要呼吸太多，否则你会得糖尿病的!</q>',7,[29,16]);//debug purposes only
 		Game.last.pool='debug';
 		
 		order=10300;
-		Game.NewUpgradeCookie({name:'Lavender chocolate butter biscuit',desc:'Rewarded for owning 300 of everything.<br>This subtly-flavored biscuit represents the accomplishments of decades of top-secret research. The molded design on the chocolate resembles a well-known entrepreneur who gave their all to the ancient path of baking.',icon:[26,10],power:	10,price: 999999999999999999999999999999999,locked:1});
+		Game.NewUpgradeCookie({name:'薰衣草巧克力奶油饼干',desc:'拥有300个各种建筑。<br>这种口味微妙的饼干代表了几十年来最高机密的研究成果。巧克力造型的造型就像一位著名的企业家，把他们的一切都献给了古老的烘焙之路。',icon:[26,10],power:	10,price: 999999999999999999999999999999999,locked:1});
 		
 		order=10030;
-		Game.NewUpgradeCookie({name:'Lombardia cookies',desc:'These come from those farms with the really good memory.',icon:[23,13],require:'品牌饼干盒',power:	3,	price:	999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Bastenaken cookies',desc:'法国曲奇饼是由香肉桂和糖制成的。这些不含坚果!',icon:[24,13],require:'品牌饼干盒',power:	3,	price:	999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'伦巴第饼干',desc:'这些来自那些有着良好记忆的农场。',icon:[23,13],require:'品牌饼干盒',power:	3,	price:	999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'巴斯顿坎饼干',desc:'法国曲奇饼是由香肉桂和糖制成的。这些不含坚果!',icon:[24,13],require:'品牌饼干盒',power:	3,	price:	999999999999999999999*5});
 		
 		order=10020;
 		Game.NewUpgradeCookie({name:'Pecan sandies',desc:'把坚果粘在饼干上，把它叫做一天！给你的乐队命名!随你的便!',icon:[25,13],power: 4,price: 999999999999999999999999*5});
@@ -7852,8 +7852,8 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'Buttercakes',desc:'这些饼干的胆固醇含量高，这些饼干在饼干的法律定义和简单的黄油块之间的线之间有一层关系。',icon:[29,13],power: 4,price: 99999999999999999999999999});
 		Game.NewUpgradeCookie({name:'Ice cream sandwiches',desc:'在另一个宇宙中，“冰淇淋三明治”设计了一个冰淇淋蛋筒，里面装满了熏肉、生菜和西红柿。也许一些洒。',icon:[28,13],power: 4,price: 99999999999999999999999999*5});
 		
-		new Game.Upgrade('甜菊糖','糖块成熟 <b>早一个小时</b>.<q>一种由天使在天堂花园中种植的超自然的甜味植物。</q>',100000000,[25,15]);Game.last.pool='prestige';Game.last.parents=['Wrinkly cookies'];
-		new Game.Upgrade('糖尿病患者','糖块成熟 <b>早一个小时</b>.<q>这是一种恶毒的，据说是在黑暗的深渊的悬崖上生长的美味的药草。</q>',300000000,[26,15]);Game.last.pool='prestige';Game.last.parents=['甜菊糖','Lucifer'];
+		new Game.Upgrade('甜菊糖','糖块成熟 <b>早一个小时</b>.<q>一种由天使在天堂花园中种植的超自然的甜味植物。</q>',100000000,[25,15]);Game.last.pool='prestige';Game.last.parents=['皱纹饼干'];
+		new Game.Upgrade('糖尿病患者','糖块成熟 <b>早一个小时</b>.<q>这是一种恶毒的，据说是在黑暗的深渊的悬崖上生长的美味的药草。</q>',300000000,[26,15]);Game.last.pool='prestige';Game.last.parents=['甜菊糖','路西法'];
 		new Game.Upgrade('舒张症','分叉糖块出现几率 <b>5% 更多地</b> 并且 <b>5% 更有可能</b> 掉两个糖块。<q>一种罕见的无趣的浆果，它的用途是有限的;只受那些贪心的收藏家的追捧，他们手上有太多的财富。</q>',1000000000,[27,15]);Game.last.pool='prestige';Game.last.parents=['糖尿病患者'];
 		
 		//note : these showIf functions stop working beyond 10 quadrillion prestige level, due to loss in precision; the solution, of course, is to make sure 10 quadrillion is not an attainable prestige level
@@ -9161,7 +9161,7 @@ Game.Launch=function()
 		Game.getWrinklersMax=function()
 		{
 			var n=10;
-			if (Game.Has('Elder spice')) n+=2;
+			if (Game.Has('老香料')) n+=2;
 			return n;
 		}
 		Game.ResetWrinklers=function()
@@ -11030,8 +11030,8 @@ Game.Launch=function()
 				
 				if (Game.Has('黄金开关')) Game.Unlock('黄金开关[关闭]');
 				if (Game.Has('选择经典的乳制品')) Game.Unlock('牛奶选择器');
-				if (Game.Has('Basic wallpaper assortment')) Game.Unlock('背景选择器');
-				if (Game.Has('Golden cookie alert sound')) Game.Unlock('Golden cookie sound selector');
+				if (Game.Has('基本壁纸分类')) Game.Unlock('背景选择器');
+				if (Game.Has('Golden cookie alert sound')) Game.Unlock('黄金饼干声音选择器');
 				
 				if (Game.Has('Eternal heart biscuits')) Game.Win('可爱的饼干');
 				if (Game.season=='easter')
@@ -11081,7 +11081,7 @@ Game.Launch=function()
 				if (minAmount>=150) {Game.Win('150周年纪念');Game.Unlock('Dark chocolate butter biscuit');}
 				if (minAmount>=200) {Game.Win('周年纪念');Game.Unlock('White chocolate butter biscuit');}
 				if (minAmount>=250) {Game.Win('二百年半');Game.Unlock('Ruby chocolate butter biscuit');}
-				if (minAmount>=300) {Game.Win('Tricentennial');Game.Unlock('Lavender chocolate butter biscuit');}
+				if (minAmount>=300) {Game.Win('Tricentennial');Game.Unlock('薰衣草巧克力奶油饼干');}
 				
 				if (Game.handmadeCookies>=1000) {Game.Win('可以点击');Game.Unlock('塑料鼠标');}
 				if (Game.handmadeCookies>=100000) {Game.Win('全能点击');Game.Unlock('铁制鼠标');}
@@ -11090,8 +11090,8 @@ Game.Launch=function()
 				if (Game.handmadeCookies>=100000000000) {Game.Win('点击狂魔');Game.Unlock('难得素鼠标');}
 				if (Game.handmadeCookies>=10000000000000) {Game.Win('点击时代');Game.Unlock('E合金鼠标');}
 				if (Game.handmadeCookies>=1000000000000000) {Game.Win('单击中心');Game.Unlock('叉合金鼠标');}
-				if (Game.handmadeCookies>=100000000000000000) {Game.Win('点击祸患');Game.Unlock('Fantasteel mouse');}
-				if (Game.handmadeCookies>=10000000000000000000) {Game.Win('点击大灾变');Game.Unlock('Nevercrack mouse');}
+				if (Game.handmadeCookies>=100000000000000000) {Game.Win('点击祸患');Game.Unlock('范塔钢鼠标');}
+				if (Game.handmadeCookies>=10000000000000000000) {Game.Win('点击大灾变');Game.Unlock('永不崩溃的鼠标');}
 				if (Game.handmadeCookies>=1000000000000000000000) {Game.Win('The ultimate clickdown');Game.Unlock('阿迈斯里鼠标');}
 				
 				if (Game.cookiesEarned<Game.cookies) Game.Win('被骗的饼干味道很糟糕');
