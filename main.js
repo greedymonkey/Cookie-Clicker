@@ -1085,7 +1085,7 @@ Game.Launch=function()
 		//replacing an existing canvas picture with a new one at runtime : Game.Loader.Replace('perfectCookie.png','imperfectCookie.png');
 		//upgrades and achievements can use other pictures than icons.png; declare their icon with [posX,posY,'http://example.com/myIcons.png']
 		//check out the "UNLOCKING STUFF" section to see how unlocking achievs and upgrades is done (queue yours in Game.customChecks)
-		//if you're making a mod, don't forget to add a Game.Win('Third-party') somewhere in there!
+		//if you're making a mod, don't forget to add a Game.Win('第三方') somewhere in there!
 		
 		//IMPORTANT : all of the above is susceptible to heavy change, proper modding API in the works
 		
@@ -1818,13 +1818,13 @@ Game.Launch=function()
 								if (Game.Has('路西法')) maxTime*=2;
 								
 								var percent=5;
-								if (Game.Has('Angels')) percent+=10;
-								if (Game.Has('Archangels')) percent+=10;
-								if (Game.Has('Virtues')) percent+=10;
-								if (Game.Has('Dominions')) percent+=10;
-								if (Game.Has('Cherubim')) percent+=10;
-								if (Game.Has('Seraphim')) percent+=10;
-								if (Game.Has('God')) percent+=10;
+								if (Game.Has('天使')) percent+=10;
+								if (Game.Has('大天使')) percent+=10;
+								if (Game.Has('美德')) percent+=10;
+								if (Game.Has('领土')) percent+=10;
+								if (Game.Has('小天使')) percent+=10;
+								if (Game.Has('六翼天使')) percent+=10;
+								if (Game.Has('上帝')) percent+=10;
 								
 								if (Game.Has('奇美拉')) {maxTime+=60*60*24*2;percent+=5;}
 							}
@@ -1835,8 +1835,8 @@ Game.Launch=function()
 							
 							if (amount>0)
 							{
-								if (Game.prefs.popups) Game.Popup('Earned '+Beautify(amount)+' cookie'+(Math.floor(amount)==1?'':'s')+' while you were away');
-								else Game.Notify('Welcome back!','You earned <b>'+Beautify(amount)+'</b> cookie'+(Math.floor(amount)==1?'':'s')+' while you were away.<br>('+Game.sayTime(timeOfflineOptimal*Game.fps,-1)+' at '+Math.floor(percent)+'% CpS'+(timeOfflineReduced?', plus '+Game.sayTime(timeOfflineReduced*Game.fps,-1)+' at '+(Math.floor(percent*10)/100)+'%':'')+'.)',[Math.floor(Math.random()*16),11]);
+								if (Game.prefs.popups) Game.Popup('获得 '+Beautify(amount)+' 饼干'+(Math.floor(amount)==1?'':'')+' 在你离开的时候');
+								else Game.Notify('欢迎回来!','你获得了 <b>'+Beautify(amount)+'</b> 饼干'+(Math.floor(amount)==1?'':'')+' 在你离开的时候。<br>('+Game.sayTime(timeOfflineOptimal*Game.fps,-1)+' 相当于 '+Math.floor(percent)+'% 饼干每秒总产量'+(timeOfflineReduced?', 加上 '+Game.sayTime(timeOfflineReduced*Game.fps,-1)+' 相当于 '+(Math.floor(percent*10)/100)+'%':'')+'.)',[Math.floor(Math.random()*16),11]);
 								Game.Earn(amount);
 							}
 						}
@@ -1855,7 +1855,7 @@ Game.Launch=function()
 					}
 					else//importing old version save
 					{
-						Game.Notify('Error importing save','Sorry, you can\'t import saves from the old version anymore.','',6,1);
+						Game.Notify('导入错误','对不起，您不能导入旧版本的存档。','',6,1);
 						return false;
 					}
 					
@@ -1905,11 +1905,11 @@ Game.Launch=function()
 				if (cookiesForfeited>=1000000000) Game.Win('遗忘');
 				if (cookiesForfeited>=1000000000000) Game.Win('从头开始');
 				if (cookiesForfeited>=1000000000000000) Game.Win('虚无主义');
-				if (cookiesForfeited>=1000000000000000000) Game.Win('Dematerialize');
-				if (cookiesForfeited>=1000000000000000000000) Game.Win('Nil zero zilch');
-				if (cookiesForfeited>=1000000000000000000000000) Game.Win('Transcendence');
-				if (cookiesForfeited>=1000000000000000000000000000) Game.Win('Obliterate');
-				if (cookiesForfeited>=1000000000000000000000000000000) Game.Win('Negative void');
+				if (cookiesForfeited>=1000000000000000000) Game.Win('非物质化');
+				if (cookiesForfeited>=1000000000000000000000) Game.Win('零零零');
+				if (cookiesForfeited>=1000000000000000000000000) Game.Win('超越');
+				if (cookiesForfeited>=1000000000000000000000000000) Game.Win('消灭');
+				if (cookiesForfeited>=1000000000000000000000000000000) Game.Win('消极的空白');
 				if (cookiesForfeited>=1000000000000000000000000000000000) Game.Win('你说的是面包屑?');
 			}
 			
@@ -2899,7 +2899,7 @@ Game.Launch=function()
 			}
 			
 			str+='<div class="line"></div>';
-			str+='你的糖块会慢慢变成熟 <b>'+Game.sayTime((Game.lumpMatureAge/1000)*Game.fps,-1)+'</b>,<br>ripen after <b>'+Game.sayTime((Game.lumpRipeAge/1000)*Game.fps,-1)+'</b>,<br>and fall after <b>'+Game.sayTime((Game.lumpOverripeAge/1000)*Game.fps,-1)+'</b>.';
+			str+='你的糖块会慢慢变成熟 <b>'+Game.sayTime((Game.lumpMatureAge/1000)*Game.fps,-1)+'</b>,<br>ripen after <b>'+Game.sayTime((Game.lumpRipeAge/1000)*Game.fps,-1)+'</b>,<br>并在之后 <b>'+Game.sayTime((Game.lumpOverripeAge/1000)*Game.fps,-1)+'</b>.';
 			
 			str+='<div class="line"></div>'+
 			'&bull; Sugar lumps can be harvested when ripe, though if left alone beyond that point they will eventually fall and be auto-harvested after some time.<br>&bull; Sugar lumps are delicious and may be used as currency for all sorts of things.<br>&bull; Once a sugar lump is harvested, another one will start growing in its place.<br>&bull; Note that sugar lumps keep growing when the game is closed.';
@@ -2939,8 +2939,8 @@ Game.Launch=function()
 					Game.harvestLumps(1,true);
 					Game.lumpCurrentType=0;//all offline lumps after the first one have a normal type
 					if (amount>1) Game.harvestLumps(amount-1,true);
-					if (Game.prefs.popups) Game.Popup('Harvested '+Beautify(amount)+' sugar lump'+(amount==1?'':'s')+' while you were away');
-					else Game.Notify('','You harvested <b>'+Beautify(amount)+'</b> sugar lump'+(amount==1?'':'s')+' while you were away.',[29,14]);
+					if (Game.prefs.popups) Game.Popup('收获 '+Beautify(amount)+' 糖块'+(amount==1?'':'')+' 在你离开的时候。');
+					else Game.Notify('','你收获了 <b>'+Beautify(amount)+'</b> 糖块'+(amount==1?'':'')+' 在你离开的时候。',[29,14]);
 					Game.lumpT=Date.now()-(age-amount*Game.lumpOverripeAge);
 					Game.computeLumpType();
 				}
@@ -2952,8 +2952,8 @@ Game.Launch=function()
 			Game.lumpsTotal+=yield;
 			
 			if (Game.lumpsTotal>=7) Game.Win('伙计，亲爱的');
-			if (Game.lumpsTotal>=30) Game.Win('Sugar rush');
-			if (Game.lumpsTotal>=365) Game.Win('Year\'s worth of cavities');
+			if (Game.lumpsTotal>=30) Game.Win('糖粉');
+			if (Game.lumpsTotal>=365) Game.Win('一年的蛀牙');
 		}
 		Game.clickLump=function()
 		{
@@ -2963,7 +2963,7 @@ Game.Launch=function()
 			else if (age<Game.lumpRipeAge)
 			{
 				var amount=choose([0,1]);
-				if (amount!=0) Game.Win('Hand-picked');
+				if (amount!=0) Game.Win('精心挑选');
 				Game.harvestLumps(amount);
 				Game.computeLumpType();
 			}
@@ -2985,21 +2985,21 @@ Game.Launch=function()
 				yield*=choose([2,3,4,5,6,7]);
 				Game.gainBuff('sugar blessing',24*60*60,1);
 				Game.Earn(Game.cookies);
-				if (Game.prefs.popups) Game.Popup('糖的祝福 activated!');
-				else Game.Notify('糖的祝福 activated!','Your cookies have been doubled.<br>+10% golden cookies 在接下来的24小时。',[29,16]);
+				if (Game.prefs.popups) Game.Popup('糖的祝福激活!');
+				else Game.Notify('糖的祝福激活!','你的饼干已经翻倍了。<br>+10% 黄金饼干出现几率，在接下来的24小时。',[29,16]);
 			}
 			else if (Game.lumpCurrentType==3) yield*=choose([0,0,1,2,2]);
 			yield=Math.floor(yield);
 			Game.gainLumps(yield);
-			if (Game.lumpCurrentType==1) Game.Win('Sugar sugar');
-			else if (Game.lumpCurrentType==2) Game.Win('All-natural cane sugar');
-			else if (Game.lumpCurrentType==3) Game.Win('Sweetmeats');
+			if (Game.lumpCurrentType==1) Game.Win('糖糖');
+			else if (Game.lumpCurrentType==2) Game.Win('天然蔗糖');
+			else if (Game.lumpCurrentType==3) Game.Win('甜品');
 			
 			if (!silent)
 			{
 				var rect=l('lumpsIcon2').getBoundingClientRect();Game.SparkleAt((rect.left+rect.right)/2,(rect.top+rect.bottom)/2-24);
-				if (yield>0) Game.Popup('<small>+'+Beautify(yield)+' sugar lump'+(yield==1?'':'s')+'</small>',(rect.left+rect.right)/2,(rect.top+rect.bottom)/2-48);
-				else Game.Popup('<small>Botched harvest!</small>',(rect.left+rect.right)/2,(rect.top+rect.bottom)/2-48);
+				if (yield>0) Game.Popup('<small>+'+Beautify(yield)+' 糖块'+(yield==1?'':'')+'</small>',(rect.left+rect.right)/2,(rect.top+rect.bottom)/2-48);
+				else Game.Popup('<small>糟糕的收获!</small>',(rect.left+rect.right)/2,(rect.top+rect.bottom)/2-48);
 				PlaySound('snd/pop'+Math.floor(Math.random()*3+1)+'.mp3',0.75);
 			}
 			Game.computeLumpTimes();
@@ -3128,7 +3128,7 @@ Game.Launch=function()
 			
 			var out=mult*Game.ComputeCps(1,Game.Has('加强的食指')+Game.Has('腕管预防霜')+Game.Has('双手通用'),add);
 			
-			if (Game.hasBuff('Cursed finger')) out=Game.buffs['Cursed finger'].power;
+			if (Game.hasBuff('被诅咒的手指')) out=Game.buffs['被诅咒的手指'].power;
 			return out;
 		}
 		Game.computedMouseCps=1;
@@ -3457,7 +3457,7 @@ Game.Launch=function()
 			Game.globalCpsMult=mult;
 			Game.cookiesPs*=Game.globalCpsMult;
 			
-			//if (Game.hasBuff('Cursed finger')) Game.cookiesPs=0;
+			//if (Game.hasBuff('被诅咒的手指')) Game.cookiesPs=0;
 			
 			Game.computedMouseCps=Game.mouseCps();
 			
@@ -4105,7 +4105,7 @@ Game.Launch=function()
 			"老者狂怒","blood frenzy",
 			"血栓","clot",
 			"Click frenzy","click frenzy",
-			"Cursed finger","cursed finger",
+			"被诅咒的手指","cursed finger",
 			"饼干链","chain cookie",
 			"Cookie storm","cookie storm",
 			"Building special","building special",
@@ -6569,7 +6569,7 @@ Game.Launch=function()
 				if (Game.Has('圣诞老人的统治')) price*=0.98;
 				if (Game.Has('法贝热彩蛋')) price*=0.99;
 				if (Game.Has('神圣销售')) price*=0.99;
-				if (Game.hasBuff('Haggler\'s luck')) price*=0.98;
+				if (Game.hasBuff('运气而已')) price*=0.98;
 				if (Game.hasBuff('Haggler\'s misery')) price*=1.02;
 				if (Game.hasAura('Master of the Armory')) price*=0.98;
 				if (this.pool=='cookie' && Game.Has('神圣的面包店')) price/=5;
@@ -7261,9 +7261,9 @@ Game.Launch=function()
 		new Game.Upgrade('改良愉快','饼干生产增加 <b>+15%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>一个摇摇欲坠的小肚子会有很长的路要走。<br>你快乐吗?</q>',2525,[17,9]);
 		new Game.Upgrade('一堆煤','饼干生产增加 <b>+1%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>一些世界上最糟糕的袜子填充物。<br/>我猜你可以尝试开创自己的小工业革命，还是别的什么?...</q>',2525,[13,9]);
 		new Game.Upgrade('发痒的毛衣','饼干生产增加 <b>+1%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>你不知道更糟糕的是什么:那个令人尴尬的古怪的“驯鹿”图案，或者穿着它会让你感觉像被一个死去的大脚野人裹住一样。</q>',2525,[14,9]);
-		new Game.Upgrade('驯鹿烘烤场','驯鹿出现 <b>两倍频繁</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>雄性驯鹿来自火星;雌性驯鹿是鹿肉。</q>',2525,[12,9]);
-		new Game.Upgrade('加重雪橇','驯鹿 <b>两倍地慢</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>希望它物有所值。<br>(某物被迫成为某物)</q>',2525,[12,9]);
-		new Game.Upgrade('何蚝味糖霜','驯鹿给 <b>两倍一样多</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>这是我该起床的时候了。</q>',2525,[12,9]);
+		new Game.Upgrade('驯鹿烘烤场','驯鹿出现频率 <b>两倍频繁</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>雄性驯鹿来自火星;雌性驯鹿是鹿肉。</q>',2525,[12,9]);
+		new Game.Upgrade('加重雪橇','驯鹿离开速度 <b>放慢2倍</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>希望它物有所值。<br>(某物被迫成为某物)</q>',2525,[12,9]);
+		new Game.Upgrade('何蚝味糖霜','点击驯鹿的奖励 <b>两倍一样多</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>这是我该起床的时候了。</q>',2525,[12,9]);
 		new Game.Upgrade('季节储蓄','所有建筑都便宜 <b>1%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>圣诞老人的胡子，什么储蓄!<br/>谁会来救我们?</q>',2525,[16,9],function(){Game.storeToRefresh=1;});
 		new Game.Upgrade('玩具车间','所有升级都便宜 <b>5%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>看着你身边的精灵，他们可能会偷走我们的生产秘密。<br>或者更糟!</q>',2525,[16,9],function(){Game.upgradesToRebuild=1;});
 		new Game.Upgrade('淘气名单','老奶奶生产工作效率像 <b>双倍</b> 一样卓有成效。<br>以圣诞老人等级为标准的成本衡量表。<q>这个名单包含了每一个由格兰德克德人延续的不神圣的行为。<br>他赢不了两次了。<br>一次。一次就足够了。</q>',2525,[15,9]);
@@ -7407,7 +7407,7 @@ Game.Launch=function()
 		Game.DropEgg=function(failRate)
 		{
 			if (Game.season!='easter') return;
-			if (Game.HasAchiev('Hide & seek champion')) failRate*=0.7;
+			if (Game.HasAchiev('捉迷藏冠军')) failRate*=0.7;
 			if (Game.Has('Omelette')) failRate*=0.9;
 			if (Game.Has('星人')) failRate*=0.9;
 			if (Game.hasGod)
@@ -7553,14 +7553,14 @@ Game.Launch=function()
 		new Game.Upgrade('星际贸易','黄金饼干出现 <b>5%</b> 更多地 during Business day.',111111,[17,6]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
 		
 		var angelPriceFactor=7;
-		var desc=function(percent,total){return '你获得了 another <b>+'+percent+'%</b> of your regular CpS while the game is closed, for a total of <b>'+total+'%</b>.';}
-		new Game.Upgrade('Angels',desc(10,15)+'<q>Lowest-ranking at the first sphere of pastry heaven, angels are tasked with delivering new recipes to the mortals they deem worthy.</q>',Math.pow(angelPriceFactor,1),[0,11]);Game.last.pool='prestige';Game.last.parents=['双重超越之门'];
-		new Game.Upgrade('Archangels',desc(10,25)+'<q>Members of the first sphere of pastry heaven, archangels are responsible for the smooth functioning of the world\'s largest bakeries.</q>',Math.pow(angelPriceFactor,2),[1,11]);Game.last.pool='prestige';Game.last.parents=['Angels'];
-		new Game.Upgrade('Virtues',desc(10,35)+'<q>Found at the second sphere of pastry heaven, virtues make use of their heavenly strength to push and drag the stars of the cosmos.</q>',Math.pow(angelPriceFactor,3),[2,11]);Game.last.pool='prestige';Game.last.parents=['Archangels'];
-		new Game.Upgrade('Dominions',desc(10,45)+'<q>Ruling over the second sphere of pastry heaven, dominions hold a managerial position and are in charge of accounting and regulating schedules.</q>',Math.pow(angelPriceFactor,4),[3,11]);Game.last.pool='prestige';Game.last.parents=['Virtues'];
-		new Game.Upgrade('Cherubim',desc(10,55)+'<q>Sieging at the first sphere of pastry heaven, the four-faced cherubim serve as heavenly bouncers and bodyguards.</q>',Math.pow(angelPriceFactor,5),[4,11]);Game.last.pool='prestige';Game.last.parents=['Dominions'];
-		new Game.Upgrade('Seraphim',desc(10,65)+'<q>Leading the first sphere of pastry heaven, seraphim possess ultimate knowledge of everything pertaining to baking.</q>',Math.pow(angelPriceFactor,6),[5,11]);Game.last.pool='prestige';Game.last.parents=['Cherubim'];
-		new Game.Upgrade('God',desc(10,75)+'<q>Like Santa, but less fun.</q>',Math.pow(angelPriceFactor,7),[6,11]);Game.last.pool='prestige';Game.last.parents=['Seraphim'];
+		var desc=function(percent,total){return '你获得了另外 <b>+'+percent+'%</b> 当前饼干每秒产量, 总共 <b>'+total+'%</b>.';}
+		new Game.Upgrade('天使',desc(10,15)+'<q>在糕点天堂的第一层，天使们的任务是向他们认为有价值的人提供新的食谱。</q>',Math.pow(angelPriceFactor,1),[0,11]);Game.last.pool='prestige';Game.last.parents=['双重超越之门'];
+		new Game.Upgrade('大天使',desc(10,25)+'<q>天使长们是第一个糕点天堂的成员，他们负责世界上最大的面包房的顺利运转。</q>',Math.pow(angelPriceFactor,2),[1,11]);Game.last.pool='prestige';Game.last.parents=['天使'];
+		new Game.Upgrade('美德',desc(10,35)+'<q>在糕点天堂的第二层发现，美德利用他们的天力量来推和拉宇宙之星。</q>',Math.pow(angelPriceFactor,3),[2,11]);Game.last.pool='prestige';Game.last.parents=['大天使'];
+		new Game.Upgrade('领土',desc(10,45)+'<q>在糕点天堂的第二个领域，自治领有一个管理职位，负责会计和管理的日程安排。</q>',Math.pow(angelPriceFactor,4),[3,11]);Game.last.pool='prestige';Game.last.parents=['美德'];
+		new Game.Upgrade('小天使',desc(10,55)+'<q>在糕点天堂的第一层，四面派的小天使是天堂的护卫和保镖。</q>',Math.pow(angelPriceFactor,5),[4,11]);Game.last.pool='prestige';Game.last.parents=['领土'];
+		new Game.Upgrade('六翼天使',desc(10,65)+'<q>在糕点天堂的第一个领域，六翼天使拥有关于烘焙的所有知识。</q>',Math.pow(angelPriceFactor,6),[5,11]);Game.last.pool='prestige';Game.last.parents=['小天使'];
+		new Game.Upgrade('上帝',desc(10,75)+'<q>就像圣诞老人一样，但乐趣却少了。</q>',Math.pow(angelPriceFactor,7),[6,11]);Game.last.pool='prestige';Game.last.parents=['六翼天使'];
 		
 		new Game.Upgrade('双重超越之门','你现在可以 <b>离线制作饼干</b>, 比率是 <b>5%</b> 你当前饼干每秒产量，离线生产资源的时间是游戏关闭后 <b>1 小时</b>。<br>(超过1小时后，这个比例又降低了90%——你的比率下降到 <b>0.5%</b> 总秒收益.)<q>这是一次你总是穿得不得体的场合。别担心，只要冲过保镖，假装你认识人。</q>',1,[15,11]);Game.last.pool='prestige';
 
@@ -7572,59 +7572,59 @@ Game.Launch=function()
 		new Game.Upgrade('神圣销售','Upgrades are <b>1% cheaper</b>.<q>一切都得过去!</q>',99999,[18,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
 		new Game.Upgrade('神圣的面包店','Cookie upgrades are <b>5 times cheaper</b>.<q>他们肯定知道自己在做什么。</q>',399999,[17,7]);Game.last.pool='prestige';Game.last.parents=['神圣销售','神圣折扣'];
 		
-		new Game.Upgrade('启动装置','You start with <b>10 cursors</b>.<q>This can come in handy.</q>',50,[0,14]);Game.last.pool='prestige';Game.last.parents=['一罐英国茶饼干','马卡龙盒子','品牌饼干盒','奶油饼干罐头'];
-		new Game.Upgrade('启动厨房','You start with <b>5 grandmas</b>.<q>这些东西是从哪里来的?</q>',5000,[1,14]);Game.last.pool='prestige';Game.last.parents=['启动装置'];
-		new Game.Upgrade('光环手套','Clicks are <b>10% more powerful</b>.<q>吃了那饼干。</q>',55555,[22,7]);Game.last.pool='prestige';Game.last.parents=['启动装置'];
+		new Game.Upgrade('启动装置','你开局时有 <b>10 游标</b>.<q>这可以派上用场。</q>',50,[0,14]);Game.last.pool='prestige';Game.last.parents=['一罐英国茶饼干','马卡龙盒子','品牌饼干盒','奶油饼干罐头'];
+		new Game.Upgrade('启动厨房','你开局时有 <b>5 老奶奶</b>.<q>这些东西是从哪里来的?</q>',5000,[1,14]);Game.last.pool='prestige';Game.last.parents=['启动装置'];
+		new Game.Upgrade('光环手套','点击效果增加 <b>10%</b>.<q>吃了那饼干。</q>',55555,[22,7]);Game.last.pool='prestige';Game.last.parents=['启动装置'];
 
-		new Game.Upgrade('小猫天使','你获得了 <b>更多的饼干每秒产量</b> 你的牛奶越多。<q>所有的猫都会去天堂。</q>',9000,[23,7]);Game.last.pool='prestige';Game.last.parents=['Dominions'];Game.last.kitten=1;
+		new Game.Upgrade('小猫天使','你获得了 <b>更多的饼干每秒产量</b> 你的牛奶越多。<q>所有的猫都会去天堂。</q>',9000,[23,7]);Game.last.pool='prestige';Game.last.parents=['领土'];Game.last.kitten=1;
 		
 		new Game.Upgrade('邪恶的诱饵','皱纹出现工作效率像 <b>5 次</b> 那么快。<q>没有皱纹可以抵御蠕虫饼干的气味。</q>',44444,[15,12]);Game.last.pool='prestige';Game.last.parents=['启动厨房'];
-		new Game.Upgrade('亵渎神明','Wrinklers regurgitate <b>5%</b> more cookies.<q>独特的动物王国，皱纹消化道能够承受难以置信程度的扩张——只要你适当地刺激它们。</q>',444444,[19,8]);Game.last.pool='prestige';Game.last.parents=['邪恶的诱饵'];
+		new Game.Upgrade('亵渎神明','起皱的人获得 <b>5%</b> 更多的饼干。<q>独特的动物王国，皱纹消化道能够承受难以置信程度的扩张——只要你适当地刺激它们。</q>',444444,[19,8]);Game.last.pool='prestige';Game.last.parents=['邪恶的诱饵'];
 		
 		
-		order=200;new Game.TieredUpgrade('Xtreme walkers','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>配上火焰贴纸和一个小喇叭，“嘟嘟”。</q>','Grandma',7);
-		order=300;new Game.TieredUpgrade('Fudge fungus','农场生产工作效率像 <b>双倍</b> 一样高效。<q>一种含糖的寄生虫，其卷须帮助饼干生长。<br>请不要在孢子里呼吸。如果有孢子摄入，在接下来的36秒内寻求医疗帮助。</q>','Farm',7);
-		order=400;new Game.TieredUpgrade('Planetsplitters','矿山工作效率像 <b>双倍</b> 一样高效。<q>这些新型的挖土机已经在马鲁拉，格洛伯特和弗瓦扎·维的实验中进行了测试，在其他遥远的星球上，它们最近都很安静。</q>','Mine',7);
-		order=500;new Game.TieredUpgrade('Cyborg workforce','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>半合成的生物体没有松懈，没有统一，午休时间缩短了20%，这使它们成为理想的劳动饲料。</q>','Factory',7);
-		order=525;new Game.TieredUpgrade('Way of the wallet','银行工作效率像 <b>双倍</b> 一样高效。<q>这种新的货币学派在银行界引起了激烈的讨论;遵循它的规则，你就可以从中获利。</q>','Bank',7);
-		order=550;new Game.TieredUpgrade('Creation myth','寺庙像 <b>双倍</b> 一样高效。<q>关于第一个饼干的起源的故事一直流传着;故事是如何开始的，在时间和命运的烤箱里。</q>','Temple',7);
-		order=575;new Game.TieredUpgrade('Cookiemancy','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>在这里;完美的烘焙魔法学校。从召唤晶片到打螺帽，没有任何一种饼干制作方法能通过魔术提高10倍的效果。</q>','Wizard tower',7);
-		order=600;new Game.TieredUpgrade('Dyson sphere','装船工作效率像 <b>双倍</b> 一样高效。<q>你已经找到了一种方法，将你的宇宙技术知识运用到更局部的努力中;这个巨大的元材料球体包裹着太阳系，肯定会让你的烘焙能力提高一个档次。</q>','Shipment',7);
-		order=700;new Game.TieredUpgrade('Theory of atomic fluidity','炼金实验室像<b>双倍</b> 一样高效。<q>把炼金术推向极限，你会发现一切事物都可以转化成其他东西——铅、水银、水;更重要的是，你意识到任何东西都可以而且应该被转换成饼干。</q>','Alchemy lab',7);
-		order=800;new Game.TieredUpgrade('End of times back-up plan','传送门像<b>双倍</b> 一样高效。<q>以防万一，好吗?</q>','Portal',7);
-		order=900;new Game.TieredUpgrade('Great loop hypothesis','时光机器工作效率像 <b>双倍</b> 一样高效。<q>如果我们的宇宙只是一个无限循环的一个实例呢?如果，在它之前和之后，无限延伸的相同的宇宙，它们本身含有无限的饼干?</q>','Time machine',7);
-		order=1000;new Game.TieredUpgrade('The Pulse','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>你已经进入了宇宙的脉搏，这是一种永恒的节奏，每一种材料和反物质都能和谐地跳动。不知何故，这意味着更多的饼干。</q>','Antimatter condenser',7);
+		order=200;new Game.TieredUpgrade('播放器步行者','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>配上火焰贴纸和一个小喇叭，“嘟嘟”。</q>','Grandma',7);
+		order=300;new Game.TieredUpgrade('软糖真菌','农场生产工作效率像 <b>双倍</b> 一样高效。<q>一种含糖的寄生虫，其卷须帮助饼干生长。<br>请不要在孢子里呼吸。如果有孢子摄入，在接下来的36秒内寻求医疗帮助。</q>','Farm',7);
+		order=400;new Game.TieredUpgrade('行星分裂器','矿山工作效率像 <b>双倍</b> 一样高效。<q>这些新型的挖土机已经在马鲁拉，格洛伯特和弗瓦扎·维的实验中进行了测试，在其他遥远的星球上，它们最近都很安静。</q>','Mine',7);
+		order=500;new Game.TieredUpgrade('半机械人','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>半合成的生物体没有松懈，没有统一，午休时间缩短了20%，这使它们成为理想的劳动饲料。</q>','Factory',7);
+		order=525;new Game.TieredUpgrade('钱包的方式','银行工作效率像 <b>双倍</b> 一样高效。<q>这种新的货币学派在银行界引起了激烈的讨论;遵循它的规则，你就可以从中获利。</q>','Bank',7);
+		order=550;new Game.TieredUpgrade('创造神话','寺庙像 <b>双倍</b> 一样高效。<q>关于第一个饼干的起源的故事一直流传着;故事是如何开始的，在时间和命运的烤箱里。</q>','Temple',7);
+		order=575;new Game.TieredUpgrade('饼干男','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>在这里;完美的烘焙魔法学校。从召唤晶片到打螺帽，没有任何一种饼干制作方法能通过魔术提高10倍的效果。</q>','Wizard tower',7);
+		order=600;new Game.TieredUpgrade('戴森球','装船工作效率像 <b>双倍</b> 一样高效。<q>你已经找到了一种方法，将你的宇宙技术知识运用到更局部的努力中;这个巨大的元材料球体包裹着太阳系，肯定会让你的烘焙能力提高一个档次。</q>','Shipment',7);
+		order=700;new Game.TieredUpgrade('原子流动性理论','炼金实验室像<b>双倍</b> 一样高效。<q>把炼金术推向极限，你会发现一切事物都可以转化成其他东西——铅、水银、水;更重要的是，你意识到任何东西都可以而且应该被转换成饼干。</q>','Alchemy lab',7);
+		order=800;new Game.TieredUpgrade('最后的备份计划','传送门像<b>双倍</b> 一样高效。<q>以防万一，好吗?</q>','Portal',7);
+		order=900;new Game.TieredUpgrade('伟大的循环假说','时光机器工作效率像 <b>双倍</b> 一样高效。<q>如果我们的宇宙只是一个无限循环的一个实例呢?如果，在它之前和之后，无限延伸的相同的宇宙，它们本身含有无限的饼干?</q>','Time machine',7);
+		order=1000;new Game.TieredUpgrade('脉冲','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>你已经进入了宇宙的脉搏，这是一种永恒的节奏，每一种材料和反物质都能和谐地跳动。不知何故，这意味着更多的饼干。</q>','Antimatter condenser',7);
 		order=1100;
-		new Game.TieredUpgrade('Lux sanctorum','棱镜工作效率像 <b>双倍</b> 一样高效。<q>你的“棱镜”服务人员已经变得越来越着迷于某些东西——或者是一些超越它的东西;超出了我们所有人,可能吗?</q>','Prism',7);
+		new Game.TieredUpgrade('神圣化','棱镜工作效率像 <b>双倍</b> 一样高效。<q>你的“棱镜”服务人员已经变得越来越着迷于某些东西——或者是一些超越它的东西;超出了我们所有人,可能吗?</q>','Prism',7);
 		
 		
-		order=200;new Game.TieredUpgrade('The Unbridling','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>It might be a classic tale of bad parenting, but let\'s see where grandma is going with this.</q>','Grandma',8);
-		order=300;new Game.TieredUpgrade('Wheat triffids','农场生产工作效率像 <b>双倍</b> 一样高效。<q>Taking care of crops is so much easier when your plants can just walk about and help around the farm.<br>Do not pet. Do not feed. Do not attempt to converse with.</q>','Farm',8);
-		order=400;new Game.TieredUpgrade('Canola oil wells','矿山工作效率像 <b>双倍</b> 一样高效。<q>A previously untapped resource, canola oil permeates the underground olifers which grant it its particular taste and lucrative properties.</q>','Mine',8);
-		order=500;new Game.TieredUpgrade('78-hour days','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>Why didn\'t we think of this earlier?</q>','Factory',8);
-		order=525;new Game.TieredUpgrade('The stuff rationale','银行工作效率像 <b>双倍</b> 一样高效。<q>If not now, when? If not it, what? If not things... stuff?</q>','Bank',8);
-		order=550;new Game.TieredUpgrade('Theocracy','寺庙像 <b>双倍</b> 一样高效。<q>You\'ve turned your cookie empire into a perfect theocracy, gathering the adoration of zillions of followers from every corner of the universe.<br>Don\'t let it go to your head.</q>','Temple',8);
-		order=575;new Game.TieredUpgrade('Rabbit trick','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>Using nothing more than a fancy top hat, your wizards have found a way to simultaneously curb rabbit population and produce heaps of extra cookies for basically free!<br>Resulting cookies may or may not be fit for vegans.</q>','Wizard tower',8);
-		order=600;new Game.TieredUpgrade('The final frontier','装船工作效率像 <b>双倍</b> 一样高效。<q>It\'s been a long road, getting from there to here. It\'s all worth it though - the sights are lovely and the oil prices slightly more reasonable.</q>','Shipment',8);
-		order=700;new Game.TieredUpgrade('Beige goo','炼金实验室像<b>双倍</b> 一样高效。<q>Well now you\'ve done it. Good job. Very nice. That\'s 3 galaxies you\'ve just converted into cookies. Good thing you can hop from universe to universe.</q>','Alchemy lab',8);
-		order=800;new Game.TieredUpgrade('Maddening chants','传送门像<b>双倍</b> 一样高效。<q>A popular verse goes like so : "jau\'hn madden jau\'hn madden aeiouaeiouaeiou brbrbrbrbrbrbr"</q>','Portal',8);
-		order=900;new Game.TieredUpgrade('Cookietopian moments of maybe','时光机器工作效率像 <b>双倍</b> 一样高效。<q>Reminiscing how things could have been, should have been, will have been.</q>','Time machine',8);
-		order=1000;new Game.TieredUpgrade('Some other super-tiny fundamental particle? Probably?','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>When even the universe is running out of ideas, that\'s when you know you\'re nearing the end.</q>','Antimatter condenser',8);
+		order=200;new Game.TieredUpgrade('未被发现的','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>这可能是一个糟糕的育儿方式的经典故事，但是让我们来看看奶奶是怎么做的。</q>','Grandma',8);
+		order=300;new Game.TieredUpgrade('小麦的由来','农场生产工作效率像 <b>双倍</b> 一样高效。<q>当你的植物可以在农场里到处走走，帮助你的时候，照料庄稼就容易多了。<br>没有宠物。不要进食。不要试图与之交谈。</q>','Farm',8);
+		order=400;new Game.TieredUpgrade('菜籽油井','矿山工作效率像 <b>双倍</b> 一样高效。<q>菜籽油是一种以前未开发的资源，它渗透在地下的橄榄石中，使其具有独特的味道和丰厚的性能</q>','Mine',8);
+		order=500;new Game.TieredUpgrade('78小时天','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>我们为什么不早点想到这个呢?</q>','Factory',8);
+		order=525;new Game.TieredUpgrade('基本原理','银行工作效率像 <b>双倍</b> 一样高效。<q>如果不是现在,更待何时?如果不是，是什么?如果不是东西……东西呢?</q>','Bank',8);
+		order=550;new Game.TieredUpgrade('神权政治','寺庙像 <b>双倍</b> 一样高效。<q>你把你的饼干帝国变成了一个完美的神权政治，聚集了无数的追随者，从宇宙的每一个角落。<br/>别让它冲昏了你的头。</q>','Temple',8);
+		order=575;new Game.TieredUpgrade('兔子戏法','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>除了一顶华丽的帽子外，你的巫师们已经找到了一种方法，可以同时控制兔子的数量，并能产生大量额外的饼干，基本上是免费的!<br>由此产生的饼干可能不适合纯素食者。</q>','Wizard tower',8);
+		order=600;new Game.TieredUpgrade('最后的边界','装船工作效率像 <b>双倍</b> 一样高效。<q>从那里到这里，这条路很长。不过，这一切都是值得的——景色很美，油价也稍微合理一些。</q>','Shipment',8);
+		order=700;new Game.TieredUpgrade('原色古果','炼金实验室像<b>双倍</b> 一样高效。<q>现在，你已经做到了。干得好。很好。这是你的3个星系，你刚刚把它们转换成饼干。你可以从宇宙跳跃到宇宙。</q>','Alchemy lab',8);
+		order=800;new Game.TieredUpgrade('疯狂的圣歌','传送门像<b>双倍</b> 一样高效。<q>流行的诗句是这样的 : "jau\'hn madden jau\'hn madden aeiouaeiouaeiou brbrbrbrbrbrbr"</q>','Portal',8);
+		order=900;new Game.TieredUpgrade('也许是小饼干的时候','时光机器工作效率像 <b>双倍</b> 一样高效。<q>追忆过去的事，本应是如此。</q>','Time machine',8);
+		order=1000;new Game.TieredUpgrade('还有其他超微小的基本粒子吗?“可能”?','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>当连宇宙都没了主意的时候，当你知道你快要结束的时候。</q>','Antimatter condenser',8);
 		order=1100;
-		new Game.TieredUpgrade('Reverse shadows','棱镜工作效率像 <b>双倍</b> 一样高效。<q>Oh man, this is really messing with your eyes.</q>','Prism',8);
+		new Game.TieredUpgrade('反向阴影','棱镜工作效率像 <b>双倍</b> 一样高效。<q>哦，老兄，这真让你的眼睛大乱。</q>','Prism',8);
 		
 		
 		order=20000;
-		new Game.Upgrade('小猫会计','你获得了 <b>更多的饼干每秒产量</b> 你的牛奶越多。<q>business going great, sir</q>',900000000000000000000000,Game.GetIcon('Kitten',6));Game.last.kitten=1;
-		new Game.Upgrade('小猫专家','你获得了 <b>更多的饼干每秒产量</b> 你的牛奶越多。<q>optimeowzing your workflow like whoah, sir</q>',900000000000000000000000000,Game.GetIcon('Kitten',7));Game.last.kitten=1;
-		new Game.Upgrade('小猫能手','你获得了 <b>更多的饼干每秒产量</b> 你的牛奶越多。<q>10 years expurrrtise in the cookie business, sir</q>',900000000000000000000000000000,Game.GetIcon('Kitten',8));Game.last.kitten=1;
+		new Game.Upgrade('小猫会计','你获得了 <b>更多的饼干每秒产量</b> 你的牛奶越多。<q>生意很好，先生</q>',900000000000000000000000,Game.GetIcon('Kitten',6));Game.last.kitten=1;
+		new Game.Upgrade('小猫专家','你获得了 <b>更多的饼干每秒产量</b> 你的牛奶越多。<q>乐观地调整你的工作流程，先生</q>',900000000000000000000000000,Game.GetIcon('Kitten',7));Game.last.kitten=1;
+		new Game.Upgrade('小猫能手','你获得了 <b>更多的饼干每秒产量</b> 你的牛奶越多。<q>先生，10年时间在饼干生意中度过了</q>',900000000000000000000000000000,Game.GetIcon('Kitten',8));Game.last.kitten=1;
 		
 		new Game.Upgrade('如何烤你的龙','一旦你获得了100万个饼干，你就可以购买一个<b>易碎的鸡蛋</b>。<q>这本书里有很多有用的建议，比如“哦，上帝，离它远点”，“我们为什么要买这个东西，它甚至连房子都没破”和“一周两次，朝着天平的方向”。</q>',9,[22,12]);Game.last.pool='prestige';
 
 		order=25100;
 		new Game.Upgrade('易碎的鸡蛋','解锁 <b>饼干龙蛋</b>.<q>谢谢你收养了这个健壮的，有趣的饼干龙!它将给你带来数年的欢乐和娱乐。<br>保持干燥凉爽的环境，远离其他宠物。强烈建议购买家庭保险。</q>',25,[21,12]);
 		
-		new Game.Upgrade('奇美拉','协同升级的成本<b>降低了2%</b>。<br>你获得了另外 <b>+5%</b> 基本饼干产量，当游戏关闭时。<br>当游戏关闭 <b>2 天以上</b> 时，会保持最优的饼干生产。<q>比它的各个部分的总和还多。</q>',Math.pow(angelPriceFactor,8),[24,7]);Game.last.pool='prestige';Game.last.parents=['God','路西法','协同效应2'];
+		new Game.Upgrade('奇美拉','协同升级的成本<b>降低了2%</b>。<br>你获得了另外 <b>+5%</b> 基本饼干产量，当游戏关闭时。<br>当游戏关闭 <b>2 天以上</b> 时，会保持最优的饼干生产。<q>比它的各个部分的总和还多。</q>',Math.pow(angelPriceFactor,8),[24,7]);Game.last.pool='prestige';Game.last.parents=['上帝','路西法','协同效应2'];
 		
 		new Game.Upgrade('奶油饼干罐头','含有丰富的奶油饼干。<q>丹麦饼干的五个品种。<br/>配小纸杯。</q>',25,[21,9]);Game.last.pool='prestige';Game.last.parents=['天堂饼干'];
 		
@@ -7801,7 +7801,7 @@ Game.Launch=function()
 		new Game.SynergyUpgrade('印刷机','<q>Fake bills so real, they\'re almost worth the ink they\'re printed with.</q>','Bank','Factory','synergy2');
 		
 		new Game.SynergyUpgrade('异教','<q>Some deities are better left unworshipped.</q>','Temple','Portal','synergy1');
-		new Game.SynergyUpgrade('上帝粒子','<q>Turns out God is much tinier than we thought, I guess.</q>','Temple','Antimatter condenser','synergy2');
+		new Game.SynergyUpgrade('上帝粒子','<q>Turns out 上帝 is much tinier than we thought, I guess.</q>','Temple','Antimatter condenser','synergy2');
 		
 		new Game.SynergyUpgrade('奥术知识','<q>Some things were never meant to be known - only mildly speculated.</q>','Wizard tower','Alchemy lab','synergy1');
 		new Game.SynergyUpgrade('神奇植物学','<q>Already known in some reactionary newspapers as "the wizard\'s GMOs".</q>','Wizard tower','Farm','synergy2');
@@ -7825,8 +7825,8 @@ Game.Launch=function()
 		new Game.SynergyUpgrade('神秘的能量','<q>Something beckons from within the light. It is warm, comforting, and apparently the cause for several kinds of exotic skin cancers.</q>','Prism','Temple','synergy2');
 		
 		
-		new Game.Upgrade('协同效应1','解锁 a new tier of upgrades that affect <b>2 buildings at the same time</b>.<br>Synergies appear once you have <b>15</b> of both buildings.<q>The many beats the few.</q>',2525,[10,20]);Game.last.pool='prestige';Game.last.parents=['撒旦','Dominions'];
-		new Game.Upgrade('协同效应2','解锁 a new tier of upgrades that affect <b>2 buildings at the same time</b>.<br>Synergies appear once you have <b>75</b> of both buildings.<q>The several beats the many.</q>',252525,[10,20]);Game.last.pool='prestige';Game.last.parents=['恶魔','Seraphim','协同效应1'];
+		new Game.Upgrade('协同效应1','解锁 a new tier of upgrades that affect <b>2 buildings at the same time</b>.<br>Synergies appear once you have <b>15</b> of both buildings.<q>The many beats the few.</q>',2525,[10,20]);Game.last.pool='prestige';Game.last.parents=['撒旦','领土'];
+		new Game.Upgrade('协同效应2','解锁 a new tier of upgrades that affect <b>2 buildings at the same time</b>.<br>Synergies appear once you have <b>75</b> of both buildings.<q>The several beats the many.</q>',252525,[10,20]);Game.last.pool='prestige';Game.last.parents=['恶魔','六翼天使','协同效应1'];
 		
 		new Game.Upgrade('天堂饼干','饼干生产增加 <b>+10% 永久产量</b>.<q>和天堂芯片一起拷。另一种超越时间和空间的文字。</q>',3,[25,12]);Game.last.pool='prestige';Game.last.parents=['遗产'];Game.last.power=10;Game.last.pseudoCookie=true;
 		new Game.Upgrade('皱纹饼干','饼干生产增加 <b>+10% 永久地</b>.<q>在一个时间和空间都没有意义的地方，普通饼干的结果会让无数的电子人离开。</q>',6666666,[26,12]);Game.last.pool='prestige';Game.last.parents=['亵渎神明','老香料'];Game.last.power=10;Game.last.pseudoCookie=true;
@@ -8441,114 +8441,114 @@ Game.Launch=function()
 		order=2000;new Game.TieredAchievement('升起，闪耀','拥有 <b>200</b> 棱镜。','Prism',5);
 		
 		order=30200;
-		new Game.Achievement('God complex','Name yourself <b>Orteil</b>.<div class="warning">Note : usurpers incur a -1% CpS penalty until they rename themselves something else.</div><q>But that\'s not you, is it?</q>',[17,5]);Game.last.pool='shadow';
-		new Game.Achievement('Third-party','Use an <b>add-on</b>.<q>Some find vanilla to be the most boring flavor.</q>',[16,5]);Game.last.pool='shadow';//if you're making a mod, add a Game.Win('Third-party') somewhere in there!
+		new Game.Achievement('上帝情结','说出你的名字<b>奥泰伊</b>.<div class="warning">注意，篡位者会受到1%的饼干秒产量处罚直到他们重新给自己改名。</div><q>但那不是你，对吗?</q>',[17,5]);Game.last.pool='shadow';
+		new Game.Achievement('第三方','使用一个 <b>附加组件</b>.<q>有些人觉得香草是最无聊的味道。</q>',[16,5]);Game.last.pool='shadow';//if you're making a mod, add a Game.Win('第三方') somewhere in there!
 		
 		order=30050;
-		new Game.Achievement('Dematerialize','转生时有 <b>1 quintillion</b> 烘烤的饼干。<q>Presto!<br>...where\'d the cookies go?</q>',[11,7]);
-		new Game.Achievement('Nil zero zilch','转生时有 <b>1 sextillion</b> 烘烤的饼干。<q>To summarize : really not very much at all.</q>',[11,7]);
-		new Game.Achievement('Transcendence','转生时有 <b>1 septillion</b> 烘烤的饼干。<q>Your cookies are now on a higher plane of being.</q>',[11,8]);
-		new Game.Achievement('Obliterate','转生时有 <b>1 octillion</b> 烘烤的饼干。<q>Resistance is futile, albeit entertaining.</q>',[11,8]);
-		new Game.Achievement('Negative void','转生时有 <b>1 nonillion</b> 烘烤的饼干。<q>You now have so few cookies that it\'s almost like you have a negative amount of them.</q>',[11,8]);
+		new Game.Achievement('非物质化','转生时有 <b>1 quintillion</b> 烘烤的饼干。<q>您看!<br>...饼干去哪儿了?</q>',[11,7]);
+		new Game.Achievement('零零零','转生时有 <b>1 sextillion</b> 烘烤的饼干。<q>总而言之:真的一点也不重要。</q>',[11,7]);
+		new Game.Achievement('超越','转生时有 <b>1 septillion</b> 烘烤的饼干。<q>你的饼干现在在更高的平面上。</q>',[11,8]);
+		new Game.Achievement('消灭','转生时有 <b>1 octillion</b> 烘烤的饼干。<q>Resistance is futile, albeit entertaining.</q>',[11,8]);
+		new Game.Achievement('消极的空白','转生时有 <b>1 nonillion</b> 烘烤的饼干。<q>你现在有那么少的饼干，就像你的饼干数量是负数一样。</q>',[11,8]);
 		
 		order=22400;
-		new Game.Achievement('The hunt is on','解锁 <b>1 egg</b>.',[1,12]);
-		new Game.Achievement('Egging on','解锁 <b>7 eggs</b>.',[4,12]);
-		new Game.Achievement('Mass Easteria','解锁 <b>14 eggs</b>.',[7,12]);
-		new Game.Achievement('Hide & seek champion','解锁 <b>all the eggs</b>.<br>Owning this achievement makes eggs drop more frequently in future playthroughs.',[13,12]);
+		new Game.Achievement('狩猎开始了','解锁 <b>1 蛋</b>.',[1,12]);
+		new Game.Achievement('鸡蛋开始了','解锁 <b>7 蛋</b>.',[4,12]);
+		new Game.Achievement('复活节弥撒','解锁 <b>14 蛋</b>.',[7,12]);
+		new Game.Achievement('捉迷藏冠军','解锁 <b>所有的蛋</b>。<br>拥有这一成就，在未来的游戏中，鸡蛋会更容易掉落。',[13,12]);
 	
 		order=11000;
-		new Game.Achievement('What\'s in a name','Give your bakery a name.',[15,9]);
+		new Game.Achievement('名字里有什么','给你的面包店起个名字。',[15,9]);
 	
 	
 		order=1425;
-		new Game.TieredAchievement('Pretty penny','拥有 <b>1</b> bank.','Bank',1);
-		new Game.TieredAchievement('Fit the bill','拥有 <b>50</b> 银行。','Bank',2);
-		new Game.TieredAchievement('A loan in the dark','拥有 <b>100</b> 银行。','Bank',3);
-		new Game.TieredAchievement('Need for greed','拥有 <b>150</b> 银行。','Bank',4);
-		new Game.TieredAchievement('It\'s the economy, stupid','拥有 <b>200</b> 银行。','Bank',5);
+		new Game.TieredAchievement('一大笔钱','拥有 <b>1</b> 银行。','Bank',1);
+		new Game.TieredAchievement('符合要求','拥有 <b>50</b> 银行。','Bank',2);
+		new Game.TieredAchievement('黑暗中的一笔贷款','拥有 <b>100</b> 银行。','Bank',3);
+		new Game.TieredAchievement('贪婪需求','拥有 <b>150</b> 银行。','Bank',4);
+		new Game.TieredAchievement('这是经济，笨蛋','拥有 <b>200</b> 银行。','Bank',5);
 		order=1450;
-		new Game.TieredAchievement('Your time to shrine','拥有 <b>1</b> temple.','Temple',1);
-		new Game.TieredAchievement('Shady sect','拥有 <b>50</b> 寺庙。','Temple',2);
-		new Game.TieredAchievement('New-age cult','拥有 <b>100</b> 寺庙。','Temple',3);
-		new Game.TieredAchievement('Organized religion','拥有 <b>150</b> 寺庙。','Temple',4);
-		new Game.TieredAchievement('Fanaticism','拥有 <b>200</b> 寺庙。','Temple',5);
+		new Game.TieredAchievement('你去神殿的时间','拥有 <b>1</b> 寺庙。','Temple',1);
+		new Game.TieredAchievement('阴暗的教派','拥有 <b>50</b> 寺庙。','Temple',2);
+		new Game.TieredAchievement('新时代崇拜','拥有 <b>100</b> 寺庙。','Temple',3);
+		new Game.TieredAchievement('有组织的宗教','拥有 <b>150</b> 寺庙。','Temple',4);
+		new Game.TieredAchievement('狂热','拥有 <b>200</b> 寺庙。','Temple',5);
 		order=1475;
-		new Game.TieredAchievement('Bewitched','拥有 <b>1</b> wizard tower.','Wizard tower',1);
-		new Game.TieredAchievement('The sorcerer\'s apprentice','拥有 <b>50</b> 精灵塔。','Wizard tower',2);
-		new Game.TieredAchievement('Charms and enchantments','拥有 <b>100</b> 精灵塔。','Wizard tower',3);
-		new Game.TieredAchievement('Curses and maledictions','拥有 <b>150</b> 精灵塔。','Wizard tower',4);
-		new Game.TieredAchievement('Magic kingdom','拥有 <b>200</b> 精灵塔。','Wizard tower',5);
+		new Game.TieredAchievement('蛊惑','拥有 <b>1</b> 精灵塔。','Wizard tower',1);
+		new Game.TieredAchievement('魔法师的学徒','拥有 <b>50</b> 精灵塔。','Wizard tower',2);
+		new Game.TieredAchievement('魅力和魔力','拥有 <b>100</b> 精灵塔。','Wizard tower',3);
+		new Game.TieredAchievement('诅咒,诅咒','拥有 <b>150</b> 精灵塔。','Wizard tower',4);
+		new Game.TieredAchievement('魔幻王国','拥有 <b>200</b> 精灵塔。','Wizard tower',5);
 		
 		order=1445;
-		new Game.Achievement('Vested interest','制作 <b>10,000,000,000,000,000</b> 饼干通过银行。',[15,22]);
+		new Game.Achievement('既得利益','制作 <b>10,000,000,000,000,000</b> 饼干通过银行。',[15,22]);
 		order=1470;
-		new Game.Achievement('New world order','制作 <b>100,000,000,000,000,000</b> 饼干通过寺庙。',[16,22]);
+		new Game.Achievement('世界新秩序','制作 <b>100,000,000,000,000,000</b> 饼干通过寺庙。',[16,22]);
 		order=1495;
-		new Game.Achievement('Hocus pocus','制作 <b>1,000,000,000,000,000,000</b> 饼干通过精灵塔。',[17,22]);
+		new Game.Achievement('欺骗','制作 <b>1,000,000,000,000,000,000</b> 饼干通过精灵塔。',[17,22]);
 		
 		
 		order=1070;
-		new Game.Achievement('Finger clickin\' good','制作 <b>10,000,000,000,000,000,000,000</b> 饼干通过游标。',[0,23]);
+		new Game.Achievement('手指点击很好','制作 <b>10,000,000,000,000,000,000,000</b> 饼干通过游标。',[0,23]);
 		order=1120;
-		new Game.Achievement('Panic at the bingo','制作 <b>10,000,000,000,000,000,000,000</b> 饼干通过老奶奶。',[1,23]);
+		new Game.Achievement('对宾果的恐慌','制作 <b>10,000,000,000,000,000,000,000</b> 饼干通过老奶奶。',[1,23]);
 		order=1220;
-		new Game.Achievement('Rake in the dough','制作 <b>10,000,000,000,000,000</b> 饼干通过农场。',[2,23]);
+		new Game.Achievement('在面团里搅拌','制作 <b>10,000,000,000,000,000</b> 饼干通过农场。',[2,23]);
 		order=1320;
-		new Game.Achievement('Quarry on','制作 <b>100,000,000,000,000,000</b> 饼干通过矿山。',[3,23]);
+		new Game.Achievement('采石场','制作 <b>100,000,000,000,000,000</b> 饼干通过矿山。',[3,23]);
 		order=1420;
-		new Game.Achievement('Yes I love technology','制作 <b>1,000,000,000,000,000,000</b> 饼干通过工厂。',[4,23]);
+		new Game.Achievement('是的，我喜欢科技','制作 <b>1,000,000,000,000,000,000</b> 饼干通过工厂。',[4,23]);
 		order=1445;
-		new Game.Achievement('Paid in full','制作 <b>10,000,000,000,000,000,000</b> 饼干通过银行。',[15,23]);
+		new Game.Achievement('全部付清','制作 <b>10,000,000,000,000,000,000</b> 饼干通过银行。',[15,23]);
 		order=1470;
-		new Game.Achievement('Church of Cookiology','制作 <b>100,000,000,000,000,000,000</b> 饼干通过寺庙。',[16,23]);
+		new Game.Achievement('古教会的教堂','制作 <b>100,000,000,000,000,000,000</b> 饼干通过寺庙。',[16,23]);
 		order=1495;
-		new Game.Achievement('Too many rabbits, not enough hats','制作 <b>1,000,000,000,000,000,000,000</b> 饼干通过精灵塔。',[17,23]);
+		new Game.Achievement('兔子太多，帽子不够','制作 <b>1,000,000,000,000,000,000,000</b> 饼干通过精灵塔。',[17,23]);
 		order=1520;
-		new Game.Achievement('The most precious cargo','制作 <b>10,000,000,000,000,000,000,000</b> 饼干通过装船。',[5,23]);
+		new Game.Achievement('最珍贵的货物','制作 <b>10,000,000,000,000,000,000,000</b> 饼干通过装船。',[5,23]);
 		order=1620;
-		new Game.Achievement('The Aureate','制作 <b>100,000,000,000,000,000,000,000</b> 饼干通过炼金术实验室。',[6,23]);
+		new Game.Achievement('金色的','制作 <b>100,000,000,000,000,000,000,000</b> 饼干通过炼金术实验室。',[6,23]);
 		order=1720;
-		new Game.Achievement('Ever more hideous','制作 <b>1,000,000,000,000,000,000,000,000</b> 饼干通过传送门。',[7,23]);
+		new Game.Achievement('更加丑恶','制作 <b>1,000,000,000,000,000,000,000,000</b> 饼干通过传送门。',[7,23]);
 		order=1820;
-		new Game.Achievement('Be kind, rewind','制作 <b>10,000,000,000,000,000,000,000,000</b> 饼干通过时光机器。',[8,23]);
+		new Game.Achievement('仁慈，重来','制作 <b>10,000,000,000,000,000,000,000,000</b> 饼干通过时光机器。',[8,23]);
 		order=1920;
-		new Game.Achievement('Infinitesimal','制作 <b>100,000,000,000,000,000,000,000,000</b> 饼干通过反物质冷凝器。',[13,23]);
+		new Game.Achievement('极小的','制作 <b>100,000,000,000,000,000,000,000,000</b> 饼干通过反物质冷凝器。',[13,23]);
 		order=2020;
-		new Game.Achievement('A still more glorious dawn','制作 <b>1,000,000,000,000,000,000,000,000,000</b> 饼干通过棱镜。',[14,23]);
+		new Game.Achievement('一个更加灿烂的黎明','制作 <b>1,000,000,000,000,000,000,000,000,000</b> 饼干通过棱镜。',[14,23]);
 		
 		order=30000;
-		new Game.Achievement('重生','Ascend at least once.',[21,6]);
+		new Game.Achievement('重生','转生至少1次。',[21,6]);
 		
 		order=11000;
-		new Game.Achievement('Here you go','Click this achievement\'s slot.<q>All you had to do was ask.</q>',[1,7]);Game.last.clickFunction=function(){if (!Game.HasAchiev('Here you go')){PlaySound('snd/tick.mp3');Game.Win('Here you go');}};
+		new Game.Achievement('给你','点击这个“成就”的插槽。<q>你所要做的就是问。</q>',[1,7]);Game.last.clickFunction=function(){if (!Game.HasAchiev('给你')){PlaySound('snd/tick.mp3');Game.Win('给你');}};
 		
 		order=30000;
-		new Game.Achievement('复活','Ascend <b>10 times</b>.',[21,6]);
-		new Game.Achievement('转生','Ascend <b>100 times</b>.',[21,6]);
-		new Game.Achievement('无限循环','Ascend <b>1000 times</b>.<q>Oh hey, it\'s you again.</q>',[2,7]);Game.last.pool='shadow';
+		new Game.Achievement('复活','转生 <b>10 次</b>.',[21,6]);
+		new Game.Achievement('转生','转生 <b>100 次</b>.',[21,6]);
+		new Game.Achievement('无限循环','转生 <b>1000 次</b>.<q>哦，嘿，又是你。</q>',[2,7]);Game.last.pool='shadow';
 		
 		
 		
 		order=1100;
-		new Game.TieredAchievement('The agemaster','拥有 <b>300</b> 老奶奶。','Grandma',7);
-		new Game.TieredAchievement('To oldly go','拥有 <b>350</b> 老奶奶。','Grandma',8);
+		new Game.TieredAchievement('那个烤面包机','拥有 <b>300</b> 老奶奶。','Grandma',7);
+		new Game.TieredAchievement('出来走','拥有 <b>350</b> 老奶奶。','Grandma',8);
 		
-		order=1200;new Game.TieredAchievement('Gardener extraordinaire','拥有 <b>250</b> 农场。','Farm',6);
-		order=1300;new Game.TieredAchievement('Tectonic ambassador','拥有 <b>250</b> 矿山。','Mine',6);
-		order=1400;new Game.TieredAchievement('Rise of the machines','拥有 <b>250</b> 工厂。','Factory',6);
-		order=1425;new Game.TieredAchievement('Acquire currency','拥有 <b>250</b> 银行。','Bank',6);
-		order=1450;new Game.TieredAchievement('Zealotry','拥有 <b>250</b> 寺庙。','Temple',6);
-		order=1475;new Game.TieredAchievement('The wizarding world','拥有 <b>250</b> 精灵塔。','Wizard tower',6);
-		order=1500;new Game.TieredAchievement('Parsec-masher','拥有 <b>250</b> 装船。','Shipment',6);
-		order=1600;new Game.TieredAchievement('The work of a lifetime','拥有 <b>250</b> 炼金术实验室。','Alchemy lab',6);
-		order=1700;new Game.TieredAchievement('A place lost in time','拥有 <b>250</b> 传送门。','Portal',6);
-		order=1800;new Game.TieredAchievement('Heat death','拥有 <b>250</b> 时光机器。','Time machine',6);
-		order=1900;new Game.TieredAchievement('Microcosm','拥有 <b>250</b> 反物质冷凝器。','Antimatter condenser',6);
-		order=2000;new Game.TieredAchievement('Bright future','拥有 <b>250</b> 棱镜。','Prism',6);
+		order=1200;new Game.TieredAchievement('杰出的园丁','拥有 <b>250</b> 农场。','Farm',6);
+		order=1300;new Game.TieredAchievement('构造大使','拥有 <b>250</b> 矿山。','Mine',6);
+		order=1400;new Game.TieredAchievement('机器的崛起','拥有 <b>250</b> 工厂。','Factory',6);
+		order=1425;new Game.TieredAchievement('获得货币','拥有 <b>250</b> 银行。','Bank',6);
+		order=1450;new Game.TieredAchievement('狂热','拥有 <b>250</b> 寺庙。','Temple',6);
+		order=1475;new Game.TieredAchievement('魔法世界','拥有 <b>250</b> 精灵塔。','Wizard tower',6);
+		order=1500;new Game.TieredAchievement('帕西-马西','拥有 <b>250</b> 装船。','Shipment',6);
+		order=1600;new Game.TieredAchievement('一生的工作','拥有 <b>250</b> 炼金术实验室。','Alchemy lab',6);
+		order=1700;new Game.TieredAchievement('一个迷失的地方','拥有 <b>250</b> 传送门。','Portal',6);
+		order=1800;new Game.TieredAchievement('热死','拥有 <b>250</b> 时光机器。','Time machine',6);
+		order=1900;new Game.TieredAchievement('微观世界','拥有 <b>250</b> 反物质冷凝器。','Antimatter condenser',6);
+		order=2000;new Game.TieredAchievement('光明的未来','拥有 <b>250</b> 棱镜。','Prism',6);
 		
 		order=25000;
-		new Game.Achievement('Here be dragon','Complete your <b>dragon\'s training</b>.',[21,12]);
+		new Game.Achievement('这就是龙','完成你的 <b>龙的训练</b>.',[21,12]);
 		
 		Game.BankAchievement('怎么样？');
 		Game.BankAchievement('牛奶和饼干的土地');
@@ -8617,13 +8617,13 @@ Game.Launch=function()
 		new Game.Achievement('麋鹿','放一只驯鹿 <b>在一场老年狂潮中</b>.',[12,9]);
 		
 		order=21100;
-		new Game.Achievement('伙计，亲爱的','Harvest <b>7 coalescing sugar lumps</b>.',[24,14]);
-		new Game.Achievement('Sugar rush','Harvest <b>30 coalescing sugar lumps</b>.',[26,14]);
-		new Game.Achievement('Year\'s worth of cavities','Harvest <b>365 coalescing sugar lumps</b>.<q>My lumps my lumps my lumps.</q>',[29,14]);
-		new Game.Achievement('Hand-picked','Successfully harvest a coalescing sugar lump before it\'s ripe.',[28,14]);
-		new Game.Achievement('Sugar sugar','Harvest a <b>bifurcated sugar lump</b>.',[29,15]);
-		new Game.Achievement('All-natural cane sugar','Harvest a <b>golden sugar lump</b>.',[29,16]);Game.last.pool='shadow';
-		new Game.Achievement('Sweetmeats','Harvest a <b>meaty sugar lump</b>.',[29,17]);
+		new Game.Achievement('伙计，亲爱的','收获 <b>7 合并糖块</b>.',[24,14]);
+		new Game.Achievement('糖粉','收获 <b>30 coalescing sugar lumps</b>.',[26,14]);
+		new Game.Achievement('一年的蛀牙','收获 <b>365 coalescing sugar lumps</b>.<q>My lumps my lumps my lumps.</q>',[29,14]);
+		new Game.Achievement('精心挑选','Successfully harvest a coalescing sugar lump before it\'s ripe.',[28,14]);
+		new Game.Achievement('糖糖','收获 a <b>bifurcated sugar lump</b>.',[29,15]);
+		new Game.Achievement('天然蔗糖','收获 a <b>golden sugar lump</b>.',[29,16]);Game.last.pool='shadow';
+		new Game.Achievement('甜品','收获 a <b>meaty sugar lump</b>.',[29,17]);
 		
 		order=7002;
 		new Game.Achievement('Tricentennial','至少有 <b>300 of everything</b>.<q>Can\'t stop, won\'t stop. Probably should stop, though.</q>',[29,12]);
@@ -8921,8 +8921,8 @@ Game.Launch=function()
 		new Game.buffType('cursed finger',function(time,pow)
 		{
 			return {
-				name:'Cursed finger',
-				desc:'Cookie production halted for '+Game.sayTime(time*Game.fps,-1)+',<br>but each click is worth '+Game.sayTime(time*Game.fps,-1)+' of CpS.',
+				name:'被诅咒的手指',
+				desc:'饼干生产停止 '+Game.sayTime(time*Game.fps,-1)+',<br>但是每一次点击都是值得的 '+Game.sayTime(time*Game.fps,-1)+' 饼干每秒产量。',
 				icon:[12,17],
 				time:time*Game.fps,
 				add:true,
@@ -8997,7 +8997,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'糖的祝福',
-				desc:'You find 10% more golden cookies for the next '+Game.sayTime(time*Game.fps,-1)+'.',
+				desc:'你发现黄金饼干的几率增加 10% 接下来 '+Game.sayTime(time*Game.fps,-1)+'.',
 				icon:[29,16],
 				time:time*Game.fps,
 				//add:true
@@ -9006,7 +9006,7 @@ Game.Launch=function()
 		new Game.buffType('haggler luck',function(time,pow)
 		{
 			return {
-				name:'Haggler\'s luck',
+				name:'运气而已',
 				desc:'所有升级都便宜'+pow+'% '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[25,11],
 				time:time*Game.fps,
@@ -9767,7 +9767,7 @@ Game.Launch=function()
 				Game.dragonLevels[Game.dragonLevel].buy();
 				Game.dragonLevel=(Game.dragonLevel+1)%Game.dragonLevels.length;
 				
-				if (Game.dragonLevel>=Game.dragonLevels.length-1) Game.Win('Here be dragon');
+				if (Game.dragonLevel>=Game.dragonLevels.length-1) Game.Win('这就是龙');
 				Game.ToggleSpecialMenu(1);
 				if (l('specialPic')){var rect=l('specialPic').getBoundingClientRect();Game.SparkleAt((rect.left+rect.right)/2,(rect.top+rect.bottom)/2);}
 				Game.recalculateGains=1;
@@ -11041,10 +11041,10 @@ Game.Launch=function()
 					{
 						if (Game.HasUnlocked(Game.easterEggs[i])) eggs++;
 					}
-					if (eggs>=1) Game.Win('The hunt is on');
-					if (eggs>=7) Game.Win('Egging on');
-					if (eggs>=14) Game.Win('Mass Easteria');
-					if (eggs>=Game.easterEggs.length) Game.Win('Hide & seek champion');
+					if (eggs>=1) Game.Win('狩猎开始了');
+					if (eggs>=7) Game.Win('鸡蛋开始了');
+					if (eggs>=14) Game.Win('复活节弥撒');
+					if (eggs>=Game.easterEggs.length) Game.Win('捉迷藏冠军');
 				}
 				
 				if (Game.prestige>0 && Game.ascensionMode!=1)
@@ -11151,9 +11151,9 @@ Game.Launch=function()
 				if (Game.Objects['Farm'].totalCookies>=base) 				Game.Win('我讨厌肥料');
 				if (Game.Objects['Mine'].totalCookies>=base*				10) Game.Win('千万别挖');
 				if (Game.Objects['Factory'].totalCookies>=base*				100) Game.Win('神奇的机器');
-				if (Game.Objects['Bank'].totalCookies>=base*				1000) Game.Win('Vested interest');
-				if (Game.Objects['Temple'].totalCookies>=base*				10000) Game.Win('New world order');
-				if (Game.Objects['Wizard tower'].totalCookies>=base*		100000) Game.Win('Hocus pocus');
+				if (Game.Objects['Bank'].totalCookies>=base*				1000) Game.Win('既得利益');
+				if (Game.Objects['Temple'].totalCookies>=base*				10000) Game.Win('世界新秩序');
+				if (Game.Objects['Wizard tower'].totalCookies>=base*		100000) Game.Win('欺骗');
 				if (Game.Objects['Shipment'].totalCookies>=base*			1000000) Game.Win('超越');
 				if (Game.Objects['Alchemy lab'].totalCookies>=base*			10000000) Game.Win('代表作');
 				if (Game.Objects['Portal'].totalCookies>=base*				100000000) Game.Win('奇怪地');
@@ -11163,20 +11163,20 @@ Game.Launch=function()
 				if (Game.Objects['Chancemaker'].totalCookies>=base*			1000000000000) Game.Win('Fingers crossed');
 
 				var base=10000000000000000;
-				if (Game.Objects['Cursor'].totalCookies>=base*1000000) 		Game.Win('Finger clickin\' good');
-				if (Game.Objects['Grandma'].totalCookies>=base*1000000) 	Game.Win('Panic at the bingo');
-				if (Game.Objects['Farm'].totalCookies>=base) 				Game.Win('Rake in the dough');
-				if (Game.Objects['Mine'].totalCookies>=base*				10) Game.Win('Quarry on');
-				if (Game.Objects['Factory'].totalCookies>=base*				100) Game.Win('Yes I love technology');
-				if (Game.Objects['Bank'].totalCookies>=base*				1000) Game.Win('Paid in full');
-				if (Game.Objects['Temple'].totalCookies>=base*				10000) Game.Win('Church of Cookiology');
-				if (Game.Objects['Wizard tower'].totalCookies>=base*		100000) Game.Win('Too many rabbits, not enough hats');
-				if (Game.Objects['Shipment'].totalCookies>=base*			1000000) Game.Win('The most precious cargo');
-				if (Game.Objects['Alchemy lab'].totalCookies>=base*			10000000) Game.Win('The Aureate');
-				if (Game.Objects['Portal'].totalCookies>=base*				100000000) Game.Win('Ever more hideous');
-				if (Game.Objects['Time machine'].totalCookies>=base*		1000000000) Game.Win('Be kind, rewind');
-				if (Game.Objects['Antimatter condenser'].totalCookies>=base*10000000000) Game.Win('Infinitesimal');
-				if (Game.Objects['Prism'].totalCookies>=base*				100000000000) Game.Win('A still more glorious dawn');
+				if (Game.Objects['Cursor'].totalCookies>=base*1000000) 		Game.Win('手指点击很好');
+				if (Game.Objects['Grandma'].totalCookies>=base*1000000) 	Game.Win('对宾果的恐慌');
+				if (Game.Objects['Farm'].totalCookies>=base) 				Game.Win('在面团里搅拌');
+				if (Game.Objects['Mine'].totalCookies>=base*				10) Game.Win('采石场');
+				if (Game.Objects['Factory'].totalCookies>=base*				100) Game.Win('是的，我喜欢科技');
+				if (Game.Objects['Bank'].totalCookies>=base*				1000) Game.Win('全部付清');
+				if (Game.Objects['Temple'].totalCookies>=base*				10000) Game.Win('古教会的教堂');
+				if (Game.Objects['Wizard tower'].totalCookies>=base*		100000) Game.Win('兔子太多，帽子不够');
+				if (Game.Objects['Shipment'].totalCookies>=base*			1000000) Game.Win('最珍贵的货物');
+				if (Game.Objects['Alchemy lab'].totalCookies>=base*			10000000) Game.Win('金色的');
+				if (Game.Objects['Portal'].totalCookies>=base*				100000000) Game.Win('更加丑恶');
+				if (Game.Objects['Time machine'].totalCookies>=base*		1000000000) Game.Win('仁慈，重来');
+				if (Game.Objects['Antimatter condenser'].totalCookies>=base*10000000000) Game.Win('极小的');
+				if (Game.Objects['Prism'].totalCookies>=base*				100000000000) Game.Win('一个更加灿烂的黎明');
 				if (Game.Objects['Chancemaker'].totalCookies>=base*			1000000000000) Game.Win('Just a statistic');
 				
 				var base=10000000000000000000;
