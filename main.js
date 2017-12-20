@@ -2495,8 +2495,8 @@ Game.Launch=function()
 				//'<div class="listing">Earned : '+Beautify(Game.cookiesEarned)+', Reset : '+Beautify(Game.cookiesReset)+'</div>'+
 				'<div class="listing"><b>声望等级 :</b> '+Beautify(Game.prestige)+'</div>'+
 				'<div class="listing"><b>天堂芯片 :</b> '+Beautify(Game.heavenlyChips)+'</div>'+
-				(ascendNowToGet>=1?('<div class="listing"><b>现在提升将产生 :</b> '+Beautify(ascendNowToGet)+' heavenly chip'+((ascendNowToGet)==1?'':'s')+'</div>'):
-				('<div class="listing warning"><b>'+Beautify(cookiesToNext)+'</b> more cookie'+((cookiesToNext)==1?'':'s')+' for the next prestige level.<br>你现在可以提升，但不会获得任何好处。</div>'))+
+				(ascendNowToGet>=1?('<div class="listing"><b>现在声望将产生 :</b> '+Beautify(ascendNowToGet)+' 天堂芯片'+((ascendNowToGet)==1?'':'')+'</div>'):
+				('<div class="listing warning"><b>'+Beautify(cookiesToNext)+'</b> 更多饼干'+((cookiesToNext)==1?'':'')+' 下一个声望等级<br>你现在可以转生，但不会获得任何好处。</div>'))+
 			'';
 			if (1 || ascendNowToGet>=1) l('promptOption0').style.display='inline-block'; else l('promptOption0').style.display='none';
 		}
@@ -2515,7 +2515,7 @@ Game.Launch=function()
 			'<div id="ascendModeButton" style="position:absolute;right:34px;bottom:25px;display:none;"></div>'+
 			'<input type="text" style="display:block;" id="upgradePositions"/></div>'+
 			
-			'<div id="ascendInfo"><div class="ascendData smallFramed" style="margin-top:22px;width:40%;font-size:11px;">你在提升。拖动屏幕<br>或使用箭头键!<br>当你准备好时，<br>单击转生。</div></div>';
+			'<div id="ascendInfo"><div class="ascendData smallFramed" style="margin-top:22px;width:40%;font-size:11px;">你在转生。拖动屏幕<br>或使用箭头键!<br>当你准备好时，<br>单击转生。</div></div>';
 		
 		Game.UpdateAscensionModePrompt();
 		
@@ -3298,7 +3298,7 @@ Game.Launch=function()
 			mult*=(1+0.01*cookieMult);
 			
 			if (Game.Has('专业巧克力片')) mult*=1.01;
-			if (Game.Has('Designer cocoa beans')) mult*=1.02;
+			if (Game.Has('可可豆设计师')) mult*=1.02;
 			if (Game.Has('地下烤箱')) mult*=1.03;
 			if (Game.Has('奇异果')) mult*=1.04;
 			if (Game.Has('神秘的糖')) mult*=1.05;
@@ -7024,8 +7024,8 @@ Game.Launch=function()
 		new Game.Upgrade('小猫工程师','你获得了 <b>更多的饼干秒产量</b> 你的牛奶越多。<q>喵喵喵，先生</q>',90000000000000,Game.GetIcon('Kitten',3));Game.last.kitten=1;
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Dark chocolate-coated cookies',desc:'这些光吸收的光线如此之好，你几乎需要眯着眼才能看到它们。',icon:[10,3],power:			4,	price:	99999999999});
-		Game.NewUpgradeCookie({name:'White chocolate-coated cookies',desc:'这些令人眼花缭乱的饼干绝对是有味道的。',icon:[11,3],power:					4,	price:	99999999999});
+		Game.NewUpgradeCookie({name:'黑巧克力饼干',desc:'这些光吸收的光线如此之好，你几乎需要眯着眼才能看到它们。',icon:[10,3],power:			4,	price:	99999999999});
+		Game.NewUpgradeCookie({name:'白巧克力饼干',desc:'这些令人眼花缭乱的饼干绝对是有味道的。',icon:[11,3],power:					4,	price:	99999999999});
 		
 		
 		Game.getGrandmaSynergyUpgradeMultiplier=function(building)
@@ -7036,9 +7036,9 @@ Game.Launch=function()
 		{
 			var building=Game.Objects[building];
 			var grandmaNumber=(building.id-1);
-			if (grandmaNumber==1) grandmaNumber='grandma';
-			else grandmaNumber+=' grandmas';
-			return '老奶奶生产工作效率像 <b>双倍</b> 一样高效。 '+(building.plural.charAt(0).toUpperCase()+building.plural.slice(1))+' gain <b>+1% CpS</b> per '+grandmaNumber+'.';
+			if (grandmaNumber==1) grandmaNumber='老奶奶';
+			else grandmaNumber+=' 老奶奶';
+			return '老奶奶生产工作效率像 <b>双倍</b> 一样高效。 '+(building.plural.charAt(0).toUpperCase()+building.plural.slice(1))+' 获得 <b>+1% 饼干秒产量</b> 每 '+grandmaNumber+'.';
 		}
 		
 		order=250;
@@ -7070,8 +7070,8 @@ Game.Launch=function()
 		
 		order=15000;
 		
-		new Game.Upgrade('专业巧克力片','饼干生产增加 <b>+1%</b>.<q>电脑设计的巧克力片。电脑芯片，如果你愿意。</q>',100000000000,[0,9],function(){Game.SetResearch('Designer cocoa beans');});Game.last.pool='tech';
-		new Game.Upgrade('Designer cocoa beans','饼干生产增加 <b>+2%</b>.<q>现在比以前更符合空气动力学了!</q>',200000000000,[1,9],function(){Game.SetResearch('仪式滚针');});Game.last.pool='tech';
+		new Game.Upgrade('专业巧克力片','饼干生产增加 <b>+1%</b>.<q>电脑设计的巧克力片。电脑芯片，如果你愿意。</q>',100000000000,[0,9],function(){Game.SetResearch('可可豆设计师');});Game.last.pool='tech';
+		new Game.Upgrade('可可豆设计师','饼干生产增加 <b>+2%</b>.<q>现在比以前更符合空气动力学了!</q>',200000000000,[1,9],function(){Game.SetResearch('仪式滚针');});Game.last.pool='tech';
 		new Game.Upgrade('仪式滚针','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>多年的科学研究成果!</q>',400000000000,[2,9],function(){Game.SetResearch('地下烤箱');});Game.last.pool='tech';
 		new Game.Upgrade('地下烤箱','饼干生产增加 <b>+3%</b>.<q>当然是靠科学的力量!</q>',800000000000,[3,9],function(){Game.SetResearch('同心协力');});Game.last.pool='tech';
 		new Game.Upgrade('同心协力','每个老奶奶收获 <b>+0.0<span></span>2 基本秒收益老奶奶</b>.<div class="warning">注意:祖母们越来越焦躁不安。不要鼓励他们。</div><q>我们是一个。我们有很多。</q>',1600000000000,[4,9],function(){Game.elderWrath=1;Game.SetResearch('奇异果');Game.storeToRefresh=1;});Game.last.pool='tech';
@@ -7653,17 +7653,17 @@ Game.Launch=function()
 		Game.last.choicesFunction=function()
 		{
 			var choices=[];
-			choices[0]={name:'Automatic',icon:[0,7]};
-			choices[1]={name:'Plain milk',icon:[1,8]};
-			choices[2]={name:'Chocolate milk',icon:[2,8]};
-			choices[3]={name:'Raspberry milk',icon:[3,8]};
-			choices[4]={name:'Orange milk',icon:[4,8]};
-			choices[5]={name:'Caramel milk',icon:[5,8]};
-			choices[6]={name:'Banana milk',icon:[6,8]};
-			choices[7]={name:'Lime milk',icon:[7,8]};
-			choices[8]={name:'Blueberry milk',icon:[8,8]};
-			choices[9]={name:'Strawberry milk',icon:[9,8]};
-			choices[10]={name:'Vanilla milk',icon:[10,8]};
+			choices[0]={name:'自动',icon:[0,7]};
+			choices[1]={name:'纯牛奶',icon:[1,8]};
+			choices[2]={name:'巧克力牛奶',icon:[2,8]};
+			choices[3]={name:'树莓牛奶',icon:[3,8]};
+			choices[4]={name:'橙汁牛奶',icon:[4,8]};
+			choices[5]={name:'焦糖牛奶',icon:[5,8]};
+			choices[6]={name:'香蕉牛奶',icon:[6,8]};
+			choices[7]={name:'石灰牛奶',icon:[7,8]};
+			choices[8]={name:'蓝莓牛奶',icon:[8,8]};
+			choices[9]={name:'草莓牛奶',icon:[9,8]};
+			choices[10]={name:'香草牛奶',icon:[10,8]};
 			
 			if (Game.Has('奇特的乳制品选择'))
 			{
@@ -7677,7 +7677,7 @@ Game.Launch=function()
 				choices[18]={name:'Frostfire milk',icon:[3,7]};
 			}
 			
-			choices[19]={name:'Honey milk',icon:[21,23]};
+			choices[19]={name:'蜂蜜牛奶',icon:[21,23]};
 			
 			choices[Game.milkType].selected=1;
 			return choices;
@@ -7774,7 +7774,7 @@ Game.Launch=function()
 		
 		new Game.Upgrade('基本壁纸分类','解锁 <b>背景选择器</b>, 让你可以选择游戏的背景。<br>有各种各样的基本口味。<q>优先考虑美学而不是关键的实用升级?让我印象深刻。</q>',99,[29,5]);Game.last.pool='prestige';Game.last.parents=['选择经典的乳制品'];
 		
-		new Game.Upgrade('遗产','这是第一次天堂的升级;它解锁<b>天堂芯片</b>系统。<div class="line"></div>你每提升一次，你过去生活中的饼干就变成了 <b>天堂芯片</b> 和 <b>声望</b>.<div class="line"></div><b>天堂芯片</b> 可以用于各种永久的超越升级。<div class="line"></div>您的 <b>声望等级</b> 每一级会给你永久的 <b>+1% 饼干秒生产量</b> 。<q>我们都在等你。</q>',1,[21,6]);Game.last.pool='prestige';Game.last.parents=[];
+		new Game.Upgrade('遗产','这是第一次天堂的升级;它解锁<b>天堂芯片</b>系统。<div class="line"></div>你每转生一次，你过去生活中的饼干就变成了 <b>天堂芯片</b> 和 <b>声望</b>.<div class="line"></div><b>天堂芯片</b> 可以用于各种永久的超越升级。<div class="line"></div>您的 <b>声望等级</b> 每一级会给你永久的 <b>+1% 饼干秒生产量</b> 。<q>我们都在等你。</q>',1,[21,6]);Game.last.pool='prestige';Game.last.parents=[];
 		
 		new Game.Upgrade('老香料','你可以吸引 <b>2 更多的皱纹</b>.<q>你的饼干闻起来像的饼干。</q>',444444,[19,8]);Game.last.pool='prestige';Game.last.parents=['邪恶的诱饵'];
 		
@@ -7867,7 +7867,7 @@ Game.Launch=function()
 		Game.last.choicesFunction=function()
 		{
 			var choices=[];
-			choices[0]={name:'Automatic',icon:[0,7]};
+			choices[0]={name:'自动',icon:[0,7]};
 			choices[1]={name:'Blue',icon:[21,21]};
 			choices[2]={name:'Red',icon:[22,21]};
 			choices[3]={name:'White',icon:[23,21]};
@@ -8972,7 +8972,7 @@ Game.Launch=function()
 			var obj=Game.ObjectsById[building];
 			return {
 				name:Game.goldenCookieBuildingBuffs[obj.name][0],
-				desc:'Your '+obj.amount+' '+obj.plural+' are boosting your CpS!<br>Cookie production +'+(Math.ceil(pow*100-100))+'% for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'你的 '+obj.amount+' '+obj.plural+' 促进饼干每秒产量!<br>饼干生产 +'+(Math.ceil(pow*100-100))+'%  '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[obj.iconColumn,14],
 				time:time*Game.fps,
 				add:true,
@@ -8985,7 +8985,7 @@ Game.Launch=function()
 			var obj=Game.ObjectsById[building];
 			return {
 				name:Game.goldenCookieBuildingBuffs[obj.name][1],
-				desc:'Your '+obj.amount+' '+obj.plural+' are rusting your CpS!<br>Cookie production '+(Math.ceil(pow*100-100))+'% slower for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'你的 '+obj.amount+' '+obj.plural+' 锈蚀饼干秒产量<br>饼干生产减慢 '+(Math.ceil(pow*100-100))+'% '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[obj.iconColumn,15],
 				time:time*Game.fps,
 				add:true,
@@ -9018,7 +9018,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Haggler\'s misery',
-				desc:'All upgrades are '+pow+'% pricier for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'所有升级成本增加 '+pow+'%  '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[25,11],
 				time:time*Game.fps,
 				power:pow,
@@ -9029,7 +9029,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Crafty pixies',
-				desc:'All buildings are '+pow+'% cheaper for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'所有建筑便宜 '+pow+'%  '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[26,11],
 				time:time*Game.fps,
 				power:pow,
@@ -9040,7 +9040,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Nasty goblins',
-				desc:'All buildings are '+pow+'% pricier for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'所有建筑成本增加 '+pow+'%  '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[26,11],
 				time:time*Game.fps,
 				power:pow,
@@ -9051,7 +9051,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Magic adept',
-				desc:'Spells backfire '+pow+' times less for '+Game.sayTime(time*Game.fps,-1)+'.',
+				desc:'咒语会适得其反 '+pow+' 持续时间变短 '+Game.sayTime(time*Game.fps,-1)+'.',
 				icon:[29,11],
 				time:time*Game.fps,
 				power:pow,
@@ -9062,7 +9062,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Magic inept',
-				desc:'Spells backfire '+pow+' times more for '+Game.sayTime(time*Game.fps,-1)+'.',
+				desc:'咒语会适得其反 '+pow+' 持续时间变短 '+Game.sayTime(time*Game.fps,-1)+'.',
 				icon:[29,11],
 				time:time*Game.fps,
 				power:pow,
@@ -9073,7 +9073,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Devastation',
-				desc:'Clicking power +'+Math.floor(pow*100-100)+'% for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'点击效果 +'+Math.floor(pow*100-100)+'%  '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[23,18],
 				time:time*Game.fps,
 				multClick:pow,
@@ -9913,17 +9913,17 @@ Game.Launch=function()
 		=======================================================================================*/
 		
 		Game.Milks=[
-			{name:'Rank I - Plain milk',pic:'milkPlain'},
-			{name:'Rank II - Chocolate milk',pic:'milkChocolate'},
-			{name:'Rank III - Raspberry milk',pic:'milkRaspberry'},
-			{name:'Rank IV - Orange milk',pic:'milkOrange'},
-			{name:'Rank V - Caramel milk',pic:'milkCaramel'},
-			{name:'Rank VI - Banana milk',pic:'milkBanana'},
-			{name:'Rank VII - Lime milk',pic:'milkLime'},
-			{name:'Rank VIII - Blueberry milk',pic:'milkBlueberry'},
-			{name:'Rank IX - Strawberry milk',pic:'milkStrawberry'},
-			{name:'Rank X - Vanilla milk',pic:'milkVanilla'},
-			{name:'Rank XI - Honey milk',pic:'milkHoney'},
+			{name:'等级 I - 纯牛奶',pic:'milkPlain'},
+			{name:'等级 II - 巧克力牛奶',pic:'milkChocolate'},
+			{name:'等级 III - 树莓牛奶',pic:'milkRaspberry'},
+			{name:'等级 IV - 橙汁牛奶',pic:'milkOrange'},
+			{name:'等级 V - 焦糖牛奶',pic:'milkCaramel'},
+			{name:'等级 VI - 香蕉牛奶',pic:'milkBanana'},
+			{name:'等级 VII - 石灰牛奶',pic:'milkLime'},
+			{name:'等级 VIII - 蓝莓牛奶',pic:'milkBlueberry'},
+			{name:'等级 IX - 草莓牛奶',pic:'milkStrawberry'},
+			{name:'等级 X - 香草牛奶',pic:'milkVanilla'},
+			{name:'等级 XI - 蜂蜜牛奶',pic:'milkHoney'},
 		];
 		Game.Milk=Game.Milks[0];
 	
@@ -11243,11 +11243,11 @@ Game.Launch=function()
 				str+='你现在的声望等级是 <b>'+Beautify(Game.prestige)+'</b>.<br>(饼干每秒产量 +'+Beautify(Game.prestige)+'%)';
 				str+='<div class="line"></div>';
 			}
-			if (ascendNowToGet<1) str+='现在提升将不会给你任何声望。';
-			else if (ascendNowToGet<2) str+='现在提升将给予你<br><b>1 声望等级</b> (+1% 饼干每秒产量)<br>和 <b>1 天堂芯片</b> 去消费。';
-			else str+='现在提升将给予你<br><b>'+Beautify(ascendNowToGet)+' 声望等级</b> (+'+Beautify(ascendNowToGet)+'% 饼干每秒产量)<br>和 <b>'+Beautify(ascendNowToGet)+' 天堂芯片</b> 去消费。';
+			if (ascendNowToGet<1) str+='现在转生将不会给你任何声望。';
+			else if (ascendNowToGet<2) str+='现在转生将给予你<br><b>1 声望等级</b> (+1% 饼干每秒产量)<br>和 <b>1 天堂芯片</b> 去消费。';
+			else str+='现在转生将给予你<br><b>'+Beautify(ascendNowToGet)+' 声望等级</b> (+'+Beautify(ascendNowToGet)+'% 饼干每秒产量)<br>和 <b>'+Beautify(ascendNowToGet)+' 天堂芯片</b> 去消费。';
 			str+='<div class="line"></div>';
-			str+='你还需要 <b>'+Beautify(cookiesToNext)+' 的饼干才能提升到</b>下一级<br>';
+			str+='你还需要 <b>'+Beautify(cookiesToNext)+' 的饼干才能提升到</b>下一声望等级<br>';
 			l('ascendTooltip').innerHTML=str;
 			
 			if (ascendNowToGet>0)//show number saying how many chips you'd get resetting now
