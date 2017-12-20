@@ -66,34 +66,34 @@ M.launch=function()
 			'creation':{
 				name:'Dotjeiess, Spirit of Creation',
 				icon:[26,18],
-				desc1:'Buildings are 7% cheaper, but heavenly chips have 30% less effect.',
-				desc2:'Buildings are 5% cheaper, but heavenly chips have 20% less effect.',
-				desc3:'Buildings are 2% cheaper, but heavenly chips have 10% less effect.',
-				quote:'All things that be and ever will be were scripted long ago by this spirit\'s inscrutable tendrils.',
+				desc1:'建筑成本降低 7%, 但是，天堂芯片的效果降低 30%。',
+				desc2:'建筑成本降低 5%, 但是，天堂芯片的效果降低 20%。',
+				desc3:'建筑成本降低 2%, 但是，天堂芯片的效果降低 10%。',
+				quote:'所有的一切，都将是很久以前由这个精神的不可思议的卷须改编而来的。',
 			},
 			'labor':{
 				name:'Muridal, Spirit of Labor',
 				icon:[27,18],
-				desc1:'Clicks are 15% more powerful, but buildings produce 3% less.',
-				desc2:'Clicks are 10% more powerful, but buildings produce 2% less.',
-				desc3:'Clicks are 5% more powerful, but buildings produce 1% less.',
-				quote:'This spirit enjoys a good cheese after a day of hard work.',
+				desc1:'点击效果增加 15% , 但是建筑产量减少 3%。',
+				desc2:'点击效果增加 10% , 但是建筑产量减少 2%。',
+				desc3:'点击效果增加 5% , 但是建筑产量减少 1%。',
+				quote:'经过一天的辛勤工作，这种精神得到了良好的效果。',
 			},
 			'industry':{
 				name:'Jeremy, Spirit of Industry',
 				icon:[28,18],
-				desc1:'Buildings produce 10% more cookies, but golden and wrath cookies appear 10% less.',
-				desc2:'Buildings produce 6% more cookies, but golden and wrath cookies appear 6% less.',
-				desc3:'Buildings produce 3% more cookies, but golden and wrath cookies appear 3% less.',
-				quote:'While this spirit has many regrets, helping you rule the world through constant industrialization is not one of them.',
+				desc1:'建筑生产更多的 10% 饼干, 但是黄金饼干和愤怒饼干却少了10%。',
+				desc2:'建筑生产更多的 6% 饼干, 但是黄金饼干和愤怒饼干却少了6%。',
+				desc3:'建筑生产更多的 3% 饼干, 但是黄金饼干和愤怒饼干却少了3%。',
+				quote:'虽然这种精神有很多遗憾，但帮助你通过持续的工业化统治世界并不是其中之一。',
 			},
 			'mother':{
 				name:'Mokalsium, Mother Spirit',
 				icon:[29,18],
-				desc1:'Milk is 10% more powerful, but golden and wrath cookies appear 15% less.',
-				desc2:'Milk is 5% more powerful, but golden and wrath cookies appear 10% less.',
-				desc3:'Milk is 3% more powerful, but golden and wrath cookies appear 5% less.',
-				quote:'A caring spirit said to contain itself, inwards infinitely.',
+				desc1:'牛奶效果增加 10% , 但是黄金饼干和愤怒饼干却少了15%',
+				desc2:'牛奶效果增加 5% ,但是黄金饼干和愤怒饼干却少了10%',
+				desc3:'牛奶效果增加 3% ,但是黄金饼干和愤怒饼干却少了5%',
+				quote:'一个有爱心的灵魂说，自己是无限的。',
 			},
 			'scorn':{
 				name:'Skruuia, Spirit of Scorn',
@@ -109,14 +109,14 @@ M.launch=function()
 				icon:[22,19],
 				activeDescFunc:function()
 				{
-					if (Game.BuildingsOwned%10==0) return 'Buildings owned : '+Beautify(Game.BuildingsOwned)+'.<br>Effect is active.';
-					else return 'Buildings owned : '+Beautify(Game.BuildingsOwned)+'.<br>Effect is inactive.';
+					if (Game.BuildingsOwned%10==0) return '拥有建筑 : '+Beautify(Game.BuildingsOwned)+'.<br>效果已激活。';
+					else return '拥有建筑 : '+Beautify(Game.BuildingsOwned)+'.<br>效果未激活。';
 				},
-				desc1:'Sugar lumps ripen an hour sooner.',
-				desc2:'Sugar lumps ripen 40 minutes sooner.',
-				desc3:'Sugar lumps ripen 20 minutes sooner.',
-				descAfter:'Effect is only active when your total amount of buildings ends with 0.',
-				quote:'You will find that life gets just a little bit sweeter if you can motivate this spirit with tidy numbers and properly-filled tax returns.',
+				desc1:'糖块成熟时间 提前1小时。',
+				desc2:'糖块成熟时间 提前40分钟。',
+				desc3:'糖块成熟时间 提前20分钟。',
+				descAfter:'只有当建筑物的总数量以0结尾时，效果才会有效。',
+				quote:'你会发现，如果你能以整洁的数字和恰当的纳税申报单来激励这种精神，生活就会变得更加甜蜜。',
 			},
 		};
 		M.godsById=[];var n=0;
@@ -145,7 +145,7 @@ M.launch=function()
 				var str='<div style="padding:8px 4px;min-width:350px;">'+
 				'<div class="icon" style="float:left;margin-left:-8px;margin-top:-8px;background-position:'+(-me.icon[0]*48)+'px '+(-me.icon[1]*48)+'px;"></div>'+
 				'<div class="name">'+me.name+'</div>'+
-				'<div class="line"></div><div class="description"><div style="margin:6px 0px;font-weight:bold;">Effects :</div>'+
+				'<div class="line"></div><div class="description"><div style="margin:6px 0px;font-weight:bold;">效果 :</div>'+
 					(me.descBefore?('<div class="templeEffect">'+me.descBefore+'</div>'):'')+
 					(me.desc1?('<div class="templeEffect templeEffect1"><div class="usesIcon shadowFilter templeGem templeGem1"></div>'+me.desc1+'</div>'):'')+
 					(me.desc2?('<div class="templeEffect templeEffect2"><div class="usesIcon shadowFilter templeGem templeGem2"></div>'+me.desc2+'</div>'):'')+
@@ -181,7 +181,7 @@ M.launch=function()
 					'</div>'
 				):
 				('<div class="name templeEffect"><div class="usesIcon shadowFilter templeGem templeGem'+(parseInt(id)+1)+'"></div>'+M.slotNames[id]+' slot (empty)</div><div class="line"></div><div class="description">'+
-				((M.slotHovered==id && M.dragging)?'Release to assign <b>'+M.dragging.name+'</b> to this slot.':'Drag a spirit onto this slot to assign it.')+
+				((M.slotHovered==id && M.dragging)?'释放到指定的 <b>'+M.dragging.name+'</b> 到这个位置。':'将精灵拖到这个插槽上以分配它。')+
 				'</div>')
 				)+
 				'</div>';
