@@ -36,8 +36,8 @@ M.launch=function()
 			},
 			'hand of fate':{
 				name:'Force the Hand of Fate',
-				desc:'Summon a random golden cookie. Each existing golden cookie makes this spell +15% more likely to backfire.',
-				failDesc:'Summon an unlucky wrath cookie.',
+				desc:'召唤一个随机的黄金饼干。每个现有黄金饼干让这个法术+ 15%更有可能会适得其反。',
+				failDesc:'召唤一个不走运的愤怒饼干。',
 				icon:[22,11],
 				costMin:10,
 				costPercent:0.6,
@@ -61,7 +61,7 @@ M.launch=function()
 					{
 						newShimmer.sizeMult=Math.random()*0.75+0.25;
 					}
-					Game.Popup('<div style="font-size:80%;">Promising fate!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">有前途的命运!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
@@ -72,13 +72,13 @@ M.launch=function()
 					if (Math.random()<0.003) choices.push('free sugar lump');
 					if (Math.random()<0.1) choices=['blab'];
 					newShimmer.force=choose(choices);
-					Game.Popup('<div style="font-size:80%;">Backfire!<br>Sinister fate!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">适得其反!<br>险恶的命运!</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'stretch time':{
 				name:'Stretch Time',
-				desc:'All active buffs gain 10% more time (up to 5 more minutes).',
-				failDesc:'All active buffs are shortened by 20% (up to 10 minutes shorter).',
+				desc:'所有激活的效果将延长10%的持续时间(最多延长5分钟)',
+				failDesc:'所有激活的效果将缩短10%的持续时间(最多缩短5分钟)',
 				icon:[23,11],
 				costMin:8,
 				costPercent:0.2,
@@ -316,9 +316,9 @@ M.launch=function()
 				{
 					M.spellsCast++;
 					M.spellsCastTotal++;
-					if (M.spellsCastTotal>=9) Game.Win('Bibbidi-bobbidi-boo');
-					if (M.spellsCastTotal>=99) Game.Win('I\'m the wiz');
-					if (M.spellsCastTotal>=999) Game.Win('A wizard is you');
+					if (M.spellsCastTotal>=9) Game.Win('圣经');
+					if (M.spellsCastTotal>=99) Game.Win('我是天才');
+					if (M.spellsCastTotal>=999) Game.Win('巫师就是你');
 				}
 				
 				M.magic-=cost;
@@ -343,8 +343,8 @@ M.launch=function()
 		M.getSpellCostBreakdown=function(spell)
 		{
 			var str='';
-			if (spell.costPercent) str+=Beautify(spell.costMin)+' magic +'+Beautify(Math.ceil(spell.costPercent*100))+'% of max magic';
-			else str+=Beautify(spell.costMin)+' magic';
+			if (spell.costPercent) str+=Beautify(spell.costMin)+' 魔法 +'+Beautify(Math.ceil(spell.costPercent*100))+'% 魔法上限';
+			else str+=Beautify(spell.costMin)+' 魔法';
 			return str;
 		}
 		
@@ -361,8 +361,8 @@ M.launch=function()
 				'<div class="icon" style="float:left;margin-left:-8px;margin-top:-8px;background-position:'+(-me.icon[0]*48)+'px '+(-me.icon[1]*48)+'px;"></div>'+
 				'<div class="name">'+me.name+'</div>'+
 				'<div>魔法成本 : <b style="color:#'+(cost<=M.magic?'6f6':'f66')+';">'+cost+'</b>'+costBreakdown+'</div>'+
-				(me.fail?('<div><small>反逆机会 : <b style="color:#f66">'+Math.ceil(100*backfire)+'%</b></small></div>'):'')+
-				'<div class="line"></div><div class="description"><b>效果 :</b> '+me.desc+(me.failDesc?('<div style="height:8px;"></div><b>逆火 :</b> '+me.failDesc):'')+'</div></div>';
+				(me.fail?('<div><small>负面效果出现几率 : <b style="color:#f66">'+Math.ceil(100*backfire)+'%</b></small></div>'):'')+
+				'<div class="line"></div><div class="description"><b>正面效果 :</b> '+me.desc+(me.failDesc?('<div style="height:8px;"></div><b>负面效果 :</b> '+me.failDesc):'')+'</div></div>';
 				return str;
 			};
 		}
@@ -408,7 +408,7 @@ M.launch=function()
 			}
 			str+='</div>';
 			var icon=[29,14];
-			str+='<div id="grimoireBar" class="smallFramed meterContainer"><div '+Game.getTooltip('<div style="padding:8px;width:300px;font-size:11px;text-align:center;">Click to refill <b>100 units</b> of your magic meter<br>for <span class="price lump">1 sugar lump</span>.</div>')+' id="grimoireLumpRefill" class="usesIcon shadowFilter" style="background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;"></div><div id="grimoireBarFull" class="meter filling"></div><div id="grimoireBarText" class="titleFont"></div><div '+Game.getTooltip('<div style="padding:8px;width:300px;font-size:11px;text-align:center;">This is your magic meter. Each spell costs magic to use.<div class="line"></div>Your maximum amount of magic varies depending on your amount of <b>Wizard towers</b>, and their level.<div class="line"></div>Magic refills over time. The lower your magic meter, the slower it refills.</div>')+' style="position:absolute;left:0px;top:0px;right:0px;bottom:0px;"></div></div>';
+			str+='<div id="grimoireBar" class="smallFramed meterContainer"><div '+Game.getTooltip('<div style="padding:8px;width:300px;font-size:11px;text-align:center;">点击重新填充 <b>100 单位</b> 你的魔法表<br> 消耗 <span class="price lump">1 糖块</span>.</div>')+' id="grimoireLumpRefill" class="usesIcon shadowFilter" style="background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;"></div><div id="grimoireBarFull" class="meter filling"></div><div id="grimoireBarText" class="titleFont"></div><div '+Game.getTooltip('<div style="padding:8px;width:300px;font-size:11px;text-align:center;">这是你的魔法表。每个法术都需要魔法。<div class="line"></div>您的最大魔法量取决于您的<b>魔法塔</b>的数量, 以及它们的等级<div class="line"></div>随着时间的推移，魔法会被重新填满。你的魔法表越低，它的填充速度就越慢。</div>')+' style="position:absolute;left:0px;top:0px;right:0px;bottom:0px;"></div></div>';
 			str+='<div id="grimoireInfo"></div>';
 		str+='</div>';
 		div.innerHTML=str;

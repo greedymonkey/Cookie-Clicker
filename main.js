@@ -1049,7 +1049,7 @@ Game.Launch=function()
 		
 		Game.showBackupWarning=function()
 		{
-			Game.Notify('备份你的游戏存档！','再一次问好！ 只是提醒一下，为了以防万一，您可能需要每隔一段时间备份您的游戏存档。<br>要做到这一点，进入选项并点击“导出存档”或“保存到文件”！<div class="line"></div><a style="float:right;" onclick="Game.prefs.showBackupWarning=0;==CLOSETHIS()==">Don\'t show this again</a>',[25,7]);
+			Game.Notify('备份你的游戏存档！','再一次问好！ 只是提醒一下，为了以防万一，您可能需要每隔一段时间备份您的游戏存档。<br>要做到这一点，进入选项并点击“导出存档”或“保存到文件”！<div class="line"></div><a style="float:right;" onclick="Game.prefs.showBackupWarning=0;==CLOSETHIS()==">不再提示</a>',[25,7]);
 		}
 		
 		/*=====================================================================================
@@ -2899,7 +2899,7 @@ Game.Launch=function()
 			}
 			
 			str+='<div class="line"></div>';
-			str+='你的糖块会慢慢变成熟 <b>'+Game.sayTime((Game.lumpMatureAge/1000)*Game.fps,-1)+'</b>,<br>成熟后 <b>'+Game.sayTime((Game.lumpRipeAge/1000)*Game.fps,-1)+'</b>,<br>并在之后 <b>'+Game.sayTime((Game.lumpOverripeAge/1000)*Game.fps,-1)+'</b>.';
+			str+='糖块成熟所需时间是 <b>'+Game.sayTime((Game.lumpMatureAge/1000)*Game.fps,-1)+'</b>,<br>成熟后 <b>'+Game.sayTime((Game.lumpRipeAge/1000)*Game.fps,-1)+'</b>,<br>并在之后 <b>'+Game.sayTime((Game.lumpOverripeAge/1000)*Game.fps,-1)+'</b>。';
 			
 			str+='<div class="line"></div>'+
 			'&bull; 在成熟的时候可以收获糖块，但如果不吃的话，它们最终会掉落并在一段时间后自动收获。<br>&bull; 糖块儿很好吃，可以用作各种食物的货币。<br>&bull; 一旦一个糖块被收获，另一个就会开始生长。<br>&bull; 注意，当游戏关闭时，糖块会继续生长。';
@@ -3106,7 +3106,7 @@ Game.Launch=function()
 			for (var i in Game.customMouseCps) {mult+=Game.customMouseCps[i]();}
 			
 			if (Game.Has('圣诞老人的帮手')) mult*=1.1;
-			if (Game.Has('Cookie egg')) mult*=1.1;
+			if (Game.Has('饼干蛋')) mult*=1.1;
 			if (Game.Has('光环手套')) mult*=1.1;
 			
 			if (Game.hasGod)
@@ -3351,7 +3351,7 @@ Game.Launch=function()
 			}
 			
 			
-			if (Game.Has('"egg"')) {Game.cookiesPs+=9;Game.cookiesPsByType['"egg"']=9;}//"egg"
+			if (Game.Has('"蛋"')) {Game.cookiesPs+=9;Game.cookiesPsByType['"egg"']=9;}//"egg"
 			
 			for (var i in Game.customCps) {mult*=Game.customCps[i]();}
 			
@@ -4868,10 +4868,10 @@ Game.Launch=function()
 				var researchStr=Game.sayTime(Game.researchT,-1);
 				var pledgeStr=Game.sayTime(Game.pledgeT,-1);
 				var wrathStr='';
-				if (Game.elderWrath==1) wrathStr='awoken';
-				else if (Game.elderWrath==2) wrathStr='displeased';
-				else if (Game.elderWrath==3) wrathStr='angered';
-				else if (Game.elderWrath==0 && Game.pledges>0) wrathStr='appeased';
+				if (Game.elderWrath==1) wrathStr='唤醒';
+				else if (Game.elderWrath==2) wrathStr='不高兴';
+				else if (Game.elderWrath==3) wrathStr='愤怒';
+				else if (Game.elderWrath==0 && Game.pledges>0) wrathStr='平息';
 				
 				var date=new Date();
 				date.setTime(Date.now()-Game.startDate);
@@ -4920,7 +4920,7 @@ Game.Launch=function()
 					(Game.Objects['Portal'].amount>0?'<div class="listing"><b>TV show seasons produced :</b> '+Beautify(Math.floor((timeInSeconds/60/60)*(Game.Objects['Portal'].amount*0.13)+1))+'</div>':'')
 				:'')+
 				(researchStr!=''?'<div class="listing"><b>研究 :</b> '+researchStr+' remaining</div>':'')+
-				(wrathStr!=''?'<div class="listing"><b>祖母的地位 :</b> '+wrathStr+'</div>':'')+
+				(wrathStr!=''?'<div class="listing"><b>老奶奶的地位 :</b> '+wrathStr+'</div>':'')+
 				(pledgeStr!=''?'<div class="listing"><b>保证 :</b> '+pledgeStr+' remaining</div>':'')+
 				(Game.wrinklersPopped>0?'<div class="listing"><b>起泡器弹出 :</b> '+Beautify(Game.wrinklersPopped)+'</div>':'')+
 				((Game.resets>0 && Game.lumpsTotal>0)?'<div class="listing"><b>收集糖块 :</b> <div class="price lump plain">'+Beautify(Game.lumpsTotal)+'</div></div>':'')+
@@ -4934,7 +4934,7 @@ Game.Launch=function()
 				'</div><div class="subsection">'+
 				'<div class="title">声望</div>'+
 				'<div class="listing"><div class="icon" style="float:left;background-position:'+(-19*48)+'px '+(-7*48)+'px;"></div>'+
-					'<div style="margin-top:8px;"><span class="title" style="font-size:22px;">声望等级 : '+Beautify(Game.prestige)+'</span> 在 '+Beautify(heavenlyMult*100,1)+'% 潜在的 <b>(+'+Beautify(parseFloat(Game.prestige)*Game.heavenlyPower*heavenlyMult,1)+'% 饼干每秒产量)</b><br><br>天堂芯片 : <b>'+Beautify(Game.heavenlyChips)+'</b></div>'+
+					'<div style="margin-top:8px;"><span class="title" style="font-size:22px;">声望等级 : '+Beautify(Game.prestige)+'</span> 在 '+Beautify(heavenlyMult*100,1)+'% 默认 <b>(+'+Beautify(parseFloat(Game.prestige)*Game.heavenlyPower*heavenlyMult,1)+'% 每秒饼干的产量)</b><br><br>天堂芯片 : <b>'+Beautify(Game.heavenlyChips)+'</b></div>'+
 				'</div>'+
 				(prestigeUpgrades!=''?(
 				'<div class="listing" style="clear:left;"><b>声望升级解锁 :</b> '+prestigeUpgradesOwned+'/'+prestigeUpgradesTotal+' ('+Math.floor((prestigeUpgradesOwned/prestigeUpgradesTotal)*100)+'%)</div>'+
@@ -7297,7 +7297,7 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'Sour heart biscuits',desc:'A bitter lime biscuit for the lonely and the heart-broken.',require:Game.last.name,season:'valentines',icon:[20,4],													power:heartPower,price: 1000000000000});
 		Game.NewUpgradeCookie({name:'Weeping heart biscuits',desc:'一个冰凉的蓝莓饼干，象征着一颗愈合的心。',require:Game.last.name,season:'valentines',icon:[21,3],												power:heartPower,price: 1000000000000000});
 		Game.NewUpgradeCookie({name:'Golden heart biscuits',desc:'一个漂亮的饼干象征着善良、真爱和真诚。',require:Game.last.name,season:'valentines',icon:[21,4],										power:heartPower,price: 1000000000000000000});
-		Game.NewUpgradeCookie({name:'Eternal heart biscuits',desc:'Silver icing for a very special someone you\'ve liked for a long, long time.',require:Game.last.name,season:'valentines',icon:[19,4],							power:heartPower,price: 1000000000000000000000});
+		Game.NewUpgradeCookie({name:'永恒的心饼干',desc:'Silver icing for a very special someone you\'ve liked for a long, long time.',require:Game.last.name,season:'valentines',icon:[19,4],							power:heartPower,price: 1000000000000000000000});
 
 		order=1100;
 		new Game.TieredUpgrade('Gem polish','棱镜工作效率像 <b>双倍</b> 一样高效。<q>摆脱污垢，让更多的光线进入。<br>真的，真的太离谱了。</q>','Prism',1);
@@ -7376,21 +7376,21 @@ Game.Launch=function()
 		new Game.Upgrade('金鹅蛋','黄金饼干出现几率 <b>+5%</b>.<br>成本是你拥有多少个蛋。<q>这是一个关于错误投资的悲惨故事的唯一痕迹。</q>',eggPrice2,[13,12]);
 		new Game.Upgrade('法贝热彩蛋','所有建筑和升级 <b>降低 1% 成本</b>.<br>成本是你拥有多少个蛋。<q>这个可恶的蛋绝对是假的。</q>',eggPrice2,[14,12],function(){Game.storeToRefresh=1;});
 		new Game.Upgrade('皱纹卵','皱纹炸裂加成 <b>5% 饼干</b>.<br>成本是你拥有多少个蛋。<q>看看这个小家伙!总有一天会成为一个大男孩的!没错,是很好玩!</q>',eggPrice2,[15,12]);
-		new Game.Upgrade('Cookie egg','Clicking is <b>10% more powerful</b>.<br>成本是你拥有多少个蛋。<q>The shell appears to be chipped.<br>I wonder what\'s inside this one!</q>',eggPrice2,[16,12]);
-		new Game.Upgrade('Omelette','Other eggs appear <b>10% more frequently</b>.<br>成本是你拥有多少个蛋。<q>Fromage not included.</q>',eggPrice2,[17,12]);
-		new Game.Upgrade('Chocolate egg','Contains <b>a lot of cookies</b>.<br>成本是你拥有多少个蛋。<q>Laid by the elusive cocoa bird. There\'s a surprise inside!</q>',eggPrice2,[18,12],function()
+		new Game.Upgrade('饼干蛋','点击加成 <b>10% </b>。<br>成本是你拥有多少个蛋。<q>壳体似乎有缺口。<br>我想知道这个里面有什么!</q>',eggPrice2,[16,12]);
+		new Game.Upgrade('煎蛋','其他蛋出现频率增加 <b>10% </b>。<br>成本是你拥有多少个蛋。<q>不包括他的年龄。</q>',eggPrice2,[17,12]);
+		new Game.Upgrade('巧克力蛋','包含 <b>很多的饼干</b>.<br>成本是你拥有多少个蛋。<q>这是一种难以捉摸的可可鸟。里面有个惊喜!</q>',eggPrice2,[18,12],function()
 		{
 			var cookies=Game.cookies*0.05;
-			if (Game.prefs.popups) Game.Popup('The chocolate egg bursts into<br>'+Beautify(cookies)+'!');
-			else Game.Notify('Chocolate egg','The egg bursts into <b>'+Beautify(cookies)+'</b> 饼干！',Game.Upgrades['Chocolate egg'].icon);
+			if (Game.prefs.popups) Game.Popup('巧克力蛋突然爆发<br>'+Beautify(cookies)+'!');
+			else Game.Notify('巧克力蛋','鸡蛋突然爆发 <b>'+Beautify(cookies)+'</b> 饼干！',Game.Upgrades['巧克力蛋'].icon);
 			Game.Earn(cookies);
 		});
-		new Game.Upgrade('世纪蛋','You continually gain <b>更多的饼干每秒产量 the longer you\'ve played</b> in the current session.<br>成本是你拥有多少个蛋。<q>Actually not centuries-old. This one isn\'t a day over 86!</q>',eggPrice2,[19,12]);
-		new Game.Upgrade('"egg"','<b>+9 CpS</b><q>hey it\'s "egg"</q>',eggPrice2,[20,12]);
+		new Game.Upgrade('世纪蛋','你不断地获得 <b>更多的饼干每秒产量，当你玩得越久</b> 在这个季节。<br>成本是你拥有多少个蛋。<q>实际上没有几个世纪的历史。这一天不超过86岁！</q>',eggPrice2,[19,12]);
+		new Game.Upgrade('"蛋"','<b>+9 饼干秒产量</b><q>嘿，这是"蛋"</q>',eggPrice2,[20,12]);
 		
-		Game.easterEggs=['鸡蛋','鸭蛋','火鸡蛋','鹌鹑蛋','知更鸟蛋','鸵鸟蛋','食火鸡蛋','鲑鱼籽','蛙卵','鲨鱼卵','龟蛋','蚂蚁幼虫','金鹅蛋','法贝热彩蛋','皱纹卵','Cookie egg','Omelette','Chocolate egg','世纪蛋','"egg"'];
+		Game.easterEggs=['鸡蛋','鸭蛋','火鸡蛋','鹌鹑蛋','知更鸟蛋','鸵鸟蛋','食火鸡蛋','鲑鱼籽','蛙卵','鲨鱼卵','龟蛋','蚂蚁幼虫','金鹅蛋','法贝热彩蛋','皱纹卵','饼干蛋','煎蛋','巧克力蛋','世纪蛋','"蛋"'];
 		Game.eggDrops=['鸡蛋','鸭蛋','火鸡蛋','鹌鹑蛋','知更鸟蛋','鸵鸟蛋','食火鸡蛋','鲑鱼籽','蛙卵','鲨鱼卵','龟蛋','蚂蚁幼虫'];
-		Game.rareEggDrops=['金鹅蛋','法贝热彩蛋','皱纹卵','Cookie egg','Omelette','Chocolate egg','世纪蛋','"egg"'];
+		Game.rareEggDrops=['金鹅蛋','法贝热彩蛋','皱纹卵','饼干蛋','煎蛋','巧克力蛋','世纪蛋','"蛋"'];
 		
 		Game.GetHowManyEggs=function()
 		{
@@ -7408,7 +7408,7 @@ Game.Launch=function()
 		{
 			if (Game.season!='easter') return;
 			if (Game.HasAchiev('捉迷藏冠军')) failRate*=0.7;
-			if (Game.Has('Omelette')) failRate*=0.9;
+			if (Game.Has('煎蛋')) failRate*=0.9;
 			if (Game.Has('星人')) failRate*=0.9;
 			if (Game.hasGod)
 			{
@@ -7532,12 +7532,12 @@ Game.Launch=function()
 			}
 			var upgrade=Game.permanentUpgrades[slot];
 			Game.SelectingPermanentUpgrade=upgrade;
-			Game.Prompt('<h3>Pick an upgrade to make permanent</h3>'+
+			Game.Prompt('<h3>选择升级，使其成为永久的</h3>'+
 			
 						'<div class="line"></div><div style="margin:4px auto;clear:both;width:120px;"><div class="crate upgrade enabled" style="background-position:'+(-slot*48)+'px '+(-10*48)+'px;"></div><div id="upgradeToSlot" class="crate upgrade enabled" style="background-position:'+(upgrade==-1?((-0*48)+'px '+(-7*48)+'px'):((-Game.UpgradesById[upgrade].icon[0]*48)+'px '+(-Game.UpgradesById[upgrade].icon[1]*48)+'px'))+';"></div></div>'+
 						'<div class="block crateBox" style="overflow-y:scroll;float:left;clear:left;width:317px;padding:0px;height:250px;">'+upgrades+'</div>'+
-						'<div class="block" style="float:right;width:152px;clear:right;height:234px;">Here are all the upgrades you\'ve purchased last playthrough.<div class="line"></div>Pick one to permanently gain its effects!<div class="line"></div>You can reassign this slot anytime you ascend.</div>'
-						,[['Confirm','Game.permanentUpgrades['+slot+']=Game.SelectingPermanentUpgrade;Game.BuildAscendTree();Game.ClosePrompt();'],'Cancel'],0,'widePrompt');
+						'<div class="block" style="float:right;width:152px;clear:right;height:234px;">以下是你上次购买的所有升级。<div class="line"></div>选择一个来永久地获得它的效果！<div class="line"></div>当你转生时，你可以重新分配这个位置。</div>'
+						,[['确认','Game.permanentUpgrades['+slot+']=Game.SelectingPermanentUpgrade;Game.BuildAscendTree();Game.ClosePrompt();'],'取消'],0,'widePrompt');
 		}
 		Game.SelectingPermanentUpgrade=-1;
 		Game.PutUpgradeInPermanentSlot=function(upgrade,slot)
@@ -7546,11 +7546,11 @@ Game.Launch=function()
 			l('upgradeToSlot').style.backgroundPosition=(-Game.UpgradesById[upgrade].icon[0]*48)+'px '+(-Game.UpgradesById[upgrade].icon[1]*48)+'px';
 		}
 		
-		new Game.Upgrade('星人','Eggs drop <b>10%</b> 更多地.<br>黄金饼干出现 <b>2%</b> 更多地 during Easter.',111111,[0,12]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
-		new Game.Upgrade('星雪','Christmas cookies drop <b>5%</b> 更多地.<br>Reindeer appear <b>5%</b> 更多地.',111111,[12,9]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
-		new Game.Upgrade('星际恐怖','幽灵饼干 drop <b>10%</b> 更多地.<br>黄金饼干出现 <b>2%</b> 更多地 during Halloween.',111111,[13,8]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
-		new Game.Upgrade('星际之恋','Heart cookies are <b>50%</b> more powerful.<br>黄金饼干出现 <b>2%</b> 更多地 during Valentines.',111111,[20,3]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
-		new Game.Upgrade('星际贸易','黄金饼干出现 <b>5%</b> 更多地 during Business day.',111111,[17,6]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
+		new Game.Upgrade('星人','鸡蛋掉率增加 <b>10%</b>。<br>黄金饼干出现频率增加 <b>2%</b> 在复活节期间。',111111,[0,12]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
+		new Game.Upgrade('星雪','圣诞饼干掉率增加 <b>5%</b>。<br>在复活节期间额外增加 <b>5%</b>。',111111,[12,9]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
+		new Game.Upgrade('星际恐怖','幽灵饼干掉率增加 <b>10%</b> 更多地.<br>黄金饼干在万圣节期间出现几率增加 <b>2%</b>。',111111,[13,8]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
+		new Game.Upgrade('星际之恋','心形饼干能力增加 <b>50%</b>。<br>黄金饼干在情人节期间出现几率增加 <b>2%</b>。',111111,[20,3]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
+		new Game.Upgrade('星际贸易','黄金饼干在工作日掉率增加 <b>5%</b>。',111111,[17,6]);Game.last.pool='prestige';Game.last.parents=['季节切换器'];
 		
 		var angelPriceFactor=7;
 		var desc=function(percent,total){return '你获得了另外 <b>+'+percent+'%</b> 当前饼干每秒产量, 总共 <b>'+total+'%</b>.';}
@@ -7710,10 +7710,10 @@ Game.Launch=function()
 		
 		
 		order=10300;
-		Game.NewUpgradeCookie({name:'Milk chocolate butter biscuit',desc:'Rewarded for owning 100 of everything.<br>It bears the engraving of a fine entrepreneur.',icon:[27,8],power:	10,price: 999999999999999999999,locked:1});
-		Game.NewUpgradeCookie({name:'Dark chocolate butter biscuit',desc:'Rewarded for owning 150 of everything.<br>It is adorned with the image of an experienced cookie tycoon.',icon:[27,9],power:	10,price: 999999999999999999999999,locked:1});
-		Game.NewUpgradeCookie({name:'White chocolate butter biscuit',desc:'Rewarded for owning 200 of everything.<br>The chocolate is chiseled to depict a masterful pastry magnate.',icon:[28,9],power:	10,price: 999999999999999999999999999,locked:1});
-		Game.NewUpgradeCookie({name:'Ruby chocolate butter biscuit',desc:'Rewarded for owning 250 of everything.<br>Covered in a rare red chocolate, this biscuit is etched to represent the face of a cookie industrialist gone mad with power.',icon:[28,8],power:	10,price: 999999999999999999999999999999,locked:1});
+		Game.NewUpgradeCookie({name:'牛奶巧克力奶油饼干',desc:'Rewarded for owning 100 of everything.<br>It bears the engraving of a fine entrepreneur.',icon:[27,8],power:	10,price: 999999999999999999999,locked:1});
+		Game.NewUpgradeCookie({name:'黑巧克力奶油饼干',desc:'Rewarded for owning 150 of everything.<br>It is adorned with the image of an experienced cookie tycoon.',icon:[27,9],power:	10,price: 999999999999999999999999,locked:1});
+		Game.NewUpgradeCookie({name:'白巧克力奶油饼干',desc:'Rewarded for owning 200 of everything.<br>The chocolate is chiseled to depict a masterful pastry magnate.',icon:[28,9],power:	10,price: 999999999999999999999999999,locked:1});
+		Game.NewUpgradeCookie({name:'红宝石巧克力奶油饼干',desc:'Rewarded for owning 250 of everything.<br>Covered in a rare red chocolate, this biscuit is etched to represent the face of a cookie industrialist gone mad with power.',icon:[28,8],power:	10,price: 999999999999999999999999999999,locked:1});
 		
 		order=10020;
 		Game.NewUpgradeCookie({name:'Gingersnaps',desc:'Cookies with a soul. Probably.',icon:[29,10],power:						4,price: 99999999999999999999});
@@ -7868,15 +7868,15 @@ Game.Launch=function()
 		{
 			var choices=[];
 			choices[0]={name:'自动',icon:[0,7]};
-			choices[1]={name:'Blue',icon:[21,21]};
-			choices[2]={name:'Red',icon:[22,21]};
-			choices[3]={name:'White',icon:[23,21]};
-			choices[4]={name:'Black',icon:[24,21]};
-			choices[5]={name:'Gold',icon:[25,21]};
-			choices[6]={name:'Grandmas',icon:[26,21]};
-			choices[7]={name:'Displeased grandmas',icon:[27,21]};
-			choices[8]={name:'Angered grandmas',icon:[28,21]};
-			choices[9]={name:'Money',icon:[29,21]};
+			choices[1]={name:'蓝色',icon:[21,21]};
+			choices[2]={name:'红色',icon:[22,21]};
+			choices[3]={name:'白色',icon:[23,21]};
+			choices[4]={name:'黑色',icon:[24,21]};
+			choices[5]={name:'黄金',icon:[25,21]};
+			choices[6]={name:'老奶奶',icon:[26,21]};
+			choices[7]={name:'生气的老奶奶',icon:[27,21]};
+			choices[8]={name:'愤怒的老奶奶',icon:[28,21]};
+			choices[9]={name:'钱',icon:[29,21]};
 			choices[Game.bgType].selected=1;
 			return choices;
 		}
@@ -8618,15 +8618,15 @@ Game.Launch=function()
 		
 		order=21100;
 		new Game.Achievement('伙计，亲爱的','收获 <b>7 合并糖块</b>.',[24,14]);
-		new Game.Achievement('糖粉','收获 <b>30 coalescing sugar lumps</b>.',[26,14]);
-		new Game.Achievement('一年的蛀牙','收获 <b>365 coalescing sugar lumps</b>.<q>My lumps my lumps my lumps.</q>',[29,14]);
-		new Game.Achievement('精心挑选','Successfully harvest a coalescing sugar lump before it\'s ripe.',[28,14]);
-		new Game.Achievement('糖糖','收获 a <b>bifurcated sugar lump</b>.',[29,15]);
-		new Game.Achievement('天然蔗糖','收获 a <b>golden sugar lump</b>.',[29,16]);Game.last.pool='shadow';
-		new Game.Achievement('甜品','收获 a <b>meaty sugar lump</b>.',[29,17]);
+		new Game.Achievement('糖粉','收获 <b>30 合并糖块</b>.',[26,14]);
+		new Game.Achievement('一年的蛀牙','收获 <b>365 合并糖块</b>.<q>我的糖块我的糖块</q>',[29,14]);
+		new Game.Achievement('精心挑选','在成熟之前，成功地收获一个合并的糖块。',[28,14]);
+		new Game.Achievement('糖糖','收获 1个 <b>分叉糖块</b>.',[29,15]);
+		new Game.Achievement('天然蔗糖','收获 1个 <b>黄金糖块</b>.',[29,16]);Game.last.pool='shadow';
+		new Game.Achievement('甜品','收获 1个 <b>肉质糖块</b>.',[29,17]);
 		
 		order=7002;
-		new Game.Achievement('Tricentennial','至少有 <b>300 of everything</b>.<q>Can\'t stop, won\'t stop. Probably should stop, though.</q>',[29,12]);
+		new Game.Achievement('三百周年纪念','至少有 <b>300 每种建筑</b>.<q>不能停，不能停。也许应该停止了。</q>',[29,12]);
 		
 		Game.CpsAchievement('Knead for speed');Game.last.baseDesc+='<q>How did we not make that one yet?</q>';Game.last.desc=BeautifyInText(Game.last.baseDesc);
 		Game.CpsAchievement('Well the cookies start coming and they don\'t stop coming');Game.last.baseDesc+='<q>Didn\'t make sense not to click for fun.</q>';Game.last.desc=BeautifyInText(Game.last.baseDesc);
@@ -8651,71 +8651,71 @@ Game.Launch=function()
 		order=2000;new Game.TieredAchievement('在隧道的尽头','拥有 <b>350</b> 棱镜。','Prism',8);
 		
 		order=1070;
-		new Game.Achievement('Click (starring Adam Sandler)','制作 <b>10,000,000,000,000,000,000,000,000</b> 饼干通过游标。',[0,24]);
+		new Game.Achievement('点击(亚当•桑德勒主演)','制作 <b>10,000,000,000,000,000,000,000,000</b> 饼干通过游标。',[0,24]);
 		order=1120;
-		new Game.Achievement('Frantiquities','制作 <b>10,000,000,000,000,000,000,000,000</b> 饼干通过老奶奶。',[1,24]);
+		new Game.Achievement('古物','制作 <b>10,000,000,000,000,000,000,000,000</b> 饼干通过老奶奶。',[1,24]);
 		order=1220;
-		new Game.Achievement('Overgrowth','制作 <b>10,000,000,000,000,000,000</b> 饼干通过农场。',[2,24]);
+		new Game.Achievement('过度生长','制作 <b>10,000,000,000,000,000,000</b> 饼干通过农场。',[2,24]);
 		order=1320;
-		new Game.Achievement('Sedimentalism','制作 <b>100,000,000,000,000,000,000</b> 饼干通过矿山。',[3,24]);
+		new Game.Achievement('沉积主义','制作 <b>100,000,000,000,000,000,000</b> 饼干通过矿山。',[3,24]);
 		order=1420;
-		new Game.Achievement('Labor of love','制作 <b>1,000,000,000,000,000,000,000</b> 饼干通过工厂。',[4,24]);
+		new Game.Achievement('爱的劳动','制作 <b>1,000,000,000,000,000,000,000</b> 饼干通过工厂。',[4,24]);
 		order=1445;
-		new Game.Achievement('Reverse funnel system','制作 <b>10,000,000,000,000,000,000,000</b> 饼干通过银行。',[15,24]);
+		new Game.Achievement('逆向漏斗系统','制作 <b>10,000,000,000,000,000,000,000</b> 饼干通过银行。',[15,24]);
 		order=1470;
-		new Game.Achievement('Thus spoke you','制作 <b>100,000,000,000,000,000,000,000</b> 饼干通过寺庙。',[16,24]);
+		new Game.Achievement('你这样说','制作 <b>100,000,000,000,000,000,000,000</b> 饼干通过寺庙。',[16,24]);
 		order=1495;
-		new Game.Achievement('Manafest destiny','制作 <b>1,000,000,000,000,000,000,000,000</b> 饼干通过精灵塔。',[17,24]);
+		new Game.Achievement('天命','制作 <b>1,000,000,000,000,000,000,000,000</b> 饼干通过精灵塔。',[17,24]);
 		order=1520;
-		new Game.Achievement('Neither snow nor rain nor heat nor gloom of night','制作 <b>10,000,000,000,000,000,000,000,000</b> 饼干通过装船。',[5,24]);
+		new Game.Achievement('无论雨雪热还是漫漫黑夜','制作 <b>10,000,000,000,000,000,000,000,000</b> 饼干通过装船。',[5,24]);
 		order=1620;
-		new Game.Achievement('I\'ve got the Midas touch','制作 <b>100,000,000,000,000,000,000,000,000</b> 饼干通过炼金术实验室。',[6,24]);
+		new Game.Achievement('我有点石成金的本领','制作 <b>100,000,000,000,000,000,000,000,000</b> 饼干通过炼金术实验室。',[6,24]);
 		order=1720;
-		new Game.Achievement('Which eternal lie','制作 <b>1,000,000,000,000,000,000,000,000,000</b> 饼干通过传送门。',[7,24]);
+		new Game.Achievement('这永恒的谎言','制作 <b>1,000,000,000,000,000,000,000,000,000</b> 饼干通过传送门。',[7,24]);
 		order=1820;
-		new Game.Achievement('D&eacute;j&agrave; vu','制作 <b>10,000,000,000,000,000,000,000,000,000</b> 饼干通过时光机器。',[8,24]);
+		new Game.Achievement('似曾相识','制作 <b>10,000,000,000,000,000,000,000,000,000</b> 饼干通过时光机器。',[8,24]);
 		order=1920;
-		new Game.Achievement('Powers of Ten','制作 <b>100,000,000,000,000,000,000,000,000,000</b> 饼干通过反物质冷凝器。',[13,24]);
+		new Game.Achievement('十大权力','制作 <b>100,000,000,000,000,000,000,000,000,000</b> 饼干通过反物质冷凝器。',[13,24]);
 		order=2020;
-		new Game.Achievement('Now the dark days are gone','制作 <b>1,000,000,000,000,000,000,000,000,000,000</b> 饼干通过棱镜。',[14,24]);
+		new Game.Achievement('现在黑暗的日子已经过去了','制作 <b>1,000,000,000,000,000,000,000,000,000,000</b> 饼干通过棱镜。',[14,24]);
 		
 		order=1070;
-		new Game.Achievement('Freaky jazz hands','Reach level <b>10</b> 游标。',[0,26]);Game.Objects['Cursor'].levelAchiev10=Game.last;
+		new Game.Achievement('怪异的爵士手','达到 <b>10</b> 级游标。',[0,26]);Game.Objects['Cursor'].levelAchiev10=Game.last;
 		order=1120;
-		new Game.Achievement('Methuselah','Reach level <b>10</b> 老奶奶。',[1,26]);Game.Objects['Grandma'].levelAchiev10=Game.last;
+		new Game.Achievement('玛土撒拉','达到 <b>10</b> 级老奶奶。',[1,26]);Game.Objects['Grandma'].levelAchiev10=Game.last;
 		order=1220;
-		new Game.Achievement('Huge tracts of land','Reach level <b>10</b> 农场。',[2,26]);Game.Objects['Farm'].levelAchiev10=Game.last;
+		new Game.Achievement('大片土地','达到 <b>10</b> 级农场。',[2,26]);Game.Objects['Farm'].levelAchiev10=Game.last;
 		order=1320;
-		new Game.Achievement('D-d-d-d-deeper','Reach level <b>10</b> 矿山。',[3,26]);Game.Objects['Mine'].levelAchiev10=Game.last;
+		new Game.Achievement('再深一点','达到 <b>10</b> 级矿山。',[3,26]);Game.Objects['Mine'].levelAchiev10=Game.last;
 		order=1420;
-		new Game.Achievement('Patently genius','Reach level <b>10</b> 工厂。',[4,26]);Game.Objects['Factory'].levelAchiev10=Game.last;
+		new Game.Achievement('明显的天才','达到 <b>10</b> 级工厂。',[4,26]);Game.Objects['Factory'].levelAchiev10=Game.last;
 		order=1445;
-		new Game.Achievement('A capital idea','Reach level <b>10</b> 银行。',[15,26]);Game.Objects['Bank'].levelAchiev10=Game.last;
+		new Game.Achievement('一个好主意','达到 <b>10</b> 级银行。',[15,26]);Game.Objects['Bank'].levelAchiev10=Game.last;
 		order=1470;
-		new Game.Achievement('It belongs in a bakery','Reach level <b>10</b> 寺庙。',[16,26]);Game.Objects['Temple'].levelAchiev10=Game.last;
+		new Game.Achievement('它属于一家面包店','达到 <b>10</b> 级寺庙。',[16,26]);Game.Objects['Temple'].levelAchiev10=Game.last;
 		order=1495;
-		new Game.Achievement('Motormouth','Reach level <b>10</b> 精灵塔。',[17,26]);Game.Objects['Wizard tower'].levelAchiev10=Game.last;
+		new Game.Achievement('汽车嘴','达到 <b>10</b> 级精灵塔。',[17,26]);Game.Objects['Wizard tower'].levelAchiev10=Game.last;
 		order=1520;
-		new Game.Achievement('Been there done that','Reach level <b>10</b> 装船。',[5,26]);Game.Objects['Shipment'].levelAchiev10=Game.last;
+		new Game.Achievement('去过也做过','达到 <b>10</b> 级装船。',[5,26]);Game.Objects['Shipment'].levelAchiev10=Game.last;
 		order=1620;
-		new Game.Achievement('Phlogisticated substances','Reach level <b>10</b> 炼金术实验室。',[6,26]);Game.Objects['Alchemy lab'].levelAchiev10=Game.last;
+		new Game.Achievement('复杂的物质','达到 <b>10</b> 级炼金术实验室。',[6,26]);Game.Objects['Alchemy lab'].levelAchiev10=Game.last;
 		order=1720;
-		new Game.Achievement('Bizarro world','Reach level <b>10</b> 传送门。',[7,26]);Game.Objects['Portal'].levelAchiev10=Game.last;
+		new Game.Achievement('奇怪的世界','达到 <b>10</b> 级传送门。',[7,26]);Game.Objects['Portal'].levelAchiev10=Game.last;
 		order=1820;
-		new Game.Achievement('The long now','Reach level <b>10</b> 时光机器。',[8,26]);Game.Objects['Time machine'].levelAchiev10=Game.last;
+		new Game.Achievement('漫长的现在','达到 <b>10</b> 级时光机器。',[8,26]);Game.Objects['Time machine'].levelAchiev10=Game.last;
 		order=1920;
-		new Game.Achievement('Chubby hadrons','Reach level <b>10</b> 反物质冷凝器。',[13,26]);Game.Objects['Antimatter condenser'].levelAchiev10=Game.last;
+		new Game.Achievement('胖嘟嘟的','达到<b>10</b> 级反物质冷凝器。',[13,26]);Game.Objects['Antimatter condenser'].levelAchiev10=Game.last;
 		order=2020;
-		new Game.Achievement('Palettable','Reach level <b>10</b> 棱镜。',[14,26]);Game.Objects['Prism'].levelAchiev10=Game.last;
+		new Game.Achievement('可调性','达到 <b>10</b> 级棱镜。',[14,26]);Game.Objects['Prism'].levelAchiev10=Game.last;
 		
 		order=61470;
 		order=61495;
-		new Game.Achievement('Bibbidi-bobbidi-boo','Cast <b>9</b> spells.',[21,11]);
-		new Game.Achievement('I\'m the wiz','Cast <b>99</b> spells.',[22,11]);
-		new Game.Achievement('A wizard is you','Cast <b>999</b> spells.<q>I\'m a what?</q>',[29,11]);
+		new Game.Achievement('圣经','投射 <b>9</b> 法术。',[21,11]);
+		new Game.Achievement('我是天才','投射 <b>99</b> 法术。',[22,11]);
+		new Game.Achievement('巫师就是你','投射 <b>999</b> 法术。<q>我是什么?</q>',[29,11]);
 		
 		order=10000;
-		new Game.Achievement('四叶饼干','拥有 <b>4</b> golden cookies simultaneously.<q>Fairly rare, considering cookies don\'t even have leaves.</q>',[27,6]);Game.last.pool='shadow';
+		new Game.Achievement('四叶饼干','拥有 <b>4</b> 黄金饼干同时出现。<q>相当罕见，因为饼干都没有叶子。</q>',[27,6]);Game.last.pool='shadow';
 		
 		order=2100;
 		new Game.TieredAchievement('Lucked out','拥有 <b>1</b> chancemaker.','Chancemaker',1);
@@ -8732,10 +8732,10 @@ Game.Launch=function()
 		new Game.Achievement('Just a statistic','制作 <b>10,000,000,000,000,000,000,000,000,000</b> 饼干通过chancemakers.',[19,23]);
 		new Game.Achievement('Murphy\'s wild guess','制作 <b>10,000,000,000,000,000,000,000,000,000,000</b> 饼干通过chancemakers.',[19,24]);
 		
-		new Game.Achievement('Let\'s leaf it at that','Reach level <b>10</b> chancemakers.',[19,26]);Game.Objects['Chancemaker'].levelAchiev10=Game.last;
+		new Game.Achievement('Let\'s leaf it at that','达到 <b>10</b> chancemakers.',[19,26]);Game.Objects['Chancemaker'].levelAchiev10=Game.last;
 		
 		order=1000;
-		new Game.Achievement('The ultimate clickdown','制作 <b>1,000,000,000,000,000,000,000</b> 饼干通过点击。<q>(of ultimate destiny.)',[11,19]);
+		new Game.Achievement('终极点击','制作 <b>1,000,000,000,000,000,000,000</b> 饼干通过点击。<q>(of ultimate destiny.)',[11,19]);
 		//end of achievements
 		
 		/*=====================================================================================
@@ -9600,92 +9600,92 @@ Game.Launch=function()
 			{name:'Dragon egg',action:'Chip it',pic:0,
 				cost:function(){return Game.cookies>=1000000;},
 				buy:function(){Game.Spend(1000000);},
-				costStr:function(){return Beautify(1000000)+' cookies';}},
+				costStr:function(){return Beautify(1000000)+' 饼干';}},
 			{name:'Dragon egg',action:'Chip it',pic:1,
 				cost:function(){return Game.cookies>=1000000*2;},
 				buy:function(){Game.Spend(1000000*2);},
-				costStr:function(){return Beautify(1000000*2)+' cookies';}},
+				costStr:function(){return Beautify(1000000*2)+' 饼干';}},
 			{name:'Dragon egg',action:'Chip it',pic:2,
 				cost:function(){return Game.cookies>=1000000*4;},
 				buy:function(){Game.Spend(1000000*4);},
-				costStr:function(){return Beautify(1000000*4)+' cookies';}},
+				costStr:function(){return Beautify(1000000*4)+' 饼干';}},
 			{name:'Shivering dragon egg',action:'Hatch it',pic:3,
 				cost:function(){return Game.cookies>=1000000*8;},
 				buy:function(){Game.Spend(1000000*8);},
-				costStr:function(){return Beautify(1000000*8)+' cookies';}},
-			{name:'Krumblor, cookie hatchling',action:'Train Breath of Milk<br><small>Aura : kittens are 5% more effective</small>',pic:4,
+				costStr:function(){return Beautify(1000000*8)+' 饼干';}},
+			{name:'Krumblor, cookie hatchling',action:'训练牛奶的气息<br><small>光环:小猫的效率提高了5%</small>',pic:4,
 				cost:function(){return Game.cookies>=1000000*16;},
 				buy:function(){Game.Spend(1000000*16);},
-				costStr:function(){return Beautify(1000000*16)+' cookies';}},
-			{name:'Krumblor, cookie hatchling',action:'Train Dragon Cursor<br><small>Aura : clicking is 5% more effective</small>',pic:4,
+				costStr:function(){return Beautify(1000000*16)+' 饼干';}},
+			{name:'Krumblor, cookie hatchling',action:'训练龙之游标<br><small>光环:点击效果增加5%</small>',pic:4,
 				cost:function(){return Game.Objects['Cursor'].amount>=100;},
 				buy:function(){Game.Objects['Cursor'].sacrifice(100);},
-				costStr:function(){return '100 cursors';}},
-			{name:'Krumblor, cookie hatchling',action:'Train Elder Battalion<br><small>Aura : grandmas gain +1% CpS for every non-grandma building</small>',pic:4,
+				costStr:function(){return '100 游标';}},
+			{name:'Krumblor, cookie hatchling',action:'训练大队长老<br><small>光环:每一栋非奶奶楼都能得到 1% 的饼干秒产量</small>',pic:4,
 				cost:function(){return Game.Objects['Grandma'].amount>=100;},
 				buy:function(){Game.Objects['Grandma'].sacrifice(100);},
-				costStr:function(){return '100 grandmas';}},
-			{name:'Krumblor, cookie hatchling',action:'Train Reaper of Fields<br><small>Aura : golden cookies may trigger a 龙之收获</small>',pic:4,
+				costStr:function(){return '100 老奶奶';}},
+			{name:'Krumblor, cookie hatchling',action:'训练领域的收割者<br><small>光环:饼干可能触发龙之收获</small>',pic:4,
 				cost:function(){return Game.Objects['Farm'].amount>=100;},
 				buy:function(){Game.Objects['Farm'].sacrifice(100);},
-				costStr:function(){return '100 farms';}},
-			{name:'Krumblor, cookie dragon',action:'Train Earth Shatterer<br><small>Aura : buildings sell back for 85% instead of 50%</small>',pic:5,
+				costStr:function(){return '100 农场';}},
+			{name:'Krumblor, cookie dragon',action:'训练地球毁灭者<br><small>光环:建筑以85%而不是50%的价格出售</small>',pic:5,
 				cost:function(){return Game.Objects['Mine'].amount>=100;},
 				buy:function(){Game.Objects['Mine'].sacrifice(100);},
-				costStr:function(){return '100 mines';}},
-			{name:'Krumblor, cookie dragon',action:'Train Master of the Armory<br><small>Aura : all upgrades are 2% cheaper</small>',pic:5,
+				costStr:function(){return '100 矿山';}},
+			{name:'Krumblor, cookie dragon',action:'训练军械库大师<br><small>光环:所有的升级都要便宜2%</small>',pic:5,
 				cost:function(){return Game.Objects['Factory'].amount>=100;},
 				buy:function(){Game.Objects['Factory'].sacrifice(100);},
-				costStr:function(){return '100 factories';}},
-			{name:'Krumblor, cookie dragon',action:'Train Fierce Hoarder<br><small>Aura : all buildings are 2% cheaper</small>',pic:5,
+				costStr:function(){return '100 工厂';}},
+			{name:'Krumblor, cookie dragon',action:'训练激烈囤积<br><small>光环:所有的建筑都要便宜2%</small>',pic:5,
 				cost:function(){return Game.Objects['Bank'].amount>=100;},
 				buy:function(){Game.Objects['Bank'].sacrifice(100);},
-				costStr:function(){return '100 banks';}},
-			{name:'Krumblor, cookie dragon',action:'Train Dragon God<br><small>Aura : prestige CpS bonus +5%</small>',pic:5,
+				costStr:function(){return '100 银行';}},
+			{name:'Krumblor, cookie dragon',action:'训练龙神<br><small>光环:声望饼干每秒产量加成+ 5%</small>',pic:5,
 				cost:function(){return Game.Objects['Temple'].amount>=100;},
 				buy:function(){Game.Objects['Temple'].sacrifice(100);},
-				costStr:function(){return '100 temples';}},
-			{name:'Krumblor, cookie dragon',action:'Train 神秘的光环<br><small>Aura : golden cookies appear 5% 更多地</small>',pic:5,
+				costStr:function(){return '100 寺庙';}},
+			{name:'Krumblor, cookie dragon',action:'训练神秘的光环<br><small>金色光环:黄金饼干出现几率增加 5%</small>',pic:5,
 				cost:function(){return Game.Objects['Wizard tower'].amount>=100;},
 				buy:function(){Game.Objects['Wizard tower'].sacrifice(100);},
-				costStr:function(){return '100 wizard towers';}},
-			{name:'Krumblor, cookie dragon',action:'Train Dragonflight<br><small>Aura : golden cookies may trigger a Dragonflight</small>',pic:5,
+				costStr:function(){return '100 精灵塔';}},
+			{name:'Krumblor, cookie dragon',action:'训练飞龙<br><small>光环:金色的饼干可能引发龙飞</small>',pic:5,
 				cost:function(){return Game.Objects['Shipment'].amount>=100;},
 				buy:function(){Game.Objects['Shipment'].sacrifice(100);},
-				costStr:function(){return '100 shipments';}},
-			{name:'Krumblor, cookie dragon',action:'Train Ancestral Metamorphosis<br><small>Aura : golden cookies give 10% more cookies</small>',pic:5,
+				costStr:function(){return '100 装船';}},
+			{name:'Krumblor, cookie dragon',action:'训练祖先的蜕变<br><small>光环:金色的饼干多给10%的饼干</small>',pic:5,
 				cost:function(){return Game.Objects['Alchemy lab'].amount>=100;},
 				buy:function(){Game.Objects['Alchemy lab'].sacrifice(100);},
-				costStr:function(){return '100 alchemy labs';}},
-			{name:'Krumblor, cookie dragon',action:'Train Unholy Dominion<br><small>Aura : wrath cookies give 10% more cookies</small>',pic:5,
+				costStr:function(){return '100 炼金实验室';}},
+			{name:'Krumblor, cookie dragon',action:'训练邪恶统治<br><small>光环:愤怒的饼干会多给10%的饼干</small>',pic:5,
 				cost:function(){return Game.Objects['Portal'].amount>=100;},
 				buy:function(){Game.Objects['Portal'].sacrifice(100);},
-				costStr:function(){return '100 portals';}},
-			{name:'Krumblor, cookie dragon',action:'Train Epoch Manipulator<br><small>Aura : golden cookie effects last 5% longer</small>',pic:5,
+				costStr:function(){return '100 传送门';}},
+			{name:'Krumblor, cookie dragon',action:'训练时代操纵者<br><small>光环:金色饼干的效果持续时间延长了5%</small>',pic:5,
 				cost:function(){return Game.Objects['Time machine'].amount>=100;},
 				buy:function(){Game.Objects['Time machine'].sacrifice(100);},
-				costStr:function(){return '100 time machines';}},
-			{name:'Krumblor, cookie dragon',action:'Train 心灵控制物质<br><small>Aura : +25% random drops</small>',pic:5,
+				costStr:function(){return '100 时光机器';}},
+			{name:'Krumblor, cookie dragon',action:'训练心灵控制物质<br><small>光环:+25%随机掉落</small>',pic:5,
 				cost:function(){return Game.Objects['Antimatter condenser'].amount>=100;},
 				buy:function(){Game.Objects['Antimatter condenser'].sacrifice(100);},
-				costStr:function(){return '100 antimatter condensers';}},
-			{name:'Krumblor, cookie dragon',action:'Train Radiant Appetite<br><small>Aura : all cookie production multiplied by 2</small>',pic:5,
+				costStr:function(){return '100 反物质冷凝器';}},
+			{name:'Krumblor, cookie dragon',action:'训练Radiant Appetite<br><small>光环:所有的饼干产量乘以2</small>',pic:5,
 				cost:function(){return Game.Objects['Prism'].amount>=100;},
 				buy:function(){Game.Objects['Prism'].sacrifice(100);},
-				costStr:function(){return '100 prisms';}},
-			{name:'Krumblor, cookie dragon',action:'Train 龙的财富<br><small>Aura : +111% CpS per golden cookie on-screen</small>',pic:5,
+				costStr:function(){return '100 棱镜';}},
+			{name:'Krumblor, cookie dragon',action:'训练龙的财富<br><small>光环:在同一屏幕上每一块金色的饼干增加111%的饼干秒产量</small>',pic:5,
 				cost:function(){return Game.Objects['Chancemaker'].amount>=100;},
 				buy:function(){Game.Objects['Chancemaker'].sacrifice(100);},
-				costStr:function(){return '100 chancemakers';}},
-			{name:'Krumblor, cookie dragon',action:'Bake dragon cookie<br><small>Delicious!</small>',pic:6,
+				costStr:function(){return '100 机会制造商';}},
+			{name:'Krumblor, cookie dragon',action:'烘烤龙饼干<br><small>美味!</small>',pic:6,
 				cost:function(){var fail=0;for (var i in Game.Objects){if (Game.Objects[i].amount<50) fail=1;}return (fail==0);},
 				buy:function(){for (var i in Game.Objects){Game.Objects[i].sacrifice(50);}Game.Unlock('龙形饼干');},
-				costStr:function(){return '50 of every building';}},
-			{name:'Krumblor, cookie dragon',action:'Train secondary aura<br><small>Lets you use two dragon auras simultaneously</small>',pic:6,
+				costStr:function(){return '50 个每种建筑';}},
+			{name:'Krumblor, cookie dragon',action:'训练二次光环<br><small>您可以同时使用两个龙光环</small>',pic:6,
 				cost:function(){var fail=0;for (var i in Game.Objects){if (Game.Objects[i].amount<200) fail=1;}return (fail==0);},
 				buy:function(){for (var i in Game.Objects){Game.Objects[i].sacrifice(200);}},
-				costStr:function(){return '200 of every building';}},
-			{name:'Krumblor, cookie dragon',action:'Your dragon is fully trained.',pic:7}
+				costStr:function(){return '200 个每种建筑';}},
+			{name:'Krumblor, cookie dragon',action:'你的龙训练有素',pic:7}
 		];
 		
 		Game.dragonAuras={
@@ -9735,13 +9735,13 @@ Game.Launch=function()
 			var highestBuilding=0;
 			for (var i in Game.Objects) {if (Game.Objects[i].amount>0) highestBuilding=Game.Objects[i];}
 			
-			Game.Prompt('<h3>Set your dragon\'s '+(slot==1?'secondary ':'')+'aura</h3>'+
+			Game.Prompt('<h3>设置你的龙的 '+(slot==1?'次要的 ':'')+'光环</h3>'+
 						'<div class="line"></div>'+
 						'<div id="dragonAuraInfo" style="min-height:60px;"></div>'+
 						'<div style="text-align:center;">'+str+'</div>'+
 						'<div class="line"></div>'+
-						'<div style="text-align:center;margin-bottom:8px;">'+(highestBuilding==0?'Switching your aura is <b>free</b> because you own no buildings.':'The cost of switching your aura is <b>1 '+highestBuilding.name+'</b>.<br>This will affect your CpS!')+'</div>'
-						,[['Confirm',(slot==0?'Game.dragonAura':'Game.dragonAura2')+'=Game.SelectingDragonAura;'+(highestBuilding==0 || currentAura==Game.SelectingDragonAura?'':'Game.ObjectsById['+highestBuilding.id+'].sacrifice(1);')+'Game.ToggleSpecialMenu(1);Game.ClosePrompt();'],'Cancel'],0,'widePrompt');
+						'<div style="text-align:center;margin-bottom:8px;">'+(highestBuilding==0?'转换你的光环是<b>免费</b>，因为你没有建筑。':'改变你的光环的代价是 <b>1 '+highestBuilding.name+'</b>.<br>这会影响到你的饼干每秒产量 !')+'</div>'
+						,[['确定',(slot==0?'Game.dragonAura':'Game.dragonAura2')+'=Game.SelectingDragonAura;'+(highestBuilding==0 || currentAura==Game.SelectingDragonAura?'':'Game.ObjectsById['+highestBuilding.id+'].sacrifice(1);')+'Game.ToggleSpecialMenu(1);Game.ClosePrompt();'],'取消'],0,'widePrompt');
 			Game.DescribeDragonAura(Game.SelectingDragonAura);
 		}
 		Game.SelectingDragonAura=-1;
@@ -10914,8 +10914,8 @@ Game.Launch=function()
 				if (!Game.Has(Game.UpgradesById[Game.nextResearch].name))
 				{
 					Game.Unlock(Game.UpgradesById[Game.nextResearch].name);
-					if (Game.prefs.popups) Game.Popup('Researched : '+Game.UpgradesById[Game.nextResearch].name);
-					else Game.Notify('Research complete','You have discovered : <b>'+Game.UpgradesById[Game.nextResearch].name+'</b>.',Game.UpgradesById[Game.nextResearch].icon);
+					if (Game.prefs.popups) Game.Popup('研究 : '+Game.UpgradesById[Game.nextResearch].name);
+					else Game.Notify('研究完成','你已经发现 : <b>'+Game.UpgradesById[Game.nextResearch].name+'</b>.',Game.UpgradesById[Game.nextResearch].icon);
 				}
 				Game.nextResearch=0;
 				Game.researchT=-1;
@@ -11031,9 +11031,9 @@ Game.Launch=function()
 				if (Game.Has('黄金开关')) Game.Unlock('黄金开关[关闭]');
 				if (Game.Has('选择经典的乳制品')) Game.Unlock('牛奶选择器');
 				if (Game.Has('基本壁纸分类')) Game.Unlock('背景选择器');
-				if (Game.Has('Golden cookie alert sound')) Game.Unlock('黄金饼干声音选择器');
+				if (Game.Has('金色饼干提示音')) Game.Unlock('黄金饼干声音选择器');
 				
-				if (Game.Has('Eternal heart biscuits')) Game.Win('可爱的饼干');
+				if (Game.Has('永恒的心饼干')) Game.Win('可爱的饼干');
 				if (Game.season=='easter')
 				{
 					var eggs=0;
@@ -11077,11 +11077,11 @@ Game.Launch=function()
 				if (minAmount>=1) Game.Win('其中的一切');
 				if (mathematician==1) Game.Win('数学家');
 				if (base10==1) Game.Win('基数10');
-				if (minAmount>=100) {Game.Win('一百周年纪念');Game.Unlock('Milk chocolate butter biscuit');}
-				if (minAmount>=150) {Game.Win('150周年纪念');Game.Unlock('Dark chocolate butter biscuit');}
-				if (minAmount>=200) {Game.Win('周年纪念');Game.Unlock('White chocolate butter biscuit');}
-				if (minAmount>=250) {Game.Win('二百年半');Game.Unlock('Ruby chocolate butter biscuit');}
-				if (minAmount>=300) {Game.Win('Tricentennial');Game.Unlock('薰衣草巧克力奶油饼干');}
+				if (minAmount>=100) {Game.Win('一百周年纪念');Game.Unlock('牛奶巧克力奶油饼干');}
+				if (minAmount>=150) {Game.Win('150周年纪念');Game.Unlock('黑巧克力奶油饼干');}
+				if (minAmount>=200) {Game.Win('周年纪念');Game.Unlock('白巧克力奶油饼干');}
+				if (minAmount>=250) {Game.Win('二百年半');Game.Unlock('红宝石巧克力奶油饼干');}
+				if (minAmount>=300) {Game.Win('三百周年纪念');Game.Unlock('薰衣草巧克力奶油饼干');}
 				
 				if (Game.handmadeCookies>=1000) {Game.Win('可以点击');Game.Unlock('塑料鼠标');}
 				if (Game.handmadeCookies>=100000) {Game.Win('全能点击');Game.Unlock('铁制鼠标');}
@@ -11092,7 +11092,7 @@ Game.Launch=function()
 				if (Game.handmadeCookies>=1000000000000000) {Game.Win('单击中心');Game.Unlock('叉合金鼠标');}
 				if (Game.handmadeCookies>=100000000000000000) {Game.Win('点击祸患');Game.Unlock('范塔钢鼠标');}
 				if (Game.handmadeCookies>=10000000000000000000) {Game.Win('点击大灾变');Game.Unlock('永不崩溃的鼠标');}
-				if (Game.handmadeCookies>=1000000000000000000000) {Game.Win('The ultimate clickdown');Game.Unlock('阿迈斯里鼠标');}
+				if (Game.handmadeCookies>=1000000000000000000000) {Game.Win('终极点击');Game.Unlock('阿迈斯里鼠标');}
 				
 				if (Game.cookiesEarned<Game.cookies) Game.Win('被骗的饼干味道很糟糕');
 				
@@ -11180,20 +11180,20 @@ Game.Launch=function()
 				if (Game.Objects['Chancemaker'].totalCookies>=base*			1000000000000) Game.Win('Just a statistic');
 				
 				var base=10000000000000000000;
-				if (Game.Objects['Cursor'].totalCookies>=base*1000000) 		Game.Win('Click (starring Adam Sandler)');
-				if (Game.Objects['Grandma'].totalCookies>=base*1000000) 	Game.Win('Frantiquities');
-				if (Game.Objects['Farm'].totalCookies>=base) 				Game.Win('Overgrowth');
-				if (Game.Objects['Mine'].totalCookies>=base*				10) Game.Win('Sedimentalism');
-				if (Game.Objects['Factory'].totalCookies>=base*				100) Game.Win('Labor of love');
-				if (Game.Objects['Bank'].totalCookies>=base*				1000) Game.Win('Reverse funnel system');
-				if (Game.Objects['Temple'].totalCookies>=base*				10000) Game.Win('Thus spoke you');
-				if (Game.Objects['Wizard tower'].totalCookies>=base*		100000) Game.Win('Manafest destiny');
-				if (Game.Objects['Shipment'].totalCookies>=base*			1000000) Game.Win('Neither snow nor rain nor heat nor gloom of night');
-				if (Game.Objects['Alchemy lab'].totalCookies>=base*			10000000) Game.Win('I\'ve got the Midas touch');
-				if (Game.Objects['Portal'].totalCookies>=base*				100000000) Game.Win('Which eternal lie');
-				if (Game.Objects['Time machine'].totalCookies>=base*		1000000000) Game.Win('D&eacute;j&agrave; vu');
-				if (Game.Objects['Antimatter condenser'].totalCookies>=base*10000000000) Game.Win('Powers of Ten');
-				if (Game.Objects['Prism'].totalCookies>=base*				100000000000) Game.Win('Now the dark days are gone');
+				if (Game.Objects['Cursor'].totalCookies>=base*1000000) 		Game.Win('点击(亚当•桑德勒主演)');
+				if (Game.Objects['Grandma'].totalCookies>=base*1000000) 	Game.Win('古物');
+				if (Game.Objects['Farm'].totalCookies>=base) 				Game.Win('过度生长');
+				if (Game.Objects['Mine'].totalCookies>=base*				10) Game.Win('沉积主义');
+				if (Game.Objects['Factory'].totalCookies>=base*				100) Game.Win('爱的劳动');
+				if (Game.Objects['Bank'].totalCookies>=base*				1000) Game.Win('逆向漏斗系统');
+				if (Game.Objects['Temple'].totalCookies>=base*				10000) Game.Win('你这样说');
+				if (Game.Objects['Wizard tower'].totalCookies>=base*		100000) Game.Win('天命');
+				if (Game.Objects['Shipment'].totalCookies>=base*			1000000) Game.Win('无论雨雪热还是漫漫黑夜');
+				if (Game.Objects['Alchemy lab'].totalCookies>=base*			10000000) Game.Win('我有点石成金的本领');
+				if (Game.Objects['Portal'].totalCookies>=base*				100000000) Game.Win('这永恒的谎言');
+				if (Game.Objects['Time machine'].totalCookies>=base*		1000000000) Game.Win('似曾相识');
+				if (Game.Objects['Antimatter condenser'].totalCookies>=base*10000000000) Game.Win('十大权力');
+				if (Game.Objects['Prism'].totalCookies>=base*				100000000000) Game.Win('现在黑暗的日子已经过去了');
 				if (Game.Objects['Chancemaker'].totalCookies>=base*			1000000000000) Game.Win('Murphy\'s wild guess');
 				
 				if (!Game.HasAchiev('饼干灌篮高手') && Game.LeftBackground && Game.milkProgress>0.1 && (Game.LeftBackground.canvas.height*0.4+256/2-16)>((1-Game.milkHd)*Game.LeftBackground.canvas.height)) Game.Win('饼干灌篮高手');
