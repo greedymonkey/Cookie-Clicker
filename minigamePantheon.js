@@ -11,21 +11,21 @@ M.launch=function()
 				
 		M.gods={
 			'asceticism':{
-				name:'Holobore, Spirit of Asceticism',
+				name:'神圣的精神，禁欲主义的精神',
 				icon:[21,18],
-				desc1:'+15% base CpS.',
-				desc2:'+10% base CpS.',
-				desc3:'+5% base CpS.',
-				descAfter:'If a golden cookie is clicked, this spirit is unslotted and all worship swaps will be used up.',
-				quote:'An immortal life spent focusing on the inner self, away from the distractions of material wealth.',
+				desc1:'+15% 基础饼干秒产量。',
+				desc2:'+10% 基础饼干秒产量。',
+				desc3:'+5% 基础饼干秒产量。',
+				descAfter:'如果一个黄金饼干被点击了，这个灵魂就会被打开所有的崇拜掉期都会被消耗殆尽。',
+				quote:'一个不朽的生命，专注于内在的自我，远离物质财富的分心。',
 			},
 			'decadence':{
 				name:'Vomitrax, Spirit of Decadence',
 				icon:[22,18],
-				desc1:'Golden and wrath cookie effect duration +7%, but buildings grant -7% CpS.',
-				desc2:'Golden and wrath cookie effect duration +5%, but buildings grant -5% CpS.',
-				desc3:'Golden and wrath cookie effect duration +2%, but buildings grant -2% CpS.',
-				quote:'This sleazy spirit revels in the lust for quick easy gain and contempt for the value of steady work.',
+				desc1:'金色和愤怒饼干效果持续时间 +7%, 但是建筑的生产效率 -7% 饼干每秒产量。',
+				desc2:'金色和愤怒饼干效果持续时间 +5%, 但是建筑的生产效率 -5% 饼干每秒产量。',
+				desc3:'金色和愤怒饼干效果持续时间 +2%, 但是建筑的生产效率 -2% 饼干每秒产量。',
+				quote:'这种卑鄙的精神是为了快速的获得和轻视稳定工作的价值而产生的。',
 			},
 			'ruin':{
 				name:'Godzamok, Spirit of Ruin',

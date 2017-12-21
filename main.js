@@ -520,7 +520,7 @@ Game.Launch=function()
 	'<div class="listing">&bull; the 背景选择器 upgrade is now functional</div>'+
 	'<div class="listing">&bull; the top menu no longer scrolls with the rest</div>'+
 	'<div class="listing">&bull; timespans are written nicer</div>'+
-	'<div class="listing">&bull; Dragonflights now tend to supercede Click frenzies, you will rarely have both at the same time</div>'+
+	'<div class="listing">&bull; 龙之飞舞 now tend to supercede Click frenzies, you will rarely have both at the same time</div>'+
 	'<div class="listing">&bull; some old bugs were phased out and replaced by new ones</div>'+
 	
 	'</div><div class="subsection update small">'+
@@ -3534,7 +3534,7 @@ Game.Launch=function()
 			}
 			
 			//cookie storm!
-			if (Game.hasBuff('Cookie storm') && Math.random()<0.5)
+			if (Game.hasBuff('饼干风暴') && Math.random()<0.5)
 			{
 				var newShimmer=new Game.shimmer('golden',0,1);
 				newShimmer.dur=Math.ceil(Math.random()*4+1);
@@ -3703,7 +3703,7 @@ Game.Launch=function()
 					if (me.wrath>0 && Math.random()<0.3) list.push('blood frenzy','chain cookie','cookie storm');
 					else if (Math.random()<0.03 && Game.cookiesEarned>=100000) list.push('chain cookie','cookie storm');
 					if (Math.random()<0.05 && Game.season=='fools') list.push('everything must go');
-					if (Math.random()<0.1 && (Math.random()<0.05 || !Game.hasBuff('Dragonflight'))) list.push('click frenzy');
+					if (Math.random()<0.1 && (Math.random()<0.05 || !Game.hasBuff('龙之飞舞'))) list.push('click frenzy');
 					if (me.wrath && Math.random()<0.1) list.push('cursed finger');
 					
 					if (Game.BuildingsOwned>=10 && Math.random()<0.25) list.push('building special');
@@ -3713,7 +3713,7 @@ Game.Launch=function()
 					if ((me.wrath==0 && Math.random()<0.15) || Math.random()<0.05)
 					{
 						if (Game.hasAura('Reaper of Fields')) list.push('dragon harvest');
-						if (Game.hasAura('Dragonflight')) list.push('dragonflight');
+						if (Game.hasAura('龙之飞舞')) list.push('dragonflight');
 					}
 					
 					if (this.last!='' && Math.random()<0.8 && list.indexOf(this.last)!=-1) list.splice(list.indexOf(this.last),1);//80% chance to force a different one
@@ -4107,10 +4107,10 @@ Game.Launch=function()
 			"Click frenzy","click frenzy",
 			"被诅咒的手指","cursed finger",
 			"饼干链","chain cookie",
-			"Cookie storm","cookie storm",
+			"饼干风暴","cookie storm",
 			"Building special","building special",
 			"龙之收获","dragon harvest",
-			"Dragonflight","dragonflight",
+			"龙之飞舞","dragonflight",
 			"Sweet","free sugar lump",
 			"Blab","blab"
 		];
@@ -5824,7 +5824,7 @@ Game.Launch=function()
 			this.levelTooltip=function()
 			{
 				var me=this;
-				return '<div style="width:280px;padding:8px;"><b>等级 '+Beautify(me.level)+' '+cnsigle(me.plural)+'</b><div class="line"></div>'+(me.level==1?me.extraName:me.extraPlural).replace('[X]',Beautify(me.level))+' 给予 +'+Beautify(me.level)+'% '+cndisplayname(me.name)+' 饼干每秒总产量。<div class="line"></div>点击升级消耗 <span class="price lump'+(Game.lumps>=me.level+1?'':' 禁用')+'">'+Beautify(me.level+1)+' 糖块'+(me.level==0?'':'s')+'</span>.'+((me.level==0 && me.minigameUrl)?'<div class="line"></div><b>这个建筑升级解锁一个迷你游戏。</b>':'')+'</div>';
+				return '<div style="width:280px;padding:8px;"><b>等级 '+Beautify(me.level)+' '+cnsigle(me.plural)+'</b><div class="line"></div>'+(me.level==1?me.extraName:me.extraPlural).replace('[X]',Beautify(me.level))+' 给予 +'+Beautify(me.level)+'% '+cndisplayname(me.name)+' 饼干每秒总产量。<div class="line"></div>点击升级消耗 <span class="price lump'+(Game.lumps>=me.level+1?'':' 禁用')+'">'+Beautify(me.level+1)+' 糖块'+(me.level==0?'':'')+'</span>.'+((me.level==0 && me.minigameUrl)?'<div class="line"></div><b>这个建筑升级解锁一个迷你游戏。</b>':'')+'</div>';
 			}
 			this.levelUp=function()
 			{
@@ -8946,7 +8946,7 @@ Game.Launch=function()
 		new Game.buffType('dragonflight',function(time,pow)
 		{
 			return {
-				name:'Dragonflight',
+				name:'龙之飞舞',
 				desc:'Clicking power x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[0,25],
 				time:time*Game.fps,
@@ -8958,8 +8958,8 @@ Game.Launch=function()
 		new Game.buffType('cookie storm',function(time,pow)
 		{
 			return {
-				name:'Cookie storm',
-				desc:'Cookies everywhere!',
+				name:'饼干风暴',
+				desc:'饼干无处不在!',
 				icon:[22,6],
 				time:time*Game.fps,
 				add:true,
@@ -9050,7 +9050,7 @@ Game.Launch=function()
 		new Game.buffType('magic adept',function(time,pow)
 		{
 			return {
-				name:'Magic adept',
+				name:'魔法专家',
 				desc:'咒语会适得其反 '+pow+' 持续时间变短 '+Game.sayTime(time*Game.fps,-1)+'.',
 				icon:[29,11],
 				time:time*Game.fps,
@@ -9061,7 +9061,7 @@ Game.Launch=function()
 		new Game.buffType('magic inept',function(time,pow)
 		{
 			return {
-				name:'Magic inept',
+				name:'魔法无能',
 				desc:'咒语会适得其反 '+pow+' 持续时间变短 '+Game.sayTime(time*Game.fps,-1)+'.',
 				icon:[29,11],
 				time:time*Game.fps,
@@ -9649,7 +9649,7 @@ Game.Launch=function()
 				cost:function(){return Game.Objects['Wizard tower'].amount>=100;},
 				buy:function(){Game.Objects['Wizard tower'].sacrifice(100);},
 				costStr:function(){return '100 精灵塔';}},
-			{name:'Krumblor, cookie dragon',action:'训练飞龙<br><small>光环:金色的饼干可能引发龙飞</small>',pic:5,
+			{name:'Krumblor, cookie dragon',action:'训练飞龙<br><small>光环:金色的饼干可能引发龙之飞舞</small>',pic:5,
 				cost:function(){return Game.Objects['Shipment'].amount>=100;},
 				buy:function(){Game.Objects['Shipment'].sacrifice(100);},
 				costStr:function(){return '100 装船';}},
@@ -9673,7 +9673,7 @@ Game.Launch=function()
 				cost:function(){return Game.Objects['Prism'].amount>=100;},
 				buy:function(){Game.Objects['Prism'].sacrifice(100);},
 				costStr:function(){return '100 棱镜';}},
-			{name:'Krumblor, cookie dragon',action:'训练龙的财富<br><small>光环:在同一屏幕上每一块金色的饼干增加111%的饼干秒产量</small>',pic:5,
+			{name:'Krumblor, cookie dragon',action:'训练龙的财富<br><small>光环:在同一屏幕上的每个黄金饼干增加111%的饼干秒产量</small>',pic:5,
 				cost:function(){return Game.Objects['Chancemaker'].amount>=100;},
 				buy:function(){Game.Objects['Chancemaker'].sacrifice(100);},
 				costStr:function(){return '100 机会制造商';}},
@@ -9689,23 +9689,23 @@ Game.Launch=function()
 		];
 		
 		Game.dragonAuras={
-			0:{name:'No aura',pic:[0,7],desc:'Select an aura from those your dragon knows.'},
-			1:{name:'Breath of Milk',pic:[18,25],desc:'Kittens are <b>5%</b> more effective.'},
-			2:{name:'Dragon Cursor',pic:[0,25],desc:'Clicking is <b>5%</b> more effective.'},
-			3:{name:'Elder Battalion',pic:[1,25],desc:'Grandmas gain <b>+1% CpS</b> for every non-grandma building.'},
-			4:{name:'Reaper of Fields',pic:[2,25],desc:'Golden cookies may trigger a <b>龙之收获</b>.'},
-			5:{name:'Earth Shatterer',pic:[3,25],desc:'Buildings sell back for <b>85%</b> instead of 50%.'},
-			6:{name:'Master of the Armory',pic:[4,25],desc:'All upgrades are <b>2%</b> cheaper.'},
-			7:{name:'Fierce Hoarder',pic:[15,25],desc:'All buildings are <b>2%</b> cheaper.'},
-			8:{name:'Dragon God',pic:[16,25],desc:'Prestige CpS bonus <b>+5%</b>.'},
-			9:{name:'神秘的光环',pic:[17,25],desc:'黄金饼干出现 <b>+5%</b> 更多地.'},
-			10:{name:'Dragonflight',pic:[5,25],desc:'Golden cookies may trigger a <b>Dragonflight</b>.'},
-			11:{name:'Ancestral Metamorphosis',pic:[6,25],desc:'Golden cookies give <b>10%</b> more cookies.'},
-			12:{name:'Unholy Dominion',pic:[7,25],desc:'Wrath cookies give <b>10%</b> more cookies.'},
-			13:{name:'Epoch Manipulator',pic:[8,25],desc:'Golden cookies last <b>5%</b> longer.'},
-			14:{name:'心灵控制物质',pic:[13,25],desc:'Random drops are <b>25% more common</b>.'},
-			15:{name:'Radiant Appetite',pic:[14,25],desc:'All cookie production <b>multiplied by 2</b>.'},
-			16:{name:'龙的财富',pic:[19,25],desc:'<b>+111% CpS</b> per golden cookie on-screen, multiplicative.'},
+			0:{name:'No aura',pic:[0,7],desc:'从你的龙所知道的光环中选择一个光环。'},
+			1:{name:'Breath of Milk',pic:[18,25],desc:'小猫的效率提高<b>5%</b>。'},
+			2:{name:'Dragon Cursor',pic:[0,25],desc:'点击效果增加 <b>5%</b> 。'},
+			3:{name:'Elder Battalion',pic:[1,25],desc:'老奶奶给所有非老奶奶的建筑加成 <b>+1% 饼干秒产量</b> 。'},
+			4:{name:'Reaper of Fields',pic:[2,25],desc:'黄金饼干可以出发 <b>龙之收获</b>.'},
+			5:{name:'Earth Shatterer',pic:[3,25],desc:'建筑卖出退回 <b>85%</b> 而不是 50% 饼干。'},
+			6:{name:'Master of the Armory',pic:[4,25],desc:'所有升级便宜 <b>2%</b>。'},
+			7:{name:'Fierce Hoarder',pic:[15,25],desc:'所有建筑便宜 <b>2%</b>。'},
+			8:{name:'Dragon God',pic:[16,25],desc:'声望对饼干秒产量的加成增加 <b>+5%</b>。'},
+			9:{name:'神秘的光环',pic:[17,25],desc:'黄金饼干出现几率提高 <b>+5%</b>。'},
+			10:{name:'龙之飞舞',pic:[5,25],desc:'黄金饼干可以触发 <b>龙之飞舞</b>.'},
+			11:{name:'Ancestral Metamorphosis',pic:[6,25],desc:'金色的饼干多给 <b>10%</b> 饼干。'},
+			12:{name:'Unholy Dominion',pic:[7,25],desc:'愤怒的饼干会多给 <b>10%</b> 饼干。'},
+			13:{name:'Epoch Manipulator',pic:[8,25],desc:'黄金饼干效果持续时间延长 <b>5%</b> 。'},
+			14:{name:'心灵控制物质',pic:[13,25],desc:'随机掉落几率增加 <b>+25%</b>.'},
+			15:{name:'Radiant Appetite',pic:[14,25],desc:'所有的饼干产量 <b>翻倍</b>.'},
+			16:{name:'龙的财富',pic:[19,25],desc:'在同一屏幕上的每个黄金饼干增加 <b>111%</b> 的饼干秒产量</b>'},
 		};
 		
 		Game.hasAura=function(what)
@@ -10123,7 +10123,7 @@ Game.Launch=function()
 				Timer.clean();
 				
 				var showDragon=0;
-				if (Game.hasBuff('Dragonflight') || Game.hasBuff('龙之收获')) showDragon=1;
+				if (Game.hasBuff('龙之飞舞') || Game.hasBuff('龙之收获')) showDragon=1;
 				
 				Game.cookieOriginX=Math.floor(Game.LeftBackground.canvas.width/2);
 				Game.cookieOriginY=Math.floor(Game.LeftBackground.canvas.height*0.4);

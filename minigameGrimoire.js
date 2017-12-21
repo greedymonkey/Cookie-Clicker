@@ -31,7 +31,7 @@ M.launch=function()
 					val=Math.min(Game.cookies,val);
 					Game.Spend(val);
 					Game.Notify(buff.name,buff.desc,buff.icon,6);
-					Game.Popup('<div style="font-size:80%;">Backfire!<br>Summoning failed! Lost '+Beautify(val)+' cookie'+(val==1?'':'s')+'!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">适得其反!<br>Summoning failed! Lost '+Beautify(val)+' cookie'+(val==1?'':'s')+'!</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'hand of fate':{
@@ -50,7 +50,7 @@ M.launch=function()
 					var newShimmer=new Game.shimmer('golden',{noWrath:true});
 					var choices=[];
 					choices.push('frenzy','multiply cookies');
-					if (!Game.hasBuff('Dragonflight')) choices.push('click frenzy');
+					if (!Game.hasBuff('龙之飞舞')) choices.push('click frenzy');
 					if (Math.random()<0.1) choices.push('chain cookie','cookie storm','blab');
 					if (Game.BuildingsOwned>=10 && Math.random()<0.25) choices.push('building special');
 					//if (Math.random()<0.2) choices.push('clot','cursed finger','ruin cookies');
@@ -108,7 +108,7 @@ M.launch=function()
 						changed++;
 					}
 					if (changed==0){Game.Popup('<div style="font-size:80%;">No buffs to alter!</div>',Game.mouseX,Game.mouseY);return -1;}
-					Game.Popup('<div style="font-size:80%;">Backfire!<br>Fizz! Buffs shortened.</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">适得其反!<br>Fizz! Buffs shortened.</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'spontaneous edifice':{
@@ -163,7 +163,7 @@ M.launch=function()
 				{
 					Game.killBuff('Haggler\'s luck');
 					var buff=Game.gainBuff('haggler misery',60*60,2);
-					Game.Popup('<div style="font-size:80%;">Backfire!<br>Upgrades are pricier!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">适得其反!<br>Upgrades are pricier!</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'summon crafty pixies':{
@@ -183,7 +183,7 @@ M.launch=function()
 				{
 					Game.killBuff('Crafty pixies');
 					var buff=Game.gainBuff('pixie misery',60*60,2);
-					Game.Popup('<div style="font-size:80%;">Backfire!<br>Nasty goblins!<br>Buildings are pricier!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">适得其反!<br>Nasty goblins!<br>Buildings are pricier!</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'gambler\'s fever dream':{
@@ -215,23 +215,23 @@ M.launch=function()
 				},
 			},
 			'resurrect abomination':{
-				name:'Resurrect Abomination',
-				desc:'Instantly summon a wrinkler if conditions are fulfilled.',
-				failDesc:'Pop one of your wrinklers.',
+				name:'复活可憎之物',
+				desc:'如果条件满足，立即召唤起皱纹。',
+				failDesc:'打开你的皱纹。',
 				icon:[28,11],
 				costMin:20,
 				costPercent:0.1,
 				win:function()
 				{
 					var out=Game.SpawnWrinkler();
-					if (!out){Game.Popup('<div style="font-size:80%;">Unable to spawn a wrinkler!</div>',Game.mouseX,Game.mouseY);return -1;}
-					Game.Popup('<div style="font-size:80%;">Rise, my precious!</div>',Game.mouseX,Game.mouseY);
+					if (!out){Game.Popup('<div style="font-size:80%;">无法产生皱纹!</div>',Game.mouseX,Game.mouseY);return -1;}
+					Game.Popup('<div style="font-size:80%;">起来，我的宝贝!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
 					var out=Game.PopRandomWrinkler();
-					if (!out){Game.Popup('<div style="font-size:80%;">Backfire!<br>But no wrinkler was harmed.</div>',Game.mouseX,Game.mouseY);return -1;}
-					Game.Popup('<div style="font-size:80%;">Backfire!<br>So long, ugly...</div>',Game.mouseX,Game.mouseY);
+					if (!out){Game.Popup('<div style="font-size:80%;">适得其反!<br>但没有人受伤。</div>',Game.mouseX,Game.mouseY);return -1;}
+					Game.Popup('<div style="font-size:80%;">适得其反!<br>又长又丑...</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'diminish ineptitude':{
@@ -243,15 +243,15 @@ M.launch=function()
 				costPercent:0.2,
 				win:function()
 				{
-					Game.killBuff('Magic inept');
+					Game.killBuff('魔法无能');
 					var buff=Game.gainBuff('magic adept',5*60,10);
-					Game.Popup('<div style="font-size:80%;">Ineptitude diminished!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">无能!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
-					Game.killBuff('Magic adept');
+					Game.killBuff('魔法专家');
 					var buff=Game.gainBuff('magic inept',10*60,5);
-					Game.Popup('<div style="font-size:80%;">Backfire!<br>Ineptitude magnified!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">适得其反!<br>无能放大!</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 		};
@@ -288,8 +288,8 @@ M.launch=function()
 		M.getFailChance=function(spell)
 		{
 			var failChance=0.15;
-			if (Game.hasBuff('Magic adept')) failChance*=0.1;
-			if (Game.hasBuff('Magic inept')) failChance*=5;
+			if (Game.hasBuff('魔法专家')) failChance*=0.1;
+			if (Game.hasBuff('魔法无能')) failChance*=5;
 			if (spell.failFunc) failChance=spell.failFunc(failChance);
 			return failChance;
 		}
