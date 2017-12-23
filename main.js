@@ -505,7 +505,7 @@ Game.Launch=function()
 	'<div class="listing">&bull; buffs no longer affect offline CpS</div>'+
 	'<div class="listing">&bull; Godzamok\'s hunger was made less potent (this is a nerf, very sorry)</div>'+
 	'<div class="listing">&bull; grimoire spell costs and maximum magic work differently</div>'+
-	'<div class="listing">&bull; Spontaneous Edifice has been reworked</div>'+
+	'<div class="listing">&bull; 自发大厦 has been reworked</div>'+
 	'<div class="listing">&bull; changed unlock levels and prices for some cursor upgrades</div>'+
 	'<div class="listing">&bull; fixed buggy pantheon slots, hopefully</div>'+
 	'<div class="listing">&bull; fixed "Legacy started a long while ago" showing as "a few seconds ago"</div>'+
@@ -3539,7 +3539,7 @@ Game.Launch=function()
 				var newShimmer=new Game.shimmer('golden',0,1);
 				newShimmer.dur=Math.ceil(Math.random()*4+1);
 				newShimmer.life=Math.ceil(Game.fps*newShimmer.dur);
-				newShimmer.force='cookie storm drop';
+				newShimmer.force='饼干风暴掉落';
 				newShimmer.sizeMult=Math.random()*0.75+0.25;
 			}
 			
@@ -3855,7 +3855,7 @@ Game.Launch=function()
 					{
 						buff=Game.gainBuff('cookie storm',Math.ceil(7*effectDurMod),7);
 					}
-					else if (choice=='cookie storm drop')
+					else if (choice=='饼干风暴掉落')
 					{
 						var moni=Math.max(mult*(Game.cookiesPs*60*Math.floor(Math.random()*7+1)),Math.floor(Math.random()*7+1));//either 1-7 cookies or 1-7 minutes of cookie production, whichever is highest
 						Game.Earn(moni);
@@ -3889,7 +3889,7 @@ Game.Launch=function()
 					
 					//sparkle and kill the shimmer
 					Game.SparkleAt(me.x+48,me.y+48);
-					if (choice=='cookie storm drop')
+					if (choice=='饼干风暴掉落')
 					{
 						if (Game.prefs.cookiesound) PlaySound('snd/clickb'+Math.floor(Math.random()*7+1)+'.mp3',0.75);
 						else PlaySound('snd/click'+Math.floor(Math.random()*7+1)+'.mp3',0.75);
@@ -6067,8 +6067,8 @@ Game.Launch=function()
 			if (Game.Has('神圣折扣')) price*=0.99;
 			if (Game.hasAura('Fierce Hoarder')) price*=0.98;
 			if (Game.hasBuff('Everything must go')) price*=0.95;
-			if (Game.hasBuff('Crafty pixies')) price*=0.98;
-			if (Game.hasBuff('Nasty goblins')) price*=1.02;
+			if (Game.hasBuff('狡猾的小妖精')) price*=0.98;
+			if (Game.hasBuff('肮脏的妖精')) price*=1.02;
 			if (Game.hasGod)
 			{
 				var godLvl=Game.hasGod('creation');
@@ -6570,7 +6570,7 @@ Game.Launch=function()
 				if (Game.Has('法贝热彩蛋')) price*=0.99;
 				if (Game.Has('神圣销售')) price*=0.99;
 				if (Game.hasBuff('运气而已')) price*=0.98;
-				if (Game.hasBuff('Haggler\'s misery')) price*=1.02;
+				if (Game.hasBuff('砍价的不幸')) price*=1.02;
 				if (Game.hasAura('Master of the Armory')) price*=0.98;
 				if (this.pool=='cookie' && Game.Has('神圣的面包店')) price/=5;
 			}
@@ -7450,12 +7450,12 @@ Game.Launch=function()
 		new Game.TieredUpgrade('金融禅宗','银行工作效率 <b>翻倍</b>。<q>经济思想的终极目标;大资金的风水,股市瑜伽-海姆利克氏操作法的1角和2角5分的硬币。</q>','Bank',6);
 		
 		order=550;
-		new Game.TieredUpgrade('金色偶像','寺庙 <b>翻倍</b>。<q>吸引更贪婪的冒险者来找回你的饼干。现在这是真正的偶像比赛!</q>','Temple',1);
-		new Game.TieredUpgrade('牺牲','寺庙 <b>翻倍</b>。<q>10亿美元的饼干是什么样的生活?</q>','Temple',2);
-		new Game.TieredUpgrade('美味的祝福','寺庙 <b>翻倍</b>。<q>瞧，面包师的万能汤匙降临，对信徒和分布式神圣的礼物——闪闪发光的糖,巧克力漆黑如夜,和各种各样的小麦。让我告诉你，那个聚会很不友好。</q>','Temple',3);
-		new Game.TieredUpgrade('太阳节','寺庙 <b>翻倍</b>。<q>在每年的庆祝活动中，你的太阳穴都能释放出你的原始力量，包括喷火者、传统舞蹈、仪式砍头和其他的欢乐!</q>','Temple',4);
-		new Game.TieredUpgrade('扩大万神殿','寺庙 <b>翻倍</b>。<q>精神上的不足!比你需要的还要多，或者你的钱要回来!百分百保证!</q>','Temple',5);
-		new Game.TieredUpgrade('天上的面包师','寺庙 <b>翻倍</b>。<q>这是它。终极神终于在你的行动上投射他们的神性的眼睛;无论这是一件好事，或者可能是几天的结束，你很快就会发现。</q>','Temple',6);
+		new Game.TieredUpgrade('金色偶像','寺庙工作效率 <b>翻倍</b>。<q>吸引更贪婪的冒险者来找回你的饼干。现在这是真正的偶像比赛!</q>','Temple',1);
+		new Game.TieredUpgrade('牺牲','寺庙工作效率 <b>翻倍</b>。<q>10亿美元的饼干是什么样的生活?</q>','Temple',2);
+		new Game.TieredUpgrade('美味的祝福','寺庙工作效率 <b>翻倍</b>。<q>瞧，面包师的万能汤匙降临，对信徒和分布式神圣的礼物——闪闪发光的糖,巧克力漆黑如夜,和各种各样的小麦。让我告诉你，那个聚会很不友好。</q>','Temple',3);
+		new Game.TieredUpgrade('太阳节','寺庙工作效率 <b>翻倍</b>。<q>在每年的庆祝活动中，你的太阳穴都能释放出你的原始力量，包括喷火者、传统舞蹈、仪式砍头和其他的欢乐!</q>','Temple',4);
+		new Game.TieredUpgrade('扩大万神殿','寺庙工作效率 <b>翻倍</b>。<q>精神上的不足!比你需要的还要多，或者你的钱要回来!百分百保证!</q>','Temple',5);
+		new Game.TieredUpgrade('天上的面包师','寺庙工作效率 <b>翻倍</b>。<q>这是它。终极神终于在你的行动上投射他们的神性的眼睛;无论这是一件好事，或者可能是几天的结束，你很快就会发现。</q>','Temple',6);
 		
 		order=575;
 		new Game.TieredUpgrade('尖尖的帽子','精灵塔工作效率 <b>翻倍</b>。<q>测试显示，相对于神奇的圆锥工具的几何比例，它的可接受性增加了。</q>','Wizard tower',1);
@@ -7562,7 +7562,7 @@ Game.Launch=function()
 		new Game.Upgrade('六翼天使',desc(10,65)+'<q>在糕点天堂的第一个领域，六翼天使拥有关于烘焙的所有知识。</q>',Math.pow(angelPriceFactor,6),[5,11]);Game.last.pool='prestige';Game.last.parents=['小天使'];
 		new Game.Upgrade('上帝',desc(10,75)+'<q>就像圣诞老人一样，但乐趣却少了。</q>',Math.pow(angelPriceFactor,7),[6,11]);Game.last.pool='prestige';Game.last.parents=['六翼天使'];
 		
-		new Game.Upgrade('双重超越之门','你现在可以 <b>离线制作饼干</b>, 比率是 <b>5%</b> 你当前饼干每秒产量，离线生产资源的时间是游戏关闭后 <b>1 小时</b>。<br>(超过1小时后，这个比例又降低了90%——你的比率下降到 <b>0.5%</b> 总秒收益.)<q>这是一次你总是穿得不得体的场合。别担心，只要冲过保镖，假装你认识人。</q>',1,[15,11]);Game.last.pool='prestige';
+		new Game.Upgrade('双重超越之门','你现在可以 <b>离线制作饼干</b>, 离线饼干每秒产量是你当前饼干每秒产量的 <b>5%</b>，离线时间是游戏关闭之后的 <b>1 小时</b>。<br>(超过1小时后，这个比例又降低了90% —— 直到你的比例下降到 <b>0.5%</b> 当前饼干每秒产量。)<q>这是一次你总是穿得不得体的场合。别担心，只要冲过保镖，假装你认识人。</q>',1,[15,11]);Game.last.pool='prestige';
 
 		new Game.Upgrade('天上的运气','黄金饼干出现 <b>5%</b> 更多地.<q>上面有人喜欢你。</q>',77,[22,6]);Game.last.pool='prestige';
 		new Game.Upgrade('永恒的财富','黄金饼干效果持续时间增加 <b>10%</b>。<q>这是你每天的运气。这是……运气好。</q>',777,[23,6]);Game.last.pool='prestige';Game.last.parents=['天上的运气'];
@@ -7587,7 +7587,7 @@ Game.Launch=function()
 		order=400;new Game.TieredUpgrade('行星分裂器','矿山工作效率 <b>翻倍</b>。<q>这些新型的挖土机已经在马鲁拉，格洛伯特和弗瓦扎·维的实验中进行了测试，在其他遥远的星球上，它们最近都很安静。</q>','Mine',7);
 		order=500;new Game.TieredUpgrade('半机械人','工厂工作效率 <b>翻倍</b>。<q>半合成的生物体没有松懈，没有统一，午休时间缩短了20%，这使它们成为理想的劳动饲料。</q>','Factory',7);
 		order=525;new Game.TieredUpgrade('钱包的方式','银行工作效率 <b>翻倍</b>。<q>这种新的货币学派在银行界引起了激烈的讨论;遵循它的规则，你就可以从中获利。</q>','Bank',7);
-		order=550;new Game.TieredUpgrade('创造神话','寺庙 <b>翻倍</b>。<q>关于第一个饼干的起源的故事一直流传着;故事是如何开始的，在时间和命运的烤箱里。</q>','Temple',7);
+		order=550;new Game.TieredUpgrade('创造神话','寺庙工作效率 <b>翻倍</b>。<q>关于第一个饼干的起源的故事一直流传着;故事是如何开始的，在时间和命运的烤箱里。</q>','Temple',7);
 		order=575;new Game.TieredUpgrade('饼干男','精灵塔工作效率 <b>翻倍</b>。<q>在这里;完美的烘焙魔法学校。从召唤晶片到打螺帽，没有任何一种饼干制作方法能通过魔术提高10倍的效果。</q>','Wizard tower',7);
 		order=600;new Game.TieredUpgrade('戴森球','装船工作效率 <b>翻倍</b>。<q>你已经找到了一种方法，将你的宇宙技术知识运用到更局部的努力中;这个巨大的元材料球体包裹着太阳系，肯定会让你的烘焙能力提高一个档次。</q>','Shipment',7);
 		order=700;new Game.TieredUpgrade('原子流动性理论','炼金实验室工作效率 <b>翻倍</b>。<q>把炼金术推向极限，你会发现一切事物都可以转化成其他东西——铅、水银、水;更重要的是，你意识到任何东西都可以而且应该被转换成饼干。</q>','Alchemy lab',7);
@@ -7603,7 +7603,7 @@ Game.Launch=function()
 		order=400;new Game.TieredUpgrade('菜籽油井','矿山工作效率 <b>翻倍</b>。<q>菜籽油是一种以前未开发的资源，它渗透在地下的橄榄石中，使其具有独特的味道和丰厚的性能</q>','Mine',8);
 		order=500;new Game.TieredUpgrade('78小时天','工厂工作效率 <b>翻倍</b>。<q>我们为什么不早点想到这个呢?</q>','Factory',8);
 		order=525;new Game.TieredUpgrade('基本原理','银行工作效率 <b>翻倍</b>。<q>如果不是现在,更待何时?如果不是，是什么?如果不是东西……东西呢?</q>','Bank',8);
-		order=550;new Game.TieredUpgrade('神权政治','寺庙 <b>翻倍</b>。<q>你把你的饼干帝国变成了一个完美的神权政治，聚集了无数的追随者，从宇宙的每一个角落。<br/>别让它冲昏了你的头。</q>','Temple',8);
+		order=550;new Game.TieredUpgrade('神权政治','寺庙工作效率 <b>翻倍</b>。<q>你把你的饼干帝国变成了一个完美的神权政治，聚集了无数的追随者，从宇宙的每一个角落。<br/>别让它冲昏了你的头。</q>','Temple',8);
 		order=575;new Game.TieredUpgrade('兔子戏法','精灵塔工作效率 <b>翻倍</b>。<q>除了一顶华丽的帽子外，你的巫师们已经找到了一种方法，可以同时控制兔子的数量，并能产生大量额外的饼干，基本上是免费的!<br>由此产生的饼干可能不适合纯素食者。</q>','Wizard tower',8);
 		order=600;new Game.TieredUpgrade('最后的边界','装船工作效率 <b>翻倍</b>。<q>从那里到这里，这条路很长。不过，这一切都是值得的——景色很美，油价也稍微合理一些。</q>','Shipment',8);
 		order=700;new Game.TieredUpgrade('原色古果','炼金实验室工作效率 <b>翻倍</b>。<q>现在，你已经做到了。干得好。很好。这是你的3个星系，你刚刚把它们转换成饼干。你可以从宇宙跳跃到宇宙。</q>','Alchemy lab',8);
@@ -7929,7 +7929,7 @@ Game.Launch=function()
 		order=400;new Game.TieredUpgrade('鼹鼠人','矿山工作效率 <b>翻倍</b>。<q>这些壮实的小人物，在你的实验室里，从真实的人类身上设计出来，他们有本事找到最美味的地下矿石，条件是更昂贵的机器可能无法生存。</q>','Mine',9);
 		order=500;new Game.TieredUpgrade('机器学习','工厂工作效率 <b>翻倍</b>。<q>如果你真的告诉你的员工学会如何操作机器，你就会得到更好的工作效率。有时候，这是小事……</q>','Factory',9);
 		order=525;new Game.TieredUpgrade('可食用货币','银行工作效率 <b>翻倍</b>。<q>这真的很简单;你让所有的货币都太好吃了，不吃，一下子解决世界饥饿和通货膨胀!</q>','Bank',9);
-		order=550;new Game.TieredUpgrade('病态的说唱祈祷','寺庙 <b>翻倍</b>。<q>这些时髦的宗教曲调以其糟糕的节奏和激流的韵律，肯定能让所有的年轻人们相信他们是在教堂的长凳上，祈祷更多!邪恶的!</q>','Temple',9);
+		order=550;new Game.TieredUpgrade('病态的说唱祈祷','寺庙工作效率 <b>翻倍</b>。<q>这些时髦的宗教曲调以其糟糕的节奏和激流的韵律，肯定能让所有的年轻人们相信他们是在教堂的长凳上，祈祷更多!邪恶的!</q>','Temple',9);
 		order=575;new Game.TieredUpgrade('豪华的魔杖','精灵塔工作效率 <b>翻倍</b>。<q>在这个科学的时代，大多数熟练的魔杖制造者都已经远去了;但值得庆幸的是，并非所有的游荡者都迷失了。</q>','Wizard tower',9);
 		order=600;new Game.TieredUpgrade('自动驾驶仪','装船工作效率 <b>翻倍</b>。<q>你的船现在安装了完全的机器人船员!当你不需要补偿那些在太空中迷失的人的家人时，你能省下多少钱，真是太疯狂了。</q>','Shipment',9);
 		order=700;new Game.TieredUpgrade('化学的出现','炼金实验室工作效率 <b>翻倍</b>。<q>你知道吗?那全是炼金术的胡说八道，是一堆毫无根据的废话。亲爱的上帝，你在想什么?</q>','Alchemy lab',9);
@@ -9017,7 +9017,7 @@ Game.Launch=function()
 		new Game.buffType('haggler misery',function(time,pow)
 		{
 			return {
-				name:'Haggler\'s misery',
+				name:'砍价的不幸',
 				desc:'所有升级成本增加 '+pow+'%  '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[25,11],
 				time:time*Game.fps,
@@ -9028,7 +9028,7 @@ Game.Launch=function()
 		new Game.buffType('pixie luck',function(time,pow)
 		{
 			return {
-				name:'Crafty pixies',
+				name:'狡猾的小妖精',
 				desc:'所有建筑便宜 '+pow+'%  '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[26,11],
 				time:time*Game.fps,
@@ -9039,7 +9039,7 @@ Game.Launch=function()
 		new Game.buffType('pixie misery',function(time,pow)
 		{
 			return {
-				name:'Nasty goblins',
+				name:'肮脏的妖精',
 				desc:'所有建筑成本增加 '+pow+'%  '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[26,11],
 				time:time*Game.fps,
@@ -11243,11 +11243,11 @@ Game.Launch=function()
 				str+='你现在的声望等级是 <b>'+Beautify(Game.prestige)+'</b>.<br>(饼干每秒产量 +'+Beautify(Game.prestige)+'%)';
 				str+='<div class="line"></div>';
 			}
-			if (ascendNowToGet<1) str+='现在转生将不会给你任何声望。';
-			else if (ascendNowToGet<2) str+='现在转生将给予你<br><b>1 声望等级</b> (+1% 饼干每秒产量)<br>和 <b>1 天堂芯片</b> 去消费。';
-			else str+='现在转生将给予你<br><b>'+Beautify(ascendNowToGet)+' 声望等级</b> (+'+Beautify(ascendNowToGet)+'% 饼干每秒产量)<br>和 <b>'+Beautify(ascendNowToGet)+' 天堂芯片</b> 去消费。';
+			if (ascendNowToGet<1) str+='现在升天你将得不到任何声望。';
+			else if (ascendNowToGet<2) str+='现在升天你会得到 <br><b> +1 声望等级 </b> (+1% 饼干每秒产量)<br>和 <b>1 天堂芯片</b> 。';
+			else str+='现在升天你会得到<br><b>+'+Beautify(ascendNowToGet)+' 声望等级</b> (+'+Beautify(ascendNowToGet)+'% 饼干每秒产量)<br>和 <b>'+Beautify(ascendNowToGet)+' 天堂芯片</b> 。';
 			str+='<div class="line"></div>';
-			str+='你还需要 <b>'+Beautify(cookiesToNext)+' 的饼干才能提升到</b>下一声望等级<br>';
+			str+='你还需要 <b>'+Beautify(cookiesToNext)+' 饼干才能提升到</b>下一声望等级<br>';
 			l('ascendTooltip').innerHTML=str;
 			
 			if (ascendNowToGet>0)//show number saying how many chips you'd get resetting now

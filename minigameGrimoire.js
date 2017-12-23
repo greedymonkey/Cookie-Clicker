@@ -11,9 +11,9 @@ M.launch=function()
 		
 		M.spells={
 			'conjure baked goods':{
-				name:'Conjure Baked Goods',
-				desc:'Summon half an hour worth of your CpS, capped at 15% of your cookies owned.',
-				failDesc:'Trigger a 15-minute clot and lose 15 minutes of CpS.',
+				name:'召唤烘焙食品',
+				desc:'一下获得半个小时的饼干秒产量，你的饼干最大上限的15%。',
+				failDesc:'触发一个15分钟的冻结，并减少你15分钟的饼干每秒产量。',
 				icon:[21,11],
 				costMin:2,
 				costPercent:0.4,
@@ -21,8 +21,8 @@ M.launch=function()
 				{
 					var val=Math.max(7,Math.min(Game.cookies*0.15,Game.cookiesPs*60*30));
 					Game.Earn(val);
-					Game.Notify('Conjure baked goods!','You magic <b>'+Beautify(val)+' cookie'+(val==1?'':'s')+'</b> out of thin air.',[21,11],6);
-					Game.Popup('<div style="font-size:80%;">+'+Beautify(val)+' cookie'+(val==1?'':'s')+'!</div>',Game.mouseX,Game.mouseY);
+					Game.Notify('召唤烘焙食品!','你通过魔法获得 <b>'+Beautify(val)+' 饼干'+(val==1?'':'')+'</b> 从稀薄的空气中。',[21,11],6);
+					Game.Popup('<div style="font-size:80%;">+'+Beautify(val)+' 饼干'+(val==1?'':'')+'!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
@@ -31,11 +31,11 @@ M.launch=function()
 					val=Math.min(Game.cookies,val);
 					Game.Spend(val);
 					Game.Notify(buff.name,buff.desc,buff.icon,6);
-					Game.Popup('<div style="font-size:80%;">适得其反!<br>Summoning failed! Lost '+Beautify(val)+' cookie'+(val==1?'':'s')+'!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">适得其反!<br>召唤失败!失去了 '+Beautify(val)+' 饼干'+(val==1?'':'')+'!</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'hand of fate':{
-				name:'Force the Hand of Fate',
+				name:'命运之手',
 				desc:'召唤一个随机的黄金饼干。每个现有黄金饼干让这个法术+ 15%更有可能会适得其反。',
 				failDesc:'召唤一个不走运的愤怒饼干。',
 				icon:[22,11],
@@ -54,10 +54,10 @@ M.launch=function()
 					if (Math.random()<0.1) choices.push('chain cookie','cookie storm','blab');
 					if (Game.BuildingsOwned>=10 && Math.random()<0.25) choices.push('building special');
 					//if (Math.random()<0.2) choices.push('clot','cursed finger','ruin cookies');
-					if (Math.random()<0.15) choices=['cookie storm drop'];
+					if (Math.random()<0.15) choices=['饼干风暴掉落'];
 					if (Math.random()<0.0001) choices.push('free sugar lump');
 					newShimmer.force=choose(choices);
-					if (newShimmer.force=='cookie storm drop')
+					if (newShimmer.force=='饼干风暴掉落')
 					{
 						newShimmer.sizeMult=Math.random()*0.75+0.25;
 					}
@@ -76,7 +76,7 @@ M.launch=function()
 				},
 			},
 			'stretch time':{
-				name:'Stretch Time',
+				name:'拉伸时间',
 				desc:'所有激活的效果将延长10%的持续时间(最多延长5分钟)',
 				failDesc:'所有激活的效果将缩短10%的持续时间(最多缩短5分钟)',
 				icon:[23,11],
@@ -93,8 +93,8 @@ M.launch=function()
 						me.time+=gain;
 						changed++;
 					}
-					if (changed==0){Game.Popup('<div style="font-size:80%;">No buffs to alter!</div>',Game.mouseX,Game.mouseY);return -1;}
-					Game.Popup('<div style="font-size:80%;">Zap! Buffs lengthened.</div>',Game.mouseX,Game.mouseY);
+					if (changed==0){Game.Popup('<div style="font-size:80%;">没有Buff改变!</div>',Game.mouseX,Game.mouseY);return -1;}
+					Game.Popup('<div style="font-size:80%;">快!Buff持续时间加长了。</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
@@ -107,14 +107,14 @@ M.launch=function()
 						me.time=Math.max(me.time,0);
 						changed++;
 					}
-					if (changed==0){Game.Popup('<div style="font-size:80%;">No buffs to alter!</div>',Game.mouseX,Game.mouseY);return -1;}
-					Game.Popup('<div style="font-size:80%;">适得其反!<br>Fizz! Buffs shortened.</div>',Game.mouseX,Game.mouseY);
+					if (changed==0){Game.Popup('<div style="font-size:80%;">没有Buff改变!</div>',Game.mouseX,Game.mouseY);return -1;}
+					Game.Popup('<div style="font-size:80%;">适得其反!<br>嘶! Buff持续时间缩短了。</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'spontaneous edifice':{
-				name:'Spontaneous Edifice',
-				desc:'The spell picks a random building you could afford if you had twice your current cookies, and gives it to you for free. The building selected must be under 400, and cannot be your most-built one (unless it is your only one).',
-				failDesc:'Lose a random building.',
+				name:'自发大厦',
+				desc:'如果你有两倍的现在的饼干，咒语就会选择一个你能负担得起的随机建筑，免费赠送给你。所选建筑的数量必须在400以下，并且不能是你建造数量的最多的(除非它是你唯一的)。',
+				failDesc:'失去一个随机的建筑。',
 				icon:[24,11],
 				costMin:20,
 				costPercent:0.75,
@@ -147,7 +147,7 @@ M.launch=function()
 				},
 			},
 			'haggler\'s charm':{
-				name:'Haggler\'s Charm',
+				name:'砍价的魅力',
 				desc:'升级的价格在1分钟内降低了2%。',
 				failDesc:'升级费用在一小时内增加了2%。<q>那是什么咒语?给我钱!</q>',
 				icon:[25,11],
@@ -155,7 +155,7 @@ M.launch=function()
 				costPercent:0.1,
 				win:function()
 				{
-					Game.killBuff('Haggler\'s misery');
+					Game.killBuff('砍价的魅力');
 					var buff=Game.gainBuff('haggler luck',60,2);
 					Game.Popup('<div style="font-size:80%;">升级更便宜!</div>',Game.mouseX,Game.mouseY);
 				},
@@ -175,15 +175,15 @@ M.launch=function()
 				costPercent:0.2,
 				win:function()
 				{
-					Game.killBuff('Nasty goblins');
+					Game.killBuff('肮脏的妖精');
 					var buff=Game.gainBuff('pixie luck',60,2);
-					Game.Popup('<div style="font-size:80%;">Crafty pixies!<br>Buildings are cheaper!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">狡猾的小妖精!<br>建筑更便宜了!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
-					Game.killBuff('Crafty pixies');
+					Game.killBuff('狡猾的小妖精');
 					var buff=Game.gainBuff('pixie misery',60*60,2);
-					Game.Popup('<div style="font-size:80%;">适得其反!<br>Nasty goblins!<br>Buildings are pricier!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">适得其反!<br>肮脏的妖精!<br>Buildings are pricier!</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'gambler\'s fever dream':{
