@@ -7066,7 +7066,7 @@ Game.Launch=function()
 			}
 		}
 		
-		new Game.Upgrade('宾果游戏中心/研究设施','老奶奶操作的科学实验室和休闲俱乐部。<br>老奶奶工作效率工作效率 <b>4 倍</b>。<br><b>Regularly unlocks new upgrades</b>.<q>还有什么能阻止这些老奶奶们呢?...<br>宾果。</q>',1000000000000000,[11,9],function(){Game.SetResearch('专业巧克力片');});Game.last.noPerm=1;
+		new Game.Upgrade('宾果游戏中心/研究设施','老奶奶操作的科学实验室和休闲俱乐部。<br>老奶奶工作效率工作效率 <b>4 倍</b>。<br><b>定期解锁新升级</b>.<q>还有什么能阻止这些老奶奶们呢?...<br>宾果。</q>',1000000000000000,[11,9],function(){Game.SetResearch('专业巧克力片');});Game.last.noPerm=1;
 		
 		order=15000;
 		
@@ -7144,37 +7144,37 @@ Game.Launch=function()
 		new Game.Upgrade('牺牲擀面杖','长者承诺至少持续 <b>翻倍</b> 的时间。<q>这些主要是为了推广抗衰老面霜。<br>(而且还可以缩短鸡的痛苦。)</q>',2888888888888,[2,9]);
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Snickerdoodles',desc:'True to their name.',icon:[2,4],power:												2,	price:	999999999999*5});
-		Game.NewUpgradeCookie({name:'Stroopwafels',desc:'If it ain\'t dutch, it ain\'t much.',icon:[3,4],power:									2,	price:	9999999999999});
-		Game.NewUpgradeCookie({name:'Macaroons',desc:'Not to be confused with macarons.<br>These have coconut, okay?',icon:[4,4],power:			2,	price:	9999999999999*5});
+		Game.NewUpgradeCookie({name:'肉桂奶油饼干',desc:'确实是他们的名字。',icon:[2,4],power:												2,	price:	999999999999*5});
+		Game.NewUpgradeCookie({name:'荷式松饼干',desc:'如果不是荷兰人，那就太不重要了。',icon:[3,4],power:									2,	price:	9999999999999});
+		Game.NewUpgradeCookie({name:'蛋白杏仁饼干',desc:'不要和马卡龙混淆。<br>这些有椰子，好吗?',icon:[4,4],power:			2,	price:	9999999999999*5});
 		
 		order=40000;
 		new Game.Upgrade('神经占卜','可以在统计菜单中随意开启和关闭升级。<q>也可以派人去看那些看不到的东西。</q>',7,[4,9]);//debug purposes only
 		Game.last.pool='debug';
 		
 		order=10030;
-		Game.NewUpgradeCookie({name:'Empire biscuits',desc:'For your growing cookie empire, of course!',icon:[5,4],power:											2,	price:	99999999999999});
-		Game.NewUpgradeCookie({name:'British tea biscuits',desc:'Quite.',icon:[6,4],require:'一罐英国茶饼干',power:									2,	price:	99999999999999});
-		Game.NewUpgradeCookie({name:'Chocolate british tea biscuits',desc:'Yes, quite.',icon:[7,4],require:Game.last.name,power:									2,	price:	99999999999999});
-		Game.NewUpgradeCookie({name:'Round british tea biscuits',desc:'Yes, quite riveting.',icon:[8,4],require:Game.last.name,power:								2,	price:	99999999999999});
-		Game.NewUpgradeCookie({name:'Round chocolate british tea biscuits',desc:'Yes, quite riveting indeed.',icon:[9,4],require:Game.last.name,power:				2,	price:	99999999999999});
-		Game.NewUpgradeCookie({name:'Round british tea biscuits with heart motif',desc:'Yes, quite riveting, old chap.',icon:[10,4],require:Game.last.name,power:	2,	price:	99999999999999});
-		Game.NewUpgradeCookie({name:'Round chocolate british tea biscuits with heart motif',desc:'I like cookies.',icon:[11,4],require:Game.last.name,power:		2,	price:	99999999999999});
+		Game.NewUpgradeCookie({name:'帝国饼干',desc:'当然，对你不断增长的饼干帝国来说！',icon:[5,4],power:											2,	price:	99999999999999});
+		Game.NewUpgradeCookie({name:'英国茶饼干',desc:'确实。',icon:[6,4],require:'一罐英国茶饼干',power:									2,	price:	99999999999999});
+		Game.NewUpgradeCookie({name:'英国茶巧克力饼干',desc:'是的，没错。',icon:[7,4],require:Game.last.name,power:									2,	price:	99999999999999});
+		Game.NewUpgradeCookie({name:'圆形英国茶饼干',desc:'是的，很吸引人。',icon:[8,4],require:Game.last.name,power:								2,	price:	99999999999999});
+		Game.NewUpgradeCookie({name:'圆巧克力英国茶饼干',desc:'是的，的确很吸引人。',icon:[9,4],require:Game.last.name,power:				2,	price:	99999999999999});
+		Game.NewUpgradeCookie({name:'有心形图案的圆形英国茶饼干',desc:'是的，很吸引人，老伙计。',icon:[10,4],require:Game.last.name,power:	2,	price:	99999999999999});
+		Game.NewUpgradeCookie({name:'有心形图案的圆巧克力英国茶饼干',desc:'我喜欢饼干。',icon:[11,4],require:Game.last.name,power:		2,	price:	99999999999999});
 		
 		order=1000;
-		new Game.TieredUpgrade('Sugar bosons','反物质冷凝器工作效率 <b>翻倍</b>。<q>可爱的公司玻色子。</q>','Antimatter condenser',1);
-		new Game.TieredUpgrade('String theory','反物质冷凝器工作效率 <b>翻倍</b>。<q>揭示烘烤饼干的真正意义(还有，作为奖励，宇宙的结构)。</q>','Antimatter condenser',2);
-		new Game.TieredUpgrade('Large macaron collider','反物质冷凝器工作效率 <b>翻倍</b>。<q>多么奇异!</q>','Antimatter condenser',3);
-		new Game.TieredUpgrade('Big bang bake','反物质冷凝器工作效率 <b>翻倍</b>。<q>这就是一切的开始。</q>','Antimatter condenser',4);
+		new Game.TieredUpgrade('糖玻色子','反物质冷凝器工作效率 <b>翻倍</b>。<q>可爱的公司玻色子。</q>','Antimatter condenser',1);
+		new Game.TieredUpgrade('弦理论','反物质冷凝器工作效率 <b>翻倍</b>。<q>揭示烘烤饼干的真正意义(还有，作为奖励，宇宙的结构)。</q>','Antimatter condenser',2);
+		new Game.TieredUpgrade('大型马卡龙对撞机','反物质冷凝器工作效率 <b>翻倍</b>。<q>多么奇异!</q>','Antimatter condenser',3);
+		new Game.TieredUpgrade('大爆炸烘烤','反物质冷凝器工作效率 <b>翻倍</b>。<q>这就是一切的开始。</q>','Antimatter condenser',4);
 
 		order=255;
 		new Game.Upgrade('针对老奶奶',Game.getGrandmaSynergyUpgradeDesc('Antimatter condenser')+'<q>一个刻薄的反祖母会吐更多的饼干。<br>(不要与正常的外祖母接触;可能会发生物质损失。)</q>',Game.Objects['Antimatter condenser'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
 
 		order=10020;
-		Game.NewUpgradeCookie({name:'Madeleines',desc:'难忘的!',icon:[12,3],power:																2,	price:	99999999999999*5});
-		Game.NewUpgradeCookie({name:'Palmiers',desc:'比你还好!',icon:[13,3],power:																2,	price:	99999999999999*5});
-		Game.NewUpgradeCookie({name:'Palets',desc:'你可以用这些来打曲棍球。我的意思是，你可以试一试。',icon:[12,4],power:	2,	price:	999999999999999});
-		Game.NewUpgradeCookie({name:'Sabl&eacute;s',desc:'这个名字暗示着它们是由沙子构成的。但你知道得更好，不是吗?',icon:[13,4],power:	2,	price:	999999999999999});
+		Game.NewUpgradeCookie({name:'玛德琳蛋糕',desc:'难忘的!',icon:[12,3],power:																2,	price:	99999999999999*5});
+		Game.NewUpgradeCookie({name:'蝴蝶酥',desc:'比你还好!',icon:[13,3],power:																2,	price:	99999999999999*5});
+		Game.NewUpgradeCookie({name:'铁饼',desc:'你可以用这些来打曲棍球。我的意思是，你可以试一试。',icon:[12,4],power:	2,	price:	999999999999999});
+		Game.NewUpgradeCookie({name:'沙琪玛饼干',desc:'这个名字暗示着它们是由沙子构成的。但你知道得更好，不是吗?',icon:[13,4],power:	2,	price:	999999999999999});
 		
 		order=20000;
 		new Game.Upgrade('小猫监工','你获得了 <b>更多的饼干每秒产量</b> 你的牛奶越多。<q>我的目的是为您服务，先生</q>',90000000000000000,Game.GetIcon('Kitten',4));Game.last.kitten=1;
@@ -7197,20 +7197,20 @@ Game.Launch=function()
 		new Game.Upgrade('难得素鼠标','点击获得 <b>+1% 总秒收益</b>.<q>这些漂亮的鼠标就够了。</q>',5000000000000,[11,14]);
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Caramoas',desc:'是的。那个戒指很漂亮。',icon:[14,4],require:'品牌饼干盒',power: 3,	price:	9999999999999999});
-		Game.NewUpgradeCookie({name:'Sagalongs',desc:'老奶奶最喜欢的是什么?',icon:[15,3],require:'品牌饼干盒',power: 3,	price:	9999999999999999});
-		Game.NewUpgradeCookie({name:'Shortfoils',desc:'挫败了!',icon:[15,4],require:'品牌饼干盒',power: 3,	price:	9999999999999999});
-		Game.NewUpgradeCookie({name:'Win mints',desc:'它们是你吃过的最幸运的饼干!',icon:[14,3],require:'品牌饼干盒',power: 3,	price:	9999999999999999});
+		Game.NewUpgradeCookie({name:'卡拉恐鸟',desc:'是的。那个戒指很漂亮。',icon:[14,4],require:'品牌饼干盒',power: 3,	price:	9999999999999999});
+		Game.NewUpgradeCookie({name:'萨松',desc:'老奶奶最喜欢的是什么?',icon:[15,3],require:'品牌饼干盒',power: 3,	price:	9999999999999999});
+		Game.NewUpgradeCookie({name:'短管',desc:'挫败了!',icon:[15,4],require:'品牌饼干盒',power: 3,	price:	9999999999999999});
+		Game.NewUpgradeCookie({name:'赢得薄荷糖',desc:'它们是你吃过的最幸运的饼干!',icon:[14,3],require:'品牌饼干盒',power: 3,	price:	9999999999999999});
 		
 		order=40000;
 		new Game.Upgrade('完美的空转','即使游戏关闭，你也会继续生产饼干。<q>这是我所见过的最美的东西。</q>',7,[10,0]);//debug purposes only
 		Game.last.pool='debug';
 		
 		order=10030;
-		Game.NewUpgradeCookie({name:'Fig gluttons',desc:'一切都搞定了。',icon:[17,4],require:'品牌饼干盒',power:													2,	price:	999999999999999*5});
-		Game.NewUpgradeCookie({name:'Loreols',desc:'因为,呃…它们值得吗?',icon:[16,3],require:'品牌饼干盒',power:												2,	price:	999999999999999*5});
-		Game.NewUpgradeCookie({name:'Jaffa cakes',desc:'如果你想从头开始烤一个饼干，你必须先建一个工厂。',icon:[17,3],require:'品牌饼干盒',power:	2,	price:	999999999999999*5});
-		Game.NewUpgradeCookie({name:'Grease\'s cups',desc:'特别油腻的花生酱。',icon:[16,4],require:'品牌饼干盒',power:												2,	price:	999999999999999*5});
+		Game.NewUpgradeCookie({name:'无花果胶子',desc:'一切都搞定了。',icon:[17,4],require:'品牌饼干盒',power:													2,	price:	999999999999999*5});
+		Game.NewUpgradeCookie({name:'洛丽醇',desc:'因为,呃…它们值得吗?',icon:[16,3],require:'品牌饼干盒',power:												2,	price:	999999999999999*5});
+		Game.NewUpgradeCookie({name:'佳发蛋糕',desc:'如果你想从头开始烤一个饼干，你必须先建一个工厂。',icon:[17,3],require:'品牌饼干盒',power:	2,	price:	999999999999999*5});
+		Game.NewUpgradeCookie({name:'油脂杯',desc:'特别油腻的花生酱。',icon:[16,4],require:'品牌饼干盒',power:												2,	price:	999999999999999*5});
 		
 		order=30000;
 		new Game.Upgrade('天堂芯片的秘密','解锁 <b>5%</b> 你的威望等级的潜力。<q>授予天堂芯片的知识,以及如何使用它们来提高烘焙的效率。<br>这是每个人的秘密。</q>',11,[19,7]);Game.last.noPerm=1;
@@ -7292,18 +7292,18 @@ Game.Launch=function()
 			}
 			return pow;
 		};
-		Game.NewUpgradeCookie({name:'Pure heart biscuits',desc:'Melty white chocolate<br>that says "I *like* like you".',season:'valentines',icon:[19,3],													power:heartPower,price: 1000000});
-		Game.NewUpgradeCookie({name:'Ardent heart biscuits',desc:'A red hot cherry biscuit that will nudge the target of your affection in interesting directions.',require:Game.last.name,season:'valentines',icon:[20,3],			power:heartPower,price: 1000000000});
-		Game.NewUpgradeCookie({name:'Sour heart biscuits',desc:'A bitter lime biscuit for the lonely and the heart-broken.',require:Game.last.name,season:'valentines',icon:[20,4],													power:heartPower,price: 1000000000000});
-		Game.NewUpgradeCookie({name:'Weeping heart biscuits',desc:'一个冰凉的蓝莓饼干，象征着一颗愈合的心。',require:Game.last.name,season:'valentines',icon:[21,3],												power:heartPower,price: 1000000000000000});
-		Game.NewUpgradeCookie({name:'Golden heart biscuits',desc:'一个漂亮的饼干象征着善良、真爱和真诚。',require:Game.last.name,season:'valentines',icon:[21,4],										power:heartPower,price: 1000000000000000000});
-		Game.NewUpgradeCookie({name:'永恒的心饼干',desc:'Silver icing for a very special someone you\'ve liked for a long, long time.',require:Game.last.name,season:'valentines',icon:[19,4],							power:heartPower,price: 1000000000000000000000});
+		Game.NewUpgradeCookie({name:'纯心饼干',desc:'融化的白巧克力<br/>，上面写着“我喜欢你”。',season:'valentines',icon:[19,3],													power:heartPower,price: 1000000});
+		Game.NewUpgradeCookie({name:'心切饼干',desc:'一个红色的热樱桃饼干，它会将你的情感目标推向一个有趣的方向。',require:Game.last.name,season:'valentines',icon:[20,3],			power:heartPower,price: 1000000000});
+		Game.NewUpgradeCookie({name:'酸心饼干',desc:'为孤独和心碎的人做酸橙饼干。',require:Game.last.name,season:'valentines',icon:[20,4],													power:heartPower,price: 1000000000000});
+		Game.NewUpgradeCookie({name:'心水饼干',desc:'一个冰凉的蓝莓饼干，象征着一颗愈合的心。',require:Game.last.name,season:'valentines',icon:[21,3],												power:heartPower,price: 1000000000000000});
+		Game.NewUpgradeCookie({name:'金心饼干',desc:'一个漂亮的饼干象征着善良、真爱和真诚。',require:Game.last.name,season:'valentines',icon:[21,4],										power:heartPower,price: 1000000000000000000});
+		Game.NewUpgradeCookie({name:'永恒的心饼干',desc:'银色的糖霜对于一个非常特别的人来说，你已经喜欢了很长时间了。',require:Game.last.name,season:'valentines',icon:[19,4],							power:heartPower,price: 1000000000000000000000});
 
 		order=1100;
-		new Game.TieredUpgrade('Gem polish','棱镜工作效率 <b>翻倍</b>。<q>摆脱污垢，让更多的光线进入。<br>真的，真的太离谱了。</q>','Prism',1);
-		new Game.TieredUpgrade('9th color','棱镜工作效率 <b>翻倍</b>。<q>甚至连螳螂虾都没注意到的地方，也在深部的光学深处。</q>','Prism',2);
-		new Game.TieredUpgrade('Chocolate light','棱镜工作效率 <b>翻倍</b>。<q>沐浴在它的茧中。<br>(警告:可能引起各种有趣但致命的皮肤状况。)</q>','Prism',3);
-		new Game.TieredUpgrade('Grainbow','棱镜工作效率 <b>翻倍</b>。<q>记住不同的谷物可以使用方便的助记:R是大米,O是燕麦……呃,B是大麦吗?...</q>','Prism',4);
+		new Game.TieredUpgrade('宝石抛光','棱镜工作效率 <b>翻倍</b>。<q>摆脱污垢，让更多的光线进入。<br>真的，真的太离谱了。</q>','Prism',1);
+		new Game.TieredUpgrade('9号颜色','棱镜工作效率 <b>翻倍</b>。<q>甚至连螳螂虾都没注意到的地方，也在深部的光学深处。</q>','Prism',2);
+		new Game.TieredUpgrade('巧克力之光','棱镜工作效率 <b>翻倍</b>。<q>沐浴在它的茧中。<br>(警告:可能引起各种有趣但致命的皮肤状况。)</q>','Prism',3);
+		new Game.TieredUpgrade('谷粒弓','棱镜工作效率 <b>翻倍</b>。<q>记住不同的谷物可以使用方便的助记:R是大米,O是燕麦……呃,B是大麦吗?...</q>','Prism',4);
 		new Game.TieredUpgrade('纯粹的宇宙之光','棱镜工作效率 <b>翻倍</b>。<q>你的棱镜现在接收到来自宇宙另一端的原始的、纯粹的光子。</q>','Prism',5);
 
 		order=255;
@@ -7341,15 +7341,15 @@ Game.Launch=function()
 		order=900;new Game.TieredUpgrade('未来的法令','时光机器工作效率 <b>翻倍</b>。<q>遥远未来的法令授权你深入挖掘未来——文明已经堕落，又重新崛起，而饼干是丰富的。</q>','Time machine',6);
 		order=1000;new Game.TieredUpgrade('纳米宇宙','反物质冷凝器工作效率 <b>翻倍</b>。<q>纳米宇宙理论认为，每一个亚原子粒子实际上都是它自己自足的宇宙，拥有不可思议的能量。</q>','Antimatter condenser',6);
 		order=1100;
-		new Game.TieredUpgrade('Glow-in-the-dark','棱镜工作效率 <b>翻倍</b>。<q>你的棱镜现在在黑暗中发光，有效地加倍它们的输出!</q>','Prism',6);
+		new Game.TieredUpgrade('在黑暗中发光','棱镜工作效率 <b>翻倍</b>。<q>你的棱镜现在在黑暗中发光，有效地加倍它们的输出!</q>','Prism',6);
 		
 		order=10032;
-		Game.NewUpgradeCookie({name:'Rose macarons',desc:'虽然味道很怪，但这些糕点最近越来越受欢迎。',icon:[22,3],require:'马卡龙盒子',		power:3,price: 9999});
-		Game.NewUpgradeCookie({name:'Lemon macarons',desc:'酸甜的，令人愉快的款待。',icon:[23,3],require:'马卡龙盒子',										power:3,price: 9999999});
-		Game.NewUpgradeCookie({name:'Chocolate macarons',desc:'它们就像小小的含糖的汉堡!',icon:[24,3],require:'马卡龙盒子',									power:3,price: 9999999999});
-		Game.NewUpgradeCookie({name:'Pistachio macarons',desc:'在多次投诉后，开心果壳被移除。',icon:[22,4],require:'马卡龙盒子',										power:3,price: 9999999999999});
-		Game.NewUpgradeCookie({name:'Hazelnut macarons',desc:'这些咖啡特别适合饮用。',icon:[23,4],require:'马卡龙盒子',									power:3,price: 9999999999999999});
-		Game.NewUpgradeCookie({name:'Violet macarons',desc:'这就像向你的嘴里喷香水!',icon:[24,4],require:'马卡龙盒子',							power:3,price: 9999999999999999999});
+		Game.NewUpgradeCookie({name:'玫瑰马卡龙',desc:'虽然味道很怪，但这些糕点最近越来越受欢迎。',icon:[22,3],require:'马卡龙盒子',		power:3,price: 9999});
+		Game.NewUpgradeCookie({name:'柠檬马卡龙',desc:'酸甜的，令人愉快的款待。',icon:[23,3],require:'马卡龙盒子',										power:3,price: 9999999});
+		Game.NewUpgradeCookie({name:'巧克力马卡龙',desc:'它们就像小小的含糖的汉堡!',icon:[24,3],require:'马卡龙盒子',									power:3,price: 9999999999});
+		Game.NewUpgradeCookie({name:'开心果马卡龙',desc:'在多次投诉后，开心果壳被移除。',icon:[22,4],require:'马卡龙盒子',										power:3,price: 9999999999999});
+		Game.NewUpgradeCookie({name:'榛子马卡龙',desc:'这些咖啡特别适合饮用。',icon:[23,4],require:'马卡龙盒子',									power:3,price: 9999999999999999});
+		Game.NewUpgradeCookie({name:'紫罗兰马卡龙',desc:'这就像向你的嘴里喷香水!',icon:[24,4],require:'马卡龙盒子',							power:3,price: 9999999999999999999});
 		
 		order=40000;
 		new Game.Upgrade('神奇的恶作剧','饼干生产 <b>乘以 1,000</b>。<q>这是魔法。我不需要解释<div style="display:inline-block;background:url(img/money.png);width:16px;height:16px;position:relative;top:4px;left:0px;margin:0px -2px;"></div></q>',7,[17,5]);//debug purposes only
@@ -7568,9 +7568,9 @@ Game.Launch=function()
 		new Game.Upgrade('永恒的财富','黄金饼干效果持续时间增加 <b>10%</b>。<q>这是你每天的运气。这是……运气好。</q>',777,[23,6]);Game.last.pool='prestige';Game.last.parents=['天上的运气'];
 		new Game.Upgrade('决定性的命运','黄金饼干停留时间增加 <b>5%</b>。<q>生活变得更加紧张。</q>',7777,[10,14]);Game.last.pool='prestige';Game.last.parents=['永恒的财富'];
 
-		new Game.Upgrade('神圣折扣','Buildings are <b>1% cheaper</b>.<q>一个特别的人值得付出特别的代价。</q>',99999,[21,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
-		new Game.Upgrade('神圣销售','Upgrades are <b>1% cheaper</b>.<q>一切都得过去!</q>',99999,[18,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
-		new Game.Upgrade('神圣的面包店','Cookie upgrades are <b>5 times cheaper</b>.<q>他们肯定知道自己在做什么。</q>',399999,[17,7]);Game.last.pool='prestige';Game.last.parents=['神圣销售','神圣折扣'];
+		new Game.Upgrade('神圣折扣','建筑便宜 <b>1% </b>。<q>一个特别的人值得付出特别的代价。</q>',99999,[21,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
+		new Game.Upgrade('神圣销售','升级便宜 <b>1% </b>。<q>一切都得过去!</q>',99999,[18,7]);Game.last.pool='prestige';Game.last.parents=['决定性的命运'];
+		new Game.Upgrade('神圣的面包店','饼干升级 <b>5 times cheaper</b>.<q>他们肯定知道自己在做什么。</q>',399999,[17,7]);Game.last.pool='prestige';Game.last.parents=['神圣销售','神圣折扣'];
 		
 		new Game.Upgrade('启动装置','你开局时有 <b>10 游标</b>.<q>这可以派上用场。</q>',50,[0,14]);Game.last.pool='prestige';Game.last.parents=['一罐英国茶饼干','马卡龙盒子','品牌饼干盒','奶油饼干罐头'];
 		new Game.Upgrade('启动厨房','你开局时有 <b>5 老奶奶</b>.<q>这些东西是从哪里来的?</q>',5000,[1,14]);Game.last.pool='prestige';Game.last.parents=['启动装置'];
@@ -7710,33 +7710,33 @@ Game.Launch=function()
 		
 		
 		order=10300;
-		Game.NewUpgradeCookie({name:'牛奶巧克力奶油饼干',desc:'Rewarded for owning 100 of everything.<br>It bears the engraving of a fine entrepreneur.',icon:[27,8],power:	10,price: 999999999999999999999,locked:1});
-		Game.NewUpgradeCookie({name:'黑巧克力奶油饼干',desc:'Rewarded for owning 150 of everything.<br>It is adorned with the image of an experienced cookie tycoon.',icon:[27,9],power:	10,price: 999999999999999999999999,locked:1});
-		Game.NewUpgradeCookie({name:'白巧克力奶油饼干',desc:'Rewarded for owning 200 of everything.<br>The chocolate is chiseled to depict a masterful pastry magnate.',icon:[28,9],power:	10,price: 999999999999999999999999999,locked:1});
-		Game.NewUpgradeCookie({name:'红宝石巧克力奶油饼干',desc:'Rewarded for owning 250 of everything.<br>Covered in a rare red chocolate, this biscuit is etched to represent the face of a cookie industrialist gone mad with power.',icon:[28,8],power:	10,price: 999999999999999999999999999999,locked:1});
+		Game.NewUpgradeCookie({name:'牛奶巧克力奶油饼干',desc:'当你拥有100个各种建筑时的奖励。这是一位优秀企业家的雕刻。',icon:[27,8],power:	10,price: 999999999999999999999,locked:1});
+		Game.NewUpgradeCookie({name:'黑巧克力奶油饼干',desc:'当你拥有150个各种建筑时的奖励。<br>它的形象是一位经验丰富的饼干大亨的形象。',icon:[27,9],power:	10,price: 999999999999999999999999,locked:1});
+		Game.NewUpgradeCookie({name:'白巧克力奶油饼干',desc:'当你拥有200个各种建筑时的奖励。<br>巧克力的轮廓，描绘了一位优秀的糕点大亨。',icon:[28,9],power:	10,price: 999999999999999999999999999,locked:1});
+		Game.NewUpgradeCookie({name:'红宝石巧克力奶油饼干',desc:'当你拥有250个各种建筑时的奖励。<br>这款饼干被一种罕见的红色巧克力所覆盖，它被蚀刻成一个饼干产业主义者的脸，这是一种疯狂的力量。',icon:[28,8],power:	10,price: 999999999999999999999999999999,locked:1});
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Gingersnaps',desc:'Cookies with a soul. Probably.',icon:[29,10],power:						4,price: 99999999999999999999});
-		Game.NewUpgradeCookie({name:'Cinnamon cookies',desc:'The secret is in the patented swirly glazing.',icon:[23,8],power:						4,price: 99999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Vanity cookies',desc:'One tiny candied fruit sits atop this decadent cookie.',icon:[22,8],power:						4,price: 999999999999999999999});
-		Game.NewUpgradeCookie({name:'Cigars',desc:'Close, but no match for those extravagant cookie straws they serve in coffee shops these days.',icon:[25,8],power:						4,price: 999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Pinwheel cookies',desc:'Bringing you the dizzying combination of brown flavor and beige taste!',icon:[22,10],power:						4,price: 9999999999999999999999});
-		Game.NewUpgradeCookie({name:'Fudge squares',desc:'Not exactly cookies, but you won\'t care once you\'ve tasted one of these.<br>They\'re so good, it\'s fudged-up!',icon:[24,8],power:						4,price: 9999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'姜饼',desc:'带着灵魂的饼干。可能吧。',icon:[29,10],power:						4,price: 99999999999999999999});
+		Game.NewUpgradeCookie({name:'肉桂饼干',desc:'秘密是在专利的旋转玻璃上。',icon:[23,8],power:						4,price: 99999999999999999999*5});
+		Game.NewUpgradeCookie({name:'小甜饼',desc:'在这个颓废的小甜饼上有一个小小的蜜饯水果。',icon:[22,8],power:						4,price: 999999999999999999999});
+		Game.NewUpgradeCookie({name:'雪茄',desc:'最近，他们在咖啡店里卖的那些奢侈的曲奇饼干都卖得很好。',icon:[25,8],power:						4,price: 999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'风车饼干',desc:'给你带来令人眼花缭乱的棕色味道和米黄色味道！',icon:[22,10],power:						4,price: 9999999999999999999999});
+		Game.NewUpgradeCookie({name:'软糖方块',desc:'不完全是饼干，但一旦你尝了其中的一种，你就不会在意。<br/>他们太棒了，这太棒了!',icon:[24,8],power:						4,price: 9999999999999999999999*5});
 		
 		order=10030;
-		Game.NewUpgradeCookie({name:'Digits',desc:'Three flavors, zero phalanges.',icon:[26,8],require:'品牌饼干盒',power:												2,	price:	999999999999999*5});
+		Game.NewUpgradeCookie({name:'数字',desc:'三种口味，零指骨。',icon:[26,8],require:'品牌饼干盒',power:												2,	price:	999999999999999*5});
 		
 		order=10030;
-		Game.NewUpgradeCookie({name:'Butter horseshoes',desc:'It would behoove you to not overindulge in these.',icon:[22,9],require:'奶油饼干罐头',power:							4,	price:	99999999999999999999999});
-		Game.NewUpgradeCookie({name:'Butter pucks',desc:'Lord, what fools these mortals be!<br>(This is kind of a hokey reference.)',icon:[23,9],require:'奶油饼干罐头',power:							4,	price:	99999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Butter knots',desc:'Look, you can call these pretzels if you want, but you\'d just be fooling yourself, wouldn\'t you?',icon:[24,9],require:'奶油饼干罐头',power:							4,	price:	999999999999999999999999});
-		Game.NewUpgradeCookie({name:'Butter slabs',desc:'Nothing better than a slab in the face.',icon:[25,9],require:'奶油饼干罐头',power:							4,	price:	999999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Butter swirls',desc:'These are equal parts sugar, butter, and warm fuzzy feelings - all of which cause millions of deaths everyday.',icon:[26,9],require:'奶油饼干罐头',power:							4,	price:	9999999999999999999999999});
+		Game.NewUpgradeCookie({name:'黄油马蹄铁',desc:'你不应该过分沉溺其中。',icon:[22,9],require:'奶油饼干罐头',power:							4,	price:	99999999999999999999999});
+		Game.NewUpgradeCookie({name:'奶油泡',desc:'主啊，这些凡人是多么愚蠢啊！<br>(这是一个很重要的参考。)',icon:[23,9],require:'奶油饼干罐头',power:							4,	price:	99999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'黄油结',desc:'听着，如果你想的话，你可以叫这些椒盐卷饼，但是你只是在愚弄你自己，对吗?',icon:[24,9],require:'奶油饼干罐头',power:							4,	price:	999999999999999999999999});
+		Game.NewUpgradeCookie({name:'黄油板',desc:'没有什么比一张板脸更好的了。',icon:[25,9],require:'奶油饼干罐头',power:							4,	price:	999999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'黄油漩涡',desc:'这些都是糖、黄油和温暖的模糊感觉——所有这些都导致了每天数百万人的死亡。',icon:[26,9],require:'奶油饼干罐头',power:							4,	price:	9999999999999999999999999});
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Shortbread biscuits',desc:'These rich butter cookies are neither short, nor bread. What a country!',icon:[23,10],power:						4,price: 99999999999999999999999});
-		Game.NewUpgradeCookie({name:'Millionaires\' shortbreads',desc:'Three thought-provoking layers of creamy chocolate, hard-working caramel and crumbly biscuit in a poignant commentary of class struggle.',icon:[24,10],power:						4,price: 99999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Caramel cookies',desc:'The polymerized carbohydrates adorning these cookies are sure to stick to your teeth for quite a while.',icon:[25,10],power:						4,price: 999999999999999999999999});
+		Game.NewUpgradeCookie({name:'脆饼饼干',desc:'这些奶油饼干既不短也不面包。多么好的国家啊!',icon:[23,10],power:						4,price: 99999999999999999999999});
+		Game.NewUpgradeCookie({name:'百万富翁酥饼',desc:'三层令人深思的奶油巧克力，辛勤的焦糖和松软的饼干，这是阶级斗争的尖锐评论。',icon:[24,10],power:						4,price: 99999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'焦糖饼干',desc:'这些饼干的聚合碳水化合物肯定会粘在你的牙齿上一段时间。',icon:[25,10],power:						4,price: 999999999999999999999999});
 		
 		
 		var desc=function(totalHours){
@@ -7846,20 +7846,20 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'巴斯顿坎饼干',desc:'法国曲奇饼是由香肉桂和糖制成的。这些不含坚果!',icon:[24,13],require:'品牌饼干盒',power:	3,	price:	999999999999999999999*5});
 		
 		order=10020;
-		Game.NewUpgradeCookie({name:'Pecan sandies',desc:'把坚果粘在饼干上，把它叫做一天！给你的乐队命名!随你的便!',icon:[25,13],power: 4,price: 999999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Moravian spice cookies',desc:'它是世界上最美味的饼干。',icon:[26,13],power: 4,price: 9999999999999999999999999});
-		Game.NewUpgradeCookie({name:'Anzac biscuits',desc:'从一家面包店买来的军用饼干，里面没有鸡蛋，只有燕麦。',icon:[27,13],power: 4,price: 9999999999999999999999999*5});
-		Game.NewUpgradeCookie({name:'Buttercakes',desc:'这些饼干的胆固醇含量高，这些饼干在饼干的法律定义和简单的黄油块之间的线之间有一层关系。',icon:[29,13],power: 4,price: 99999999999999999999999999});
-		Game.NewUpgradeCookie({name:'Ice cream sandwiches',desc:'在另一个宇宙中，“冰淇淋三明治”设计了一个冰淇淋蛋筒，里面装满了熏肉、生菜和西红柿。也许一些洒。',icon:[28,13],power: 4,price: 99999999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'山核桃饼干',desc:'把坚果粘在饼干上，把它叫做一天！给你的乐队命名!随你的便!',icon:[25,13],power: 4,price: 999999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'摩拉维亚香料饼干',desc:'它是世界上最美味的饼干。',icon:[26,13],power: 4,price: 9999999999999999999999999});
+		Game.NewUpgradeCookie({name:'澳扎克饼干',desc:'从一家面包店买来的军用饼干，里面没有鸡蛋，只有燕麦。',icon:[27,13],power: 4,price: 9999999999999999999999999*5});
+		Game.NewUpgradeCookie({name:'黄油蛋糕',desc:'这些饼干的胆固醇含量高，这些饼干在饼干的法律定义和简单的黄油块之间的线之间有一层关系。',icon:[29,13],power: 4,price: 99999999999999999999999999});
+		Game.NewUpgradeCookie({name:'冰淇淋三明治',desc:'在另一个宇宙中，“冰淇淋三明治”设计了一个冰淇淋蛋筒，里面装满了熏肉、生菜和西红柿。也许一些洒。',icon:[28,13],power: 4,price: 99999999999999999999999999*5});
 		
 		new Game.Upgrade('甜菊糖','糖块成熟 <b>早一个小时</b>.<q>一种由天使在天堂花园中种植的超自然的甜味植物。</q>',100000000,[25,15]);Game.last.pool='prestige';Game.last.parents=['皱纹饼干'];
 		new Game.Upgrade('糖尿病患者','糖块成熟 <b>早一个小时</b>.<q>这是一种恶毒的，据说是在黑暗的深渊的悬崖上生长的美味的药草。</q>',300000000,[26,15]);Game.last.pool='prestige';Game.last.parents=['甜菊糖','路西法'];
 		new Game.Upgrade('舒张症','分叉糖块出现几率 <b>5% 更多地</b> 并且 <b>5% 更有可能</b> 掉两个糖块。<q>一种罕见的无趣的浆果，它的用途是有限的;只受那些贪心的收藏家的追捧，他们手上有太多的财富。</q>',1000000000,[27,15]);Game.last.pool='prestige';Game.last.parents=['糖尿病患者'];
 		
 		//note : these showIf functions stop working beyond 10 quadrillion prestige level, due to loss in precision; the solution, of course, is to make sure 10 quadrillion is not an attainable prestige level
-		new Game.Upgrade('幸运数字','<b>+1%</b> prestige level effect on CpS.<br><b>+1%</b> golden cookie effect duration.<br><b>+1%</b> golden cookie lifespan.<q>This upgrade is a bit shy and only appears when your prestige level ends in 7.</q>',777,[24,15]);Game.last.pool='prestige';Game.last.parents=['天上的运气'];Game.last.showIf=function(){return (Math.ceil(Game.prestige)%10==7);};
-		new Game.Upgrade('幸运数','<b>+1%</b> prestige level effect on CpS.<br><b>+1%</b> golden cookie effect duration.<br><b>+1%</b> golden cookie lifespan.<q>This upgrade is a reclusive hermit and only appears when your prestige level ends in 777.</q>',77777,[24,15]);Game.last.pool='prestige';Game.last.parents=['幸运数字','永恒的财富'];Game.last.showIf=function(){return (Math.ceil(Game.prestige)%1000==777);};
-		new Game.Upgrade('幸运的支付','<b>+1%</b> prestige level effect on CpS.<br><b>+1%</b> golden cookie effect duration.<br><b>+1%</b> golden cookie lifespan.<q>This upgrade took an oath of complete seclusion from the rest of the world and only appears when your prestige level ends in 777777.</q>',77777777,[24,15]);Game.last.pool='prestige';Game.last.parents=['幸运数','决定性的命运'];Game.last.showIf=function(){return (Math.ceil(Game.prestige)%1000000==777777);};
+		new Game.Upgrade('幸运数字','<b>+1%</b> 声望等级每秒饼干产量效果<br><b>+1%</b> 黄金饼干效果持续时间。<br><b>+1%</b> 黄金饼干寿命。<q>这种升级有点害羞，只有当你的声望等级达到7时才会出现。</q>',777,[24,15]);Game.last.pool='prestige';Game.last.parents=['天上的运气'];Game.last.showIf=function(){return (Math.ceil(Game.prestige)%10==7);};
+		new Game.Upgrade('幸运数','<b>+1%</b> 声望等级每秒饼干产量效果<br><b>+1%</b> 黄金饼干效果持续时间。<br><b>+1%</b> 黄金饼干寿命。<q>这是一个隐藏的绅士，只有当你的声望达到777时才会出现。</q>',77777,[24,15]);Game.last.pool='prestige';Game.last.parents=['幸运数字','永恒的财富'];Game.last.showIf=function(){return (Math.ceil(Game.prestige)%1000==777);};
+		new Game.Upgrade('幸运的支付','<b>+1%</b> 声望等级每秒饼干产量效果<br><b>+1%</b> 黄金饼干效果持续时间。<br><b>+1%</b> 黄金饼干寿命。<q>这一升级誓言与世界其他地区完全隔绝，只有当你的声望达到777777时才会出现。</q>',77777777,[24,15]);Game.last.pool='prestige';Game.last.parents=['幸运数','决定性的命运'];Game.last.showIf=function(){return (Math.ceil(Game.prestige)%1000000==777777);};
 		
 		order=50000;
 		new Game.Upgrade('背景选择器','让您选择要显示的墙纸。',0,[29,5]);
