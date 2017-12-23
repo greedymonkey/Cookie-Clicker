@@ -5084,8 +5084,8 @@ Game.Launch=function()
 				]));
 				
 				if (Game.Objects['Wizard tower'].amount>0) list.push(choose([
-				'新闻：all '+choose(animals,choose(['public restrooms','clouds','politicians','moustaches','hats','shoes','pants','clowns','encyclopedias','websites','potted plants','lemons','household items','bodily fluids','cutlery','national landmarks','yogurt','rap music','underwear']))+' turned into '+choose(animals,choose(['public restrooms','clouds','politicians','moustaches','hats','shoes','pants','clowns','encyclopedias','websites','potted plants','lemons','household items','bodily fluids','cutlery','national landmarks','yogurt','rap music','underwear']))+' in freak magic catastrophe!',
-				'新闻：heavy dissent rages between the schools of '+choose(['water','fire','earth','air','lightning','acid','song','battle','peace','pencil','internet','space','time','brain','nature','techno','plant','bug','ice','poison','crab','kitten','dolphin','bird','punch','fart'])+' magic and '+choose(['water','fire','earth','air','lightning','acid','song','battle','peace','pencil','internet','space','time','brain','nature','techno','plant','bug','ice','poison','crab','kitten','dolphin','bird','punch','fart'])+' magic!',
+				'新闻：all '+choose(animals,choose(['public restrooms','clouds','politicians','moustaches','hats','shoes','pants','clowns','encyclopedias','websites','potted plants','lemons','household items','bodily fluids','cutlery','national landmarks','yogurt','rap music','underwear']))+' turned into '+choose(animals,choose(['public restrooms','clouds','politicians','moustaches','hats','shoes','pants','clowns','encyclopedias','websites','potted plants','lemons','household items','bodily fluids','cutlery','national landmarks','yogurt','rap music','underwear']))+' 在神奇的魔法灾难中!',
+				'新闻：学校之间有强烈的不同意见 '+choose(['water','fire','earth','air','lightning','acid','song','battle','peace','pencil','internet','space','time','brain','nature','techno','plant','bug','ice','poison','crab','kitten','dolphin','bird','punch','fart'])+' 魔法和 '+choose(['water','fire','earth','air','lightning','acid','song','battle','peace','pencil','internet','space','time','brain','nature','techno','plant','bug','ice','poison','crab','kitten','dolphin','bird','punch','fart'])+' 魔法!',
 				'新闻：在每年的国家法制工作会上获得新的魅力和诅咒！ 符文和魔法书上的独家价格。',
 				'新闻：医生说，饼干巫师否认参与令人震惊的丑陋的新生儿 - 婴儿是“诚实地看起来，但自然”。',
 				'新闻："任何足够粗的魔法是从技术没有区别”，知名技术向导宣称。'
@@ -5898,12 +5898,12 @@ Game.Launch=function()
 				l('productOwned'+me.id).innerHTML=me.amount?me.amount:'';
 				l('productPrice'+me.id).innerHTML=Beautify(Math.round(price));
 				l('productPriceMult'+me.id).innerHTML=(Game.buyBulk>1)?('x'+Game.buyBulk+' '):'';
-				l('productLevel'+me.id).innerHTML='lvl '+Beautify(me.level);
+				l('productLevel'+me.id).innerHTML='等级 '+Beautify(me.level);
 				if (Game.isMinigameReady(me))
 				{
 					l('productMinigameButton'+me.id).style.display='block';
 					if (!me.onMinigame) l('productMinigameButton'+me.id).innerHTML='View '+me.minigameName;
-					else l('productMinigameButton'+me.id).innerHTML='Close '+me.minigameName;
+					else l('productMinigameButton'+me.id).innerHTML='关闭 '+me.minigameName;
 				}
 				else l('productMinigameButton'+me.id).style.display='none';
 			}
@@ -6940,53 +6940,53 @@ Game.Launch=function()
 		//define upgrades
 		//WARNING : do NOT add new upgrades in between, this breaks the saves. Add them at the end !
 		var order=100;//this is used to set the order in which the items are listed
-		new Game.Upgrade('加强的食指','每次鼠标和游标工作效率像 <b>双倍</b> 一样高效。<q>戳戳</q>',100,[0,0]);
-		new Game.Upgrade('腕管预防霜','每次鼠标和游标工作效率像 <b>双倍</b> 一样高效。<q>它…点击伤害…</q>',500,[0,1]);
-		new Game.Upgrade('双手通用','每次鼠标和游标工作效率像 <b>双倍</b> 一样高效。<q>看看马，双手！</q>',10000,[0,2])
+		new Game.Upgrade('加强的食指','每次鼠标和游标工作效率 <b>翻倍</b>。<q>戳戳</q>',100,[0,0]);
+		new Game.Upgrade('腕管预防霜','每次鼠标和游标工作效率 <b>翻倍</b>。<q>它…点击伤害…</q>',500,[0,1]);
+		new Game.Upgrade('双手通用','每次鼠标和游标工作效率 <b>翻倍</b>。<q>看看马，双手！</q>',10000,[0,2])
 		new Game.Upgrade('千手指','鼠标和游标获得 <b>+0.1</b> 每个非游标建筑生产的饼干数。<q>点点</q>',100000,[0,13]);
 		new Game.Upgrade('百万手指','鼠标和游标获得 <b>+0.5</b> 每个非游标建筑生产的饼干数。<q>点点点</q>',10000000,[0,14]);
 		new Game.Upgrade('十亿手指','鼠标和游标获得 <b>+5</b> 每个非游标建筑生产的饼干数。<q>点点点点</q>',100000000,[0,15]);
 		new Game.Upgrade('万亿手指','鼠标和游标获得 <b>+50</b> 每个非游标建筑生产的饼干数。<q>点点点点点</q>',1000000000,[0,16]);
 		
 		order=200;
-		new Game.TieredUpgrade('前锋老奶奶','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>我还以为你会被踢出这个地方呢。</q>','Grandma',1);
-		new Game.TieredUpgrade('钢包滚针','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>就是你的膝盖。</q>','Grandma',2);
-		new Game.TieredUpgrade('润滑假牙','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>压扁</q>','Grandma',3);
+		new Game.TieredUpgrade('前锋老奶奶','老奶奶工作效率 <b>翻倍</b>。<q>我还以为你会被踢出这个地方呢。</q>','Grandma',1);
+		new Game.TieredUpgrade('钢包滚针','老奶奶工作效率 <b>翻倍</b>。<q>就是你的膝盖。</q>','Grandma',2);
+		new Game.TieredUpgrade('润滑假牙','老奶奶工作效率 <b>翻倍</b>。<q>压扁</q>','Grandma',3);
 		
 		order=300;
-		new Game.TieredUpgrade('廉价的锄头','农场生产工作效率像 <b>双倍</b> 一样高效。<q>把面团耙平!</q>','Farm',1);
-		new Game.TieredUpgrade('肥料','农场生产工作效率像 <b>双倍</b> 一样高效。<q>这是巧克力，我发誓。</q>','Farm',2);
-		new Game.TieredUpgrade('饼干树','农场生产工作效率像 <b>双倍</b> 一样高效。<q>面包果的亲戚。</q>','Farm',3);
+		new Game.TieredUpgrade('廉价的锄头','农场工作效率 <b>翻倍</b>。<q>把面团耙平!</q>','Farm',1);
+		new Game.TieredUpgrade('肥料','农场工作效率 <b>翻倍</b>。<q>这是巧克力，我发誓。</q>','Farm',2);
+		new Game.TieredUpgrade('饼干树','农场工作效率 <b>翻倍</b>。<q>面包果的亲戚。</q>','Farm',3);
 		
 		order=500;
-		new Game.TieredUpgrade('更坚固的传送带','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>你要去的地方。</q>','Factory',1);
-		new Game.TieredUpgrade('童工','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>更便宜,更健康的劳动力。</q>','Factory',2);
-		new Game.TieredUpgrade('血汗工厂','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>游手好闲的人将被解雇。</q>','Factory',3);
+		new Game.TieredUpgrade('更坚固的传送带','工厂工作效率 <b>翻倍</b>。<q>你要去的地方。</q>','Factory',1);
+		new Game.TieredUpgrade('童工','工厂工作效率 <b>翻倍</b>。<q>更便宜,更健康的劳动力。</q>','Factory',2);
+		new Game.TieredUpgrade('血汗工厂','工厂工作效率 <b>翻倍</b>。<q>游手好闲的人将被解雇。</q>','Factory',3);
 		
 		order=400;
-		new Game.TieredUpgrade('糖气','矿工工作效率像 <b>双倍</b> 一样高效。<q>在一些巧克力洞穴的深处发现了一种粉红色的挥发性气体。</q>','Mine',1);
-		new Game.TieredUpgrade('大型钻','矿工工作效率像 <b>双倍</b> 一样高效。<q>你太深了。</q>','Mine',2);
-		new Game.TieredUpgrade('超级钻','矿工工作效率像 <b>双倍</b> 一样高效。<q>终于妥协了?</q>','Mine',3);
+		new Game.TieredUpgrade('糖气','矿工工作效率 <b>翻倍</b>。<q>在一些巧克力洞穴的深处发现了一种粉红色的挥发性气体。</q>','Mine',1);
+		new Game.TieredUpgrade('大型钻','矿工工作效率 <b>翻倍</b>。<q>你太深了。</q>','Mine',2);
+		new Game.TieredUpgrade('超级钻','矿工工作效率 <b>翻倍</b>。<q>终于妥协了?</q>','Mine',3);
 		
 		order=600;
-		new Game.TieredUpgrade('香草星云','装船工作效率像 <b>双倍</b> 一样高效。<q>如果你去掉了你的太空头盔，你可能会闻到它!<br/>(注意:不要那样做。)</q>','Shipment',1);
-		new Game.TieredUpgrade('虫洞','装船工作效率像 <b>双倍</b> 一样高效。<q>通过使用这些快捷方式，你的船只可以行驶得更快。</q>','Shipment',2);
-		new Game.TieredUpgrade('飞行常客','装船工作效率像 <b>双倍</b> 一样高效。<q>很快回来!</q>','Shipment',3);
+		new Game.TieredUpgrade('香草星云','装船工作效率 <b>翻倍</b>。<q>如果你去掉了你的太空头盔，你可能会闻到它!<br/>(注意:不要那样做。)</q>','Shipment',1);
+		new Game.TieredUpgrade('虫洞','装船工作效率 <b>翻倍</b>。<q>通过使用这些快捷方式，你的船只可以行驶得更快。</q>','Shipment',2);
+		new Game.TieredUpgrade('飞行常客','装船工作效率 <b>翻倍</b>。<q>很快回来!</q>','Shipment',3);
 		
 		order=700;
-		new Game.TieredUpgrade('锑','炼金实验室像<b>双倍</b> 一样高效。<q>确实值得一大笔钱。</q>','Alchemy lab',1);
-		new Game.TieredUpgrade('面团的本质','炼金实验室像<b>双倍</b> 一样高效。<q>从炼化烘焙的5个古老步骤中提取。</q>','Alchemy lab',2);
-		new Game.TieredUpgrade('真正的巧克力','炼金实验室像<b>双倍</b> 一样高效。<q>可可的最纯净的形式。</q>','Alchemy lab',3);
+		new Game.TieredUpgrade('锑','炼金实验室像<b>翻倍</b>。<q>确实值得一大笔钱。</q>','Alchemy lab',1);
+		new Game.TieredUpgrade('面团的本质','炼金实验室像<b>翻倍</b>。<q>从炼化烘焙的5个古老步骤中提取。</q>','Alchemy lab',2);
+		new Game.TieredUpgrade('真正的巧克力','炼金实验室像<b>翻倍</b>。<q>可可的最纯净的形式。</q>','Alchemy lab',3);
 		
 		order=800;
-		new Game.TieredUpgrade('古碑文','传送门工作效率像 <b>双倍</b> 一样高效。<q>一块奇怪的花生脆饼，拿着一个古老的饼干食谱。太棒了!</q>','Portal',1);
-		new Game.TieredUpgrade('疯狂的燕麦工人','传送门工作效率像 <b>双倍</b> 一样高效。<q>起来，我的奴才们!</q>','Portal',2);
-		new Game.TieredUpgrade('灵魂纽带','传送门工作效率像 <b>双倍</b> 一样高效。<q>所以我只是注册并得到更多的饼干?当然，管他呢!</q>','Portal',3);
+		new Game.TieredUpgrade('古碑文','传送门工作效率 <b>翻倍</b>。<q>一块奇怪的花生脆饼，拿着一个古老的饼干食谱。太棒了!</q>','Portal',1);
+		new Game.TieredUpgrade('疯狂的燕麦工人','传送门工作效率 <b>翻倍</b>。<q>起来，我的奴才们!</q>','Portal',2);
+		new Game.TieredUpgrade('灵魂纽带','传送门工作效率 <b>翻倍</b>。<q>所以我只是注册并得到更多的饼干?当然，管他呢!</q>','Portal',3);
 		
 		order=900;
-		new Game.TieredUpgrade('通量电容器','时光机器工作效率像 <b>双倍</b> 一样高效。<q>烤到未来。</q>','Time machine',1);
-		new Game.TieredUpgrade('时间悖论解析器','时光机器工作效率像 <b>双倍</b> 一样高效。<q>别再和你的老奶奶鬼混了!</q>','Time machine',2);
-		new Game.TieredUpgrade('量子难题','时光机器工作效率像 <b>双倍</b> 一样高效。<q>只有一个常数，那就是普遍的不确定性。<br>是这样吗?</q>','Time machine',3);
+		new Game.TieredUpgrade('通量电容器','时光机器工作效率 <b>翻倍</b>。<q>烤到未来。</q>','Time machine',1);
+		new Game.TieredUpgrade('时间悖论解析器','时光机器工作效率 <b>翻倍</b>。<q>别再和你的老奶奶鬼混了!</q>','Time machine',2);
+		new Game.TieredUpgrade('量子难题','时光机器工作效率 <b>翻倍</b>。<q>只有一个常数，那就是普遍的不确定性。<br>是这样吗?</q>','Time machine',3);
 		
 		order=20000;
 		new Game.Upgrade('小猫助手','你获得了 <b>更多的饼干每秒产量</b> 你的牛奶越多。<q>喵~我可以帮你吗？</q>',9000000,Game.GetIcon('Kitten',1));Game.last.kitten=1;
@@ -7007,18 +7007,18 @@ Game.Launch=function()
 		order=100;
 		new Game.Upgrade('千万亿手指','鼠标和游标获得 <b>+500</b> 每个非游标对象生产的饼干数。<q>点点点点点点点点点点点点</q>',10000000000,[0,17]);
 		
-		order=200;new Game.TieredUpgrade('西梅汁','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>让我走。</q>','Grandma',4);
-		order=300;new Game.TieredUpgrade('转基因饼干','农场生产工作效率像 <b>双倍</b> 一样高效。<q>全自然变异。</q>','Farm',4);
-		order=500;new Game.TieredUpgrade('镭反应堆','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>让你的饼干焕发光彩。</q>','Factory',4);
-		order=400;new Game.TieredUpgrade('天涯钻','矿山工作效率像 <b>双倍</b> 一样高效。<q>穿过天空，等等。</q>','Mine',4);
-		order=600;new Game.TieredUpgrade('曲速驱动','装船工作效率像 <b>双倍</b> 一样高效。<q>大胆地烘烤。</q>','Shipment',4);
-		order=700;new Game.TieredUpgrade('美味食物','炼金实验室像<b>双倍</b> 一样高效。<q>把这个加入到饼干的混合物中肯定会让他们更容易上瘾!<br>也许是危险的。<br>希望你能继续合法地销售这些产品。</q>','Alchemy lab',4);
-		order=800;new Game.TieredUpgrade('理智之舞','传送门像<b>双倍</b> 一样高效。<q>如果我们愿意，我们可以改变。<br>我们可以把我们的大脑抛在脑后。</q>','Portal',4);
-		order=900;new Game.TieredUpgrade('因果关系的执行者','时光机器工作效率像 <b>双倍</b> 一样高效。<q>发生了什么,发生了。</q>','Time machine',4);
+		order=200;new Game.TieredUpgrade('西梅汁','老奶奶工作效率 <b>翻倍</b>。<q>让我走。</q>','Grandma',4);
+		order=300;new Game.TieredUpgrade('转基因饼干','农场工作效率 <b>翻倍</b>。<q>全自然变异。</q>','Farm',4);
+		order=500;new Game.TieredUpgrade('镭反应堆','工厂工作效率 <b>翻倍</b>。<q>让你的饼干焕发光彩。</q>','Factory',4);
+		order=400;new Game.TieredUpgrade('天涯钻','矿山工作效率 <b>翻倍</b>。<q>穿过天空，等等。</q>','Mine',4);
+		order=600;new Game.TieredUpgrade('曲速驱动','装船工作效率 <b>翻倍</b>。<q>大胆地烘烤。</q>','Shipment',4);
+		order=700;new Game.TieredUpgrade('美味食物','炼金实验室像<b>翻倍</b>。<q>把这个加入到饼干的混合物中肯定会让他们更容易上瘾!<br>也许是危险的。<br>希望你能继续合法地销售这些产品。</q>','Alchemy lab',4);
+		order=800;new Game.TieredUpgrade('理智之舞','传送门像<b>翻倍</b>。<q>如果我们愿意，我们可以改变。<br>我们可以把我们的大脑抛在脑后。</q>','Portal',4);
+		order=900;new Game.TieredUpgrade('因果关系的执行者','时光机器工作效率 <b>翻倍</b>。<q>发生了什么,发生了。</q>','Time machine',4);
 		
 		order=5000;
-		new Game.Upgrade('幸运日','黄金饼干出现工作效率像 <b>两倍一样的频繁</b> 并且停留 <b>两倍的时间</b>.<q>哦，嗨，一枚四叶的硬币！</q>',777777777,[27,6]);
-		new Game.Upgrade('意外的惊喜','黄金饼干出现工作效率像 <b>两倍一样的频繁</b> 并且停留 <b>两倍的时间</b>.<q>多么快乐!七个马蹄铁!</q>',77777777777,[27,6]);
+		new Game.Upgrade('幸运日','黄金饼干出现工作效率 <b>两倍一样的频繁</b> 并且停留 <b>两倍的时间</b>.<q>哦，嗨，一枚四叶的硬币！</q>',777777777,[27,6]);
+		new Game.Upgrade('意外的惊喜','黄金饼干出现工作效率 <b>两倍一样的频繁</b> 并且停留 <b>两倍的时间</b>.<q>多么快乐!七个马蹄铁!</q>',77777777777,[27,6]);
 		
 		order=20000;
 		new Game.Upgrade('小猫工程师','你获得了 <b>更多的饼干秒产量</b> 你的牛奶越多。<q>喵喵喵，先生</q>',90000000000000,Game.GetIcon('Kitten',3));Game.last.kitten=1;
@@ -7038,7 +7038,7 @@ Game.Launch=function()
 			var grandmaNumber=(building.id-1);
 			if (grandmaNumber==1) grandmaNumber='老奶奶';
 			else grandmaNumber+=' 老奶奶';
-			return '老奶奶生产工作效率像 <b>双倍</b> 一样高效。 '+(building.plural.charAt(0).toUpperCase()+building.plural.slice(1))+' 获得 <b>+1% 饼干秒产量</b> 每 '+grandmaNumber+'.';
+			return '老奶奶工作效率 <b>翻倍</b>。 '+(building.plural.charAt(0).toUpperCase()+building.plural.slice(1))+' 获得 <b>+1% 饼干秒产量</b> 每 '+grandmaNumber+'.';
 		}
 		
 		order=250;
@@ -7066,13 +7066,13 @@ Game.Launch=function()
 			}
 		}
 		
-		new Game.Upgrade('宾果游戏中心/研究设施','老奶奶操作的科学实验室和休闲俱乐部。<br>老奶奶工作效率工作效率像 <b>4 倍</b> 一样高效。<br><b>Regularly unlocks new upgrades</b>.<q>还有什么能阻止这些老奶奶们呢?...<br>宾果。</q>',1000000000000000,[11,9],function(){Game.SetResearch('专业巧克力片');});Game.last.noPerm=1;
+		new Game.Upgrade('宾果游戏中心/研究设施','老奶奶操作的科学实验室和休闲俱乐部。<br>老奶奶工作效率工作效率 <b>4 倍</b>。<br><b>Regularly unlocks new upgrades</b>.<q>还有什么能阻止这些老奶奶们呢?...<br>宾果。</q>',1000000000000000,[11,9],function(){Game.SetResearch('专业巧克力片');});Game.last.noPerm=1;
 		
 		order=15000;
 		
 		new Game.Upgrade('专业巧克力片','饼干生产增加 <b>+1%</b>.<q>电脑设计的巧克力片。电脑芯片，如果你愿意。</q>',100000000000,[0,9],function(){Game.SetResearch('可可豆设计师');});Game.last.pool='tech';
 		new Game.Upgrade('可可豆设计师','饼干生产增加 <b>+2%</b>.<q>现在比以前更符合空气动力学了!</q>',200000000000,[1,9],function(){Game.SetResearch('仪式滚针');});Game.last.pool='tech';
-		new Game.Upgrade('仪式滚针','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>多年的科学研究成果!</q>',400000000000,[2,9],function(){Game.SetResearch('地下烤箱');});Game.last.pool='tech';
+		new Game.Upgrade('仪式滚针','老奶奶工作效率 <b>翻倍</b>。<q>多年的科学研究成果!</q>',400000000000,[2,9],function(){Game.SetResearch('地下烤箱');});Game.last.pool='tech';
 		new Game.Upgrade('地下烤箱','饼干生产增加 <b>+3%</b>.<q>当然是靠科学的力量!</q>',800000000000,[3,9],function(){Game.SetResearch('同心协力');});Game.last.pool='tech';
 		new Game.Upgrade('同心协力','每个老奶奶收获 <b>+0.0<span></span>2 基本秒收益老奶奶</b>.<div class="warning">注意:祖母们越来越焦躁不安。不要鼓励他们。</div><q>我们是一个。我们有很多。</q>',1600000000000,[4,9],function(){Game.elderWrath=1;Game.SetResearch('奇异果');Game.storeToRefresh=1;});Game.last.pool='tech';
 		//Game.last.clickFunction=function(){return confirm('Warning : purchasing this will have unexpected, and potentially undesirable results!\nIt\'s all downhill from here. You have been warned!\nPurchase anyway?');};
@@ -7141,7 +7141,7 @@ Game.Launch=function()
 		new Game.Upgrade('走运','黄金饼干效果至少持续 <b>两倍的时间</b>。<q>你整晚都没睡，是吧?</q>',77777777777777,[27,6]);
 		
 		order=15000;
-		new Game.Upgrade('牺牲擀面杖','长者承诺至少持续 <b>双倍</b> 的时间。<q>这些主要是为了推广抗衰老面霜。<br>(而且还可以缩短鸡的痛苦。)</q>',2888888888888,[2,9]);
+		new Game.Upgrade('牺牲擀面杖','长者承诺至少持续 <b>翻倍</b> 的时间。<q>这些主要是为了推广抗衰老面霜。<br>(而且还可以缩短鸡的痛苦。)</q>',2888888888888,[2,9]);
 		
 		order=10020;
 		Game.NewUpgradeCookie({name:'Snickerdoodles',desc:'True to their name.',icon:[2,4],power:												2,	price:	999999999999*5});
@@ -7162,10 +7162,10 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'Round chocolate british tea biscuits with heart motif',desc:'I like cookies.',icon:[11,4],require:Game.last.name,power:		2,	price:	99999999999999});
 		
 		order=1000;
-		new Game.TieredUpgrade('Sugar bosons','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>可爱的公司玻色子。</q>','Antimatter condenser',1);
-		new Game.TieredUpgrade('String theory','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>揭示烘烤饼干的真正意义(还有，作为奖励，宇宙的结构)。</q>','Antimatter condenser',2);
-		new Game.TieredUpgrade('Large macaron collider','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>多么奇异!</q>','Antimatter condenser',3);
-		new Game.TieredUpgrade('Big bang bake','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>这就是一切的开始。</q>','Antimatter condenser',4);
+		new Game.TieredUpgrade('Sugar bosons','反物质冷凝器工作效率 <b>翻倍</b>。<q>可爱的公司玻色子。</q>','Antimatter condenser',1);
+		new Game.TieredUpgrade('String theory','反物质冷凝器工作效率 <b>翻倍</b>。<q>揭示烘烤饼干的真正意义(还有，作为奖励，宇宙的结构)。</q>','Antimatter condenser',2);
+		new Game.TieredUpgrade('Large macaron collider','反物质冷凝器工作效率 <b>翻倍</b>。<q>多么奇异!</q>','Antimatter condenser',3);
+		new Game.TieredUpgrade('Big bang bake','反物质冷凝器工作效率 <b>翻倍</b>。<q>这就是一切的开始。</q>','Antimatter condenser',4);
 
 		order=255;
 		new Game.Upgrade('针对老奶奶',Game.getGrandmaSynergyUpgradeDesc('Antimatter condenser')+'<q>一个刻薄的反祖母会吐更多的饼干。<br>(不要与正常的外祖母接触;可能会发生物质损失。)</q>',Game.Objects['Antimatter condenser'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
@@ -7183,15 +7183,15 @@ Game.Launch=function()
 		order=100;
 		new Game.Upgrade('百万的六乘方手指','鼠标和游标获得 <b>+50000</b> 每个非游标对象生产的饼干数。<q>有时<br>事情只是<br>点击</q>',10000000000000000,[0,19]);
 		
-		order=200;new Game.TieredUpgrade('Double-thick glasses','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>哦……所以这就是我一直在烘焙的东西。</q>','Grandma',5);
-		order=300;new Game.TieredUpgrade('Gingerbread scarecrows','农场生产工作效率像 <b>双倍</b> 一样高效。<q>看着你的庄稼，带着淘气的欢乐。</q>','Farm',5);
-		order=500;new Game.TieredUpgrade('Recombobulators','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>这是饼干的主要组成部分。</q>','Factory',5);
-		order=400;new Game.TieredUpgrade('H-bomb mining','矿山工作效率像 <b>双倍</b> 一样高效。<q>虽然效率有问题，但还是很壮观。</q>','Mine',5);
-		order=600;new Game.TieredUpgrade('Chocolate monoliths','装船工作效率像 <b>双倍</b> 一样高效。<q>我的上帝。全是巧克力棒。</q>','Shipment',5);
-		order=700;new Game.TieredUpgrade('Aqua crustulae','炼金实验室像<b>双倍</b> 一样高效。<q>小心点，一滴太多，你就会得到松饼。<br>没有人喜欢松饼。</q>','Alchemy lab',5);
-		order=800;new Game.TieredUpgrade('Brane transplant','传送门像<b>双倍</b> 一样高效。<q>这指的是将更高维度的宇宙，或“膜”，与我们自己的相结合，以方便运输(和收获宝贵的饼干面团)。</q>','Portal',5);
-		order=900;new Game.TieredUpgrade('Yestermorrow comparators','时光机器工作效率像 <b>双倍</b> 一样高效。<q>两周进入千禧年。</q>','Time machine',5);
-		order=1000;new Game.TieredUpgrade('Reverse cyclotrons','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>它们可以不碰撞粒子和不旋转的原子。为…嗯…更好的味道,和东西。</q>','Antimatter condenser',5);
+		order=200;new Game.TieredUpgrade('双层厚眼镜','老奶奶工作效率 <b>翻倍</b>。<q>哦……所以这就是我一直在烘焙的东西。</q>','Grandma',5);
+		order=300;new Game.TieredUpgrade('姜饼稻草人','农场工作效率 <b>翻倍</b>。<q>看着你的庄稼，带着淘气的欢乐。</q>','Farm',5);
+		order=500;new Game.TieredUpgrade('重新组合','工厂工作效率 <b>翻倍</b>。<q>这是饼干的主要组成部分。</q>','Factory',5);
+		order=400;new Game.TieredUpgrade('氢弹开采','矿山工作效率 <b>翻倍</b>。<q>虽然效率有问题，但还是很壮观。</q>','Mine',5);
+		order=600;new Game.TieredUpgrade('巧克力块','装船工作效率 <b>翻倍</b>。<q>我的上帝。全是巧克力棒。</q>','Shipment',5);
+		order=700;new Game.TieredUpgrade('甲壳纲','炼金实验室像<b>翻倍</b>。<q>小心点，一滴太多，你就会得到松饼。<br>没有人喜欢松饼。</q>','Alchemy lab',5);
+		order=800;new Game.TieredUpgrade('膜移植','传送门像<b>翻倍</b>。<q>这指的是将更高维度的宇宙，或“膜”，与我们自己的相结合，以方便运输(和收获宝贵的饼干面团)。</q>','Portal',5);
+		order=900;new Game.TieredUpgrade('昨天比较器','时光机器工作效率 <b>翻倍</b>。<q>两周进入千禧年。</q>','Time machine',5);
+		order=1000;new Game.TieredUpgrade('反向回旋加速器','反物质冷凝器工作效率 <b>翻倍</b>。<q>它们可以不碰撞粒子和不旋转的原子。为…嗯…更好的味道,和东西。</q>','Antimatter condenser',5);
 		
 		order=150;
 		new Game.Upgrade('难得素鼠标','点击获得 <b>+1% 总秒收益</b>.<q>这些漂亮的鼠标就够了。</q>',5000000000000,[11,14]);
@@ -7229,7 +7229,7 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'蜘蛛饼干',desc:'你在网上找到了这个菜谱。他们做任何饼干都可以。',locked:1,icon:[18,8],power: 2, price: 444444444444});
 
 		order=0;
-		new Game.Upgrade('持久记忆','后续研究将工作效率像 <b>10 次</b> 那样快。<q>这一切都是有道理的!<br>再一次!</q>',5,[9,2]);Game.last.pool='prestige';
+		new Game.Upgrade('持久记忆','后续研究将工作效率 <b>10 次</b> 那样快。<q>这一切都是有道理的!<br>再一次!</q>',5,[9,2]);Game.last.pool='prestige';
 		
 		order=40000;
 		new Game.Upgrade('皱纹门垫','皱纹产生的频率要高得多。<q>你真是个软弱的人。</q>',7,[19,8]);//debug purposes only
@@ -7266,7 +7266,7 @@ Game.Launch=function()
 		new Game.Upgrade('何蚝味糖霜','点击驯鹿的奖励 <b>两倍一样多</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>这是我该起床的时候了。</q>',2525,[12,9]);
 		new Game.Upgrade('季节储蓄','所有建筑都便宜 <b>1%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>圣诞老人的胡子，什么储蓄!<br/>谁会来救我们?</q>',2525,[16,9],function(){Game.storeToRefresh=1;});
 		new Game.Upgrade('玩具车间','所有升级都便宜 <b>5%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>看着你身边的精灵，他们可能会偷走我们的生产秘密。<br>或者更糟!</q>',2525,[16,9],function(){Game.upgradesToRebuild=1;});
-		new Game.Upgrade('淘气名单','老奶奶生产工作效率像 <b>双倍</b> 一样卓有成效。<br>以圣诞老人等级为标准的成本衡量表。<q>这个名单包含了每一个由格兰德克德人延续的不神圣的行为。<br>他赢不了两次了。<br>一次。一次就足够了。</q>',2525,[15,9]);
+		new Game.Upgrade('淘气名单','老奶奶工作效率 <b>翻倍</b> 一样卓有成效。<br>以圣诞老人等级为标准的成本衡量表。<q>这个名单包含了每一个由格兰德克德人延续的不神圣的行为。<br>他赢不了两次了。<br>一次。一次就足够了。</q>',2525,[15,9]);
 		new Game.Upgrade('圣诞老人的无底包','随机掉落 <b>10% 更常见的</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>这是你不能检查的一个底部。</q>',2525,[19,9]);
 		new Game.Upgrade('圣诞老人的帮手','点击加成 <b>10% 更强大的</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>一些人选择帮助汉堡包;有些人选择帮助你。<br>我想，每个人都有自己的想法。</q>',2525,[19,9]);
 		new Game.Upgrade('圣诞老人的遗产','饼干生产增加 <b>+3% 每圣诞老人等级</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>在北极，你得先找到精灵。当你得到精灵，你就开始制造玩具。然后当你拿到玩具的时候…然后你得到饼干。</q>',2525,[19,9]);
@@ -7300,11 +7300,11 @@ Game.Launch=function()
 		Game.NewUpgradeCookie({name:'永恒的心饼干',desc:'Silver icing for a very special someone you\'ve liked for a long, long time.',require:Game.last.name,season:'valentines',icon:[19,4],							power:heartPower,price: 1000000000000000000000});
 
 		order=1100;
-		new Game.TieredUpgrade('Gem polish','棱镜工作效率像 <b>双倍</b> 一样高效。<q>摆脱污垢，让更多的光线进入。<br>真的，真的太离谱了。</q>','Prism',1);
-		new Game.TieredUpgrade('9th color','棱镜工作效率像 <b>双倍</b> 一样高效。<q>甚至连螳螂虾都没注意到的地方，也在深部的光学深处。</q>','Prism',2);
-		new Game.TieredUpgrade('Chocolate light','棱镜工作效率像 <b>双倍</b> 一样高效。<q>沐浴在它的茧中。<br>(警告:可能引起各种有趣但致命的皮肤状况。)</q>','Prism',3);
-		new Game.TieredUpgrade('Grainbow','棱镜工作效率像 <b>双倍</b> 一样高效。<q>记住不同的谷物可以使用方便的助记:R是大米,O是燕麦……呃,B是大麦吗?...</q>','Prism',4);
-		new Game.TieredUpgrade('纯粹的宇宙之光','棱镜工作效率像 <b>双倍</b> 一样高效。<q>你的棱镜现在接收到来自宇宙另一端的原始的、纯粹的光子。</q>','Prism',5);
+		new Game.TieredUpgrade('Gem polish','棱镜工作效率 <b>翻倍</b>。<q>摆脱污垢，让更多的光线进入。<br>真的，真的太离谱了。</q>','Prism',1);
+		new Game.TieredUpgrade('9th color','棱镜工作效率 <b>翻倍</b>。<q>甚至连螳螂虾都没注意到的地方，也在深部的光学深处。</q>','Prism',2);
+		new Game.TieredUpgrade('Chocolate light','棱镜工作效率 <b>翻倍</b>。<q>沐浴在它的茧中。<br>(警告:可能引起各种有趣但致命的皮肤状况。)</q>','Prism',3);
+		new Game.TieredUpgrade('Grainbow','棱镜工作效率 <b>翻倍</b>。<q>记住不同的谷物可以使用方便的助记:R是大米,O是燕麦……呃,B是大麦吗?...</q>','Prism',4);
+		new Game.TieredUpgrade('纯粹的宇宙之光','棱镜工作效率 <b>翻倍</b>。<q>你的棱镜现在接收到来自宇宙另一端的原始的、纯粹的光子。</q>','Prism',5);
 
 		order=255;
 		new Game.Upgrade('彩虹老奶奶',Game.getGrandmaSynergyUpgradeDesc('Prism')+'<q>一个发光的老奶奶在饼干上闪闪发光。</q>',Game.Objects['Prism'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
@@ -7331,17 +7331,17 @@ Game.Launch=function()
 		
 		order=150;new Game.Upgrade('E合金鼠标','点击获得 <b>+1% 总秒收益</b>.<q>如果我是你，我就会这么做。</q>',500000000000000,[11,15]);
 		new Game.Upgrade('叉合金鼠标','点击获得 <b>+1% 总秒收益</b>.<q>按一下就可以了，但是不要把你的鼠标砸在上面。开始你的游戏吧。去玩。</q>',50000000000000000,[11,16]);
-		order=200;new Game.TieredUpgrade('老化剂','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>与直觉相反的是，奶奶有一种不可思议的能力，可以变得更强大。</q>','Grandma',6);
-		order=300;new Game.TieredUpgrade('脉冲星洒水器','农场生产工作效率像 <b>双倍</b> 一样高效。<q>不存在过度浇水的问题。潮湿是最好的。</q>','Farm',6);
-		order=500;new Game.TieredUpgrade('深度烘焙过程','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>一个专利的过程增加饼干产量两倍的相同数量的原料。别问了，别拍照，一定要穿防护服。</q>','Factory',6);
-		order=400;new Game.TieredUpgrade('铁匠铺','矿山工作效率像 <b>双倍</b> 一样高效。<q>你终于挖出了一条地道到地球的核心。这里很暖和。</q>','Mine',6);
-		order=600;new Game.TieredUpgrade('发电船','装船工作效率像 <b>双倍</b> 一样高效。<q>建造到最后，这个巨大的飞船一定会把你的饼干送到太空深处，总有一天。</q>','Shipment',6);
-		order=700;new Game.TieredUpgrade('起源坩埚','炼金实验室像<b>双倍</b> 一样高效。<q>这个传说中的坩埚是由地球上最稀有的星球建造而成，位于最深处，据说它能保留大爆炸本身的特性。</q>','Alchemy lab',6);
-		order=800;new Game.TieredUpgrade('大型传送门','传送门像<b>双倍</b> 一样高效。<q>就像，说，老天爷能把这东西塞进去。假设地。</q>','Portal',6);
-		order=900;new Game.TieredUpgrade('未来的法令','时光机器工作效率像 <b>双倍</b> 一样高效。<q>遥远未来的法令授权你深入挖掘未来——文明已经堕落，又重新崛起，而饼干是丰富的。</q>','Time machine',6);
-		order=1000;new Game.TieredUpgrade('纳米宇宙','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>纳米宇宙理论认为，每一个亚原子粒子实际上都是它自己自足的宇宙，拥有不可思议的能量。</q>','Antimatter condenser',6);
+		order=200;new Game.TieredUpgrade('老化剂','老奶奶工作效率 <b>翻倍</b>。<q>与直觉相反的是，奶奶有一种不可思议的能力，可以变得更强大。</q>','Grandma',6);
+		order=300;new Game.TieredUpgrade('脉冲星洒水器','农场工作效率 <b>翻倍</b>。<q>不存在过度浇水的问题。潮湿是最好的。</q>','Farm',6);
+		order=500;new Game.TieredUpgrade('深度烘焙过程','工厂工作效率 <b>翻倍</b>。<q>一个专利的过程增加饼干产量两倍的相同数量的原料。别问了，别拍照，一定要穿防护服。</q>','Factory',6);
+		order=400;new Game.TieredUpgrade('铁匠铺','矿山工作效率 <b>翻倍</b>。<q>你终于挖出了一条地道到地球的核心。这里很暖和。</q>','Mine',6);
+		order=600;new Game.TieredUpgrade('发电船','装船工作效率 <b>翻倍</b>。<q>建造到最后，这个巨大的飞船一定会把你的饼干送到太空深处，总有一天。</q>','Shipment',6);
+		order=700;new Game.TieredUpgrade('起源坩埚','炼金实验室像<b>翻倍</b>。<q>这个传说中的坩埚是由地球上最稀有的星球建造而成，位于最深处，据说它能保留大爆炸本身的特性。</q>','Alchemy lab',6);
+		order=800;new Game.TieredUpgrade('大型传送门','传送门像<b>翻倍</b>。<q>就像，说，老天爷能把这东西塞进去。假设地。</q>','Portal',6);
+		order=900;new Game.TieredUpgrade('未来的法令','时光机器工作效率 <b>翻倍</b>。<q>遥远未来的法令授权你深入挖掘未来——文明已经堕落，又重新崛起，而饼干是丰富的。</q>','Time machine',6);
+		order=1000;new Game.TieredUpgrade('纳米宇宙','反物质冷凝器工作效率 <b>翻倍</b>。<q>纳米宇宙理论认为，每一个亚原子粒子实际上都是它自己自足的宇宙，拥有不可思议的能量。</q>','Antimatter condenser',6);
 		order=1100;
-		new Game.TieredUpgrade('Glow-in-the-dark','棱镜工作效率像 <b>双倍</b> 一样高效。<q>你的棱镜现在在黑暗中发光，有效地加倍它们的输出!</q>','Prism',6);
+		new Game.TieredUpgrade('Glow-in-the-dark','棱镜工作效率 <b>翻倍</b>。<q>你的棱镜现在在黑暗中发光，有效地加倍它们的输出!</q>','Prism',6);
 		
 		order=10032;
 		Game.NewUpgradeCookie({name:'Rose macarons',desc:'虽然味道很怪，但这些糕点最近越来越受欢迎。',icon:[22,3],require:'马卡龙盒子',		power:3,price: 9999});
@@ -7442,28 +7442,28 @@ Game.Launch=function()
 		
 		
 		order=525;
-		new Game.TieredUpgrade('更高级的出纳员','银行工作效率像 <b>双倍</b> 一样高效。<q>能够处理更高数量的事务。不过要小心，因为高个子的人会讲些高挑的故事。</q>','Bank',1);
-		new Game.TieredUpgrade('抗剪刀的信用卡','银行工作效率像 <b>双倍</b> 一样高效。<q>对那些真正有价值的顾客。</q>','Bank',2);
-		new Game.TieredUpgrade('耐酸金库','银行工作效率像 <b>双倍</b> 一样高效。<q>你知道他们说什么吗，小心点。</q>','Bank',3);
-		new Game.TieredUpgrade('巧克力硬币','银行工作效率像 <b>双倍</b> 一样高效。<q>这种革命性的货币更容易从内部和内部熔化——而且味道更好，这是一种改变。</q>','Bank',4);
-		new Game.TieredUpgrade('指数利率','银行工作效率像 <b>双倍</b> 一样高效。<q>不能和数学争辩!现在把它分叉。</q>','Bank',5);
-		new Game.TieredUpgrade('金融禅宗','银行工作效率像 <b>双倍</b> 一样高效。<q>经济思想的终极目标;大资金的风水,股市瑜伽-海姆利克氏操作法的1角和2角5分的硬币。</q>','Bank',6);
+		new Game.TieredUpgrade('更高级的出纳员','银行工作效率 <b>翻倍</b>。<q>能够处理更高数量的事务。不过要小心，因为高个子的人会讲些高挑的故事。</q>','Bank',1);
+		new Game.TieredUpgrade('抗剪刀的信用卡','银行工作效率 <b>翻倍</b>。<q>对那些真正有价值的顾客。</q>','Bank',2);
+		new Game.TieredUpgrade('耐酸金库','银行工作效率 <b>翻倍</b>。<q>你知道他们说什么吗，小心点。</q>','Bank',3);
+		new Game.TieredUpgrade('巧克力硬币','银行工作效率 <b>翻倍</b>。<q>这种革命性的货币更容易从内部和内部熔化——而且味道更好，这是一种改变。</q>','Bank',4);
+		new Game.TieredUpgrade('指数利率','银行工作效率 <b>翻倍</b>。<q>不能和数学争辩!现在把它分叉。</q>','Bank',5);
+		new Game.TieredUpgrade('金融禅宗','银行工作效率 <b>翻倍</b>。<q>经济思想的终极目标;大资金的风水,股市瑜伽-海姆利克氏操作法的1角和2角5分的硬币。</q>','Bank',6);
 		
 		order=550;
-		new Game.TieredUpgrade('金色偶像','寺庙像 <b>双倍</b> 一样高效。<q>吸引更贪婪的冒险者来找回你的饼干。现在这是真正的偶像比赛!</q>','Temple',1);
-		new Game.TieredUpgrade('牺牲','寺庙像 <b>双倍</b> 一样高效。<q>10亿美元的饼干是什么样的生活?</q>','Temple',2);
-		new Game.TieredUpgrade('美味的祝福','寺庙像 <b>双倍</b> 一样高效。<q>瞧，面包师的万能汤匙降临，对信徒和分布式神圣的礼物——闪闪发光的糖,巧克力漆黑如夜,和各种各样的小麦。让我告诉你，那个聚会很不友好。</q>','Temple',3);
-		new Game.TieredUpgrade('太阳节','寺庙像 <b>双倍</b> 一样高效。<q>在每年的庆祝活动中，你的太阳穴都能释放出你的原始力量，包括喷火者、传统舞蹈、仪式砍头和其他的欢乐!</q>','Temple',4);
-		new Game.TieredUpgrade('扩大万神殿','寺庙像 <b>双倍</b> 一样高效。<q>精神上的不足!比你需要的还要多，或者你的钱要回来!百分百保证!</q>','Temple',5);
-		new Game.TieredUpgrade('天上的面包师','寺庙像 <b>双倍</b> 一样高效。<q>这是它。终极神终于在你的行动上投射他们的神性的眼睛;无论这是一件好事，或者可能是几天的结束，你很快就会发现。</q>','Temple',6);
+		new Game.TieredUpgrade('金色偶像','寺庙 <b>翻倍</b>。<q>吸引更贪婪的冒险者来找回你的饼干。现在这是真正的偶像比赛!</q>','Temple',1);
+		new Game.TieredUpgrade('牺牲','寺庙 <b>翻倍</b>。<q>10亿美元的饼干是什么样的生活?</q>','Temple',2);
+		new Game.TieredUpgrade('美味的祝福','寺庙 <b>翻倍</b>。<q>瞧，面包师的万能汤匙降临，对信徒和分布式神圣的礼物——闪闪发光的糖,巧克力漆黑如夜,和各种各样的小麦。让我告诉你，那个聚会很不友好。</q>','Temple',3);
+		new Game.TieredUpgrade('太阳节','寺庙 <b>翻倍</b>。<q>在每年的庆祝活动中，你的太阳穴都能释放出你的原始力量，包括喷火者、传统舞蹈、仪式砍头和其他的欢乐!</q>','Temple',4);
+		new Game.TieredUpgrade('扩大万神殿','寺庙 <b>翻倍</b>。<q>精神上的不足!比你需要的还要多，或者你的钱要回来!百分百保证!</q>','Temple',5);
+		new Game.TieredUpgrade('天上的面包师','寺庙 <b>翻倍</b>。<q>这是它。终极神终于在你的行动上投射他们的神性的眼睛;无论这是一件好事，或者可能是几天的结束，你很快就会发现。</q>','Temple',6);
 		
 		order=575;
-		new Game.TieredUpgrade('尖尖的帽子','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>测试显示，相对于神奇的圆锥工具的几何比例，它的可接受性增加了。</q>','Wizard tower',1);
-		new Game.TieredUpgrade('胡子胡子','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>你没听说吗?胡子就是这个词。</q>','Wizard tower',2);
-		new Game.TieredUpgrade('古魔典','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>包含一些有趣的咒语，比如“把水变成流口水”，“在家具上长眉毛”和“召唤政治家”。</q>','Wizard tower',3);
-		new Game.TieredUpgrade('厨房诅咒','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>奇异魔法涉及到一切与人有关的东西。好极了!</q>','Wizard tower',4);
-		new Game.TieredUpgrade('魔法学校','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>这个由饼干资助的魔法学院是四所著名的魔法学院的所在地:运动员，书呆子，预备者，和死亡的人。</q>','Wizard tower',5);
-		new Game.TieredUpgrade('黑暗公式','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>在这些咒语的背后，有一种力量在发挥作用——你会感觉到你真的不应该把它们弄乱。但是我是说，免费的饼干，对吧?</q>','Wizard tower',6);
+		new Game.TieredUpgrade('尖尖的帽子','精灵塔工作效率 <b>翻倍</b>。<q>测试显示，相对于神奇的圆锥工具的几何比例，它的可接受性增加了。</q>','Wizard tower',1);
+		new Game.TieredUpgrade('胡子胡子','精灵塔工作效率 <b>翻倍</b>。<q>你没听说吗?胡子就是这个词。</q>','Wizard tower',2);
+		new Game.TieredUpgrade('古魔典','精灵塔工作效率 <b>翻倍</b>。<q>包含一些有趣的咒语，比如“把水变成流口水”，“在家具上长眉毛”和“召唤政治家”。</q>','Wizard tower',3);
+		new Game.TieredUpgrade('厨房诅咒','精灵塔工作效率 <b>翻倍</b>。<q>奇异魔法涉及到一切与人有关的东西。好极了!</q>','Wizard tower',4);
+		new Game.TieredUpgrade('魔法学校','精灵塔工作效率 <b>翻倍</b>。<q>这个由饼干资助的魔法学院是四所著名的魔法学院的所在地:运动员，书呆子，预备者，和死亡的人。</q>','Wizard tower',5);
+		new Game.TieredUpgrade('黑暗公式','精灵塔工作效率 <b>翻倍</b>。<q>在这些咒语的背后，有一种力量在发挥作用——你会感觉到你真的不应该把它们弄乱。但是我是说，免费的饼干，对吧?</q>','Wizard tower',6);
 
 		order=250;
 		new Game.Upgrade('银行家老奶奶',Game.getGrandmaSynergyUpgradeDesc('Bank')+'<q>一个好的银行家可以兑现更多的饼干。</q>',Game.Objects['Bank'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
@@ -7578,40 +7578,40 @@ Game.Launch=function()
 
 		new Game.Upgrade('小猫天使','你获得了 <b>更多的饼干每秒产量</b> 你的牛奶越多。<q>所有的猫都会去天堂。</q>',9000,[23,7]);Game.last.pool='prestige';Game.last.parents=['领土'];Game.last.kitten=1;
 		
-		new Game.Upgrade('邪恶的诱饵','皱纹出现工作效率像 <b>5 次</b> 那么快。<q>没有皱纹可以抵御蠕虫饼干的气味。</q>',44444,[15,12]);Game.last.pool='prestige';Game.last.parents=['启动厨房'];
+		new Game.Upgrade('邪恶的诱饵','皱纹出现工作效率 <b>5 次</b> 那么快。<q>没有皱纹可以抵御蠕虫饼干的气味。</q>',44444,[15,12]);Game.last.pool='prestige';Game.last.parents=['启动厨房'];
 		new Game.Upgrade('亵渎神明','起皱的人获得 <b>5%</b> 更多的饼干。<q>独特的动物王国，皱纹消化道能够承受难以置信程度的扩张——只要你适当地刺激它们。</q>',444444,[19,8]);Game.last.pool='prestige';Game.last.parents=['邪恶的诱饵'];
 		
 		
-		order=200;new Game.TieredUpgrade('播放器步行者','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>配上火焰贴纸和一个小喇叭，“嘟嘟”。</q>','Grandma',7);
-		order=300;new Game.TieredUpgrade('软糖真菌','农场生产工作效率像 <b>双倍</b> 一样高效。<q>一种含糖的寄生虫，其卷须帮助饼干生长。<br>请不要在孢子里呼吸。如果有孢子摄入，在接下来的36秒内寻求医疗帮助。</q>','Farm',7);
-		order=400;new Game.TieredUpgrade('行星分裂器','矿山工作效率像 <b>双倍</b> 一样高效。<q>这些新型的挖土机已经在马鲁拉，格洛伯特和弗瓦扎·维的实验中进行了测试，在其他遥远的星球上，它们最近都很安静。</q>','Mine',7);
-		order=500;new Game.TieredUpgrade('半机械人','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>半合成的生物体没有松懈，没有统一，午休时间缩短了20%，这使它们成为理想的劳动饲料。</q>','Factory',7);
-		order=525;new Game.TieredUpgrade('钱包的方式','银行工作效率像 <b>双倍</b> 一样高效。<q>这种新的货币学派在银行界引起了激烈的讨论;遵循它的规则，你就可以从中获利。</q>','Bank',7);
-		order=550;new Game.TieredUpgrade('创造神话','寺庙像 <b>双倍</b> 一样高效。<q>关于第一个饼干的起源的故事一直流传着;故事是如何开始的，在时间和命运的烤箱里。</q>','Temple',7);
-		order=575;new Game.TieredUpgrade('饼干男','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>在这里;完美的烘焙魔法学校。从召唤晶片到打螺帽，没有任何一种饼干制作方法能通过魔术提高10倍的效果。</q>','Wizard tower',7);
-		order=600;new Game.TieredUpgrade('戴森球','装船工作效率像 <b>双倍</b> 一样高效。<q>你已经找到了一种方法，将你的宇宙技术知识运用到更局部的努力中;这个巨大的元材料球体包裹着太阳系，肯定会让你的烘焙能力提高一个档次。</q>','Shipment',7);
-		order=700;new Game.TieredUpgrade('原子流动性理论','炼金实验室像<b>双倍</b> 一样高效。<q>把炼金术推向极限，你会发现一切事物都可以转化成其他东西——铅、水银、水;更重要的是，你意识到任何东西都可以而且应该被转换成饼干。</q>','Alchemy lab',7);
-		order=800;new Game.TieredUpgrade('最后的备份计划','传送门像<b>双倍</b> 一样高效。<q>以防万一，好吗?</q>','Portal',7);
-		order=900;new Game.TieredUpgrade('伟大的循环假说','时光机器工作效率像 <b>双倍</b> 一样高效。<q>如果我们的宇宙只是一个无限循环的一个实例呢?如果，在它之前和之后，无限延伸的相同的宇宙，它们本身含有无限的饼干?</q>','Time machine',7);
-		order=1000;new Game.TieredUpgrade('脉冲','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>你已经进入了宇宙的脉搏，这是一种永恒的节奏，每一种材料和反物质都能和谐地跳动。不知何故，这意味着更多的饼干。</q>','Antimatter condenser',7);
+		order=200;new Game.TieredUpgrade('播放器步行者','老奶奶工作效率 <b>翻倍</b>。<q>配上火焰贴纸和一个小喇叭，“嘟嘟”。</q>','Grandma',7);
+		order=300;new Game.TieredUpgrade('软糖真菌','农场工作效率 <b>翻倍</b>。<q>一种含糖的寄生虫，其卷须帮助饼干生长。<br>请不要在孢子里呼吸。如果有孢子摄入，在接下来的36秒内寻求医疗帮助。</q>','Farm',7);
+		order=400;new Game.TieredUpgrade('行星分裂器','矿山工作效率 <b>翻倍</b>。<q>这些新型的挖土机已经在马鲁拉，格洛伯特和弗瓦扎·维的实验中进行了测试，在其他遥远的星球上，它们最近都很安静。</q>','Mine',7);
+		order=500;new Game.TieredUpgrade('半机械人','工厂工作效率 <b>翻倍</b>。<q>半合成的生物体没有松懈，没有统一，午休时间缩短了20%，这使它们成为理想的劳动饲料。</q>','Factory',7);
+		order=525;new Game.TieredUpgrade('钱包的方式','银行工作效率 <b>翻倍</b>。<q>这种新的货币学派在银行界引起了激烈的讨论;遵循它的规则，你就可以从中获利。</q>','Bank',7);
+		order=550;new Game.TieredUpgrade('创造神话','寺庙 <b>翻倍</b>。<q>关于第一个饼干的起源的故事一直流传着;故事是如何开始的，在时间和命运的烤箱里。</q>','Temple',7);
+		order=575;new Game.TieredUpgrade('饼干男','精灵塔工作效率 <b>翻倍</b>。<q>在这里;完美的烘焙魔法学校。从召唤晶片到打螺帽，没有任何一种饼干制作方法能通过魔术提高10倍的效果。</q>','Wizard tower',7);
+		order=600;new Game.TieredUpgrade('戴森球','装船工作效率 <b>翻倍</b>。<q>你已经找到了一种方法，将你的宇宙技术知识运用到更局部的努力中;这个巨大的元材料球体包裹着太阳系，肯定会让你的烘焙能力提高一个档次。</q>','Shipment',7);
+		order=700;new Game.TieredUpgrade('原子流动性理论','炼金实验室像<b>翻倍</b>。<q>把炼金术推向极限，你会发现一切事物都可以转化成其他东西——铅、水银、水;更重要的是，你意识到任何东西都可以而且应该被转换成饼干。</q>','Alchemy lab',7);
+		order=800;new Game.TieredUpgrade('最后的备份计划','传送门像<b>翻倍</b>。<q>以防万一，好吗?</q>','Portal',7);
+		order=900;new Game.TieredUpgrade('伟大的循环假说','时光机器工作效率 <b>翻倍</b>。<q>如果我们的宇宙只是一个无限循环的一个实例呢?如果，在它之前和之后，无限延伸的相同的宇宙，它们本身含有无限的饼干?</q>','Time machine',7);
+		order=1000;new Game.TieredUpgrade('脉冲','反物质冷凝器工作效率 <b>翻倍</b>。<q>你已经进入了宇宙的脉搏，这是一种永恒的节奏，每一种材料和反物质都能和谐地跳动。不知何故，这意味着更多的饼干。</q>','Antimatter condenser',7);
 		order=1100;
-		new Game.TieredUpgrade('神圣化','棱镜工作效率像 <b>双倍</b> 一样高效。<q>你的“棱镜”服务人员已经变得越来越着迷于某些东西——或者是一些超越它的东西;超出了我们所有人,可能吗?</q>','Prism',7);
+		new Game.TieredUpgrade('神圣化','棱镜工作效率 <b>翻倍</b>。<q>你的“棱镜”服务人员已经变得越来越着迷于某些东西——或者是一些超越它的东西;超出了我们所有人,可能吗?</q>','Prism',7);
 		
 		
-		order=200;new Game.TieredUpgrade('未被发现的','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>这可能是一个糟糕的育儿方式的经典故事，但是让我们来看看奶奶是怎么做的。</q>','Grandma',8);
-		order=300;new Game.TieredUpgrade('小麦的由来','农场生产工作效率像 <b>双倍</b> 一样高效。<q>当你的植物可以在农场里到处走走，帮助你的时候，照料庄稼就容易多了。<br>没有宠物。不要进食。不要试图与之交谈。</q>','Farm',8);
-		order=400;new Game.TieredUpgrade('菜籽油井','矿山工作效率像 <b>双倍</b> 一样高效。<q>菜籽油是一种以前未开发的资源，它渗透在地下的橄榄石中，使其具有独特的味道和丰厚的性能</q>','Mine',8);
-		order=500;new Game.TieredUpgrade('78小时天','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>我们为什么不早点想到这个呢?</q>','Factory',8);
-		order=525;new Game.TieredUpgrade('基本原理','银行工作效率像 <b>双倍</b> 一样高效。<q>如果不是现在,更待何时?如果不是，是什么?如果不是东西……东西呢?</q>','Bank',8);
-		order=550;new Game.TieredUpgrade('神权政治','寺庙像 <b>双倍</b> 一样高效。<q>你把你的饼干帝国变成了一个完美的神权政治，聚集了无数的追随者，从宇宙的每一个角落。<br/>别让它冲昏了你的头。</q>','Temple',8);
-		order=575;new Game.TieredUpgrade('兔子戏法','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>除了一顶华丽的帽子外，你的巫师们已经找到了一种方法，可以同时控制兔子的数量，并能产生大量额外的饼干，基本上是免费的!<br>由此产生的饼干可能不适合纯素食者。</q>','Wizard tower',8);
-		order=600;new Game.TieredUpgrade('最后的边界','装船工作效率像 <b>双倍</b> 一样高效。<q>从那里到这里，这条路很长。不过，这一切都是值得的——景色很美，油价也稍微合理一些。</q>','Shipment',8);
-		order=700;new Game.TieredUpgrade('原色古果','炼金实验室像<b>双倍</b> 一样高效。<q>现在，你已经做到了。干得好。很好。这是你的3个星系，你刚刚把它们转换成饼干。你可以从宇宙跳跃到宇宙。</q>','Alchemy lab',8);
-		order=800;new Game.TieredUpgrade('疯狂的圣歌','传送门像<b>双倍</b> 一样高效。<q>流行的诗句是这样的 : "jau\'hn madden jau\'hn madden aeiouaeiouaeiou brbrbrbrbrbrbr"</q>','Portal',8);
-		order=900;new Game.TieredUpgrade('也许是小饼干的时候','时光机器工作效率像 <b>双倍</b> 一样高效。<q>追忆过去的事，本应是如此。</q>','Time machine',8);
-		order=1000;new Game.TieredUpgrade('还有其他超微小的基本粒子吗?“可能”?','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>当连宇宙都没了主意的时候，当你知道你快要结束的时候。</q>','Antimatter condenser',8);
+		order=200;new Game.TieredUpgrade('未被发现的','老奶奶工作效率 <b>翻倍</b>。<q>这可能是一个糟糕的育儿方式的经典故事，但是让我们来看看奶奶是怎么做的。</q>','Grandma',8);
+		order=300;new Game.TieredUpgrade('小麦的由来','农场工作效率 <b>翻倍</b>。<q>当你的植物可以在农场里到处走走，帮助你的时候，照料庄稼就容易多了。<br>没有宠物。不要进食。不要试图与之交谈。</q>','Farm',8);
+		order=400;new Game.TieredUpgrade('菜籽油井','矿山工作效率 <b>翻倍</b>。<q>菜籽油是一种以前未开发的资源，它渗透在地下的橄榄石中，使其具有独特的味道和丰厚的性能</q>','Mine',8);
+		order=500;new Game.TieredUpgrade('78小时天','工厂工作效率 <b>翻倍</b>。<q>我们为什么不早点想到这个呢?</q>','Factory',8);
+		order=525;new Game.TieredUpgrade('基本原理','银行工作效率 <b>翻倍</b>。<q>如果不是现在,更待何时?如果不是，是什么?如果不是东西……东西呢?</q>','Bank',8);
+		order=550;new Game.TieredUpgrade('神权政治','寺庙 <b>翻倍</b>。<q>你把你的饼干帝国变成了一个完美的神权政治，聚集了无数的追随者，从宇宙的每一个角落。<br/>别让它冲昏了你的头。</q>','Temple',8);
+		order=575;new Game.TieredUpgrade('兔子戏法','精灵塔工作效率 <b>翻倍</b>。<q>除了一顶华丽的帽子外，你的巫师们已经找到了一种方法，可以同时控制兔子的数量，并能产生大量额外的饼干，基本上是免费的!<br>由此产生的饼干可能不适合纯素食者。</q>','Wizard tower',8);
+		order=600;new Game.TieredUpgrade('最后的边界','装船工作效率 <b>翻倍</b>。<q>从那里到这里，这条路很长。不过，这一切都是值得的——景色很美，油价也稍微合理一些。</q>','Shipment',8);
+		order=700;new Game.TieredUpgrade('原色古果','炼金实验室像<b>翻倍</b>。<q>现在，你已经做到了。干得好。很好。这是你的3个星系，你刚刚把它们转换成饼干。你可以从宇宙跳跃到宇宙。</q>','Alchemy lab',8);
+		order=800;new Game.TieredUpgrade('疯狂的圣歌','传送门像<b>翻倍</b>。<q>流行的诗句是这样的 : "jau\'hn madden jau\'hn madden aeiouaeiouaeiou brbrbrbrbrbrbr"</q>','Portal',8);
+		order=900;new Game.TieredUpgrade('也许是小饼干的时候','时光机器工作效率 <b>翻倍</b>。<q>追忆过去的事，本应是如此。</q>','Time machine',8);
+		order=1000;new Game.TieredUpgrade('还有其他超微小的基本粒子吗?“可能”?','反物质冷凝器工作效率 <b>翻倍</b>。<q>当连宇宙都没了主意的时候，当你知道你快要结束的时候。</q>','Antimatter condenser',8);
 		order=1100;
-		new Game.TieredUpgrade('反向阴影','棱镜工作效率像 <b>双倍</b> 一样高效。<q>哦，老兄，这真让你的眼睛大乱。</q>','Prism',8);
+		new Game.TieredUpgrade('反向阴影','棱镜工作效率 <b>翻倍</b>。<q>哦，老兄，这真让你的眼睛大乱。</q>','Prism',8);
 		
 		
 		order=20000;
@@ -7900,14 +7900,14 @@ Game.Launch=function()
 		new Game.Upgrade('幸运老奶奶',Game.getGrandmaSynergyUpgradeDesc('Chancemaker')+'<q>一位幸运的奶奶总是能找到更多的饼干。</q>',Game.Objects['Chancemaker'].basePrice*Game.Tiers[2].price,[10,9],function(){Game.Objects['Grandma'].redraw();});
 		
 		order=1200;
-		new Game.TieredUpgrade('你的幸运饼干','投机分子工作效率像 <b>双倍</b> 一样高效。<q>这是你烤过的第一块饼干。它具有很深的情感价值，而且，在这之后，有一种有趣的味道。</q>','Chancemaker',1);
-		new Game.TieredUpgrade('所有的赌注都在"魔法硬币"上','投机分子工作效率像 <b>双倍</b> 一样高效。<q>抛硬币时总是落在另一边的硬币。不是正面，不是反面，不是边缘。是<i>另一边</i>.</q>','Chancemaker',2);
-		new Game.TieredUpgrade('中奖彩票','投机分子工作效率像 <b>双倍</b> 一样高效。<q>什么彩票?彩票，那就是彩票！只有彩票才重要!</q>','Chancemaker',3);
-		new Game.TieredUpgrade('四叶苜蓿田','投机分子工作效率像 <b>双倍</b> 一样高效。<q>这里没有巨型怪物，只有一大堆幸运草。</q>','Chancemaker',4);
-		new Game.TieredUpgrade('一本关于书的食谱','投机分子工作效率像 <b>双倍</b> 一样高效。<q>用28种创造性的新方法来帮你烹饪书。</q>','Chancemaker',5);
-		new Game.TieredUpgrade('小妖精村','投机分子工作效率像 <b>双倍</b> 一样高效。<q>你最终会被当地的小妖精们所接受，他们把神话般的运气当作友谊的象征(还有一些很臭的茶)。</q>','Chancemaker',6);
-		new Game.TieredUpgrade('非概率驱动','投机分子工作效率像 <b>双倍</b> 一样高效。<q>这是一个奇怪的引擎，它会把统计数据转到他们的头上。由祖母推荐的面包房指南。</q>','Chancemaker',7);
-		new Game.TieredUpgrade('反超级美味','投机分子工作效率像 <b>双倍</b> 一样高效。<q>一个令人兴奋的新领域的研究使不幸的事情变得幸运。没有镜子没有被打破，没有梯子在下面！</q>','Chancemaker',8);
+		new Game.TieredUpgrade('你的幸运饼干','投机分子工作效率 <b>翻倍</b>。<q>这是你烤过的第一块饼干。它具有很深的情感价值，而且，在这之后，有一种有趣的味道。</q>','Chancemaker',1);
+		new Game.TieredUpgrade('所有的赌注都在"魔法硬币"上','投机分子工作效率 <b>翻倍</b>。<q>抛硬币时总是落在另一边的硬币。不是正面，不是反面，不是边缘。是<i>另一边</i>.</q>','Chancemaker',2);
+		new Game.TieredUpgrade('中奖彩票','投机分子工作效率 <b>翻倍</b>。<q>什么彩票?彩票，那就是彩票！只有彩票才重要!</q>','Chancemaker',3);
+		new Game.TieredUpgrade('四叶苜蓿田','投机分子工作效率 <b>翻倍</b>。<q>这里没有巨型怪物，只有一大堆幸运草。</q>','Chancemaker',4);
+		new Game.TieredUpgrade('一本关于书的食谱','投机分子工作效率 <b>翻倍</b>。<q>用28种创造性的新方法来帮你烹饪书。</q>','Chancemaker',5);
+		new Game.TieredUpgrade('小妖精村','投机分子工作效率 <b>翻倍</b>。<q>你最终会被当地的小妖精们所接受，他们把神话般的运气当作友谊的象征(还有一些很臭的茶)。</q>','Chancemaker',6);
+		new Game.TieredUpgrade('非概率驱动','投机分子工作效率 <b>翻倍</b>。<q>这是一个奇怪的引擎，它会把统计数据转到他们的头上。由祖母推荐的面包房指南。</q>','Chancemaker',7);
+		new Game.TieredUpgrade('反超级美味','投机分子工作效率 <b>翻倍</b>。<q>一个令人兴奋的新领域的研究使不幸的事情变得幸运。没有镜子没有被打破，没有梯子在下面！</q>','Chancemaker',8);
 		
 		order=5000;
 		new Game.SynergyUpgrade('宝石护身符','<q>幸运的符咒覆盖着古老的、极其稀有的晶体。一定要有面试的机会！</q>','Chancemaker','Mine','synergy1');
@@ -7924,20 +7924,20 @@ Game.Launch=function()
 		
 		order=150;new Game.Upgrade('阿迈斯里鼠标','点击获得 <b>+1% 总秒收益</b>.<q>这个需要大约53人来推动它，另外48人跳下来按下按钮并触发点击。你可以说它有一些分量。</q>',50000000000000000000000,[11,19]);
 		
-		order=200;new Game.TieredUpgrade('逆转痴呆','老奶奶生产工作效率像 <b>双倍</b> 一样高效。<q>非常令人不安，甚至比普通的还要糟糕。</q>','Grandma',9);
-		order=300;new Game.TieredUpgrade('人道杀虫剂','农场生产工作效率像 <b>双倍</b> 一样高效。<q>这是由人，为人们，从人们，准备释放一些正义的灼伤的那些讨厌的昆虫，所以应该得到它。</q>','Farm',9);
-		order=400;new Game.TieredUpgrade('鼹鼠人','矿山工作效率像 <b>双倍</b> 一样高效。<q>这些壮实的小人物，在你的实验室里，从真实的人类身上设计出来，他们有本事找到最美味的地下矿石，条件是更昂贵的机器可能无法生存。</q>','Mine',9);
-		order=500;new Game.TieredUpgrade('机器学习','工厂生产工作效率像 <b>双倍</b> 一样高效。<q>如果你真的告诉你的员工学会如何操作机器，你就会得到更好的工作效率。有时候，这是小事……</q>','Factory',9);
-		order=525;new Game.TieredUpgrade('可食用货币','银行工作效率像 <b>双倍</b> 一样高效。<q>这真的很简单;你让所有的货币都太好吃了，不吃，一下子解决世界饥饿和通货膨胀!</q>','Bank',9);
-		order=550;new Game.TieredUpgrade('病态的说唱祈祷','寺庙像 <b>双倍</b> 一样高效。<q>这些时髦的宗教曲调以其糟糕的节奏和激流的韵律，肯定能让所有的年轻人们相信他们是在教堂的长凳上，祈祷更多!邪恶的!</q>','Temple',9);
-		order=575;new Game.TieredUpgrade('豪华的魔杖','精灵塔工作效率像 <b>双倍</b> 一样高效。<q>在这个科学的时代，大多数熟练的魔杖制造者都已经远去了;但值得庆幸的是，并非所有的游荡者都迷失了。</q>','Wizard tower',9);
-		order=600;new Game.TieredUpgrade('自动驾驶仪','装船工作效率像 <b>双倍</b> 一样高效。<q>你的船现在安装了完全的机器人船员!当你不需要补偿那些在太空中迷失的人的家人时，你能省下多少钱，真是太疯狂了。</q>','Shipment',9);
-		order=700;new Game.TieredUpgrade('化学的出现','炼金实验室像<b>双倍</b> 一样高效。<q>你知道吗?那全是炼金术的胡说八道，是一堆毫无根据的废话。亲爱的上帝，你在想什么?</q>','Alchemy lab',9);
-		order=800;new Game.TieredUpgrade('真实的世界','传送门像<b>双倍</b> 一样高效。<q>事实证明，我们的宇宙实际上是另一种更理智的现实世界的扭曲维度。是时候跳到那边去了!</q>','Portal',9);
-		order=900;new Game.TieredUpgrade('第二秒','时光机器工作效率像 <b>双倍</b> 一样高效。<q>在相同的时间内，它的秒数是原来的两倍!什么交易!还有，以上帝的名义!</q>','Time machine',9);
-		order=1000;new Game.TieredUpgrade('量子梳','反物质冷凝器工作效率像 <b>双倍</b> 一样高效。<q>量子纠缠是一种很烦人的解释，我们可以坦白地说，如果没有它，我们可能会过得更好。这终于有可能多亏了量子梳子!</q>','Antimatter condenser',9);
-		order=1100;new Game.TieredUpgrade('水晶镜子','棱镜工作效率像 <b>双倍</b> 一样高效。<q>它的设计是为了将更多的光线过滤回你的棱镜，达到了现实本身从未计划过的亮度水平。</q>','Prism',9);
-		order=1200;new Game.TieredUpgrade('兔子脚','投机分子工作效率像 <b>双倍</b> 一样高效。<q>你会用几百只爪子去饲养兔子，这使它们在本质上非常幸运，因此是一个非常方便(如果非常令人不安)的宠物。</q>','Chancemaker',9);
+		order=200;new Game.TieredUpgrade('逆转痴呆','老奶奶工作效率 <b>翻倍</b>。<q>非常令人不安，甚至比普通的还要糟糕。</q>','Grandma',9);
+		order=300;new Game.TieredUpgrade('人道杀虫剂','农场工作效率 <b>翻倍</b>。<q>这是由人，为人们，从人们，准备释放一些正义的灼伤的那些讨厌的昆虫，所以应该得到它。</q>','Farm',9);
+		order=400;new Game.TieredUpgrade('鼹鼠人','矿山工作效率 <b>翻倍</b>。<q>这些壮实的小人物，在你的实验室里，从真实的人类身上设计出来，他们有本事找到最美味的地下矿石，条件是更昂贵的机器可能无法生存。</q>','Mine',9);
+		order=500;new Game.TieredUpgrade('机器学习','工厂工作效率 <b>翻倍</b>。<q>如果你真的告诉你的员工学会如何操作机器，你就会得到更好的工作效率。有时候，这是小事……</q>','Factory',9);
+		order=525;new Game.TieredUpgrade('可食用货币','银行工作效率 <b>翻倍</b>。<q>这真的很简单;你让所有的货币都太好吃了，不吃，一下子解决世界饥饿和通货膨胀!</q>','Bank',9);
+		order=550;new Game.TieredUpgrade('病态的说唱祈祷','寺庙 <b>翻倍</b>。<q>这些时髦的宗教曲调以其糟糕的节奏和激流的韵律，肯定能让所有的年轻人们相信他们是在教堂的长凳上，祈祷更多!邪恶的!</q>','Temple',9);
+		order=575;new Game.TieredUpgrade('豪华的魔杖','精灵塔工作效率 <b>翻倍</b>。<q>在这个科学的时代，大多数熟练的魔杖制造者都已经远去了;但值得庆幸的是，并非所有的游荡者都迷失了。</q>','Wizard tower',9);
+		order=600;new Game.TieredUpgrade('自动驾驶仪','装船工作效率 <b>翻倍</b>。<q>你的船现在安装了完全的机器人船员!当你不需要补偿那些在太空中迷失的人的家人时，你能省下多少钱，真是太疯狂了。</q>','Shipment',9);
+		order=700;new Game.TieredUpgrade('化学的出现','炼金实验室像<b>翻倍</b>。<q>你知道吗?那全是炼金术的胡说八道，是一堆毫无根据的废话。亲爱的上帝，你在想什么?</q>','Alchemy lab',9);
+		order=800;new Game.TieredUpgrade('真实的世界','传送门像<b>翻倍</b>。<q>事实证明，我们的宇宙实际上是另一种更理智的现实世界的扭曲维度。是时候跳到那边去了!</q>','Portal',9);
+		order=900;new Game.TieredUpgrade('第二秒','时光机器工作效率 <b>翻倍</b>。<q>在相同的时间内，它的秒数是原来的两倍!什么交易!还有，以上帝的名义!</q>','Time machine',9);
+		order=1000;new Game.TieredUpgrade('量子梳','反物质冷凝器工作效率 <b>翻倍</b>。<q>量子纠缠是一种很烦人的解释，我们可以坦白地说，如果没有它，我们可能会过得更好。这终于有可能多亏了量子梳子!</q>','Antimatter condenser',9);
+		order=1100;new Game.TieredUpgrade('水晶镜子','棱镜工作效率 <b>翻倍</b>。<q>它的设计是为了将更多的光线过滤回你的棱镜，达到了现实本身从未计划过的亮度水平。</q>','Prism',9);
+		order=1200;new Game.TieredUpgrade('兔子脚','投机分子工作效率 <b>翻倍</b>。<q>你会用几百只爪子去饲养兔子，这使它们在本质上非常幸运，因此是一个非常方便(如果非常令人不安)的宠物。</q>','Chancemaker',9);
 		
 		order=20000;
 		new Game.Upgrade('小猫助理到区域经理那里','你获得了 <b>更多饼干秒产量</b> 你的牛奶越多。<q>没有什么能强调……除了必须征得我的下级的同意外，先生</q>',900000000000000000000000000000000000,Game.GetIcon('Kitten',10));Game.last.kitten=1;
@@ -8910,7 +8910,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'Everything must go',
-				desc:'All buildings are '+pow+'% cheaper for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'所有建筑便宜'+pow+'%  '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[17,6],
 				time:time*Game.fps,
 				add:true,
@@ -8972,7 +8972,7 @@ Game.Launch=function()
 			var obj=Game.ObjectsById[building];
 			return {
 				name:Game.goldenCookieBuildingBuffs[obj.name][0],
-				desc:'你的 '+obj.amount+' '+obj.plural+' 促进饼干每秒产量!<br>饼干生产 +'+(Math.ceil(pow*100-100))+'%  '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'你的 '+obj.amount+' '+cnsigle(obj.plural)+' 促进饼干每秒产量!<br>饼干生产 +'+(Math.ceil(pow*100-100))+'%  '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[obj.iconColumn,14],
 				time:time*Game.fps,
 				add:true,

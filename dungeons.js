@@ -760,7 +760,7 @@ var LaunchDungeons=function()
 			'<a class="control middle" onclick="Game.HeroesById['+this.hero.id+'].Move(0,0);"></a><br>'+
 			'</div>';
 			str+='<div style="position:absolute;left:'+(9*16+16+48*3)+'px;bottom:16px;height:100%;">'+
-			'<div class="dungeonName"><a onclick="Game.ObjectsById['+this.id+'].setSpecial(0);">Exit</a> - <span class="title" style="font-size:12px;">'+this.name+'</span> lvl.'+(this.level+1)+'</div>'+
+			'<div class="dungeonName"><a onclick="Game.ObjectsById['+this.id+'].setSpecial(0);">Exit</a> - <span class="title" style="font-size:12px;">'+this.name+'</span> 等级'+(this.level+1)+'</div>'+
 			'<div id="heroSlot'+this.id+'" class="mobSlot"><div id="picHero'+this.id+'" class="mobPic"></div><div id="nameHero'+this.id+'" class="title mobName"></div><div class="hpmBar"><div id="hpHero'+this.id+'" class="hpBar"></div></div></div>'+
 			'<div id="monsterSlot'+this.id+'" class="mobSlot" style="left:128px;"><div id="picMonster'+this.id+'" class="mobPic"></div><div id="nameMonster'+this.id+'" class="title mobName"></div><div class="hpmBar"><div id="hpMonster'+this.id+'" class="hpBar"></div></div></div>'+
 			'</div>'+
@@ -1081,7 +1081,7 @@ var LaunchDungeons=function()
 		'entrance':'Let\'s do this, I guess.|Well, let\'s go...|I gotta go in there?|Are we really doing this?|I hope I won\'t get lost like last time.|Let\'s get this over with.',
 		'completion':'I... I did it...|I\'m glad that\'s over.|What, there\'s more?|In I go, I guess.|It doesn\'t end, does it?|But it\'s dark in there.',
 		'defeat':'I, uh, ouch.|Why does that always happen to me?|I\'m just no good, am I?|Oh no.|I\'m... I\'m not crying.|Well that wasn\'t fun at all.|I\'m sorry I failed you.|Please... make them go away...',
-		'meet Ascended Baking Pod':'That thing shouldn\'t even be alive.|Is that where they all came from?',
+		'meet Ascended Baking Pod':'那东西不应该还活着。他们都是从哪里来的吗?',
 		'win against Ascended Baking Pod':'Hm. Fascinating.'
 	};
 	hero.stats={
