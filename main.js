@@ -2899,10 +2899,10 @@ Game.Launch=function()
 			}
 			
 			str+='<div class="line"></div>';
-			str+='糖块成熟所需时间是 <b>'+Game.sayTime((Game.lumpMatureAge/1000)*Game.fps,-1)+'</b>,<br>成熟后 <b>'+Game.sayTime((Game.lumpRipeAge/1000)*Game.fps,-1)+'</b>,<br>并在之后 <b>'+Game.sayTime((Game.lumpOverripeAge/1000)*Game.fps,-1)+'</b>。';
+			str+='糖块完全成熟需要 <b>'+Game.sayTime((Game.lumpMatureAge/1000)*Game.fps,-1)+'</b>,<br>成熟后 <b>'+Game.sayTime((Game.lumpRipeAge/1000)*Game.fps,-1)+'</b>,<br>然后会在 <b>'+Game.sayTime((Game.lumpOverripeAge/1000)*Game.fps,-1)+'</b> 后自动掉落。';
 			
 			str+='<div class="line"></div>'+
-			'&bull; 在成熟的时候可以收获糖块，但如果不吃的话，它们最终会掉落并在一段时间后自动收获。<br>&bull; 糖块儿很好吃，可以用作各种食物的货币。<br>&bull; 一旦一个糖块被收获，另一个就会开始生长。<br>&bull; 注意，当游戏关闭时，糖块会继续生长。';
+			'&bull; 糖块可以在成熟时收获，但如果不吃的话，它们最终会掉落并在一段时间后自动收获。<br>&bull; 糖块儿很好吃，可以用作各种食物的货币。<br>&bull; 一旦一个糖块被收获，另一个就会开始生长。<br>&bull; 注意，当游戏关闭时，糖块会继续生长。';
 			
 			str+='</div>';
 			return str;
@@ -6974,9 +6974,9 @@ Game.Launch=function()
 		new Game.TieredUpgrade('飞行常客','装船工作效率 <b>翻倍</b>。<q>很快回来!</q>','Shipment',3);
 		
 		order=700;
-		new Game.TieredUpgrade('锑','炼金实验室像<b>翻倍</b>。<q>确实值得一大笔钱。</q>','Alchemy lab',1);
-		new Game.TieredUpgrade('面团的本质','炼金实验室像<b>翻倍</b>。<q>从炼化烘焙的5个古老步骤中提取。</q>','Alchemy lab',2);
-		new Game.TieredUpgrade('真正的巧克力','炼金实验室像<b>翻倍</b>。<q>可可的最纯净的形式。</q>','Alchemy lab',3);
+		new Game.TieredUpgrade('锑','炼金实验室工作效率 <b>翻倍</b>。<q>确实值得一大笔钱。</q>','Alchemy lab',1);
+		new Game.TieredUpgrade('面团的本质','炼金实验室工作效率 <b>翻倍</b>。<q>从炼化烘焙的5个古老步骤中提取。</q>','Alchemy lab',2);
+		new Game.TieredUpgrade('真正的巧克力','炼金实验室工作效率 <b>翻倍</b>。<q>可可的最纯净的形式。</q>','Alchemy lab',3);
 		
 		order=800;
 		new Game.TieredUpgrade('古碑文','传送门工作效率 <b>翻倍</b>。<q>一块奇怪的花生脆饼，拿着一个古老的饼干食谱。太棒了!</q>','Portal',1);
@@ -7012,8 +7012,8 @@ Game.Launch=function()
 		order=500;new Game.TieredUpgrade('镭反应堆','工厂工作效率 <b>翻倍</b>。<q>让你的饼干焕发光彩。</q>','Factory',4);
 		order=400;new Game.TieredUpgrade('天涯钻','矿山工作效率 <b>翻倍</b>。<q>穿过天空，等等。</q>','Mine',4);
 		order=600;new Game.TieredUpgrade('曲速驱动','装船工作效率 <b>翻倍</b>。<q>大胆地烘烤。</q>','Shipment',4);
-		order=700;new Game.TieredUpgrade('美味食物','炼金实验室像<b>翻倍</b>。<q>把这个加入到饼干的混合物中肯定会让他们更容易上瘾!<br>也许是危险的。<br>希望你能继续合法地销售这些产品。</q>','Alchemy lab',4);
-		order=800;new Game.TieredUpgrade('理智之舞','传送门像<b>翻倍</b>。<q>如果我们愿意，我们可以改变。<br>我们可以把我们的大脑抛在脑后。</q>','Portal',4);
+		order=700;new Game.TieredUpgrade('美味食物','炼金实验室工作效率 <b>翻倍</b>。<q>把这个加入到饼干的混合物中肯定会让他们更容易上瘾!<br>也许是危险的。<br>希望你能继续合法地销售这些产品。</q>','Alchemy lab',4);
+		order=800;new Game.TieredUpgrade('理智之舞','传送门工作效率 <b>翻倍</b>。<q>如果我们愿意，我们可以改变。<br>我们可以把我们的大脑抛在脑后。</q>','Portal',4);
 		order=900;new Game.TieredUpgrade('因果关系的执行者','时光机器工作效率 <b>翻倍</b>。<q>发生了什么,发生了。</q>','Time machine',4);
 		
 		order=5000;
@@ -7188,8 +7188,8 @@ Game.Launch=function()
 		order=500;new Game.TieredUpgrade('重新组合','工厂工作效率 <b>翻倍</b>。<q>这是饼干的主要组成部分。</q>','Factory',5);
 		order=400;new Game.TieredUpgrade('氢弹开采','矿山工作效率 <b>翻倍</b>。<q>虽然效率有问题，但还是很壮观。</q>','Mine',5);
 		order=600;new Game.TieredUpgrade('巧克力块','装船工作效率 <b>翻倍</b>。<q>我的上帝。全是巧克力棒。</q>','Shipment',5);
-		order=700;new Game.TieredUpgrade('甲壳纲','炼金实验室像<b>翻倍</b>。<q>小心点，一滴太多，你就会得到松饼。<br>没有人喜欢松饼。</q>','Alchemy lab',5);
-		order=800;new Game.TieredUpgrade('膜移植','传送门像<b>翻倍</b>。<q>这指的是将更高维度的宇宙，或“膜”，与我们自己的相结合，以方便运输(和收获宝贵的饼干面团)。</q>','Portal',5);
+		order=700;new Game.TieredUpgrade('甲壳纲','炼金实验室工作效率 <b>翻倍</b>。<q>小心点，一滴太多，你就会得到松饼。<br>没有人喜欢松饼。</q>','Alchemy lab',5);
+		order=800;new Game.TieredUpgrade('膜移植','传送门工作效率 <b>翻倍</b>。<q>这指的是将更高维度的宇宙，或“膜”，与我们自己的相结合，以方便运输(和收获宝贵的饼干面团)。</q>','Portal',5);
 		order=900;new Game.TieredUpgrade('昨天比较器','时光机器工作效率 <b>翻倍</b>。<q>两周进入千禧年。</q>','Time machine',5);
 		order=1000;new Game.TieredUpgrade('反向回旋加速器','反物质冷凝器工作效率 <b>翻倍</b>。<q>它们可以不碰撞粒子和不旋转的原子。为…嗯…更好的味道,和东西。</q>','Antimatter condenser',5);
 		
@@ -7336,8 +7336,8 @@ Game.Launch=function()
 		order=500;new Game.TieredUpgrade('深度烘焙过程','工厂工作效率 <b>翻倍</b>。<q>一个专利的过程增加饼干产量两倍的相同数量的原料。别问了，别拍照，一定要穿防护服。</q>','Factory',6);
 		order=400;new Game.TieredUpgrade('铁匠铺','矿山工作效率 <b>翻倍</b>。<q>你终于挖出了一条地道到地球的核心。这里很暖和。</q>','Mine',6);
 		order=600;new Game.TieredUpgrade('发电船','装船工作效率 <b>翻倍</b>。<q>建造到最后，这个巨大的飞船一定会把你的饼干送到太空深处，总有一天。</q>','Shipment',6);
-		order=700;new Game.TieredUpgrade('起源坩埚','炼金实验室像<b>翻倍</b>。<q>这个传说中的坩埚是由地球上最稀有的星球建造而成，位于最深处，据说它能保留大爆炸本身的特性。</q>','Alchemy lab',6);
-		order=800;new Game.TieredUpgrade('大型传送门','传送门像<b>翻倍</b>。<q>就像，说，老天爷能把这东西塞进去。假设地。</q>','Portal',6);
+		order=700;new Game.TieredUpgrade('起源坩埚','炼金实验室工作效率 <b>翻倍</b>。<q>这个传说中的坩埚是由地球上最稀有的星球建造而成，位于最深处，据说它能保留大爆炸本身的特性。</q>','Alchemy lab',6);
+		order=800;new Game.TieredUpgrade('大型传送门','传送门工作效率 <b>翻倍</b>。<q>就像，说，老天爷能把这东西塞进去。假设地。</q>','Portal',6);
 		order=900;new Game.TieredUpgrade('未来的法令','时光机器工作效率 <b>翻倍</b>。<q>遥远未来的法令授权你深入挖掘未来——文明已经堕落，又重新崛起，而饼干是丰富的。</q>','Time machine',6);
 		order=1000;new Game.TieredUpgrade('纳米宇宙','反物质冷凝器工作效率 <b>翻倍</b>。<q>纳米宇宙理论认为，每一个亚原子粒子实际上都是它自己自足的宇宙，拥有不可思议的能量。</q>','Antimatter condenser',6);
 		order=1100;
@@ -7590,8 +7590,8 @@ Game.Launch=function()
 		order=550;new Game.TieredUpgrade('创造神话','寺庙 <b>翻倍</b>。<q>关于第一个饼干的起源的故事一直流传着;故事是如何开始的，在时间和命运的烤箱里。</q>','Temple',7);
 		order=575;new Game.TieredUpgrade('饼干男','精灵塔工作效率 <b>翻倍</b>。<q>在这里;完美的烘焙魔法学校。从召唤晶片到打螺帽，没有任何一种饼干制作方法能通过魔术提高10倍的效果。</q>','Wizard tower',7);
 		order=600;new Game.TieredUpgrade('戴森球','装船工作效率 <b>翻倍</b>。<q>你已经找到了一种方法，将你的宇宙技术知识运用到更局部的努力中;这个巨大的元材料球体包裹着太阳系，肯定会让你的烘焙能力提高一个档次。</q>','Shipment',7);
-		order=700;new Game.TieredUpgrade('原子流动性理论','炼金实验室像<b>翻倍</b>。<q>把炼金术推向极限，你会发现一切事物都可以转化成其他东西——铅、水银、水;更重要的是，你意识到任何东西都可以而且应该被转换成饼干。</q>','Alchemy lab',7);
-		order=800;new Game.TieredUpgrade('最后的备份计划','传送门像<b>翻倍</b>。<q>以防万一，好吗?</q>','Portal',7);
+		order=700;new Game.TieredUpgrade('原子流动性理论','炼金实验室工作效率 <b>翻倍</b>。<q>把炼金术推向极限，你会发现一切事物都可以转化成其他东西——铅、水银、水;更重要的是，你意识到任何东西都可以而且应该被转换成饼干。</q>','Alchemy lab',7);
+		order=800;new Game.TieredUpgrade('最后的备份计划','传送门工作效率 <b>翻倍</b>。<q>以防万一，好吗?</q>','Portal',7);
 		order=900;new Game.TieredUpgrade('伟大的循环假说','时光机器工作效率 <b>翻倍</b>。<q>如果我们的宇宙只是一个无限循环的一个实例呢?如果，在它之前和之后，无限延伸的相同的宇宙，它们本身含有无限的饼干?</q>','Time machine',7);
 		order=1000;new Game.TieredUpgrade('脉冲','反物质冷凝器工作效率 <b>翻倍</b>。<q>你已经进入了宇宙的脉搏，这是一种永恒的节奏，每一种材料和反物质都能和谐地跳动。不知何故，这意味着更多的饼干。</q>','Antimatter condenser',7);
 		order=1100;
@@ -7606,8 +7606,8 @@ Game.Launch=function()
 		order=550;new Game.TieredUpgrade('神权政治','寺庙 <b>翻倍</b>。<q>你把你的饼干帝国变成了一个完美的神权政治，聚集了无数的追随者，从宇宙的每一个角落。<br/>别让它冲昏了你的头。</q>','Temple',8);
 		order=575;new Game.TieredUpgrade('兔子戏法','精灵塔工作效率 <b>翻倍</b>。<q>除了一顶华丽的帽子外，你的巫师们已经找到了一种方法，可以同时控制兔子的数量，并能产生大量额外的饼干，基本上是免费的!<br>由此产生的饼干可能不适合纯素食者。</q>','Wizard tower',8);
 		order=600;new Game.TieredUpgrade('最后的边界','装船工作效率 <b>翻倍</b>。<q>从那里到这里，这条路很长。不过，这一切都是值得的——景色很美，油价也稍微合理一些。</q>','Shipment',8);
-		order=700;new Game.TieredUpgrade('原色古果','炼金实验室像<b>翻倍</b>。<q>现在，你已经做到了。干得好。很好。这是你的3个星系，你刚刚把它们转换成饼干。你可以从宇宙跳跃到宇宙。</q>','Alchemy lab',8);
-		order=800;new Game.TieredUpgrade('疯狂的圣歌','传送门像<b>翻倍</b>。<q>流行的诗句是这样的 : "jau\'hn madden jau\'hn madden aeiouaeiouaeiou brbrbrbrbrbrbr"</q>','Portal',8);
+		order=700;new Game.TieredUpgrade('原色古果','炼金实验室工作效率 <b>翻倍</b>。<q>现在，你已经做到了。干得好。很好。这是你的3个星系，你刚刚把它们转换成饼干。你可以从宇宙跳跃到宇宙。</q>','Alchemy lab',8);
+		order=800;new Game.TieredUpgrade('疯狂的圣歌','传送门工作效率 <b>翻倍</b>。<q>流行的诗句是这样的 : "jau\'hn madden jau\'hn madden aeiouaeiouaeiou brbrbrbrbrbrbr"</q>','Portal',8);
 		order=900;new Game.TieredUpgrade('也许是小饼干的时候','时光机器工作效率 <b>翻倍</b>。<q>追忆过去的事，本应是如此。</q>','Time machine',8);
 		order=1000;new Game.TieredUpgrade('还有其他超微小的基本粒子吗?“可能”?','反物质冷凝器工作效率 <b>翻倍</b>。<q>当连宇宙都没了主意的时候，当你知道你快要结束的时候。</q>','Antimatter condenser',8);
 		order=1100;
@@ -7932,8 +7932,8 @@ Game.Launch=function()
 		order=550;new Game.TieredUpgrade('病态的说唱祈祷','寺庙 <b>翻倍</b>。<q>这些时髦的宗教曲调以其糟糕的节奏和激流的韵律，肯定能让所有的年轻人们相信他们是在教堂的长凳上，祈祷更多!邪恶的!</q>','Temple',9);
 		order=575;new Game.TieredUpgrade('豪华的魔杖','精灵塔工作效率 <b>翻倍</b>。<q>在这个科学的时代，大多数熟练的魔杖制造者都已经远去了;但值得庆幸的是，并非所有的游荡者都迷失了。</q>','Wizard tower',9);
 		order=600;new Game.TieredUpgrade('自动驾驶仪','装船工作效率 <b>翻倍</b>。<q>你的船现在安装了完全的机器人船员!当你不需要补偿那些在太空中迷失的人的家人时，你能省下多少钱，真是太疯狂了。</q>','Shipment',9);
-		order=700;new Game.TieredUpgrade('化学的出现','炼金实验室像<b>翻倍</b>。<q>你知道吗?那全是炼金术的胡说八道，是一堆毫无根据的废话。亲爱的上帝，你在想什么?</q>','Alchemy lab',9);
-		order=800;new Game.TieredUpgrade('真实的世界','传送门像<b>翻倍</b>。<q>事实证明，我们的宇宙实际上是另一种更理智的现实世界的扭曲维度。是时候跳到那边去了!</q>','Portal',9);
+		order=700;new Game.TieredUpgrade('化学的出现','炼金实验室工作效率 <b>翻倍</b>。<q>你知道吗?那全是炼金术的胡说八道，是一堆毫无根据的废话。亲爱的上帝，你在想什么?</q>','Alchemy lab',9);
+		order=800;new Game.TieredUpgrade('真实的世界','传送门工作效率 <b>翻倍</b>。<q>事实证明，我们的宇宙实际上是另一种更理智的现实世界的扭曲维度。是时候跳到那边去了!</q>','Portal',9);
 		order=900;new Game.TieredUpgrade('第二秒','时光机器工作效率 <b>翻倍</b>。<q>在相同的时间内，它的秒数是原来的两倍!什么交易!还有，以上帝的名义!</q>','Time machine',9);
 		order=1000;new Game.TieredUpgrade('量子梳','反物质冷凝器工作效率 <b>翻倍</b>。<q>量子纠缠是一种很烦人的解释，我们可以坦白地说，如果没有它，我们可能会过得更好。这终于有可能多亏了量子梳子!</q>','Antimatter condenser',9);
 		order=1100;new Game.TieredUpgrade('水晶镜子','棱镜工作效率 <b>翻倍</b>。<q>它的设计是为了将更多的光线过滤回你的棱镜，达到了现实本身从未计划过的亮度水平。</q>','Prism',9);
