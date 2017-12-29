@@ -167,9 +167,9 @@ M.launch=function()
 				},
 			},
 			'summon crafty pixies':{
-				name:'Summon Crafty Pixies',
-				desc:'Buildings are 2% cheaper for 1 minute.',
-				failDesc:'Buildings are 2% more expensive for an hour.',
+				name:'召唤狡猾的小妖精',
+				desc:'建筑在1分钟内便宜2%。',
+				failDesc:'1小时内，建筑价格上涨了2%。',
 				icon:[26,11],
 				costMin:10,
 				costPercent:0.2,
@@ -183,12 +183,12 @@ M.launch=function()
 				{
 					Game.killBuff('狡猾的小妖精');
 					var buff=Game.gainBuff('pixie misery',60*60,2);
-					Game.Popup('<div style="font-size:80%;">适得其反!<br>肮脏的妖精!<br>Buildings are pricier!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">适得其反!<br>肮脏的妖精!<br>建筑价格更高!</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'gambler\'s fever dream':{
-				name:'Gambler\'s Fever Dream',
-				desc:'Cast a random spell at half the magic cost, with twice the chance of backfiring.',
+				name:'赌徒的狂热梦',
+				desc:'以一半的魔法成本随机施法，两次回火的几率。',
 				icon:[27,11],
 				costMin:3,
 				costPercent:0.05,
@@ -198,7 +198,7 @@ M.launch=function()
 					var selfCost=M.getSpellCost(M.spells['gambler\'s fever dream']);
 					for (var i in M.spells)
 					{if (i!='gambler\'s fever dream' && (M.magic-selfCost)>=M.getSpellCost(M.spells[i])*0.5) spells.push(M.spells[i]);}
-					if (spells.length==0){Game.Popup('<div style="font-size:80%;">No eligible spells!</div>',Game.mouseX,Game.mouseY);return -1;}
+					if (spells.length==0){Game.Popup('<div style="font-size:80%;">没有符合条件的法术！</div>',Game.mouseX,Game.mouseY);return -1;}
 					var spell=choose(spells);
 					var cost=M.getSpellCost(spell)*0.5;
 					setTimeout(function(){
@@ -207,11 +207,11 @@ M.launch=function()
 						{
 							M.magic+=selfCost;
 							setTimeout(function(){
-								Game.Popup('<div style="font-size:80%;">That\'s too bad!<br>Magic refunded.</div>',Game.mouseX,Game.mouseY);
+								Game.Popup('<div style="font-size:80%;">这太糟糕了！<br>魔法退还。</div>',Game.mouseX,Game.mouseY);
 							},1500);
 						}
 					},1000);
-					Game.Popup('<div style="font-size:80%;">Casting '+spell.name+'<br>for '+Beautify(cost)+' magic...</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">释放 '+spell.name+'<br>消耗 '+Beautify(cost)+' 魔法...</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'resurrect abomination':{
@@ -235,9 +235,9 @@ M.launch=function()
 				},
 			},
 			'diminish ineptitude':{
-				name:'Diminish Ineptitude',
-				desc:'Spells backfire 10 times less for the next 5 minutes.',
-				failDesc:'Spells backfire 5 times more for the next 10 minutes.',
+				name:'减少无能',
+				desc:'法术的不良效果在接下来的5分钟内减少10次。',
+				failDesc:'法术的不良效果在接下来的10分钟内增加5次。',
 				icon:[29,11],
 				costMin:5,
 				costPercent:0.2,
@@ -493,7 +493,7 @@ M.launch=function()
 		M.magicBarTextL.innerHTML=Math.min(Math.floor(M.magicM),Beautify(M.magic))+'/'+Beautify(Math.floor(M.magicM))+(M.magic<M.magicM?(' (+'+Beautify((M.magicPS||0)*Game.fps,2)+'/s)'):'');
 		M.magicBarFullL.style.width=((M.magic/M.magicM)*100)+'%';
 		M.magicBarL.style.width=(M.magicM*3)+'px';
-		M.infoL.innerHTML='Spells cast : '+Beautify(M.spellsCast)+' (total : '+Beautify(M.spellsCastTotal)+')';
+		M.infoL.innerHTML='施放法术 : '+Beautify(M.spellsCast)+' (累计 : '+Beautify(M.spellsCastTotal)+')';
 	}
 	M.init(l('rowSpecial'+M.parent.id));
 }

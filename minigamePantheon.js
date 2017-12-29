@@ -11,7 +11,7 @@ M.launch=function()
 				
 		M.gods={
 			'asceticism':{
-				name:'神圣的精神，禁欲主义的精神',
+				name:'神圣的灵魂，禁欲主义的灵魂',
 				icon:[21,18],
 				desc1:'+15% 基础饼干秒产量。',
 				desc2:'+10% 基础饼干秒产量。',
@@ -20,24 +20,24 @@ M.launch=function()
 				quote:'一个不朽的生命，专注于内在的自我，远离物质财富的分心。',
 			},
 			'decadence':{
-				name:'Vomitrax, Spirit of Decadence',
+				name:'呕吐，堕落的灵魂',
 				icon:[22,18],
 				desc1:'金色和愤怒饼干效果持续时间 +7%, 但是建筑的生产效率 -7% 饼干每秒产量。',
 				desc2:'金色和愤怒饼干效果持续时间 +5%, 但是建筑的生产效率 -5% 饼干每秒产量。',
 				desc3:'金色和愤怒饼干效果持续时间 +2%, 但是建筑的生产效率 -2% 饼干每秒产量。',
-				quote:'这种卑鄙的精神是为了快速的获得和轻视稳定工作的价值而产生的。',
+				quote:'这种卑鄙的灵魂是为了快速的获得和轻视稳定工作的价值而产生的。',
 			},
 			'ruin':{
-				name:'Godzamok, Spirit of Ruin',
+				name:'上帝，毁灭之魂',
 				icon:[23,18],
-				descBefore:'Selling buildings triggers a buff boosted by how many buildings were sold.',
-				desc1:'Buff boosts clicks by +1% for every building sold for 10 seconds.',
-				desc2:'Buff boosts clicks by +0.5% for every building sold for 10 seconds.',
-				desc3:'Buff boosts clicks by +0.25% for every building sold for 10 seconds.',
-				quote:'The embodiment of natural disasters. An impenetrable motive drives the devastation caused by this spirit.',
+				descBefore:'出售建筑物引发了一场狂热，因为有多少建筑被售出。',
+				desc1:'在出售建筑后的10秒钟的时间里，出售的每一幢建筑都能增加1%的点击量。',
+				desc2:'在出售建筑后的10秒钟的时间里，出售的每一幢建筑都能增加0.5%的点击量。',
+				desc3:'在出售建筑后的10秒钟的时间里，出售的每一幢建筑都能增加0.25%的点击量。',
+				quote:'自然灾害的化身。一种难以理解的动机驱使着这种精神所造成的破坏。',
 			},
 			'ages':{
-				name:'Cyclius, Spirit of Ages',
+				name:'周期性，时代灵魂',
 				icon:[24,18],
 				activeDescFunc:function()
 				{
@@ -46,49 +46,49 @@ M.launch=function()
 					if (godLvl==1) mult*=0.15*Math.sin((Date.now()/1000/(60*60*3))*Math.PI*2);
 					else if (godLvl==2) mult*=0.15*Math.sin((Date.now()/1000/(60*60*12))*Math.PI*2);
 					else if (godLvl==3) mult*=0.15*Math.sin((Date.now()/1000/(60*60*24))*Math.PI*2);
-					return 'Current bonus : '+(mult<0?'-':'+')+Beautify(Math.abs(mult)*100,2)+'%.';
+					return '当前奖励 : '+(mult<0?'-':'+')+Beautify(Math.abs(mult)*100,2)+'%.';
 				},
-				descBefore:'CpS bonus fluctuating between +15% and -15% over time.',
-				desc1:'Effect cycles over 3 hours.',
-				desc2:'Effect cycles over 12 hours.',
-				desc3:'Effect cycles over 24 hours.',
-				quote:'This spirit knows about everything you\'ll ever do, and enjoys dispensing a harsh judgement.',
+				descBefore:'随着时间的推移，饼干每秒产量的奖励在+ 15%到- 15%之间波动。',
+				desc1:'影响周期 3 小时。',
+				desc2:'影响周期 12 小时。',
+				desc3:'影响周期 24 小时。',
+				quote:'这种灵魂知道你要做的每一种事情，并且乐于做出严厉的判断。',
 			},
 			'seasons':{
-				name:'Selebrak, Spirit of Festivities',
+				name:'塞雷布拉克，欢庆的灵魂',
 				icon:[25,18],
-				descBefore:'Some seasonal effects are boosted.',
-				desc1:'Large boost. Switching seasons is 100% pricier.',
-				desc2:'Medium boost. Switching seasons is 50% pricier.',
-				desc3:'Small boost. Switching seasons is 25% pricier.',
-				quote:'This is the spirit of merry getaways and regretful Monday mornings.',
+				descBefore:'一些季节性的影响得到了加强。',
+				desc1:'大幅提升。切换季节的价格是100%。',
+				desc2:'中等提升。切换季节的价格是50%。',
+				desc3:'小幅提升。切换季节的价格是25%。',
+				quote:'这是欢乐的灵魂和周一早晨的遗憾。',
 			},
 			'creation':{
-				name:'Dotjeiess, Spirit of Creation',
+				name:'多杰斯，创造灵魂',
 				icon:[26,18],
 				desc1:'建筑成本降低 7%, 但是，天堂芯片的效果降低 30%。',
 				desc2:'建筑成本降低 5%, 但是，天堂芯片的效果降低 20%。',
 				desc3:'建筑成本降低 2%, 但是，天堂芯片的效果降低 10%。',
-				quote:'所有的一切，都将是很久以前由这个精神的不可思议的卷须改编而来的。',
+				quote:'所有的一切，都将是很久以前由这个灵魂的不可思议的卷须改编而来的。',
 			},
 			'labor':{
-				name:'Muridal, Spirit of Labor',
+				name:'穆里达尔，劳动的灵魂',
 				icon:[27,18],
 				desc1:'点击效果增加 15% , 但是建筑产量减少 3%。',
 				desc2:'点击效果增加 10% , 但是建筑产量减少 2%。',
 				desc3:'点击效果增加 5% , 但是建筑产量减少 1%。',
-				quote:'经过一天的辛勤工作，这种精神得到了良好的效果。',
+				quote:'经过一天的辛勤工作，这种灵魂得到了良好的效果。',
 			},
 			'industry':{
-				name:'Jeremy, Spirit of Industry',
+				name:'杰瑞米，工业灵魂',
 				icon:[28,18],
 				desc1:'建筑生产更多的 10% 饼干, 但是黄金饼干和愤怒饼干却少了10%。',
 				desc2:'建筑生产更多的 6% 饼干, 但是黄金饼干和愤怒饼干却少了6%。',
 				desc3:'建筑生产更多的 3% 饼干, 但是黄金饼干和愤怒饼干却少了3%。',
-				quote:'虽然这种精神有很多遗憾，但帮助你通过持续的工业化统治世界并不是其中之一。',
+				quote:'虽然这种灵魂有很多遗憾，但帮助你通过持续的工业化统治世界并不是其中之一。',
 			},
 			'mother':{
-				name:'Mokalsium, Mother Spirit',
+				name:'莫卡西姆，母亲灵魂',
 				icon:[29,18],
 				desc1:'牛奶效果增加 10% , 但是黄金饼干和愤怒饼干却少了15%',
 				desc2:'牛奶效果增加 5% ,但是黄金饼干和愤怒饼干却少了10%',
@@ -96,16 +96,16 @@ M.launch=function()
 				quote:'一个有爱心的灵魂说，自己是无限的。',
 			},
 			'scorn':{
-				name:'Skruuia, Spirit of Scorn',
+				name:'斯克鲁伊亚，轻蔑的灵魂',
 				icon:[21,19],
 				descBefore:'所有的黄金饼干都是愤怒的饼干，有更大的机会产生负面影响。',
 				desc1:'皱纹出现加速 150% 再多消化15%的饼干。',
 				desc2:'皱纹出现加速 100% 再多消化10%的饼干。',
 				desc3:'皱纹出现加速 50% 再多消化5%的饼干。',
-				quote:'这种精神喜欢刺死野兽，看着他们局促不安，但却不喜欢自己的家人。',
+				quote:'这种灵魂喜欢刺死野兽，看着他们局促不安，但却不喜欢自己的家人。',
 			},
 			'order':{
-				name:'Rigidel, Spirit of Order',
+				name:'严格，秩序灵魂',
 				icon:[22,19],
 				activeDescFunc:function()
 				{
@@ -116,7 +116,7 @@ M.launch=function()
 				desc2:'糖块成熟时间 提前40分钟。',
 				desc3:'糖块成熟时间 提前20分钟。',
 				descAfter:'只有当建筑物的总数量以0结尾时，效果才会有效。',
-				quote:'你会发现，如果你能以整洁的数字和恰当的纳税申报单来激励这种精神，生活就会变得更加甜蜜。',
+				quote:'你会发现，如果你能以整洁的数字和恰当的纳税申报单来激励这种灵魂，生活就会变得更加甜蜜。',
 			},
 		};
 		M.godsById=[];var n=0;
@@ -129,7 +129,7 @@ M.launch=function()
 		M.slot[2]=-1;//jade socket
 		
 		M.slotNames=[
-			'Diamond','Ruby','Jade'
+			'钻石','红宝石','玉石'
 		];
 		
 		M.swaps=3;//swaps left
@@ -180,7 +180,7 @@ M.launch=function()
 						(me.quote?('<q>'+me.quote+'</q>'):'')+
 					'</div>'
 				):
-				('<div class="name templeEffect"><div class="usesIcon shadowFilter templeGem templeGem'+(parseInt(id)+1)+'"></div>'+M.slotNames[id]+' slot (empty)</div><div class="line"></div><div class="description">'+
+				('<div class="name templeEffect"><div class="usesIcon shadowFilter templeGem templeGem'+(parseInt(id)+1)+'"></div>'+M.slotNames[id]+' 插槽 (空)</div><div class="line"></div><div class="description">'+
 				((M.slotHovered==id && M.dragging)?'释放到指定的 <b>'+M.dragging.name+'</b> 到这个位置。':'将精灵拖到这个插槽上以分配它。')+
 				'</div>')
 				)+
@@ -377,7 +377,7 @@ M.launch=function()
 			}
 			str+='</div>';
 			var icon=[29,14];
-			str+='<div id="templeInfo"><div '+Game.getTooltip('<div style="padding:8px;width:300px;font-size:11px;text-align:center;">Click to refill all your worship swaps for <span class="price lump">1 sugar lump</span>.</div>')+' id="templeLumpRefill" class="usesIcon shadowFilter" style="background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;"></div><div id="templeSwaps" '+Game.getTooltip('<div style="padding:8px;width:350px;font-size:11px;text-align:center;">Each time you slot a spirit, you use up one worship swap.<div class="line"></div>If you have 0 swaps left, you will get one after 16 hours.<br>If you have 1 swap left, the next one will refill after 4 hours.<br>If you have 2 swaps left, the next one will refill after 1 hour.<div class="line"></div>Unslotting a spirit costs no swaps.</div>')+'>-</div></div>';
+			str+='<div id="templeInfo"><div '+Game.getTooltip('<div style="padding:8px;width:300px;font-size:11px;text-align:center;">点击填充您的所有崇拜交换 <span class="price lump">1 糖块</span>.</div>')+' id="templeLumpRefill" class="usesIcon shadowFilter" style="background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;"></div><div id="templeSwaps" '+Game.getTooltip('<div style="padding:8px;width:350px;font-size:11px;text-align:center;">每次你插入一个灵魂，你用了一个崇拜交换。<div class="line"></div>如果你还有0崇拜交换，16个小时后你会得到一个。<br>如果你还有1个崇拜交换，下一个将在4个小时后重新填充。<br>如果你已经拥有2个崇拜交换，下一个会在1小时后重新填充。<div class="line"></div>不插槽的精神不会消耗掉。</div>')+'>-</div></div>';
 			str+='<div id="templeGods">';
 			for (var i in M.gods)
 			{
@@ -493,7 +493,7 @@ M.launch=function()
 		if (M.swaps==0) t=1000*60*60*16;
 		else if (M.swaps==1) t=1000*60*60*4;
 		var t2=M.swapT+t-Date.now();
-		M.swapsL.innerHTML='Worship swaps : <span class="titleFont" style="color:'+(M.swaps>0?'#fff':'#c00')+';">'+M.swaps+'/'+(3)+'</span>'+((M.swaps<3)?' (next in '+Game.sayTime((t2/1000+1)*Game.fps,-1)+')':'');
+		M.swapsL.innerHTML='崇拜互换 : <span class="titleFont" style="color:'+(M.swaps>0?'#fff':'#c00')+';">'+M.swaps+'/'+(3)+'</span>'+((M.swaps<3)?' (下一个还需 '+Game.sayTime((t2/1000+1)*Game.fps,-1)+')':'');
 	}
 	M.init(l('rowSpecial'+M.parent.id));
 }

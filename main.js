@@ -791,7 +791,7 @@ Game.Launch=function()
 	'</div><div class="subsection update">'+
 	'<div class="title">31/08/2013 - too many grandmas</div>'+
 	'<div class="listing">&bull; the grandmapocalypse is back, along with more grandma types</div>'+
-	'<div class="listing">&bull; added some upgrades that boost your clicking power and make it scale with your cps</div>'+
+	'<div class="listing">&bull; added some upgrades that boost your 点击效果 and make it scale with your cps</div>'+
 	'<div class="listing">&bull; clicking achievements made harder; 永不点击 is now a shadow achievement; 神奇遥控器 should now truly be a world record</div>'+
 	
 	'</div><div class="subsection update small">'+
@@ -2474,9 +2474,9 @@ Game.Launch=function()
 				str+='<div class="crate enabled'+(i==Game.nextAscensionMode?' highlighted':'')+'" id="challengeModeSelector'+i+'" style="opacity:1;float:none;display:inline-block;background-position:'+(-icon[0]*48)+'px '+(-icon[1]*48)+'px;" '+Game.clickStr+'="Game.nextAscensionMode='+i+';Game.PickAscensionMode();PlaySound(\'snd/tick.mp3\');Game.choiceSelectorOn=-1;" onMouseOut="l(\'challengeSelectedName\').innerHTML=Game.ascensionModes[Game.nextAscensionMode].name;l(\'challengeSelectedDesc\').innerHTML=Game.ascensionModes[Game.nextAscensionMode].desc;" onMouseOver="l(\'challengeSelectedName\').innerHTML=Game.ascensionModes['+i+'].name;l(\'challengeSelectedDesc\').innerHTML=Game.ascensionModes['+i+'].desc;"'+
 				'></div>';
 			}
-			Game.Prompt('<h3>Select a challenge mode</h3>'+
+			Game.Prompt('<h3>选择一个挑战模式</h3>'+
 						'<div class="line"></div><div class="crateBox">'+str+'</div><h4 id="challengeSelectedName">'+Game.ascensionModes[Game.nextAscensionMode].name+'</h4><div class="line"></div><div id="challengeSelectedDesc" style="min-height:128px;">'+Game.ascensionModes[Game.nextAscensionMode].desc+'</div><div class="line"></div>'
-						,[['Confirm','Game.UpdateAscensionModePrompt();Game.ClosePrompt();']],0,'widePrompt');
+						,[['确定','Game.UpdateAscensionModePrompt();Game.ClosePrompt();']],0,'widePrompt');
 		}
 		
 		Game.UpdateLegacyPrompt=function()
@@ -4082,7 +4082,7 @@ Game.Launch=function()
 						else if (godLvl==2) m*=0.95;
 						else if (godLvl==3) m*=0.97;
 					}
-					if (Game.Has('Reindeer season')) m=0.01;
+					if (Game.Has('驯鹿的季节')) m=0.01;
 					return Math.ceil(Game.fps*60*m);
 				},
 				getMinTime:function()
@@ -4104,7 +4104,7 @@ Game.Launch=function()
 			"Ruin","ruin cookies",
 			"老者狂怒","blood frenzy",
 			"血栓","clot",
-			"Click frenzy","click frenzy",
+			"疯狂点击","click frenzy",
 			"被诅咒的手指","cursed finger",
 			"饼干链","chain cookie",
 			"饼干风暴","cookie storm",
@@ -5902,7 +5902,7 @@ Game.Launch=function()
 				if (Game.isMinigameReady(me))
 				{
 					l('productMinigameButton'+me.id).style.display='block';
-					if (!me.onMinigame) l('productMinigameButton'+me.id).innerHTML='View '+me.minigameName;
+					if (!me.onMinigame) l('productMinigameButton'+me.id).innerHTML='显示 '+me.minigameName;
 					else l('productMinigameButton'+me.id).innerHTML='关闭 '+me.minigameName;
 				}
 				else l('productMinigameButton'+me.id).style.display='none';
@@ -6343,7 +6343,7 @@ Game.Launch=function()
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('农民老奶奶');
 		});
 		
-		new Game.Object('Mine','mine|mines|开采|[X] 米深|[X] 米深','矿山生产饼干面团和巧克力片。',4,3,{base:'mine',xV:16,yV:16,w:64,rows:2,x:0,y:24},10000,function(me){
+		new Game.Object('Mine','矿山|矿山|开采|[X] 米深|[X] 米深','矿山生产饼干面团和巧克力片。',4,3,{base:'mine',xV:16,yV:16,w:64,rows:2,x:0,y:24},10000,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
 			if (Game.Has('矿工老奶奶')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
@@ -6354,7 +6354,7 @@ Game.Launch=function()
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('矿工老奶奶');
 		});
 		
-		new Game.Object('Factory','factory|factories|大量生产|[X] 附加专利|[X] 附加专利','生产大量的饼干。',5,4,{base:'factory',xV:8,yV:0,w:64,rows:1,x:0,y:-22},3000,function(me){
+		new Game.Object('Factory','工厂|工厂|大量生产|[X] 附加专利|[X] 附加专利','生产大量的饼干。',5,4,{base:'factory',xV:8,yV:0,w:64,rows:1,x:0,y:-22},3000,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
 			if (Game.Has('工人老奶奶')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
@@ -6365,7 +6365,7 @@ Game.Launch=function()
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('工人老奶奶');
 		});
 		
-		new Game.Object('Bank','bank|banks|存入银行|利率增加 [X]% |利率增加 [X]% ','从利息中生成饼干。',6,15,{base:'bank',xV:8,yV:4,w:56,rows:1,x:0,y:13},0,function(me){
+		new Game.Object('Bank','银行|银行|存入银行|利率增加 [X]% |利率增加 [X]% ','从利息中生成饼干。',6,15,{base:'bank',xV:8,yV:4,w:56,rows:1,x:0,y:13},0,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
 			if (Game.Has('银行家老奶奶')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
@@ -6376,7 +6376,7 @@ Game.Launch=function()
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('银行家老奶奶');
 		});
 		
-		new Game.Object('Temple','temple|temples|发现|[X] 神圣的构件检索|[X] 神圣的构件检索','充满了珍贵的古代巧克力。',7,16,{base:'temple',xV:8,yV:4,w:72,rows:2,x:0,y:-5},0,function(me){
+		new Game.Object('Temple','寺庙|寺庙|发现|[X] 神圣的构件检索|[X] 神圣的构件检索','充满了珍贵的古代巧克力。',7,16,{base:'temple',xV:8,yV:4,w:72,rows:2,x:0,y:-5},0,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
 			if (Game.Has('祭司老奶奶')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
@@ -6387,9 +6387,9 @@ Game.Launch=function()
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('祭司老奶奶');
 		});
 		Game.last.minigameUrl='minigamePantheon.js';
-		Game.last.minigameName='Pantheon';
+		Game.last.minigameName='万神殿';
 		
-		new Game.Object('Wizard tower','wizard tower|wizard towers|召唤|咒语拥有 [X] 更多的音节|咒语拥有 [X] 更多的音节','用魔法咒语召唤饼干。',8,17,{base:'wizardtower',xV:16,yV:16,w:48,rows:2,x:0,y:20},0,function(me){
+		new Game.Object('Wizard tower','精灵塔|精灵塔|召唤|咒语拥有 [X] 更多的音节|咒语拥有 [X] 更多的音节','用魔法咒语召唤饼干。',8,17,{base:'wizardtower',xV:16,yV:16,w:48,rows:2,x:0,y:20},0,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
 			if (Game.Has('女巫老奶奶')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
@@ -6400,9 +6400,9 @@ Game.Launch=function()
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('女巫老奶奶');
 		});
 		Game.last.minigameUrl='minigameGrimoire.js';
-		Game.last.minigameName='Grimoire';
+		Game.last.minigameName='魔典';
 		
-		new Game.Object('Shipment','shipment|shipments|装运|[X] 星系完全探索|[X] 星系完全探索','从饼干星球带来新鲜的饼干。',9,5,{base:'shipment',xV:16,yV:16,w:64,rows:1,x:0,y:0},40000,function(me){
+		new Game.Object('Shipment','装船|装船|装运|[X] 星系完全探索|[X] 星系完全探索','从饼干星球带来新鲜的饼干。',9,5,{base:'shipment',xV:16,yV:16,w:64,rows:1,x:0,y:0},40000,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
 			if (Game.Has('宇宙老奶奶')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
@@ -6413,7 +6413,7 @@ Game.Launch=function()
 			if (this.amount>=Game.SpecialGrandmaUnlock && Game.Objects['Grandma'].amount>0) Game.Unlock('宇宙老奶奶');
 		});
 		
-		new Game.Object('Alchemy lab','alchemy lab|alchemy labs|转换|[X] 原始元素掌握|[X] 原始元素掌握','把金子变成饼干！',10,6,{base:'alchemylab',xV:16,yV:16,w:64,rows:2,x:0,y:16},200000,function(me){
+		new Game.Object('Alchemy lab','炼金实验室|炼金实验室|转换|[X] 原始元素掌握|[X] 原始元素掌握','把金子变成饼干！',10,6,{base:'alchemylab',xV:16,yV:16,w:64,rows:2,x:0,y:16},200000,function(me){
 			var mult=1;
 			mult*=Game.GetTieredCpsMult(me);
 			if (Game.Has('嬗变老奶奶')) mult*=Game.getGrandmaSynergyUpgradeMultiplier(me.name);
@@ -7038,7 +7038,7 @@ Game.Launch=function()
 			var grandmaNumber=(building.id-1);
 			if (grandmaNumber==1) grandmaNumber='老奶奶';
 			else grandmaNumber+=' 老奶奶';
-			return '老奶奶工作效率 <b>翻倍</b>。 '+(building.plural.charAt(0).toUpperCase()+building.plural.slice(1))+' 获得 <b>+1% 饼干秒产量</b> 每 '+grandmaNumber+'.';
+			return '老奶奶工作效率 <b>翻倍</b>。 '+(building.plural.charAt(0).toUpperCase()+building.plural.slice(1))+' 获得 <b>+1% 饼干秒产量</b> 每 '+grandmaNumber+'。';
 		}
 		
 		order=250;
@@ -8934,8 +8934,8 @@ Game.Launch=function()
 		new Game.buffType('click frenzy',function(time,pow)
 		{
 			return {
-				name:'Click frenzy',
-				desc:'Clicking power x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
+				name:'点击狂潮',
+				desc:'点击效果 x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[0,14],
 				time:time*Game.fps,
 				add:true,
@@ -8947,7 +8947,7 @@ Game.Launch=function()
 		{
 			return {
 				name:'龙之飞舞',
-				desc:'Clicking power x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
+				desc:'点击效果 x'+pow+' for '+Game.sayTime(time*Game.fps,-1)+'!',
 				icon:[0,25],
 				time:time*Game.fps,
 				add:true,
