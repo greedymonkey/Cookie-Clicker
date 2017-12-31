@@ -163,7 +163,7 @@ M.launch=function()
 				{
 					Game.killBuff('Haggler\'s luck');
 					var buff=Game.gainBuff('haggler misery',60*60,2);
-					Game.Popup('<div style="font-size:80%;">适得其反!<br>Upgrades are pricier!</div>',Game.mouseX,Game.mouseY);
+					Game.Popup('<div style="font-size:80%;">适得其反!<br>升级价格变高!</div>',Game.mouseX,Game.mouseY);
 				},
 			},
 			'summon crafty pixies':{
