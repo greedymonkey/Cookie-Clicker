@@ -3864,19 +3864,19 @@ Game.Launch=function()
 					else if (choice=='blab')//sorry (it's really rare)
 					{
 						var str=choose([
-						'Cookie crumbliness x3 for 60 seconds!',
-						'Chocolatiness x7 for 77 seconds!',
-						'Dough elasticity halved for 66 seconds!',
+						'Cookie crumbliness x3 持续 60 秒!',
+						'Chocolatiness x7 持续 77 秒!',
+						'Dough elasticity halved 持续 66 秒!',
 						'Golden cookie shininess doubled for 3 seconds!',
 						'World economy halved for 30 seconds!',
 						'Grandma kisses 23% stingier for 45 seconds!',
-						'Thanks for clicking!',
+						'感谢点击!',
 						'Fooled you! This one was just a test.',
 						'Golden cookies clicked +1!',
 						'Your click has been registered. Thank you for your cooperation.',
 						'Thanks! That hit the spot!',
 						'Thank you. A team has been dispatched.',
-						'They know.',
+						'他们知道。',
 						'Oops. This was just a chocolate cookie with shiny aluminium foil.'
 						]);
 						popup=str;
@@ -7038,7 +7038,7 @@ Game.Launch=function()
 			var grandmaNumber=(building.id-1);
 			if (grandmaNumber==1) grandmaNumber='老奶奶';
 			else grandmaNumber+=' 老奶奶';
-			return '老奶奶工作效率 <b>翻倍</b>。 '+(building.plural.charAt(0).toUpperCase()+building.plural.slice(1))+' 获得 <b>+1% 饼干秒产量</b> 每 '+grandmaNumber+'。';
+			return '老奶奶工作效率 <b>翻倍</b>。 '+cnsigle(building.plural)+' 获得 <b>+1% 饼干秒产量</b> 每 '+grandmaNumber+'。';
 		}
 		
 		order=250;
@@ -7266,7 +7266,7 @@ Game.Launch=function()
 		new Game.Upgrade('何蚝味糖霜','点击驯鹿的奖励 <b>两倍一样多</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>这是我该起床的时候了。</q>',2525,[12,9]);
 		new Game.Upgrade('季节储蓄','所有建筑都便宜 <b>1%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>圣诞老人的胡子，什么储蓄!<br/>谁会来救我们?</q>',2525,[16,9],function(){Game.storeToRefresh=1;});
 		new Game.Upgrade('玩具车间','所有升级都便宜 <b>5%</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>看着你身边的精灵，他们可能会偷走我们的生产秘密。<br>或者更糟!</q>',2525,[16,9],function(){Game.upgradesToRebuild=1;});
-		new Game.Upgrade('淘气名单','老奶奶工作效率 <b>翻倍</b> 一样卓有成效。<br>以圣诞老人等级为标准的成本衡量表。<q>这个名单包含了每一个由格兰德克德人延续的不神圣的行为。<br>他赢不了两次了。<br>一次。一次就足够了。</q>',2525,[15,9]);
+		new Game.Upgrade('淘气名单','老奶奶工作效率 <b>翻倍</b>。<br>以圣诞老人等级为标准的成本衡量表。<q>这个名单包含了每一个由格兰德克德人延续的不神圣的行为。<br>他赢不了两次了。<br>一次。一次就足够了。</q>',2525,[15,9]);
 		new Game.Upgrade('圣诞老人的无底包','随机掉落 <b>10% 更常见的</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>这是你不能检查的一个底部。</q>',2525,[19,9]);
 		new Game.Upgrade('圣诞老人的帮手','点击加成 <b>10% 更强大的</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>一些人选择帮助汉堡包;有些人选择帮助你。<br>我想，每个人都有自己的想法。</q>',2525,[19,9]);
 		new Game.Upgrade('圣诞老人的遗产','饼干生产增加 <b>+3% 每圣诞老人等级</b>.<br>以圣诞老人等级为标准的成本衡量表。<q>在北极，你得先找到精灵。当你得到精灵，你就开始制造玩具。然后当你拿到玩具的时候…然后你得到饼干。</q>',2525,[19,9]);
