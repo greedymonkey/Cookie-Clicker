@@ -8137,7 +8137,7 @@ Game.Launch=function()
 		{
 			var threshold=Math.pow(10,Math.floor(Game.BankAchievements.length*1.5+2));
 			if (Game.BankAchievements.length==0) threshold=1;
-			var achiev=new Game.Achievement(name,'烘烤 <b>'+Beautify(threshold)+'</b> 饼干'+(threshold==1?'':'')+' 在第一次转生前。',[Game.thresholdIcons[Game.BankAchievements.length],(Game.BankAchievements.length>23?2:5)]);
+			var achiev=new Game.Achievement(name,'烘烤 <b>'+Beautify(threshold)+'</b> 饼干'+(threshold==1?'':'')+' 在一次转生前。',[Game.thresholdIcons[Game.BankAchievements.length],(Game.BankAchievements.length>23?2:5)]);
 			achiev.threshold=threshold;
 			achiev.order=100+Game.BankAchievements.length*0.01;
 			Game.BankAchievements.push(achiev);
@@ -9362,9 +9362,9 @@ Game.Launch=function()
 					}
 					if (me.sucked>0.5)
 					{
-						if (Game.prefs.popups) Game.Popup('Exploded a '+(me.type==1?'shiny ':'')+'wrinkler : found '+Beautify(me.sucked)+' 饼干！');
-						else Game.Notify('Exploded a '+(me.type==1?'shiny ':'')+'wrinkler','Found <b>'+Beautify(me.sucked)+'</b> 饼干！',[19,8],6);
-						Game.Popup('<div style="font-size:80%;">+'+Beautify(me.sucked)+' cookies</div>',Game.mouseX,Game.mouseY);
+						if (Game.prefs.popups) Game.Popup('引爆了一个 '+(me.type==1?'闪亮的 ':'')+'皱纹 : 发现了 '+Beautify(me.sucked)+' 饼干！');
+						else Game.Notify('引爆了一个 '+(me.type==1?'闪亮的 ':'')+'皱纹','发现了 <b>'+Beautify(me.sucked)+'</b> 饼干！',[19,8],6);
+						Game.Popup('<div style="font-size:80%;">+'+Beautify(me.sucked)+' 饼干</div>',Game.mouseX,Game.mouseY);
 						
 						if (Game.season=='halloween')
 						{
@@ -11532,6 +11532,8 @@ function cndisplayname(name){
         cnname="时光机器"
     }else if(temp=='<span style="font-size:65%;position:relative;bottom:4px;">Antimatter condenser</span>'){
         cnname='<span style="font-size:65%;position:relative;bottom:4px;">反物质冷凝器</span>'
+    }else if(temp=="Antimatter condenser"){
+        cnname="反物质冷凝器"
     }else if(temp=="Prism"){
         cnname="棱镜"
     }else if(temp=="Chancemaker"){
